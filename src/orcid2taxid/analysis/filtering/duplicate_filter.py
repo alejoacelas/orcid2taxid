@@ -1,6 +1,6 @@
-class DuplicateFilter:
+class DuplicatePublicationFilter:
     """
-    Deduplicates papers by comparing DOIs, or titles if DOIs are not available.
+    Filters out duplicate publications from different sources.
     """
     def __init__(self):
         pass

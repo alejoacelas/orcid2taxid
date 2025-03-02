@@ -1,5 +1,5 @@
 from typing import List
-from schemas.schemas import OrganismMention
+from orcid2taxid.core.models.schemas import OrganismMention
 
 class LLMAnalyzer:
     """

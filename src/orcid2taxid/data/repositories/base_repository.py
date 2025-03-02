@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import List, Dict, Optional
-from schemas.schemas import PaperMetadata, AuthorMetadata
+from orcid2taxid.core.models.schemas import PaperMetadata, AuthorMetadata
 
 class BasePublicationRepository(ABC):
     """
@@ -27,6 +27,26 @@ class BasePublicationRepository(ABC):
         :param author_metadata: Author metadata dictionary.
         :param max_results: Maximum number of results to fetch.
         :return: List of publication metadata dictionaries.
+        """
+        pass
+
+    @abstractmethod
+    def fetch_publications_by_orcid(self, orcid: str, max_results: int = 20) -> Dict:
+        """
+        Fetch raw publication data from API using ORCID ID.
+        :param orcid: ORCID ID.
+        :param max_results: Maximum number of results to fetch.
+        :return: Raw API response as a dictionary.
+        """
+        pass
+
+    @abstractmethod
+    def fetch_publications_by_author_metadata(self, author_metadata: AuthorMetadata, max_results: int = 20) -> Dict:
+        """
+        Fetch raw publication data from API using author metadata.
+        :param author_metadata: Author metadata dictionary.
+        :param max_results: Maximum number of results to fetch.
+        :return: Raw API response as a dictionary.
         """
         pass
 

@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from typing import List
-from schemas.schemas import OrganismList
+from orcid2taxid.core.models.schemas import OrganismList
 
 app = FastAPI()
 

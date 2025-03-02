@@ -4,12 +4,29 @@
 
 ORCID2TAXID works by analyzing a researcher's publication history through multiple sources and extracting organism mentions from their publications which are mapped to TAXIDs using NCBI's e-search API. 
 
+## Repository Structure
+
+```
+orcid2taxid/
+├── src/
+│   └── orcid2taxid/
+│       ├── api/         # External API integrations
+│       ├── core/        # Core functionality modules
+│       ├── analysis/    # Analysis and processing modules
+│       ├── data/        # Data models and schemas
+│       └── main.py      # Main application entry point
+├── tests/               # Test suite
+├── notebooks/           # Jupyter notebooks for development and examples
+├── requirements.txt     # Project dependencies
+└── setup.py            # Package installation configuration
+```
+
 ## Technical Implementation Details
 
-### 1. Component Initialization
-The system initializes several specialized components:
-- `OrcidFetcher`: Retrieves researcher information and publications from ORCID
-- Publication repositories: `PubmedFetcher` and `BiorxivFetcher`
+### 1. Component Architecture
+The system is organized into several specialized components:
+- `OrcidClient`: Retrieves researcher information and publications from ORCID
+- Publication repositories: `EuropePMCRepository` and `BiorxivRepository`
 - `UnpaywallFetcher`: Obtains full-text access to papers if available
 - `GnfFinder`: Uses GlobalNames.org API for organism name detection
 - `LLMAnalyzer`: Uses Claude 3.5 for text analysis
@@ -46,10 +63,25 @@ Organizes results using defined schemas:
 - `OrganismList`: Paper-level collection of organisms and TAXIDs
 - Includes confidence scores and extraction method information
 
+## Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/orcid2taxid.git
+cd orcid2taxid
+
+# Create and activate a virtual environment (optional but recommended)
+python -m venv .venv
+source .venv/bin/activate  # On Windows, use `.venv\Scripts\activate`
+
+# Install the package and dependencies
+pip install -e .
+```
+
 ## Usage
 
 ```bash
-python main.py <ORCID>
+python -m orcid2taxid <ORCID>
 ```
 
 Replace `<ORCID>` with the researcher's ORCID identifier (e.g., "0000-0002-1825-0097").

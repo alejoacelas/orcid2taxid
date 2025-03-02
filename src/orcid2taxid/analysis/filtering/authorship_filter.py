@@ -1,10 +1,9 @@
 from typing import Dict, List
-from schemas.schemas import PaperMetadata
+from orcid2taxid.core.models.schemas import PaperMetadata
 
-class AuthorVerificationFilter:
+class AuthorshipVerificationFilter:
     """
-    Determines whether papers likely belong to a specific author by comparing
-    against known publications and author patterns.
+    Verifies that a publication belongs to the target author.
     """
     
     def __init__(self, known_papers: List[PaperMetadata], threshold: float = 0.8):

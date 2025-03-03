@@ -38,6 +38,8 @@ class CountryInfo(BaseModel):
 class AuthorMetadata(BaseModel):
     """Represents comprehensive author information from ORCID"""
     orcid: str
+    given_name: Optional[str] = None
+    family_name: Optional[str] = None
     full_name: str
     credit_name: Optional[str] = None
     alternative_names: List[str] = Field(default_factory=list)
@@ -53,9 +55,9 @@ class AuthorMetadata(BaseModel):
 
 class Author(BaseModel):
     """Simplified author information as it appears in a publication"""
+    given_name: Optional[str] = None
+    family_name: Optional[str] = None
     full_name: str
-    first_name: Optional[str] = None
-    last_name: Optional[str] = None
     orcid: Optional[str] = None
     email: Optional[str] = None
     affiliations: List[str] = Field(default_factory=list)

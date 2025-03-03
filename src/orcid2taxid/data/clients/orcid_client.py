@@ -47,6 +47,9 @@ class OrcidClient:
             
             # Initialize with required fields
             full_name = None
+            given_name_value = None
+            family_name_value = None
+            
             name_data = data.get('name', {}) if data else {}
             if name_data:
                 given_name = name_data.get('given-names', {})
@@ -62,6 +65,8 @@ class OrcidClient:
             researcher_info = {
                 'orcid': orcid_id,
                 'full_name': full_name,
+                'given_name': given_name_value,
+                'family_name': family_name_value,
             }
             
             # Add optional fields

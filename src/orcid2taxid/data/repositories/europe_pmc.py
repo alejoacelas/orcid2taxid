@@ -1,6 +1,6 @@
 from orcid2taxid.data.repositories.base_repository import BasePublicationRepository
 from typing import List, Dict
-from orcid2taxid.core.models.schemas import PaperMetadata, Author, ExternalId, FundingInfo
+from orcid2taxid.core.models.schemas import PaperMetadata, Author, ExternalId, FundingInfo, AuthorMetadata
 from datetime import datetime
 import requests
 import time
@@ -66,8 +66,8 @@ class EuropePMCRepository(BasePublicationRepository):
                 # Create Author object with enhanced information
                 authors.append(Author(
                     full_name=author.get('fullName', ''),
-                    first_name=author.get('firstName', ''),
-                    last_name=author.get('lastName', ''),
+                    given_name=author.get('firstName', ''),
+                    family_name=author.get('lastName', ''),
                     affiliations=affiliations,
                     sequence='first' if i == 0 else 'additional',
                     orcid=orcid if 'orcid' in locals() else None,
@@ -137,6 +137,14 @@ class EuropePMCRepository(BasePublicationRepository):
                         funder=grant.get('agency')
                     ))
 
+        # Ensure keywords is always a list, even if empty
+        keywords = []
+        keyword_list = epmc_result.get('keywordList', {})
+        if isinstance(keyword_list, dict):
+            keyword_array = keyword_list.get('keyword', [])
+            if isinstance(keyword_array, list):
+                keywords = [k for k in keyword_array if isinstance(k, str)]
+
         # Build PaperMetadata object with enhanced information
         return PaperMetadata(
             title=epmc_result.get('title', ''),
@@ -152,7 +160,7 @@ class EuropePMCRepository(BasePublicationRepository):
             url=full_text_urls[0] if full_text_urls else None,
             full_text_urls=full_text_urls,
             citation_count=epmc_result.get('citedByCount'),
-            keywords=epmc_result.get('keywordList', {}).get('keyword', []),
+            keywords=keywords,
             subjects=[mesh['descriptorName'] for mesh in epmc_result.get('meshHeadingList', {}).get('meshHeading', []) if isinstance(mesh, dict) and 'descriptorName' in mesh],
             funding_info=funding_info if 'funding_info' in locals() else None,
             external_ids=external_ids,
@@ -246,35 +254,51 @@ class EuropePMCRepository(BasePublicationRepository):
     def fetch_publications_by_author_metadata(self, author_metadata: Dict, max_results: int = 20) -> Dict:
         """
         Fetch raw publication data from Europe PMC API using author metadata.
-        :param author_metadata: Author metadata dictionary.
+        :param author_metadata: Author metadata dictionary or AuthorMetadata object.
         :param max_results: Maximum number of results to fetch.
         :return: Raw API response as a dictionary.
         """
         try:
+            # Convert AuthorMetadata object to dict if needed
+            if isinstance(author_metadata, AuthorMetadata):
+                author_metadata = author_metadata.model_dump()
+            
             query_parts = []
             
-            # Add author name
-            if 'full_name' in author_metadata:
-                query_parts.append(f'AUTH:"{author_metadata["full_name"]}"')
-            
-            # Add affiliations if available
-            if 'affiliations' in author_metadata and author_metadata['affiliations']:
-                for affiliation in author_metadata['affiliations']:
-                    if isinstance(affiliation, dict) and 'institution_name' in affiliation:
-                        query_parts.append(f'AFFIL:"{affiliation["institution_name"]}"')
+            # Add author name in Europe PMC format
+            if author_metadata.get('family_name') and author_metadata.get('given_name'):
+                # Construct name from parts in the format "Segireddy Rameswara Reddy"
+                author_name = f"{author_metadata['family_name']} {author_metadata['given_name']}"
+                author_name = author_name.replace(',', '').strip()
+                query_parts.append(f'AUTH:"{author_name}"')
+            elif author_metadata.get('full_name'):
+                # Try to parse from full_name, assuming format "Lastname, Firstname"
+                full_name = author_metadata['full_name']
+                # Split on comma and reverse to get "Lastname Firstname" format
+                name_parts = [part.strip() for part in full_name.split(',')]
+                if len(name_parts) == 2:
+                    author_name = f"{name_parts[0]} {name_parts[1]}"
+                else:
+                    author_name = full_name.replace(',', '').strip()
+                query_parts.append(f'AUTH:"{author_name}"')
 
             if not query_parts:
                 return {}
 
-            # Combine query parts
-            query = " AND ".join(query_parts)
+            # Add ORCID if available
+            if author_metadata.get('orcid'):
+                query_parts.append(f'AUTHORID:"{author_metadata["orcid"]}"')
+
+            # Combine query parts with OR to be more permissive
+            query = " OR ".join(query_parts)
             
             # Construct the search URL
             search_url = f"{self.base_url}/search"
             params = {
                 'query': query,
                 'format': 'json',
-                'pageSize': max_results
+                'pageSize': max_results,
+                'resultType': 'core'  # Get full results instead of lite
             }
             
             # Make the request
@@ -284,5 +308,5 @@ class EuropePMCRepository(BasePublicationRepository):
             return response.json()
             
         except Exception as e:
-            logging.error("Error fetching Europe PMC publications by author metadata", exc_info=True)
+            logging.error(f"Error fetching Europe PMC publications by author metadata: {str(e)}", exc_info=True)
             return {}

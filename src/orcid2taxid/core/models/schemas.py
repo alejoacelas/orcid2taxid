@@ -1,14 +1,13 @@
 from pydantic import BaseModel, Field, HttpUrl
 from typing import List, Dict, Optional
-from datetime import date
 
 class AuthorAffiliation(BaseModel):
     """Represents an author's affiliation with an institution"""
     institution_name: str
     department: Optional[str] = None
     role: Optional[str] = None
-    start_date: Optional[date] = None
-    end_date: Optional[date] = None
+    start_date: Optional[str] = None  # ISO format YYYY-MM-DD
+    end_date: Optional[str] = None    # ISO format YYYY-MM-DD
     visibility: Optional[str] = None
 
 class ExternalId(BaseModel):
@@ -55,10 +54,14 @@ class AuthorMetadata(BaseModel):
 class Author(BaseModel):
     """Simplified author information as it appears in a publication"""
     full_name: str
+    first_name: Optional[str] = None
+    last_name: Optional[str] = None
     orcid: Optional[str] = None
+    email: Optional[str] = None
     affiliations: List[str] = Field(default_factory=list)
     role: Optional[str] = None
     sequence: Optional[str] = None
+    identifiers: Dict[str, str] = Field(default_factory=dict)
 
 class FundingInfo(BaseModel):
     """Represents funding information for a publication"""
@@ -66,18 +69,30 @@ class FundingInfo(BaseModel):
     funder: Optional[str] = None
     grant_number: Optional[str] = None
 
+class JournalInfo(BaseModel):
+    """Detailed journal information"""
+    title: Optional[str] = None
+    issn: Optional[str] = None
+    eissn: Optional[str] = None
+    nlm_id: Optional[str] = None
+    iso_abbreviation: Optional[str] = None
+    volume: Optional[str] = None
+    issue: Optional[str] = None
+
 class PaperMetadata(BaseModel):
     """Represents metadata for a scientific publication"""
     title: str
     doi: Optional[str] = None
     pmid: Optional[str] = None
-    publication_date: Optional[date] = None
+    publication_date: Optional[str] = None  # ISO format YYYY-MM-DD
     journal: Optional[str] = None
+    journal_info: Optional[JournalInfo] = None
     abstract: Optional[str] = None
     authors: List[Author] = Field(default_factory=list)
     repository_source: Optional[str] = None
     type: Optional[str] = None
     url: Optional[str] = None
+    full_text_urls: List[str] = Field(default_factory=list)
     citation_count: Optional[int] = None
     keywords: List[str] = Field(default_factory=list)
     subjects: List[str] = Field(default_factory=list)
@@ -86,6 +101,9 @@ class PaperMetadata(BaseModel):
     language: Optional[str] = None
     country: Optional[str] = None
     visibility: Optional[str] = None
+    publication_status: Optional[str] = None
+    is_open_access: bool = False
+    has_pdf: bool = False
 
 class OrganismMention(BaseModel):
     """Represents a mention of an organism in text"""

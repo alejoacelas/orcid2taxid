@@ -3,3 +3,5 @@ fastapi
 requests
 pytest
 ipykernel
+anthropic
+python-dotenv

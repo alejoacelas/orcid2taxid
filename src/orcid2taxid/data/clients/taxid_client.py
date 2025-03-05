@@ -3,6 +3,7 @@ import logging
 from typing import Optional, Dict, Union
 from urllib.parse import quote
 import json
+from orcid2taxid.core.models.schemas import NCBITaxonomyInfo
 
 class NCBITaxIDLookup:
     """
@@ -83,12 +84,12 @@ class NCBITaxIDLookup:
             self.logger.error(f"Unexpected error in NCBI taxonomy lookup for {organism_name}", exc_info=True)
             return None
 
-    def get_taxid(self, organism_name: str) -> Optional[int]:
+    def get_taxid(self, organism_name: str) -> Optional[NCBITaxonomyInfo]:
         """
-        Returns the TAXID for a given organism name via NCBI requests.
+        Returns comprehensive taxonomy information for a given organism name via NCBI requests.
         
         :param organism_name: The name of the organism to map.
-        :return: TAXID integer or None if not found.
+        :return: NCBITaxonomyInfo object or None if not found.
         """
         try:
             # Get the raw taxonomy data
@@ -96,7 +97,7 @@ class NCBITaxIDLookup:
             if not tax_data:
                 return None
             
-            # Extract the taxonomy ID from the response
+            # Extract the taxonomy information from the response
             result = tax_data.get('result', {})
             if not result:
                 return None
@@ -106,9 +107,26 @@ class NCBITaxIDLookup:
             if not uids:
                 return None
                 
-            # Return the taxonomy ID as an integer
-            return int(uids[0])
+            # Get the taxonomy record for the first ID
+            tax_record = result.get(str(uids[0]), {})
+            
+            # Create NCBITaxonomyInfo object
+            return NCBITaxonomyInfo(
+                taxid=int(uids[0]),
+                scientific_name=tax_record.get('scientificname', ''),
+                rank=tax_record.get('rank'),
+                division=tax_record.get('division'),
+                common_name=tax_record.get('commonname'),
+                lineage=tax_record.get('lineage', '').split('; ') if tax_record.get('lineage') else None,
+                synonyms=tax_record.get('synonym', []),
+                genetic_code=tax_record.get('gencode'),
+                mito_genetic_code=tax_record.get('mitogenome'),
+                is_parasite=tax_record.get('parasite', False),
+                is_pathogen=tax_record.get('pathogen', False),
+                host_taxid=int(tax_record.get('host_taxid')) if tax_record.get('host_taxid') else None,
+                host_scientific_name=tax_record.get('host_scientificname')
+            )
             
         except Exception as e:
-            self.logger.error(f"Error extracting TAXID from NCBI response for {organism_name}", exc_info=True)
+            self.logger.error(f"Error extracting taxonomy info from NCBI response for {organism_name}", exc_info=True)
             return None

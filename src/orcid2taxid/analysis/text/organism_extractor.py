@@ -61,7 +61,7 @@ PATHOGEN_LIST = [
     "Blastomyces dermatitidis"
 ]
 
-class LLMAnalyzer:
+class LLMOrganismExtractor:
     """
     Uses an LLM to extract and standardize organisms from text.
     """

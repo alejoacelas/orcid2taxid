@@ -6,6 +6,7 @@ import requests
 import time
 import json
 import logging
+from orcid2taxid.core.utils.date import parse_date_to_iso
 
 class EuropePMCRepository(BasePublicationRepository):
     """
@@ -27,8 +28,7 @@ class EuropePMCRepository(BasePublicationRepository):
         pub_date = None
         try:
             if 'firstPublicationDate' in epmc_result:
-                # Convert to ISO format string YYYY-MM-DD
-                pub_date = epmc_result['firstPublicationDate']
+                pub_date = parse_date_to_iso(epmc_result['firstPublicationDate'])
         except (ValueError, TypeError):
             pass
 

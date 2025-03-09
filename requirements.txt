@@ -5,3 +5,4 @@ pytest
 ipykernel
 anthropic
 python-dotenv
+streamlit

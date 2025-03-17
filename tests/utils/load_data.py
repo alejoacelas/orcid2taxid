@@ -1,38 +1,48 @@
 import json
 from pathlib import Path
 from typing import List, Dict
-from orcid2taxid.core.models.schemas import AuthorMetadata
+from orcid2taxid.core.models.schemas import AuthorMetadata, PaperMetadata
+
 from orcid2taxid.data.clients.orcid_client import OrcidClient
 from orcid2taxid.data.repositories.europe_pmc import EuropePMCRepository
 
 
-def load_test_orcids(n: int = 5) -> List[str]:
-    """Load the first n ORCIDs from the JSON file"""
-    orcids_file = Path('tests/data/orcids.json')
+def load_test_orcids(n: int = 5, keyword: str = None) -> List[str]:
+    """
+    Load the first n ORCIDs from the JSON file
+    
+    Args:
+        n: Number of ORCIDs to load
+        keyword: Optional keyword to specify which file to load from (e.g., 'jensen' loads from 'jensen_orcids.json')
+    """
+    filename = f"{keyword}_orcids.json" if keyword else "orcids.json"
+    orcids_file = Path('tests/data') / filename
+    
     if not orcids_file.exists():
-        raise FileNotFoundError("ORCID list file not found at tests/data/orcids.json")
+        raise FileNotFoundError(f"ORCID list file not found at {orcids_file}")
         
     with open(orcids_file, 'r') as f:
         orcids = json.load(f)
     return orcids[:n]
 
-def load_test_author_metadata(n: int = 5, force_refresh: bool = False) -> List[AuthorMetadata]:
+def load_test_author_metadata(n: int = 5, force_refresh: bool = False, keyword: str = None) -> List[AuthorMetadata]:
     """
     Load test author metadata from a JSON file or regenerate it from ORCID API.
     
     Args:
         n: Number of author metadata records to load
-        regenerate: If True, regenerate the metadata by calling the ORCID API
+        force_refresh: If True, regenerate the metadata by calling the ORCID API
+        keyword: Optional keyword to specify which files to use (e.g., 'jensen' uses 'jensen_orcids.json' and saves to 'jensen_metadata.json')
         
     Returns:
         List of AuthorMetadata objects
     """
-    metadata_file = Path('tests/data/author_metadata.json')
+    filename = f"{keyword}_metadata.json" if keyword else "author_metadata.json"
+    metadata_file = Path('tests/data') / filename
     
     if force_refresh or not metadata_file.exists():
         # Regenerate the metadata by calling the ORCID API
-        
-        orcids = load_test_orcids(n)
+        orcids = load_test_orcids(n, keyword)
         client = OrcidClient()
         author_metadata_list = []
         
@@ -46,7 +56,7 @@ def load_test_author_metadata(n: int = 5, force_refresh: bool = False) -> List[A
         # Save the regenerated metadata to the JSON file
         metadata_file.parent.mkdir(parents=True, exist_ok=True)
         with open(metadata_file, 'w') as f:
-            json.dump([m.dict() for m in author_metadata_list], f, indent=2)
+            json.dump([m.model_dump() for m in author_metadata_list], f, indent=2)
             
         return author_metadata_list
     
@@ -56,9 +66,8 @@ def load_test_author_metadata(n: int = 5, force_refresh: bool = False) -> List[A
     
     # If n is larger than available entries, regenerate additional entries
     if n > len(metadata_list):
-        
         # Get additional ORCIDs beyond what we already have
-        all_orcids = load_test_orcids(n)
+        all_orcids = load_test_orcids(n, keyword)
         existing_orcids = [m.get('orcid') for m in metadata_list]
         new_orcids = [orcid for orcid in all_orcids if orcid not in existing_orcids]
         
@@ -67,7 +76,7 @@ def load_test_author_metadata(n: int = 5, force_refresh: bool = False) -> List[A
             for orcid in new_orcids:
                 try:
                     metadata = client.get_author_metadata(orcid)
-                    metadata_list.append(metadata.dict())
+                    metadata_list.append(metadata.model_dump())
                 except Exception as e:
                     print(f"Error fetching metadata for ORCID {orcid}: {str(e)}")
             
@@ -79,22 +88,86 @@ def load_test_author_metadata(n: int = 5, force_refresh: bool = False) -> List[A
     author_metadata_list = [AuthorMetadata(**m) for m in metadata_list[:n]]
     return author_metadata_list
 
-def load_test_abstracts(n: int = 5, force_refresh: bool = False) -> List[Dict[str, str]]:
+def load_test_papers(n: int = 5, force_refresh: bool = False, keyword: str = None) -> List[PaperMetadata]:
+    """
+    Load test paper metadata from a JSON file or fetch them from Europe PMC API.
+    
+    Args:
+        n: Number of ORCIDs to process
+        force_refresh: If True, regenerate the papers by calling the Europe PMC API
+        keyword: Optional keyword to specify which files to use (e.g., 'jensen' uses 'jensen_orcids.json' and saves to 'jensen_papers.json')
+        
+    Returns:
+        List of PaperMetadata objects
+    """
+    filename = f"{keyword}_papers.json" if keyword else "papers.json"
+    papers_file = Path('tests/data') / filename
+    
+    if force_refresh or not papers_file.exists():
+        # Fetch papers by calling the Europe PMC API
+        orcids = load_test_orcids(n, keyword)
+        repository = EuropePMCRepository()
+        papers_data = []
+        
+        for orcid in orcids:
+            try:
+                # Get publications for each ORCID
+                publications = repository.get_publications_by_orcid(orcid, max_results=5)
+                papers_data.extend([pub.model_dump() for pub in publications])
+            except Exception as e:
+                print(f"Error fetching papers for ORCID {orcid}: {str(e)}")
+        
+        # Save the fetched papers to the JSON file
+        papers_file.parent.mkdir(parents=True, exist_ok=True)
+        with open(papers_file, 'w') as f:
+            json.dump(papers_data, f, indent=2)
+            
+        return [PaperMetadata(**p) for p in papers_data]
+    
+    # Load the papers from the JSON file
+    with open(papers_file, 'r') as f:
+        papers_data = json.load(f)
+    
+    # If n is larger than available entries, fetch additional entries
+    if n * 5 > len(papers_data):  # Assuming ~5 papers per ORCID
+        all_orcids = load_test_orcids(n, keyword)
+        existing_papers = {p.get('doi') for p in papers_data if p.get('doi')}
+        
+        repository = EuropePMCRepository()
+        for orcid in all_orcids:
+            try:
+                publications = repository.get_publications_by_orcid(orcid, max_results=5)
+                for pub in publications:
+                    if pub.doi and pub.doi not in existing_papers:
+                        papers_data.append(pub.model_dump())
+                        existing_papers.add(pub.doi)
+            except Exception as e:
+                print(f"Error fetching papers for ORCID {orcid}: {str(e)}")
+        
+        # Update the JSON file with new entries
+        with open(papers_file, 'w') as f:
+            json.dump(papers_data, f, indent=2)
+    
+    return [PaperMetadata(**p) for p in papers_data]
+
+def load_test_abstracts(n: int = 5, force_refresh: bool = False, keyword: str = None) -> List[Dict[str, str]]:
     """
     Load test abstracts from a JSON file or fetch them from Europe PMC API.
     
     Args:
         n: Number of ORCIDs to process
         force_refresh: If True, regenerate the abstracts by calling the Europe PMC API
+        keyword: Optional keyword to specify which files to use (e.g., 'jensen' uses 'jensen_orcids.json' and saves to 'jensen_abstracts.json')
         
     Returns:
         List of dictionaries containing ORCID and associated paper abstracts
     """
-    abstracts_file = Path('tests/data/abstracts.json')
+    filename = f"{keyword}_abstracts.json" if keyword else "abstracts.json"
+    abstracts_file = Path('tests/data') / filename
     
     if force_refresh or not abstracts_file.exists():
         # Fetch abstracts by calling the Europe PMC API
-        orcids = load_test_orcids(n)
+        orcids = load_test_orcids(n, keyword)
         repository = EuropePMCRepository()
         abstracts_data = []
         
@@ -137,7 +210,7 @@ def load_test_abstracts(n: int = 5, force_refresh: bool = False) -> List[Dict[st
     
     # If n is larger than available entries, fetch additional entries
     if n > len(abstracts_data):
-        all_orcids = load_test_orcids(n)
+        all_orcids = load_test_orcids(n, keyword)
         existing_orcids = [a['orcid'] for a in abstracts_data]
         new_orcids = [orcid for orcid in all_orcids if orcid not in existing_orcids]
         
@@ -173,5 +246,6 @@ def load_test_abstracts(n: int = 5, force_refresh: bool = False) -> List[Dict[st
     return abstracts_data[:n]
 
 if __name__ == "__main__":
-    abstracts = load_test_abstracts(n=10, force_refresh=True)
+    # Example usage with keyword
+    abstracts = load_test_abstracts(n=10, force_refresh=True, keyword="jensen")
     # print(abstracts)

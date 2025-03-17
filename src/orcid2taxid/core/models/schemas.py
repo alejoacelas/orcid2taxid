@@ -1,5 +1,5 @@
-from pydantic import BaseModel, Field, HttpUrl
 from typing import List, Dict, Optional
+from pydantic import BaseModel, Field
 
 class AuthorAffiliation(BaseModel):
     """Represents an author's affiliation with an institution"""

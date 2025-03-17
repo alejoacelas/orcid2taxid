@@ -1,32 +1,50 @@
 import requests
 import json
 import logging
+from pathlib import Path
 from orcid2taxid.core.models.schemas import (
     AuthorMetadata, 
     AuthorAffiliation, 
     ExternalId, 
     ResearcherUrl, 
     EmailInfo, 
-    CountryInfo
+    CountryInfo,
+    PaperMetadata
 )
 from datetime import datetime
+from orcid2taxid.core.utils.date import parse_date_to_iso
+from orcid2taxid.core.config.logging import get_logger
+from typing import Dict, Any
 
 class OrcidClient:
     """
     Responsible for querying the ORCID API to retrieve researcher
     metadata and publications using an ORCID ID.
     """
-    def __init__(self, api_key: str = None):
+    def __init__(self, api_key: str = None, timeout: int = 30):
         """
         :param api_key: (Optional) API key if needed for ORCID's advanced endpoints.
+        :param timeout: Timeout in seconds for API requests. Defaults to 30 seconds.
         """
         self.api_key = api_key
+        self.timeout = timeout
         self.base_url = "https://pub.orcid.org/v3.0"
         self.headers = {
             'Accept': 'application/vnd.orcid+json'  # Specify JSON format explicitly
         }
         if api_key:
             self.headers['Authorization'] = f'Bearer {api_key}'
+        self.error_occurred = False  # Track if any critical errors occurred
+        self.logger = get_logger('orcid_client')
+
+    def _log_error(self, message: str, exc_info: bool = True) -> None:
+        """Log an error and set the error flag"""
+        self.logger.error(message, exc_info=exc_info)
+        self.error_occurred = True
+
+    def _log_warning(self, message: str) -> None:
+        """Log a warning without setting the error flag"""
+        self.logger.warning(message)
 
     def get_author_metadata(self, orcid_id: str) -> AuthorMetadata:
         """
@@ -39,7 +57,8 @@ class OrcidClient:
             # Make request to ORCID API
             response = requests.get(
                 f"{self.base_url}/{orcid_id}/person",
-                headers=self.headers
+                headers=self.headers,
+                timeout=self.timeout
             )
             response.raise_for_status()
             
@@ -100,21 +119,27 @@ class OrcidClient:
             
             # Add external identifiers
             external_ids = {}
-            ext_ids_data = data.get('external-identifiers', {}) if data else {}
-            for ext_id in ext_ids_data.get('external-identifier', []):
-                if isinstance(ext_id, dict):
-                    id_type = ext_id.get('external-id-type', '').lower()
-                    id_value = ext_id.get('external-id-value')
-                    if id_type and id_value:
-                        id_url = ext_id.get('external-id-url', {})
-                        if isinstance(id_url, dict):
-                            id_url = id_url.get('value')
-                        external_ids[id_type] = ExternalId(
-                            value=id_value,
-                            url=id_url,
-                            relationship=ext_id.get('external-id-relationship'),
-                            visibility=ext_id.get('visibility')
-                        )
+            doi = None
+            if data and isinstance(data, dict):
+                ext_ids_container = data.get('external-ids')
+                if ext_ids_container and isinstance(ext_ids_container, dict):
+                    for ext_id in ext_ids_container.get('external-id') or []:
+                        if isinstance(ext_id, dict):
+                            id_type = ext_id.get('external-id-type', '').lower()
+                            id_value = ext_id.get('external-id-value')
+                            id_url = ext_id.get('external-id-url', {})
+                            if isinstance(id_url, dict):
+                                id_url = id_url.get('value')
+                            
+                            if id_type and id_value:
+                                if id_type == 'doi':
+                                    doi = id_value
+                                external_ids[id_type] = ExternalId(
+                                    value=id_value,
+                                    url=id_url,
+                                    relationship=ext_id.get('external-id-relationship'),
+                                    visibility=ext_id.get('visibility')
+                                )
             researcher_info['external_ids'] = external_ids
             
             # Add researcher URLs
@@ -162,7 +187,8 @@ class OrcidClient:
             try:
                 education_response = requests.get(
                     f"{self.base_url}/{orcid_id}/educations",
-                    headers=self.headers
+                    headers=self.headers,
+                    timeout=self.timeout
                 )
                 education_response.raise_for_status()
                 education_data = education_response.json()
@@ -175,12 +201,12 @@ class OrcidClient:
                                 institution_name=org['name'],
                                 department=edu.get('department-name'),
                                 role=edu.get('role-title'),
-                                start_date=self._parse_date(edu.get('start-date')),
-                                end_date=self._parse_date(edu.get('end-date')),
+                                start_date=parse_date_to_iso(edu.get('start-date')),
+                                end_date=parse_date_to_iso(edu.get('end-date')),
                                 visibility=edu.get('visibility')
                             ))
-            except Exception as e:
-                logging.error("Error fetching education data", exc_info=True)
+            except Exception:
+                self._log_error("Error fetching education data")
             researcher_info['education'] = education
             
             # Get employment history from /employments endpoint
@@ -188,7 +214,8 @@ class OrcidClient:
             try:
                 employment_response = requests.get(
                     f"{self.base_url}/{orcid_id}/employments",
-                    headers=self.headers
+                    headers=self.headers,
+                    timeout=self.timeout
                 )
                 employment_response.raise_for_status()
                 employment_data = employment_response.json()
@@ -198,6 +225,7 @@ class OrcidClient:
                     affiliation_groups = employment_data.get('affiliation-group', [])
                     for group in affiliation_groups:
                         if not isinstance(group, dict):
+                            self._log_warning(f"Skipping invalid affiliation group format for ORCID {orcid_id}")
                             continue
                             
                         # Get summaries array from each affiliation group
@@ -212,51 +240,24 @@ class OrcidClient:
                                         institution_name=org['name'],
                                         department=emp.get('department-name'),
                                         role=emp.get('role-title'),
-                                        start_date=self._parse_date(emp.get('start-date')),
-                                        end_date=self._parse_date(emp.get('end-date')),
+                                        start_date=parse_date_to_iso(emp.get('start-date')),
+                                        end_date=parse_date_to_iso(emp.get('end-date')),
                                         visibility=emp.get('visibility')
                                     ))
-            except Exception as e:
-                logging.error("Error fetching employment data", exc_info=True)
+            except Exception:
+                self._log_error("Error fetching employment data")
             researcher_info['affiliations'] = affiliations
             
             return AuthorMetadata(**researcher_info)
             
         except Exception as e:
-            logging.error("Error fetching researcher info from ORCID", exc_info=True)
+            self._log_error(f"Error fetching researcher info from ORCID: {str(e)}")
             # Return minimal AuthorMetadata object with error info
             return AuthorMetadata(
                 orcid=orcid_id,
                 full_name="Unknown",
                 biography=f"Error fetching data: {str(e)}"
             )
-
-    def _parse_date(self, date_dict: dict) -> str:
-        """Helper method to parse ORCID date format to ISO format string"""
-        if not date_dict:
-            return None
-        date_parts = []
-        
-        # Safely get year, month, day values handling None cases
-        year_dict = date_dict.get('year')
-        month_dict = date_dict.get('month')
-        day_dict = date_dict.get('day')
-        
-        year = year_dict.get('value') if isinstance(year_dict, dict) else None
-        month = month_dict.get('value') if isinstance(month_dict, dict) else None
-        day = day_dict.get('value') if isinstance(day_dict, dict) else None
-        
-        # If we have a year but no month or day, add defaults to make a valid date
-        if year:
-            if not month:
-                month = "01"
-            if not day:
-                day = "01"
-            
-            # Create ISO format date string YYYY-MM-DD
-            return f"{year}-{month:0>2}-{day:0>2}"
-        
-        return None
 
     def fetch_author_metadata(self, orcid_id: str) -> dict:
         """
@@ -268,7 +269,8 @@ class OrcidClient:
             # Make request to ORCID API for person data
             person_response = requests.get(
                 f"{self.base_url}/{orcid_id}/person",
-                headers=self.headers
+                headers=self.headers,
+                timeout=self.timeout
             )
             person_response.raise_for_status()
             person_data = person_response.json()
@@ -276,7 +278,8 @@ class OrcidClient:
             # Make request for education data
             education_response = requests.get(
                 f"{self.base_url}/{orcid_id}/educations",
-                headers=self.headers
+                headers=self.headers,
+                timeout=self.timeout
             )
             education_response.raise_for_status()
             education_data = education_response.json()
@@ -284,7 +287,8 @@ class OrcidClient:
             # Make request for employment data
             employment_response = requests.get(
                 f"{self.base_url}/{orcid_id}/employments",
-                headers=self.headers
+                headers=self.headers,
+                timeout=self.timeout
             )
             employment_response.raise_for_status()
             employment_data = employment_response.json()
@@ -298,28 +302,113 @@ class OrcidClient:
 
             return raw_data
 
-        except Exception as e:
-            logging.error("Error fetching raw researcher data from ORCID", exc_info=True)
+        except Exception:
+            self._log_error("Error fetching raw researcher data from ORCID")
             return {}
+
+    def _clean_work_response(self, work: Dict[Any, Any]) -> Dict[Any, Any]:
+        """Clean work response by removing redundant fields and simplifying structure"""
+        if not isinstance(work, dict):
+            return work
+        
+        # Fields we want to exclude (metadata, redundant info, etc)
+        excluded_fields = {
+            'path',
+            'source',
+            'last-modified-date',
+            'created-date',
+            'submission-date',
+            'display-index',
+            'external-id-normalized',
+            'external-id-normalized-error',
+        }
+        
+        cleaned = {}
+        for key, value in work.items():
+            # Skip excluded fields
+            if key in excluded_fields:
+                continue
+            
+            if isinstance(value, dict):
+                # Special handling for common nested structures
+                if key == 'title' and 'title' in value:
+                    cleaned[key] = value['title'].get('value')
+                elif key in {'journal-title', 'url'}:
+                    cleaned[key] = value.get('value')
+                else:
+                    # Recursively clean nested dict
+                    cleaned_value = self._clean_work_response(value)
+                    if cleaned_value:  # Only add if there's content after cleaning
+                        cleaned[key] = cleaned_value
+            elif isinstance(value, list):
+                # Clean each item in the list
+                cleaned_list = [self._clean_work_response(item) for item in value]
+                # Only add non-empty lists
+                if any(cleaned_list):
+                    cleaned[key] = cleaned_list
+            elif value is not None:  # Keep non-null values
+                cleaned[key] = value
+            
+        return cleaned
 
     def fetch_publications_by_orcid(self, orcid_id: str) -> dict:
         """
         Fetches raw publication data from the ORCID API.
         :param orcid_id: ORCID ID.
-        :return: Raw API response as a dictionary containing publication data.
+        :return: Raw API response as a dictionary containing publication data with full work details.
         """
         try:
-            # Make request to ORCID API
+            # Make request to ORCID API for works summary
             response = requests.get(
                 f"{self.base_url}/{orcid_id}/works",
-                headers=self.headers
+                headers=self.headers,
+                timeout=self.timeout
             )
             response.raise_for_status()
+            data = response.json()
             
-            return response.json()
+            # Extract work groups and get full details for each work
+            work_groups = data.get('group', [])
+            detailed_works = []
+            
+            for work_group in work_groups:
+                work_summaries = work_group.get('work-summary', [])
+                if work_summaries:
+                    # Get the preferred work version (first one in the group)
+                    work = work_summaries[0]
+                    put_code = work.get('put-code')
+                    
+                    if put_code:
+                        # Fetch full work details
+                        work_details = self.fetch_work_details(orcid_id, put_code)
+                        if work_details:
+                            # Clean and add the work details
+                            cleaned_work = self._clean_work_response(work_details)
+                            detailed_works.append(cleaned_work)
+            
+            return {'works': detailed_works}
             
         except Exception as e:
-            logging.error("Error fetching raw publication data from ORCID", exc_info=True)
+            self._log_error(f"Error fetching raw publication data from ORCID: {str(e)}")
+            return {}
+
+    def fetch_work_details(self, orcid_id: str, put_code: int) -> dict:
+        """
+        Fetches detailed information for a specific work using its put-code.
+        :param orcid_id: ORCID ID
+        :param put_code: Work's put-code from the summary
+        :return: Dictionary containing the full work details
+        """
+        try:
+            response = requests.get(
+                f"{self.base_url}/{orcid_id}/work/{put_code}",
+                headers=self.headers,
+                timeout=self.timeout
+            )
+            response.raise_for_status()
+            return response.json()
+        except Exception as e:
+            self._log_warning(f"Error fetching work details for put-code {put_code}: {str(e)}")
             return {}
 
     def get_publications_by_orcid(self, orcid_id: str) -> list:
@@ -333,7 +422,8 @@ class OrcidClient:
             # Make request to ORCID API
             response = requests.get(
                 f"{self.base_url}/{orcid_id}/works",
-                headers=self.headers
+                headers=self.headers,
+                timeout=self.timeout
             )
             response.raise_for_status()
             
@@ -346,9 +436,17 @@ class OrcidClient:
                 # Each work group contains work summaries - we'll take the first/preferred one
                 work_summaries = work_group.get('work-summary', [])
                 if not work_summaries:
+                    self._log_warning(f"Empty work summaries found for ORCID {orcid_id}")
                     continue
                     
                 work = work_summaries[0]  # Get preferred work version
+                
+                # Get full work details using put-code
+                put_code = work.get('put-code')
+                if put_code:
+                    work_details = self.fetch_work_details(orcid_id, put_code)
+                    if work_details:
+                        work = work_details  # Use detailed version if available
                 
                 # Extract title
                 title = None
@@ -359,6 +457,7 @@ class OrcidClient:
                         title = title_value.get('value')
                 
                 if not title:  # Skip if no title
+                    self._log_warning(f"Skipping publication without title for ORCID {orcid_id}")
                     continue
                 
                 # Extract journal title
@@ -370,32 +469,14 @@ class OrcidClient:
                     journal = journal_title
                 
                 # Extract publication date
-                pub_date = None
-                date_obj = work.get('publication-date', {})
-                if date_obj:
-                    year_obj = date_obj.get('year', {})
-                    month_obj = date_obj.get('month', {})
-                    day_obj = date_obj.get('day', {})
-                    
-                    year = year_obj.get('value') if isinstance(year_obj, dict) else None
-                    month = month_obj.get('value', '1') if isinstance(month_obj, dict) else '1'
-                    day = day_obj.get('value', '1') if isinstance(day_obj, dict) else '1'
-                    
-                    if year:
-                        try:
-                            pub_date = datetime.strptime(
-                                f"{year}-{month}-{day}", 
-                                "%Y-%m-%d"
-                            ).date()
-                        except ValueError:
-                            pass
+                pub_date = parse_date_to_iso(work.get('publication-date'))
                 
                 # Extract external identifiers
                 external_ids = {}
                 doi = None
-                ext_ids_container = work.get('external-ids', {})
-                if isinstance(ext_ids_container, dict):
-                    for ext_id in ext_ids_container.get('external-id', []):
+                ext_ids_container = work.get('external-ids')
+                if ext_ids_container and isinstance(ext_ids_container, dict):
+                    for ext_id in ext_ids_container.get('external-id') or []:
                         if isinstance(ext_id, dict):
                             id_type = ext_id.get('external-id-type', '').lower()
                             id_value = ext_id.get('external-id-value')
@@ -406,11 +487,21 @@ class OrcidClient:
                             if id_type and id_value:
                                 if id_type == 'doi':
                                     doi = id_value
-                                external_ids[id_type] = {
-                                    'value': id_value,
-                                    'url': id_url
-                                }
-                
+                                external_ids[id_type] = ExternalId(
+                                    value=id_value,
+                                    url=id_url
+                                )
+
+                # Extract description/abstract
+                description = None
+                if isinstance(work, dict):
+                    # Try to get description from different possible fields
+                    description = (
+                        work.get('abstracts', {}).get('abstract', [{}])[0].get('value')
+                        or work.get('description', {}).get('value')
+                        or work.get('short-description')
+                    )
+
                 # Create PaperMetadata object
                 try:
                     paper = PaperMetadata(
@@ -422,15 +513,16 @@ class OrcidClient:
                         external_ids=external_ids,
                         repository_source='ORCID',
                         url=work.get('url', {}).get('value') if isinstance(work.get('url'), dict) else None,
-                        visibility=work.get('visibility')
+                        visibility=work.get('visibility'),
+                        abstract=description
                     )
                     publications.append(paper)
                 except Exception as e:
-                    print(f"Error creating PaperMetadata object: {str(e)}")
+                    self._log_error(f"Error creating PaperMetadata object: {str(e)}")
                     continue
             
             return publications
             
         except Exception as e:
-            logging.error("Error fetching publications from ORCID", exc_info=True)
+            self._log_error(f"Error fetching publications from ORCID: {str(e)}")
             return [] 

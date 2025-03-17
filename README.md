@@ -4,6 +4,8 @@
 
 ORCID2TAXID works by analyzing a researcher's publication history through multiple sources and extracting organism mentions from their publications which are mapped to TAXIDs using NCBI's e-search API. 
 
+This project came out from the idea introduced by Tessa Alexanian and Max Lagenkamp in this [EA Forum post](https://forum.effectivealtruism.org/posts/RwMpnHwqhTZ2rrwbr/five-tractable-biosecurity-projects-you-could-start-tomorrow).
+
 ## Repository Structure
 
 ```

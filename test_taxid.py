@@ -46,7 +46,4 @@ def test_pipeline(n: int = 1):
                     logger.warning(f"No taxonomy found for: {org.searchable_name}")
 
 if __name__ == "__main__":
-    # Uncomment the test you want to run
-    # test_single_taxid()
-    # test_single_paper()
     test_pipeline(n=10)

@@ -1,19 +1,19 @@
 # %%
-from orcid2taxid.data.clients.orcid_client import OrcidClient
-from orcid2taxid.data.repositories.europe_pmc import EuropePMCRepository
+from orcid2taxid.integrations.orcid import OrcidClient
+from orcid2taxid.integrations.europe_pmc import EuropePMCRepository
 from orcid2taxid.core.models.schemas import AuthorMetadata, AuthorAffiliation
 from orcid2taxid.core.config.logging import setup_logging
 from tests.utils.load_data import load_test_orcids, load_test_author_metadata
 import json
 from pathlib import Path
 import logging
-from orcid2taxid.data.clients.taxid_client import NCBITaxIDLookup
+from orcid2taxid.integrations.ncbi import TaxIDLookup
 
 # Set up logging with more verbose output
 logging.basicConfig(level=logging.INFO)
 
 # %%
-lookup = NCBITaxIDLookup()
+lookup = TaxIDLookup()
 taxid = lookup.get_taxid("e. coli")
 raw_data = lookup.fetch_taxid("e. coli")
 

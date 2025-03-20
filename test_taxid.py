@@ -1,7 +1,7 @@
 # %%
 import logging
-from orcid2taxid.data.clients.taxid_client import NCBITaxIDLookup
-from orcid2taxid.analysis.text.organism_extractor import LLMOrganismExtractor
+from orcid2taxid.integrations.ncbi import TaxIDLookup
+from orcid2taxid.analysis.extraction.papers import PaperExtractor
 from orcid2taxid.core.models.schemas import PaperMetadata
 from tests.utils.load_data import load_test_abstracts
 
@@ -16,8 +16,8 @@ logging.getLogger('httpx').setLevel(logging.WARNING)
 logger = logging.getLogger(__name__)
 
 # Initialize clients
-analyzer = LLMOrganismExtractor()
-taxid_lookup = NCBITaxIDLookup()
+analyzer = PaperExtractor()
+taxid_lookup = TaxIDLookup()
 
 
 # Test full pipeline

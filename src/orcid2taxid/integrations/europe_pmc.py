@@ -1,14 +1,11 @@
-from orcid2taxid.data.repositories.base_repository import BasePublicationRepository
 from typing import List, Dict
 from orcid2taxid.core.models.schemas import PaperMetadata, Author, ExternalId, FundingInfo, AuthorMetadata
-from datetime import datetime
 import requests
 import time
-import json
 import logging
 from orcid2taxid.core.utils.date import parse_date_to_iso
 
-class EuropePMCRepository(BasePublicationRepository):
+class EuropePMCRepository:
     """
     Repository implementation for Europe PMC.
     Uses the Europe PMC REST API to search for publications.
@@ -247,7 +244,7 @@ class EuropePMCRepository(BasePublicationRepository):
             
             return response.json()
             
-        except Exception as e:
+        except Exception:
             logging.error("Error fetching Europe PMC publications by ORCID", exc_info=True)
             return {}
 
@@ -307,6 +304,6 @@ class EuropePMCRepository(BasePublicationRepository):
             
             return response.json()
             
-        except Exception as e:
-            logging.error(f"Error fetching Europe PMC publications by author metadata: {str(e)}", exc_info=True)
+        except Exception:
+            logging.error(f"Error fetching Europe PMC publications by author metadata", exc_info=True)
             return {}

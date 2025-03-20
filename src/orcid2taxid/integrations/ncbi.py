@@ -1,11 +1,10 @@
 import requests
 import logging
-from typing import Optional, Dict, Union
-from urllib.parse import quote
+from typing import Optional, Dict
 import json
 from orcid2taxid.core.models.schemas import NCBITaxonomyInfo
 
-class NCBITaxIDLookup:
+class TaxIDLookup:
     """
     Uses NCBI e-utils to map organism names to their corresponding TAXIDs.
     """

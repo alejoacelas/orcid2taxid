@@ -1,4 +1,5 @@
 pydantic
+pyyaml
 fastapi
 requests
 pytest

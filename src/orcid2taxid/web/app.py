@@ -1,7 +1,7 @@
 import streamlit as st
-from orcid2taxid.data.repositories.europe_pmc import EuropePMCRepository
-from orcid2taxid.analysis.text.organism_extractor import LLMOrganismExtractor
-from orcid2taxid.data.clients.taxid_client import NCBITaxIDLookup
+from orcid2taxid.integrations.europe_pmc import EuropePMCRepository
+from orcid2taxid.analysis.extraction.papers import PaperExtractor
+from orcid2taxid.integrations.ncbi import TaxIDLookup
 from collections import defaultdict
 from typing import List
 from orcid2taxid.core.models.schemas import PaperMetadata, OrganismMention
@@ -60,8 +60,8 @@ def handle_search():
 
 # Initialize components
 europe_pmc = EuropePMCRepository()
-organism_extractor = LLMOrganismExtractor()
-taxid_client = NCBITaxIDLookup()
+organism_extractor = PaperExtractor()
+taxid_client = TaxIDLookup()
 
 # Set up page config
 st.set_page_config(

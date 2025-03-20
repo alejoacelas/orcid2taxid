@@ -6,7 +6,7 @@ from typing import Dict, Any, Optional, List
 from dataclasses import dataclass
 from datetime import datetime
 
-from orcid2taxid.data.clients.orcid_client import OrcidClient
+from orcid2taxid.integrations.orcid import OrcidClient
 from orcid2taxid.core.models.schemas import AuthorMetadata, PaperMetadata
 
 # Keep only the test data directory

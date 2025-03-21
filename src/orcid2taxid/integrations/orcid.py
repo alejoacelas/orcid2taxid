@@ -1,18 +1,15 @@
 import requests
-import json
-import logging
-from pathlib import Path
 from orcid2taxid.core.models.schemas import (
-    AuthorMetadata, 
     AuthorAffiliation, 
     ExternalId, 
     ResearcherUrl, 
     EmailInfo, 
     CountryInfo,
+    Author,
+    ResearcherMetadata,
     PaperMetadata
 )
-from datetime import datetime
-from orcid2taxid.core.utils.date import parse_date_to_iso
+from orcid2taxid.core.utils.date import parse_date
 from orcid2taxid.core.config.logging import get_logger
 from typing import Dict, Any
 
@@ -46,7 +43,7 @@ class OrcidClient:
         """Log a warning without setting the error flag"""
         self.logger.warning(message)
 
-    def get_author_metadata(self, orcid_id: str) -> AuthorMetadata:
+    def get_author_metadata(self, orcid_id: str) -> ResearcherMetadata:
         """
         Fetches a researcher's metadata (e.g., name, institution).
         :param orcid_id: ORCID ID (string).
@@ -90,7 +87,7 @@ class OrcidClient:
             
             # Add optional fields
             if data and data.get('last-modified-date', {}) and data['last-modified-date'].get('value'):
-                researcher_info['last_modified'] = data['last-modified-date']['value']
+                researcher_info['last_modified'] = parse_date(data['last-modified-date']['value'])
             
             # Add credit name if available
             if name_data and name_data.get('credit-name', {}) and name_data['credit-name'].get('value'):
@@ -201,8 +198,8 @@ class OrcidClient:
                                 institution_name=org['name'],
                                 department=edu.get('department-name'),
                                 role=edu.get('role-title'),
-                                start_date=parse_date_to_iso(edu.get('start-date')),
-                                end_date=parse_date_to_iso(edu.get('end-date')),
+                                start_date=parse_date(edu.get('start-date')),
+                                end_date=parse_date(edu.get('end-date')),
                                 visibility=edu.get('visibility')
                             ))
             except Exception:
@@ -240,23 +237,22 @@ class OrcidClient:
                                         institution_name=org['name'],
                                         department=emp.get('department-name'),
                                         role=emp.get('role-title'),
-                                        start_date=parse_date_to_iso(emp.get('start-date')),
-                                        end_date=parse_date_to_iso(emp.get('end-date')),
+                                        start_date=parse_date(emp.get('start-date')),
+                                        end_date=parse_date(emp.get('end-date')),
                                         visibility=emp.get('visibility')
                                     ))
             except Exception:
                 self._log_error("Error fetching employment data")
             researcher_info['affiliations'] = affiliations
             
-            return AuthorMetadata(**researcher_info)
+            return ResearcherMetadata(**researcher_info)
             
         except Exception as e:
             self._log_error(f"Error fetching researcher info from ORCID: {str(e)}")
-            # Return minimal AuthorMetadata object with error info
-            return AuthorMetadata(
+            # Return minimal ResearcherMetadata object with error info
+            return ResearcherMetadata(
                 orcid=orcid_id,
                 full_name="Unknown",
-                biography=f"Error fetching data: {str(e)}"
             )
 
     def fetch_author_metadata(self, orcid_id: str) -> dict:
@@ -460,37 +456,37 @@ class OrcidClient:
                     self._log_warning(f"Skipping publication without title for ORCID {orcid_id}")
                     continue
                 
-                # Extract journal title
-                journal = None
-                journal_title = work.get('journal-title')  # Don't assume it's a dict
+                # Extract journal title and ISSN
+                journal_name = None
+                journal_issn = None
+                journal_title = work.get('journal-title')
                 if isinstance(journal_title, dict):
-                    journal = journal_title.get('value')
+                    journal_name = journal_title.get('value')
                 elif isinstance(journal_title, str):
-                    journal = journal_title
+                    journal_name = journal_title
                 
-                # Extract publication date
-                pub_date = parse_date_to_iso(work.get('publication-date'))
-                
-                # Extract external identifiers
-                external_ids = {}
-                doi = None
+                # Extract ISSN if available
                 ext_ids_container = work.get('external-ids')
                 if ext_ids_container and isinstance(ext_ids_container, dict):
                     for ext_id in ext_ids_container.get('external-id') or []:
                         if isinstance(ext_id, dict):
                             id_type = ext_id.get('external-id-type', '').lower()
-                            id_value = ext_id.get('external-id-value')
-                            id_url = ext_id.get('external-id-url', {})
-                            if isinstance(id_url, dict):
-                                id_url = id_url.get('value')
-                            
-                            if id_type and id_value:
-                                if id_type == 'doi':
-                                    doi = id_value
-                                external_ids[id_type] = ExternalId(
-                                    value=id_value,
-                                    url=id_url
-                                )
+                            if id_type == 'issn':
+                                journal_issn = ext_id.get('external-id-value')
+                                break
+                
+                # Extract publication date
+                pub_date = parse_date(work.get('publication-date'))
+                
+                # Extract DOI
+                doi = None
+                if ext_ids_container and isinstance(ext_ids_container, dict):
+                    for ext_id in ext_ids_container.get('external-id') or []:
+                        if isinstance(ext_id, dict):
+                            id_type = ext_id.get('external-id-type', '').lower()
+                            if id_type == 'doi':
+                                doi = ext_id.get('external-id-value')
+                                break
 
                 # Extract description/abstract
                 description = None
@@ -502,19 +498,44 @@ class OrcidClient:
                         or work.get('short-description')
                     )
 
+                # Extract authors
+                authors = []
+                contributors = work.get('contributors', {}).get('contributor', [])
+                if isinstance(contributors, list):
+                    for i, contributor in enumerate(contributors):
+                        if isinstance(contributor, dict):
+                            # Safely handle contributor-orcid which might be None
+                            contributor_orcid = None
+                            contributor_orcid_data = contributor.get('contributor-orcid')
+                            if isinstance(contributor_orcid_data, dict):
+                                contributor_orcid = contributor_orcid_data.get('uri')
+                                if contributor_orcid:
+                                    contributor_orcid = contributor_orcid.split('/')[-1]
+                            
+                            # Safely handle contributor attributes
+                            sequence = 'additional'  # Default value
+                            contributor_attributes = contributor.get('contributor-attributes')
+                            if isinstance(contributor_attributes, dict):
+                                sequence = contributor_attributes.get('contributor-sequence', 'additional')
+                            
+                            authors.append(Author(
+                                full_name=contributor.get('credit-name', {}).get('value', ''),
+                                given_name=contributor.get('given-names', {}).get('value', ''),
+                                family_name=contributor.get('family-name', {}).get('value', ''),
+                                sequence=sequence,
+                                identifiers={'orcid': contributor_orcid} if contributor_orcid else {}
+                            ))
+
                 # Create PaperMetadata object
                 try:
                     paper = PaperMetadata(
                         title=title,
-                        type=work.get('type'),
-                        publication_date=pub_date,
-                        journal=journal,
+                        abstract=description,
                         doi=doi,
-                        external_ids=external_ids,
-                        repository_source='ORCID',
-                        url=work.get('url', {}).get('value') if isinstance(work.get('url'), dict) else None,
-                        visibility=work.get('visibility'),
-                        abstract=description
+                        publication_date=pub_date,
+                        journal_name=journal_name,
+                        journal_issn=journal_issn,
+                        authors=authors
                     )
                     publications.append(paper)
                 except Exception as e:

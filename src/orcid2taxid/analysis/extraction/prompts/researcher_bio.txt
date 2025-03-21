@@ -1,0 +1,33 @@
+You are a professional science writer tasked with creating a biographical summary of a researcher based on their academic profile. Use the following information (when available) to generate a comprehensive but concise bio.
+
+RESEARCHER INFORMATION:
+Full Name: {{ full_name }}
+Existing Biography: {{ biography }}
+Total Publications: {{ total_publications }}
+
+Recent Publications:
+{{ recent_papers }}
+
+Research Subjects: {{ subjects }}
+Keywords: {{ keywords }}
+
+Current Affiliations:
+{{ affiliations }}
+
+Please generate a biographical summary with the following sections. Use a professional academic tone and focus on their research contributions and expertise.
+
+<short_bio>
+Write a 2-3 sentence biographical summary introducing the researcher and their main field of work.
+</short_bio>
+
+<research_focus>
+Describe their primary research areas and interests based on their publication history and keywords.
+</research_focus>
+
+<achievements>
+Highlight key achievements, including publication record and any notable research trends visible in their work.
+</achievements>
+
+<justification>
+Explain how you determined the researcher's main areas of expertise and what evidence supports your summary.
+</justification> 

@@ -1,0 +1,52 @@
+2025-03-20 17:38:31,301 - orcid_client - ERROR - Error fetching publications from ORCID: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/orcid.py", line 507, in get_publications_by_orcid
+    contributor_orcid = contributor.get('contributor-orcid', {}).get('uri')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2025-03-20 17:38:37,826 - orcid_client - ERROR - Error fetching publications from ORCID: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/orcid.py", line 507, in get_publications_by_orcid
+    contributor_orcid = contributor.get('contributor-orcid', {}).get('uri')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2025-03-20 17:42:23,917 - orcid_client - ERROR - Error fetching publications from ORCID: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/orcid.py", line 516, in get_publications_by_orcid
+    sequence = contributor_attributes.get('contributor-sequence', 'additional')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2025-03-20 17:42:28,686 - orcid_client - ERROR - Error fetching publications from ORCID: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/orcid.py", line 516, in get_publications_by_orcid
+    sequence = contributor_attributes.get('contributor-sequence', 'additional')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2025-03-20 17:42:54,527 - orcid_client - ERROR - Error fetching publications from ORCID: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/orcid.py", line 516, in get_publications_by_orcid
+    sequence = contributor_attributes.get('contributor-sequence', 'additional')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2025-03-20 17:42:59,000 - orcid_client - ERROR - Error fetching publications from ORCID: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/orcid.py", line 516, in get_publications_by_orcid
+    sequence = contributor_attributes.get('contributor-sequence', 'additional')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2025-03-20 19:05:31,809 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-20 19:05:36,863 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-20 19:05:41,013 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-20 19:05:46,730 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-20 19:05:53,198 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-20 19:06:04,245 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-20 19:06:08,956 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-20 19:06:14,284 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-20 19:06:20,014 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-20 19:06:27,694 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-20 19:06:32,178 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-20 19:06:44,600 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-20 19:06:50,119 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-20 19:06:56,711 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-20 19:07:01,347 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-20 19:07:05,802 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"

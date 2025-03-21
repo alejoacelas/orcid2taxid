@@ -19,16 +19,17 @@ class PaperExtractor:
         self.llm = LLMClient(model=model)
         self.pathogens = load_yaml_data(DATA_DIR / "pathogens.yaml")["pathogens"]
 
-    def extract_organisms_from_abstract(self, paper_metadata: PaperMetadata) -> List[OrganismMention]:
+    def extract_organisms_from_abstract(self, paper: PaperMetadata) -> List[OrganismMention]:
         """
         Uses an LLM to detect organism names from text.
         
-        :param paper_metadata: The paper metadata containing title and abstract.
+        :param title: The title of the paper.
+        :param abstract: The abstract of the paper.
         :return: List of recognized organism names.
         """
         template_data = {
             "pathogen_list": "\n".join(self.pathogens),
-            "paper_content": f"Title: {paper_metadata.title}\n\nAbstract: {paper_metadata.abstract}"
+            "paper_content": f"Title: {paper.title}\n\nAbstract: {paper.abstract}"
         }
         
         prompt = render_prompt(PROMPT_DIR, "organism_extraction.txt", **template_data)
@@ -43,7 +44,6 @@ class PaperExtractor:
                 context="",  # Default empty context
                 confidence=1.0,  # Default confidence
                 justification=parsed_result["justification"],
-                taxonomy_info=None  # Will be populated later by taxid lookup
             ))
         
         return organisms

@@ -1,6 +1,6 @@
 import streamlit as st
 from orcid2taxid.integrations.europe_pmc import EuropePMCRepository
-from orcid2taxid.analysis.extraction.papers import PaperExtractor
+from orcid2taxid.analysis.extraction.paper import PaperExtractor
 from orcid2taxid.integrations.ncbi import TaxIDLookup
 from collections import defaultdict
 from typing import List

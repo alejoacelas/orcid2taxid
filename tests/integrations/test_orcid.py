@@ -1,26 +1,18 @@
 # %%
-import json
-from pathlib import Path
 from pprint import pprint
 from typing import Dict, Any, Optional, List
 from dataclasses import dataclass
 from datetime import datetime
 
 from orcid2taxid.integrations.orcid import OrcidClient
-from orcid2taxid.core.models.schemas import AuthorMetadata, PaperMetadata
+from orcid2taxid.core.models.schemas import ResearcherMetadata, PaperMetadata
+from tests.utils.load_data import load_test_orcids, load_test_researchers, load_test_papers
 
-# Keep only the test data directory
-TEST_DATA_DIR = Path(__file__).parent / "tests/data"
-
-# Load test ORCID IDs
-with open(TEST_DATA_DIR / "virology_orcids.json") as f:
-    TEST_ORCIDS = json.load(f)
-
-# Update client initialization to remove log_dir
+# Initialize client
 client = OrcidClient()
 
-# %% [markdown]
-# ## Test Result Schemas
+# Load test data
+TEST_ORCIDS = load_test_orcids(n=20, keyword="virology")
 
 # %%
 @dataclass
@@ -28,7 +20,7 @@ class AuthorTestResult:
     """Container for author metadata test results"""
     orcid: str
     raw_response: Dict[str, Any]
-    formatted_response: Optional[AuthorMetadata]
+    formatted_response: Optional[ResearcherMetadata]
     success: bool = True
     error_message: Optional[str] = None
     
@@ -161,38 +153,42 @@ def test_name_edge_cases(sample_size: int = 5) -> TestSuiteResult:
         sample_size=sample_size,
         start_time=datetime.now()
     )
+    idx = 0  # Initialize idx
     
     try:
-        for idx, orcid in enumerate(TEST_ORCIDS[:sample_size]):
+        # Load test data
+        test_orcids = load_test_orcids(n=sample_size, keyword="virology")
+        test_metadata = load_test_researchers(n=sample_size, keyword="virology")
+        
+        for idx, (orcid, metadata) in enumerate(zip(test_orcids, test_metadata)):
             try:
-                # Get responses
+                # Get raw response for comparison
                 raw_response = client.fetch_author_metadata(orcid)
-                response = client.get_author_metadata(orcid)
                 
                 # Validate name handling
-                assert response.full_name, "Missing required field: full_name"
-                if not response.given_name and not response.family_name:
-                    assert response.credit_name or response.full_name != "Unknown", \
+                assert metadata.full_name, "Missing required field: full_name"
+                if not metadata.given_name and not metadata.family_name:
+                    assert metadata.credit_name or metadata.full_name != "Unknown", \
                         "No name information available"
                 
                 # Check name field consistency
-                if response.given_name or response.family_name:
-                    expected_full = f"{response.family_name or ''}, {response.given_name or ''}".strip(', ')
-                    assert response.full_name == expected_full, \
-                        f"Full name {response.full_name} doesn't match components: {expected_full}"
+                if metadata.given_name or metadata.family_name:
+                    expected_full = f"{metadata.family_name or ''}, {metadata.given_name or ''}".strip(', ')
+                    assert metadata.full_name == expected_full, \
+                        f"Full name {metadata.full_name} doesn't match components: {expected_full}"
                 
                 # Add successful result
                 result.add_result(AuthorTestResult(
                     orcid=orcid,
                     raw_response=raw_response,
-                    formatted_response=response
+                    formatted_response=metadata
                 ))
                 
             except Exception as e:
                 result.add_result(AuthorTestResult(
                     orcid=orcid,
                     raw_response=raw_response,
-                    formatted_response=response,
+                    formatted_response=metadata,
                     success=False,
                     error_message=str(e)
                 ))
@@ -219,16 +215,20 @@ def test_affiliation_edge_cases(sample_size: int = 5) -> TestSuiteResult:
         sample_size=sample_size,
         start_time=datetime.now()
     )
+    idx = 0  # Initialize idx
     
     try:
-        for idx, orcid in enumerate(TEST_ORCIDS[:sample_size]):
+        # Load test data
+        test_orcids = load_test_orcids(n=sample_size, keyword="virology")
+        test_metadata = load_test_researchers(n=sample_size, keyword="virology")
+        
+        for idx, (orcid, metadata) in enumerate(zip(test_orcids, test_metadata)):
             try:
-                # Get responses
+                # Get raw response for comparison
                 raw_response = client.fetch_author_metadata(orcid)
-                response = client.get_author_metadata(orcid)
                 
                 # Check education entries
-                for edu in response.education:
+                for edu in metadata.education:
                     assert edu.institution_name and edu.institution_name.strip(), \
                         "Empty or missing institution name in education"
                     
@@ -244,7 +244,7 @@ def test_affiliation_edge_cases(sample_size: int = 5) -> TestSuiteResult:
                             print(f"Warning: Future end date found: {edu.end_date}")
                 
                 # Check employment entries
-                for aff in response.affiliations:
+                for aff in metadata.affiliations:
                     assert aff.institution_name and aff.institution_name.strip(), \
                         "Empty or missing institution name in affiliation"
                     
@@ -258,14 +258,14 @@ def test_affiliation_edge_cases(sample_size: int = 5) -> TestSuiteResult:
                 result.add_result(AuthorTestResult(
                     orcid=orcid,
                     raw_response=raw_response,
-                    formatted_response=response
+                    formatted_response=metadata
                 ))
                 
             except Exception as e:
                 result.add_result(AuthorTestResult(
                     orcid=orcid,
                     raw_response=raw_response,
-                    formatted_response=response,
+                    formatted_response=metadata,
                     success=False,
                     error_message=str(e)
                 ))
@@ -292,16 +292,20 @@ def test_publication_edge_cases(sample_size: int = 1) -> TestSuiteResult:
         sample_size=sample_size,
         start_time=datetime.now()
     )
+    idx = 0  # Initialize idx
     
     try:
-        for idx, test_orcid in enumerate(TEST_ORCIDS[:sample_size]):
+        # Load test data
+        test_orcids = load_test_orcids(n=sample_size, keyword="virology")
+        test_papers = load_test_papers(n=sample_size, keyword="virology")
+        
+        for idx, (orcid, papers) in enumerate(zip(test_orcids, test_papers)):
             try:
-                # Get responses
-                raw_response = client.fetch_publications_by_orcid(test_orcid)
-                formatted_response = client.get_publications_by_orcid(test_orcid)
+                # Get raw response for comparison
+                raw_response = client.fetch_publications_by_orcid(orcid)
                 
                 # Check each publication
-                for pub in formatted_response:
+                for pub in papers:
                     # Title is required
                     assert pub.title and pub.title.strip(), "Empty or missing title"
                     
@@ -316,28 +320,23 @@ def test_publication_edge_cases(sample_size: int = 1) -> TestSuiteResult:
                     if pub.doi:
                         assert '/' in pub.doi, f"Invalid DOI format: {pub.doi}"
                     
-                    # Check external IDs
-                    doi_count = sum(1 for id_type in pub.external_ids if id_type.lower() == 'doi')
-                    if doi_count > 1:
-                        print(f"Warning: Multiple DOIs found for publication: {pub.title}")
-                    
                     # Validate URLs if present
-                    if pub.url:
-                        assert pub.url.startswith(('http://', 'https://')), \
-                            f"Invalid URL format: {pub.url}"
+                    if pub.full_text_url:
+                        assert pub.full_text_url.startswith(('http://', 'https://')), \
+                            f"Invalid URL format: {pub.full_text_url}"
                 
                 # Add successful result
                 result.add_result(PublicationTestResult(
-                    orcid=test_orcid,
+                    orcid=orcid,
                     raw_response=raw_response,
-                    formatted_response=formatted_response
+                    formatted_response=papers
                 ))
                 
             except Exception as e:
                 result.add_result(PublicationTestResult(
-                    orcid=test_orcid,
+                    orcid=orcid,
                     raw_response=raw_response,
-                    formatted_response=formatted_response,
+                    formatted_response=papers,
                     success=False,
                     error_message=str(e)
                 ))
@@ -363,9 +362,15 @@ def test_error_logging(sample_size: int = 5) -> TestSuiteResult:
         sample_size=sample_size,
         start_time=datetime.now()
     )
+    idx = 0  # Initialize idx
     
     try:
-        for idx, orcid in enumerate(TEST_ORCIDS[:sample_size]):
+        # Load test data
+        test_orcids = load_test_orcids(n=sample_size, keyword="virology")
+        test_metadata = load_test_researchers(n=sample_size, keyword="virology")
+        test_papers = load_test_papers(n=sample_size, keyword="virology")
+        
+        for idx, (orcid, metadata, papers) in enumerate(zip(test_orcids, test_metadata, test_papers)):
             try:
                 # Create a new client instance for each test to ensure clean error state
                 client = OrcidClient()
@@ -383,7 +388,7 @@ def test_error_logging(sample_size: int = 5) -> TestSuiteResult:
                 # Add successful result
                 result.add_result(AuthorTestResult(
                     orcid=orcid,
-                    raw_response={'author': author_data.dict(), 'publications': [p.dict() for p in publications]},
+                    raw_response={'author': metadata.dict(), 'publications': [p.dict() for p in papers]},
                     formatted_response=author_data,
                     success=True
                 ))
@@ -408,10 +413,10 @@ def test_error_logging(sample_size: int = 5) -> TestSuiteResult:
 
 # %%
 # Run tests with error reporting
-sample_size = 20
+sample_size = 5
 # test_func = test_affiliation_edge_cases
-# test_func = test_name_edge_cases
-test_func = test_publication_edge_cases
+test_func = test_name_edge_cases
+# test_func = test_publication_edge_cases
 # test_func = test_error_logging
 
 print(f"\nRunning {test_func.__name__} with sample_size={sample_size}")

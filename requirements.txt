@@ -6,4 +6,5 @@ pytest
 ipykernel
 anthropic
 python-dotenv
+ipykernel
 streamlit

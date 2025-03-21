@@ -2,9 +2,9 @@
 from datetime import datetime, date
 from typing import Optional, Union, Dict
 
-def parse_date_to_iso(date_value: Union[str, datetime, date, Dict, None]) -> Optional[str]:
+def parse_date(date_value: Union[str, datetime, date, Dict, None]) -> Optional[datetime]:
     """
-    Parse various date formats to ISO format string (YYYY-MM-DD).
+    Parse various date formats to datetime object.
     
     Args:
         date_value: Date value that could be:
@@ -14,19 +14,23 @@ def parse_date_to_iso(date_value: Union[str, datetime, date, Dict, None]) -> Opt
             - None
             
     Returns:
-        ISO format string (YYYY-MM-DD) or None if parsing fails
+        datetime object or None if parsing fails
     """
     if not date_value:
         return None
         
     try:
-        # If already a string, try to parse and reformat
+        # If already a string, try to parse
         if isinstance(date_value, str):
-            return datetime.strptime(date_value, "%Y-%m-%d").date().isoformat()
+            return datetime.strptime(date_value, "%Y-%m-%d")
             
-        # If datetime or date object, convert to ISO string
-        if isinstance(date_value, (datetime, date)):
-            return date_value.isoformat()
+        # If datetime object, return as is
+        if isinstance(date_value, datetime):
+            return date_value
+            
+        # If date object, convert to datetime
+        if isinstance(date_value, date):
+            return datetime.combine(date_value, datetime.min.time())
             
         # If dictionary with date components
         if isinstance(date_value, dict):
@@ -43,8 +47,8 @@ def parse_date_to_iso(date_value: Union[str, datetime, date, Dict, None]) -> Opt
             day = get_value('day') or '01'
             
             if year:
-                # Create ISO format date string
-                return f"{year}-{month:0>2}-{day:0>2}"
+                # Create datetime object
+                return datetime(int(year), int(month), int(day))
                 
         return None
         

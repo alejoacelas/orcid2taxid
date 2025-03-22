@@ -2,7 +2,7 @@
 
 ## Overview
 
-ORCID2TAXID works by analyzing a researcher's publication history through multiple sources and extracting organism mentions from their publications which are mapped to TAXIDs using NCBI's e-search API. 
+ORCID2TAXID works by analyzing a researcher's publication history through multiple sources and extracting organism mentions from their publications which are mapped to TAXIDs using NCBI's e-search API.
 
 This project came out from the idea introduced by Tessa Alexanian and Max Lagenkamp in this [EA Forum post](https://forum.effectivealtruism.org/posts/RwMpnHwqhTZ2rrwbr/five-tractable-biosecurity-projects-you-could-start-tomorrow).
 
@@ -12,13 +12,13 @@ This project came out from the idea introduced by Tessa Alexanian and Max Lagenk
 orcid2taxid/
 ├── src/
 │   └── orcid2taxid/
-│       ├── api/         # External API integrations
+│       ├── web/         # Web interface and API
 │       ├── core/        # Core functionality modules
-│       ├── analysis/    # Analysis and processing modules
-│       ├── data/        # Data models and schemas
-│       └── main.py      # Main application entry point
+│       ├── integrations/# External service integrations
+│       └── analysis/    # Analysis and processing modules
 ├── tests/               # Test suite
-├── notebooks/           # Jupyter notebooks for development and examples
+├── notebooks/           # Jupyter notebooks for development
+├── .streamlit/          # Streamlit configuration
 ├── requirements.txt     # Project dependencies
 └── setup.py            # Package installation configuration
 ```
@@ -26,41 +26,50 @@ orcid2taxid/
 ## Technical Implementation Details
 
 ### 1. Component Architecture
-The system is organized into several specialized components:
-- `OrcidClient`: Retrieves researcher information and publications from ORCID
-- Publication repositories: `EuropePMCRepository` and `BiorxivRepository`
-- `UnpaywallFetcher`: Obtains full-text access to papers if available
-- `GnfFinder`: Uses GlobalNames.org API for organism name detection
-- `LLMAnalyzer`: Uses Claude 3.5 for text analysis
-- `NCBITaxIDLookup`: Maps organism names to NCBI TAXIDs
 
-### 2. Publication Collection and Filtering
-The system implements a multi-stage filtering process:
-1. Fetches author metadata and verified publications from ORCID
-2. Collects publications from multiple sources (PubMed, bioRxiv)
-3. Applies two filtering steps:
-   - `DuplicateFilter`: Removes duplicate publications
-   - `AuthorVerificationFilter`: Verifies authorship with a confidence threshold
+The system is organized into several specialized components:
+
+- Web Interface: Streamlit-based UI for easy access
+- API Layer: FastAPI-based REST API
+- Core Components: Publication retrieval and organism detection
+- Analysis: Text processing and organism name extraction
+- Integrations: External APIs (ORCID, NCBI, etc.)
+
+### 2. Publication Collection and Processing
+
+The system implements a multi-stage process:
+
+1. Retrieves publications from ORCID and other sources
+2. Processes text to identify organism mentions
+3. Maps identified organisms to NCBI TAXIDs
+4. Provides results through both web UI and API
 
 ### 3. Organism Detection Strategy
-Implements a fallback strategy for organism detection:
-1. Primary approach: Full-text
-   - Uses Unpaywall to get PDF access
-   - Processes full text with GNF
-   - Standardizes organism names using an LLM
 
-2. Fallback approach: Abstract-only
-   - Uses LLM to analyze abstract text
-   - Standardizes organism names using an LLM
+The system uses a combination of techniques to detect organisms:
+
+1. Text Analysis
+   - Processes publication text and abstracts
+   - Uses advanced NLP to identify organism mentions
+   - Standardizes organism names
+
+2. TAXID Mapping
+   - Maps identified organisms to NCBI taxonomy IDs
+   - Validates and verifies taxonomic classifications
+   - Maintains mapping accuracy
 
 ### 4. TAXID Mapping
+
 Converts organism names to NCBI TAXIDs:
+
 - Iterates through detected organisms
 - Uses `NCBITaxIDLookup` to get corresponding TAXIDs
 - Maintains mapping between names and IDs
 
 ### 5. Result Structure
+
 Organizes results using defined schemas:
+
 - `OrganismMention`: Individual organism references with metadata
 - `OrganismList`: Paper-level collection of organisms and TAXIDs
 - Includes confidence scores and extraction method information
@@ -72,27 +81,60 @@ Organizes results using defined schemas:
 git clone https://github.com/yourusername/orcid2taxid.git
 cd orcid2taxid
 
-# Create and activate a virtual environment (optional but recommended)
+# Create and activate a virtual environment
 python -m venv .venv
 source .venv/bin/activate  # On Windows, use `.venv\Scripts\activate`
 
-# Install the package and dependencies
-pip install -e .
+# Install dependencies and package
+pip install -r requirements.txt
 ```
 
 ## Usage
 
+### Web Interface
+
+Run the Streamlit app locally:
+
 ```bash
-python -m orcid2taxid <ORCID>
+streamlit run src/orcid2taxid/web/app.py
 ```
 
-Replace `<ORCID>` with the researcher's ORCID identifier (e.g., "0000-0002-1825-0097").
+### API
 
-## Output
+Start the FastAPI server:
 
-The tool returns a list of `OrganismList` objects containing:
-- Paper identifiers
-- Detected organisms
-- Corresponding TAXIDs
-- Confidence scores
-- Extraction methods used
+```bash
+uvicorn orcid2taxid.web.api:app --reload --host 0.0.0.0 --port 8000
+```
+
+Access the API at:
+
+- API endpoint: http://localhost:8000/orcid2taxid/{orcid_id}
+- API documentation: http://localhost:8000/docs
+
+### Example API Call
+
+```bash
+# Get organism information for an ORCID
+curl http://localhost:8000/orcid2taxid/0009-0009-2183-7559
+
+# Limit results
+curl "http://localhost:8000/orcid2taxid/0009-0009-2183-7559?max_results=5"
+```
+
+## Environment Setup
+
+Create a `.env` file with required API keys:
+
+```
+ANTHROPIC_API_KEY=your_key_here
+```
+
+## Deployment on Streamlit Cloud
+
+1. Connect your GitHub account at [share.streamlit.io](https://share.streamlit.io)
+2. Deploy this repository with:
+   - Main file path: `src/orcid2taxid/web/app.py`
+3. Add your `ANTHROPIC_API_KEY` to the app's secrets in Streamlit Cloud settings
+
+That's it! The app will be accessible via the Streamlit Cloud URL provided.

@@ -8,3 +8,4 @@ anthropic
 python-dotenv
 ipykernel
 streamlit
+-e .

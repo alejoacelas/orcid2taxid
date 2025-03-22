@@ -2,7 +2,12 @@ import requests
 import logging
 from typing import Optional, Dict
 import json
+import os
+from dotenv import load_dotenv
 from orcid2taxid.core.models.schemas import NCBITaxonomyInfo
+
+# Load environment variables
+load_dotenv()
 
 class TaxIDLookup:
     """
@@ -14,7 +19,7 @@ class TaxIDLookup:
         """
         self.base_url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
         self.tool_name = "orcid2taxid"
-        self.email = "alejoacelas@gmail.com"  # Should be configured via environment variable
+        self.api_key = os.getenv("NCBI_API_KEY")
         # Use module-level logger like other classes
         self.logger = logging.getLogger(__name__)
 
@@ -40,7 +45,7 @@ class TaxIDLookup:
                 'term': search_term,
                 'retmode': 'json',
                 'tool': self.tool_name,
-                'email': self.email
+                'api_key': self.api_key
             }
             
             response = requests.get(search_url, params=params)
@@ -65,7 +70,7 @@ class TaxIDLookup:
                 'id': taxid,
                 'retmode': 'json',
                 'tool': self.tool_name,
-                'email': self.email
+                'api_key': self.api_key
             }
             
             response = requests.get(fetch_url, params=params)

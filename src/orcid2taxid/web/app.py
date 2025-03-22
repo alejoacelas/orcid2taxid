@@ -43,7 +43,7 @@ def display_results():
     if st.session_state.analyzed_papers:
         st.subheader("📚 Analyzed Papers")
         for paper in st.session_state.analyzed_papers:
-            with st.expander(f"{paper.title} ({paper.publication_date[:4] if paper.publication_date else 'Unknown'})"):
+            with st.expander(f"{paper.title} ({paper.publication_date.strftime('%Y') if paper.publication_date else 'Unknown'})"):
                 if paper.doi:
                     st.markdown(f"**DOI**: [{paper.doi}](https://doi.org/{paper.doi})")
                 if paper.abstract:
@@ -145,7 +145,7 @@ if orcid and search_clicked:
                         paper_info = {
                             'title': paper.title,
                             'doi': paper.doi,
-                            'year': paper.publication_date[:4] if paper.publication_date else 'Unknown'
+                            'year': paper.publication_date.strftime('%Y') if paper.publication_date else 'Unknown'
                         }
                         if paper_info not in st.session_state.organism_to_papers[key]:
                             st.session_state.organism_to_papers[key].append(paper_info)

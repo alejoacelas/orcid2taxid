@@ -55,6 +55,13 @@ class PaperExtractor:
         :param response_text: The raw response text from the LLM
         :return: Dictionary containing parsed organisms and justification
         """
+        # Check for the "No organisms" response
+        if "No organisms from the provided list were directly worked with in this study" in response_text:
+            return {
+                "organisms": [],
+                "justification": "No organisms from the provided list were found in the study."
+            }
+            
         organisms_section = extract_tagged_content(response_text, "organisms_worked_with")
         justification = extract_tagged_content(response_text, "justification")
         

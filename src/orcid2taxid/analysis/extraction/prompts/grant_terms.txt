@@ -1,0 +1,19 @@
+You are an expert at analyzing research grant proposals and identifying key scientific terms and concepts. Please analyze the following grant title and abstract to extract the most relevant scientific terms.
+
+GRANT CONTENT:
+{{ grant_content }}
+
+Please extract and list the key scientific terms that best describe the research focus and methodology of this grant. Focus on:
+1. Specific research areas and fields
+2. Key methodologies and techniques
+3. Important scientific concepts
+4. Specific organisms or biological systems (if applicable)
+5. Technical terms that define the scope of work
+
+<key_terms>
+List each term on a new line. Be concise and precise in your term selection.
+</key_terms>
+
+<justification>
+Explain how you identified these terms and why they are relevant to understanding the grant's research focus.
+</justification> 

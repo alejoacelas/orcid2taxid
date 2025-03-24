@@ -1,0 +1,300 @@
+2025-03-24 10:24:02,725 - nih_reporter - ERROR - Error converting NIH Reporter result to GrantMetadata: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['005421136'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/nih_reporter.py", line 66, in _convert_to_grant_metadata
+    return GrantMetadata(
+           ^^^^^^^^^^^^^^
+  File "/Users/alejo/Code/orcid2taxid/.venv/lib/python3.11/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['005421136'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-03-24 10:24:02,727 - nih_reporter - ERROR - Error converting NIH Reporter result to GrantMetadata: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['005421136'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/nih_reporter.py", line 66, in _convert_to_grant_metadata
+    return GrantMetadata(
+           ^^^^^^^^^^^^^^
+  File "/Users/alejo/Code/orcid2taxid/.venv/lib/python3.11/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['005421136'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-03-24 10:24:02,728 - nih_reporter - ERROR - Error converting NIH Reporter result to GrantMetadata: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['005421136'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/nih_reporter.py", line 66, in _convert_to_grant_metadata
+    return GrantMetadata(
+           ^^^^^^^^^^^^^^
+  File "/Users/alejo/Code/orcid2taxid/.venv/lib/python3.11/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['005421136'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-03-24 10:24:02,729 - nih_reporter - ERROR - Error converting NIH Reporter result to GrantMetadata: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['800771545'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/nih_reporter.py", line 66, in _convert_to_grant_metadata
+    return GrantMetadata(
+           ^^^^^^^^^^^^^^
+  File "/Users/alejo/Code/orcid2taxid/.venv/lib/python3.11/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['800771545'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-03-24 10:24:02,730 - nih_reporter - ERROR - Error converting NIH Reporter result to GrantMetadata: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['800771545'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/nih_reporter.py", line 66, in _convert_to_grant_metadata
+    return GrantMetadata(
+           ^^^^^^^^^^^^^^
+  File "/Users/alejo/Code/orcid2taxid/.venv/lib/python3.11/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['800771545'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-03-24 10:24:02,731 - nih_reporter - ERROR - Error converting NIH Reporter result to GrantMetadata: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['800771545'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/nih_reporter.py", line 66, in _convert_to_grant_metadata
+    return GrantMetadata(
+           ^^^^^^^^^^^^^^
+  File "/Users/alejo/Code/orcid2taxid/.venv/lib/python3.11/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['800771545'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-03-24 10:24:02,732 - nih_reporter - ERROR - Error converting NIH Reporter result to GrantMetadata: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/nih_reporter.py", line 66, in _convert_to_grant_metadata
+    return GrantMetadata(
+           ^^^^^^^^^^^^^^
+  File "/Users/alejo/Code/orcid2taxid/.venv/lib/python3.11/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-03-24 10:24:02,733 - nih_reporter - ERROR - Error converting NIH Reporter result to GrantMetadata: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/nih_reporter.py", line 66, in _convert_to_grant_metadata
+    return GrantMetadata(
+           ^^^^^^^^^^^^^^
+  File "/Users/alejo/Code/orcid2taxid/.venv/lib/python3.11/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-03-24 10:24:02,734 - nih_reporter - ERROR - Error converting NIH Reporter result to GrantMetadata: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/nih_reporter.py", line 66, in _convert_to_grant_metadata
+    return GrantMetadata(
+           ^^^^^^^^^^^^^^
+  File "/Users/alejo/Code/orcid2taxid/.venv/lib/python3.11/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-03-24 10:24:02,734 - nih_reporter - ERROR - Error converting NIH Reporter result to GrantMetadata: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/nih_reporter.py", line 66, in _convert_to_grant_metadata
+    return GrantMetadata(
+           ^^^^^^^^^^^^^^
+  File "/Users/alejo/Code/orcid2taxid/.venv/lib/python3.11/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-03-24 10:24:02,735 - nih_reporter - ERROR - Error converting NIH Reporter result to GrantMetadata: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/nih_reporter.py", line 66, in _convert_to_grant_metadata
+    return GrantMetadata(
+           ^^^^^^^^^^^^^^
+  File "/Users/alejo/Code/orcid2taxid/.venv/lib/python3.11/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-03-24 10:24:02,736 - nih_reporter - ERROR - Error converting NIH Reporter result to GrantMetadata: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/nih_reporter.py", line 66, in _convert_to_grant_metadata
+    return GrantMetadata(
+           ^^^^^^^^^^^^^^
+  File "/Users/alejo/Code/orcid2taxid/.venv/lib/python3.11/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-03-24 10:24:02,737 - nih_reporter - ERROR - Error converting NIH Reporter result to GrantMetadata: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/nih_reporter.py", line 66, in _convert_to_grant_metadata
+    return GrantMetadata(
+           ^^^^^^^^^^^^^^
+  File "/Users/alejo/Code/orcid2taxid/.venv/lib/python3.11/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-03-24 10:24:02,737 - nih_reporter - ERROR - Error converting NIH Reporter result to GrantMetadata: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/nih_reporter.py", line 66, in _convert_to_grant_metadata
+    return GrantMetadata(
+           ^^^^^^^^^^^^^^
+  File "/Users/alejo/Code/orcid2taxid/.venv/lib/python3.11/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-03-24 10:24:02,739 - nih_reporter - ERROR - Error converting NIH Reporter result to GrantMetadata: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/nih_reporter.py", line 66, in _convert_to_grant_metadata
+    return GrantMetadata(
+           ^^^^^^^^^^^^^^
+  File "/Users/alejo/Code/orcid2taxid/.venv/lib/python3.11/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-03-24 10:24:02,739 - nih_reporter - ERROR - Error converting NIH Reporter result to GrantMetadata: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/nih_reporter.py", line 66, in _convert_to_grant_metadata
+    return GrantMetadata(
+           ^^^^^^^^^^^^^^
+  File "/Users/alejo/Code/orcid2taxid/.venv/lib/python3.11/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-03-24 10:24:02,740 - nih_reporter - ERROR - Error converting NIH Reporter result to GrantMetadata: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/nih_reporter.py", line 66, in _convert_to_grant_metadata
+    return GrantMetadata(
+           ^^^^^^^^^^^^^^
+  File "/Users/alejo/Code/orcid2taxid/.venv/lib/python3.11/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-03-24 10:24:02,741 - nih_reporter - ERROR - Error converting NIH Reporter result to GrantMetadata: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/nih_reporter.py", line 66, in _convert_to_grant_metadata
+    return GrantMetadata(
+           ^^^^^^^^^^^^^^
+  File "/Users/alejo/Code/orcid2taxid/.venv/lib/python3.11/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-03-24 10:24:02,742 - nih_reporter - ERROR - Error converting NIH Reporter result to GrantMetadata: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/nih_reporter.py", line 66, in _convert_to_grant_metadata
+    return GrantMetadata(
+           ^^^^^^^^^^^^^^
+  File "/Users/alejo/Code/orcid2taxid/.venv/lib/python3.11/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-03-24 10:24:02,743 - nih_reporter - ERROR - Error converting NIH Reporter result to GrantMetadata: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "/Users/alejo/Code/orcid2taxid/src/orcid2taxid/integrations/nih_reporter.py", line 66, in _convert_to_grant_metadata
+    return GrantMetadata(
+           ^^^^^^^^^^^^^^
+  File "/Users/alejo/Code/orcid2taxid/.venv/lib/python3.11/site-packages/pydantic/main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for GrantMetadata
+organization.duns
+  Input should be a valid string [type=string_type, input_value=['064931884'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type

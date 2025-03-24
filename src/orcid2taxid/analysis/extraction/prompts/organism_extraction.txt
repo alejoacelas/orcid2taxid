@@ -6,7 +6,7 @@ You will be analyzing a scientific paper to identify organisms from a list of pa
 {{ pathogen_list }}
 </pathogen_list>
 
-2. Next, you will be given the title and abstract of a scientific paper. This content will be enclosed in <scientific_paper> tags.
+2. Next, you will be given the doi and the title of a scientific paper. This content will be enclosed in <scientific_paper> tags.
 
 <scientific_paper>
 {{ paper_content }}

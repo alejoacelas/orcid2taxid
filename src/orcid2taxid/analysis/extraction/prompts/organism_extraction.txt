@@ -12,22 +12,23 @@ You will be analyzing a scientific paper to identify organisms from a list of pa
 {{ paper_content }}
 </scientific_paper>
 
-3. Carefully read through the title and abstract, paying close attention to mentions of organisms that are directly manipulated, cultured, or experimented upon in the study.
+3. Carefully read through the paper, paying close attention to the methods section. Look for mentions of organisms that are directly manipulated, cultured, or experimented upon in the study.
 
 4. To determine if an organism was directly worked with, consider the following criteria:
    a. The organism is mentioned in the context of laboratory procedures, experiments, or manipulations.
    b. There are specific details about how the organism was handled, cultured, or analyzed.
-   c. The paper presents original data or results related to the organism.
+   c. The paper presents original, primary data or results related to the organism.
    d. The organism is central to the study's objectives or hypotheses.
 
 5. Do not include organisms that are merely mentioned in passing, used as comparisons, or referenced from other studies without direct experimentation in the current paper.
 
-6. Cross-reference the organisms you've identified as being directly worked with against the provided list of pandemic potential pathogens.
+6. Cross-reference the organisms you've identified as being directly worked with against the provided list of pandemic potential pathogens. Output any pathogenic organism found even if it is not on the list. Flag if the organism is included on the list.
 
 7. Prepare your output in the following format:
    a. If no organisms from the pathogen list were directly worked with in the paper, state "No organisms from the provided list were directly worked with in this study."
-   b. If one or more organisms from the list were directly worked with, list them in <organisms_worked_with> tags, with each organism on a new line.
-   c. Make sure that the organisms are searchable in the NCBI database. If the extracted organism name is not immediately searchable, translate it to a searchable term. List the searchable term next to the original name.
+   b. If one or more organisms from the list were directly worked with, list them in <organisms_worked_with> tags, with each organism on a new line. 
+   c. Display whether the organism was worked on directly, in a wet-lab, or if it was only computational work.
+   d.  Make sure that the organisms are searchable in the NCBI database. If the extracted organism name is not immediately searchable, translate it to a searchable term. List the searchable term next to the original name.
 
 8. After the list (or statement of no organisms found), provide a brief justification for your findings in <justification> tags. Explain why you included or excluded certain organisms based on the paper's content.
 

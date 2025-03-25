@@ -1,1 +1,1809 @@
-[{"orcid":"0009-0000-3550-1137","given_name":"Rameswara Reddy","family_name":"Segireddy","email":null,"full_name":"Segireddy, Rameswara Reddy","credit_name":null,"biography":null,"researcher_urls":[],"country":null,"last_modified":null,"alternative_names":[],"keywords":[],"subjects":[],"journals":[],"external_ids":{},"education":[],"affiliations":[{"institution_name":"Jenner Institute","department":null,"role":"Senior Scientist","start_date":"2024-02-01T00:00:00","end_date":null},{"institution_name":"Jenner Institute","department":"Jenner Institute","role":"Post-doctoral Scientist","start_date":"2018-02-13T00:00:00","end_date":"2024-02-12T00:00:00"}],"publications":[]},{"orcid":"0009-0001-1887-9442","given_name":"Seun","family_name":"Ajayi","email":null,"full_name":"Ajayi, Seun","credit_name":null,"biography":null,"researcher_urls":[],"country":null,"last_modified":null,"alternative_names":[],"keywords":[],"subjects":[],"journals":[],"external_ids":{},"education":[],"affiliations":[{"institution_name":"Jenner Institute","department":"Nuffield Department of Medicine","role":"Programme Manager","start_date":"2024-12-09T00:00:00","end_date":null},{"institution_name":"University of Oxford","department":"Oxford Vaccine Group","role":"Project Manager","start_date":"2024-02-05T00:00:00","end_date":"2024-12-06T00:00:00"}],"publications":[]},{"orcid":"0009-0005-4855-9107","given_name":"Vaishnav Pavan Kumar","family_name":"Achalla","email":null,"full_name":"Achalla, Vaishnav Pavan Kumar","credit_name":null,"biography":null,"researcher_urls":[{"name":"LinkedIn Profile","url":"https://www.linkedin.com/in/achalla-vaishnav-pavan-kumar-355053165/"}],"country":{"code":"GB"},"last_modified":null,"alternative_names":[],"keywords":[],"subjects":[],"journals":[],"external_ids":{},"education":[],"affiliations":[{"institution_name":"Jenner Institute","department":"Nuffield Department of Medicine","role":"Research Assistant","start_date":"2024-07-31T00:00:00","end_date":null}],"publications":[]},{"orcid":"0009-0006-6941-0165","given_name":"Robert","family_name":"Mitchell","email":null,"full_name":"Mitchell, Robert","credit_name":null,"biography":null,"researcher_urls":[],"country":null,"last_modified":null,"alternative_names":[],"keywords":[],"subjects":[],"journals":[],"external_ids":{},"education":[],"affiliations":[{"institution_name":"Jenner Institute","department":"Jenner Institute and Oxford Vaccine group","role":"Research assistant for TB vaccine trial and COVID-19 human challenge study","start_date":"2021-01-01T00:00:00","end_date":"2022-01-01T00:00:00"}],"publications":[]},{"orcid":"0000-0002-4345-661X","given_name":"David","family_name":"Kim","email":{"address":"david.kim@cyanocapture.com","verified":true,"primary":true},"full_name":"Kim, David","credit_name":"David S. Kim","biography":null,"researcher_urls":[],"country":{"code":"GB"},"last_modified":null,"alternative_names":[],"keywords":["vaccines","carbon capture","medicine","covid-19","global health","cyanobacteria","immunology"],"subjects":[],"journals":[],"external_ids":{},"education":[],"affiliations":[{"institution_name":"CyanoCapture","department":null,"role":null,"start_date":null,"end_date":null},{"institution_name":"British Army","department":null,"role":"Lt","start_date":null,"end_date":null},{"institution_name":"Frimley Park Hospital","department":null,"role":"Doctor (Military)","start_date":null,"end_date":null},{"institution_name":"University of Oxford","department":null,"role":null,"start_date":"2016-01-01T00:00:00","end_date":"2022-01-01T00:00:00"},{"institution_name":"Jenner Institute","department":"Prof Adrian Hill group","role":"Research ","start_date":"2018-05-01T00:00:00","end_date":"2018-08-01T00:00:00"}],"publications":[]}]
+{
+  "items": [
+    {
+      "orcid": "0009-0000-3550-1137",
+      "given_name": "Rameswara Reddy",
+      "family_name": "Segireddy",
+      "email": null,
+      "full_name": "Segireddy, Rameswara Reddy",
+      "credit_name": null,
+      "biography": null,
+      "researcher_urls": [],
+      "country": null,
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "Jenner Institute",
+          "department": null,
+          "role": "Senior Scientist",
+          "start_date": "2024-02-01T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "Jenner Institute",
+          "department": "Jenner Institute",
+          "role": "Post-doctoral Scientist",
+          "start_date": "2018-02-13T00:00:00",
+          "end_date": "2024-02-12T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0009-0001-1887-9442",
+      "given_name": "Seun",
+      "family_name": "Ajayi",
+      "email": null,
+      "full_name": "Ajayi, Seun",
+      "credit_name": null,
+      "biography": null,
+      "researcher_urls": [],
+      "country": null,
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "University of Oxford",
+          "department": "Jenner Institute",
+          "role": null,
+          "start_date": null,
+          "end_date": null
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0009-0005-4855-9107",
+      "given_name": "Vaishnav Pavan Kumar",
+      "family_name": "Achalla",
+      "email": null,
+      "full_name": "Achalla, Vaishnav Pavan Kumar",
+      "credit_name": null,
+      "biography": null,
+      "researcher_urls": [
+        {
+          "name": "LinkedIn Profile",
+          "url": "https://www.linkedin.com/in/achalla-vaishnav-pavan-kumar-355053165/"
+        }
+      ],
+      "country": {
+        "code": "GB"
+      },
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "Jenner Institute",
+          "department": "Nuffield Department of Medicine",
+          "role": "Research Assistant",
+          "start_date": "2024-07-31T00:00:00",
+          "end_date": null
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0009-0006-6941-0165",
+      "given_name": "Robert",
+      "family_name": "Mitchell",
+      "email": null,
+      "full_name": "Mitchell, Robert",
+      "credit_name": null,
+      "biography": null,
+      "researcher_urls": [],
+      "country": null,
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "Jenner Institute",
+          "department": "Jenner Institute and Oxford Vaccine group",
+          "role": "Research assistant for TB vaccine trial and COVID-19 human challenge study",
+          "start_date": "2021-01-01T00:00:00",
+          "end_date": "2022-01-01T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0002-4345-661X",
+      "given_name": "David",
+      "family_name": "Kim",
+      "email": {
+        "address": "david.kim@cyanocapture.com",
+        "verified": true,
+        "primary": true
+      },
+      "full_name": "Kim, David",
+      "credit_name": "David S. Kim",
+      "biography": null,
+      "researcher_urls": [],
+      "country": {
+        "code": "GB"
+      },
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [
+        "immunology",
+        "cyanobacteria",
+        "vaccines",
+        "medicine",
+        "carbon capture",
+        "global health",
+        "covid-19"
+      ],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "CyanoCapture",
+          "department": null,
+          "role": null,
+          "start_date": null,
+          "end_date": null
+        },
+        {
+          "institution_name": "British Army",
+          "department": null,
+          "role": "Lt",
+          "start_date": null,
+          "end_date": null
+        },
+        {
+          "institution_name": "Frimley Park Hospital",
+          "department": null,
+          "role": "Doctor (Military)",
+          "start_date": null,
+          "end_date": null
+        },
+        {
+          "institution_name": "University of Oxford",
+          "department": null,
+          "role": null,
+          "start_date": "2016-01-01T00:00:00",
+          "end_date": "2022-01-01T00:00:00"
+        },
+        {
+          "institution_name": "Jenner Institute",
+          "department": "Prof Adrian Hill group",
+          "role": "Research ",
+          "start_date": "2018-05-01T00:00:00",
+          "end_date": "2018-08-01T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0002-9082-5756",
+      "given_name": "Thomas",
+      "family_name": "Belcher",
+      "email": null,
+      "full_name": "Belcher, Thomas",
+      "credit_name": null,
+      "biography": null,
+      "researcher_urls": [],
+      "country": {
+        "code": "GB"
+      },
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [
+        "Immunology",
+        "Neisseria gonorrhoeae",
+        "Bvg",
+        "Vaccines",
+        "Microbial evolution",
+        "Microbial metabolism",
+        "Outer membrane vesicles",
+        "Microbiology",
+        "Bordetella pertussis"
+      ],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "Jenner Institute",
+          "department": null,
+          "role": "Postdoctoral Scientist",
+          "start_date": "2021-07-01T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "Institut Pasteur de Lille",
+          "department": "Centre d'Infection et d'Immunite de Lille",
+          "role": "Post-doc",
+          "start_date": "2017-11-06T00:00:00",
+          "end_date": "2021-06-01T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0003-0152-3033",
+      "given_name": "Susan",
+      "family_name": "Jackson",
+      "email": null,
+      "full_name": "Jackson, Susan",
+      "credit_name": null,
+      "biography": null,
+      "researcher_urls": [],
+      "country": null,
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "Jenner Institute",
+          "department": null,
+          "role": "Clinical research Fellow - TB/ COVID",
+          "start_date": "2020-02-05T00:00:00",
+          "end_date": null
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0001-9032-847X",
+      "given_name": "William",
+      "family_name": "Taylor",
+      "email": null,
+      "full_name": "Taylor, William",
+      "credit_name": null,
+      "biography": null,
+      "researcher_urls": [],
+      "country": null,
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "Jenner Institute",
+          "department": null,
+          "role": "Postdoctoral Researcher",
+          "start_date": "2023-02-13T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "Institute of Genetics and Development of Rennes",
+          "department": null,
+          "role": null,
+          "start_date": "2018-10-01T00:00:00",
+          "end_date": "2021-11-30T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0002-6045-2522",
+      "given_name": "Ekta",
+      "family_name": "Mukhopadhyay",
+      "email": {
+        "address": "ekta.mukhopadhyay@rdm.ox.ac.uk",
+        "verified": true,
+        "primary": true
+      },
+      "full_name": "Mukhopadhyay, Ekta",
+      "credit_name": null,
+      "biography": null,
+      "researcher_urls": [],
+      "country": null,
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "MRC Weatherall Institute of Molecular Medicine",
+          "department": "Radcliffe Department of Medicine",
+          "role": "Post Doctoral Researcher in Influenza Studies",
+          "start_date": "2024-07-01T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "Kennedy Institute of Rheumatology",
+          "department": null,
+          "role": "Post Doctoral Researcher in Mucosal Immunology",
+          "start_date": "2022-10-04T00:00:00",
+          "end_date": "2024-04-30T00:00:00"
+        },
+        {
+          "institution_name": "The Jenner Institute",
+          "department": null,
+          "role": null,
+          "start_date": "2019-12-13T00:00:00",
+          "end_date": "2022-10-03T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0003-3614-0032",
+      "given_name": "Duncan",
+      "family_name": "Bellamy",
+      "email": null,
+      "full_name": "Bellamy, Duncan",
+      "credit_name": null,
+      "biography": null,
+      "researcher_urls": [],
+      "country": null,
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "Exscientia",
+          "department": "Drug discovery - Inflammation and Immunology",
+          "role": "Research Scientist",
+          "start_date": "2024-05-08T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "Jenner Institute",
+          "department": "Pre-Erythrocytic Malaria and Emerging Pathogen Groups",
+          "role": "Research Assistant",
+          "start_date": "2017-03-20T00:00:00",
+          "end_date": null
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0001-9135-0556",
+      "given_name": "Giovanna",
+      "family_name": "Schiavoni",
+      "email": null,
+      "full_name": "Schiavoni, Giovanna",
+      "credit_name": null,
+      "biography": null,
+      "researcher_urls": [],
+      "country": null,
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "Istituto Superiore di Sanità",
+          "department": "Department of Oncology and Molecular Medicine",
+          "role": "Researcher, Group Leader",
+          "start_date": "2014-01-01T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "Istituto Superiore di Sanità",
+          "department": "Department of Oncology and Molecular Medicine",
+          "role": "Researcher",
+          "start_date": "2011-01-01T00:00:00",
+          "end_date": "2014-01-01T00:00:00"
+        },
+        {
+          "institution_name": "Istituto Superiore di Sanità",
+          "department": "Department of Cell Biology",
+          "role": "Researcher",
+          "start_date": "2002-01-01T00:00:00",
+          "end_date": "2011-01-01T00:00:00"
+        },
+        {
+          "institution_name": "Istituto Superiore di Sanità",
+          "department": "Laboratory of Virology",
+          "role": "Research associate",
+          "start_date": "2000-01-01T00:00:00",
+          "end_date": "2002-01-01T00:00:00"
+        },
+        {
+          "institution_name": "Edward Jenner Institute for Vaccine Research",
+          "department": null,
+          "role": "Fellowship",
+          "start_date": "1999-01-01T00:00:00",
+          "end_date": "2000-01-01T00:00:00"
+        },
+        {
+          "institution_name": "Istituto Superiore di Sanità",
+          "department": "Laboratory of Virology",
+          "role": "Fellowship",
+          "start_date": "1997-01-01T00:00:00",
+          "end_date": "1998-01-01T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0003-4426-2443",
+      "given_name": "Amanda",
+      "family_name": "Caneschi Lorencini",
+      "email": null,
+      "full_name": "Caneschi Lorencini, Amanda",
+      "credit_name": null,
+      "biography": null,
+      "researcher_urls": [],
+      "country": null,
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "Instituto Educacional Edward Jenner",
+          "department": "Educação",
+          "role": "Docente",
+          "start_date": "2018-03-14T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "Unidade de Saúde de Vila Brasil",
+          "department": "Saúde",
+          "role": "Enfermeira de Saúde da Família",
+          "start_date": "2013-05-19T00:00:00",
+          "end_date": "2017-05-04T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0003-1744-1569",
+      "given_name": "Bartolomeu",
+      "family_name": "Conceição Bastos Neto",
+      "email": null,
+      "full_name": "Conceição Bastos Neto, Bartolomeu",
+      "credit_name": null,
+      "biography": null,
+      "researcher_urls": [],
+      "country": null,
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "Instituto Educacional Edward Jenner",
+          "department": null,
+          "role": "Professor",
+          "start_date": "2018-03-01T00:00:00",
+          "end_date": "2019-07-01T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0003-2625-102X",
+      "given_name": "Charlotte",
+      "family_name": "Hague",
+      "email": null,
+      "full_name": "Hague, Charlotte",
+      "credit_name": null,
+      "biography": null,
+      "researcher_urls": [],
+      "country": null,
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "Jenner Institute",
+          "department": null,
+          "role": "Finance & Project manager - Malaria vaccine programme",
+          "start_date": "2021-03-01T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "Public Health England",
+          "department": null,
+          "role": "Principal health protection scientist",
+          "start_date": "2020-11-01T00:00:00",
+          "end_date": "2021-03-01T00:00:00"
+        },
+        {
+          "institution_name": "Public Health England",
+          "department": null,
+          "role": "Health Protection Scientist",
+          "start_date": "2013-03-01T00:00:00",
+          "end_date": "2020-11-01T00:00:00"
+        },
+        {
+          "institution_name": "MRC-University of Glasgow Centre for Virus Research",
+          "department": null,
+          "role": "Career Development Fellow",
+          "start_date": "2010-04-01T00:00:00",
+          "end_date": "2012-04-01T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0001-7543-3386",
+      "given_name": "Isabel",
+      "family_name": "Cuella Martin",
+      "email": null,
+      "full_name": "Cuella Martin, Isabel",
+      "credit_name": null,
+      "biography": null,
+      "researcher_urls": [],
+      "country": null,
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "Institute of Tropical Medicine",
+          "department": "Unit of Mycobacteriology",
+          "role": "PhD Student",
+          "start_date": "2021-04-01T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "Amsterdam UMC Location VUmc",
+          "department": "Department of Medical Microbiology",
+          "role": "Research Assistant",
+          "start_date": "2020-10-01T00:00:00",
+          "end_date": "2021-02-01T00:00:00"
+        },
+        {
+          "institution_name": "Edward Jenner Institute for Vaccine Research",
+          "department": "Tuberculosis Vaccine Group",
+          "role": "Research Assistant",
+          "start_date": "2019-08-01T00:00:00",
+          "end_date": "2020-08-01T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0003-3422-0434",
+      "given_name": "David",
+      "family_name": "Pulido-Gomez",
+      "email": {
+        "address": "david.pulido-gomez@ndm.ox.ac.uk",
+        "verified": true,
+        "primary": false
+      },
+      "full_name": "Pulido-Gomez, David",
+      "credit_name": null,
+      "biography": "I obtained my PhD in Biochemistry in Biochemistry and Molecular Biology at the Autonomous University of Barcelona.  During my early research years I studied the innate immune system as a source of novel antibiotics, using the antimicrobial structural determinants of the human ribonucleases to develop new therapeutic agents.\n\nAfter my PhD I moved to Imperial College London as a Postdoctoral Scientist in Professor Hohenester's Laboratory, where I expanded my knowledge and skills in protein production, structural biology and biophysics, especially in X-ray crystallography.\n\nAfter my first postdoctoral experience I moved to the Structural Genomics Consortium, University of Oxford, where I consolidated myself as a structural biologist and protein production expert, developing novel drugs against autophagy regulators.\n\nCurrently, I am a Senior Postdoctoral Scientist working in Professor Simon J Draper's laboratory at the Jenner Institute, University of Oxford. My work is focused in the identification of improved antigen targets within the blood-stage merozoite malaria parasite; and the development and production of structure-guided protein based vaccines according to GMP standards.",
+      "researcher_urls": [
+        {
+          "name": "Mendeley profile",
+          "url": "https://www.mendeley.com/profiles/david-pulido-gomez2/"
+        },
+        {
+          "name": "Scopus profile",
+          "url": "https://www.scopus.com/authid/detail.uri?authorId=46661296500"
+        },
+        {
+          "name": "Research gate profile",
+          "url": "https://www.researchgate.net/profile/David_Pulido"
+        },
+        {
+          "name": "Google Scholar profile",
+          "url": "https://scholar.google.co.uk/citations?user=2fEOnC8AAAAJ&hl=en"
+        }
+      ],
+      "country": null,
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [
+        "Biophysics",
+        "Vaccine development",
+        "Infection",
+        "Structural biology",
+        "Extracellular matrix",
+        "Host-Pathogen interaction",
+        "Antimicrobial peptides"
+      ],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "Jenner Institute, Univeristy of Oxford.",
+          "department": "Nuffield Department of Medicine",
+          "role": "Postdoctoral Scientist",
+          "start_date": "2018-01-01T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "Structural Genomic Consortium, University of Oxford",
+          "department": "Nuffield Department of Medicine",
+          "role": "Postdoctoral Scientist",
+          "start_date": "2018-04-01T00:00:00",
+          "end_date": "2018-12-01T00:00:00"
+        },
+        {
+          "institution_name": "Imperial College London",
+          "department": "Life Sciences Department",
+          "role": "Postdoctoral Scientist",
+          "start_date": "2014-02-01T00:00:00",
+          "end_date": "2017-03-01T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0002-2419-4415",
+      "given_name": "Kate",
+      "family_name": "Harrison",
+      "email": null,
+      "full_name": "Harrison, Kate",
+      "credit_name": null,
+      "biography": null,
+      "researcher_urls": [
+        {
+          "name": "Staff Profile at the University of Chester",
+          "url": "https://www1.chester.ac.uk/departments/chester-medical-school/staff/kate-harrison"
+        }
+      ],
+      "country": {
+        "code": "GB"
+      },
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "University of Chester",
+          "department": "Chester Medical School",
+          "role": "Lecturer",
+          "start_date": "2019-06-24T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "Jenner Institute",
+          "department": "Neglected Tropical Diseases Group",
+          "role": "Post-Doctoral Researcher",
+          "start_date": "2018-02-01T00:00:00",
+          "end_date": "2019-06-14T00:00:00"
+        },
+        {
+          "institution_name": "Jenner Institute",
+          "department": "Neglected Tropical Diseases",
+          "role": "Research Assistant ",
+          "start_date": "2017-03-20T00:00:00",
+          "end_date": "2018-01-31T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0002-6988-0822",
+      "given_name": "Gerly",
+      "family_name": "Gonçalves",
+      "email": null,
+      "full_name": "Gonçalves, Gerly",
+      "credit_name": null,
+      "biography": null,
+      "researcher_urls": [],
+      "country": {
+        "code": "PT"
+      },
+      "last_modified": null,
+      "alternative_names": [
+        "Gerly Macedo"
+      ],
+      "keywords": [],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "Hospital Senhora da Oliveira",
+          "department": "UNPSI, Serviço de Psiquiatria e Saúde Mental",
+          "role": "Psicologa Clinica e da Saúde, psicoterapeuta",
+          "start_date": "2003-08-01T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "Instituto Jenner",
+          "department": null,
+          "role": "Psicóloga Clínica e da Saúde ",
+          "start_date": "2018-01-01T00:00:00",
+          "end_date": "2023-12-31T00:00:00"
+        },
+        {
+          "institution_name": "Personalizar, Centro Clinico-Educacional, LDA",
+          "department": null,
+          "role": "Psicóloga Clínica e da Suade",
+          "start_date": "2001-01-01T00:00:00",
+          "end_date": "2005-05-31T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0001-5147-3914",
+      "given_name": "Reinaldo",
+      "family_name": "Acevedo Grogues",
+      "email": null,
+      "full_name": "Acevedo Grogues, Reinaldo",
+      "credit_name": "Reinaldo Acevedo",
+      "biography": null,
+      "researcher_urls": [],
+      "country": {
+        "code": "CU"
+      },
+      "last_modified": null,
+      "alternative_names": [
+        "Reinaldo Acevedo Grogues",
+        "R Acevedo"
+      ],
+      "keywords": [],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "Micropore Technologies (United Kingdom)",
+          "department": null,
+          "role": "Formulation Development Manager",
+          "start_date": "2024-02-01T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "Evox Therapeutics Limited",
+          "department": null,
+          "role": null,
+          "start_date": "2022-04-10T00:00:00",
+          "end_date": "2023-09-30T00:00:00"
+        },
+        {
+          "institution_name": "Jenner Institute",
+          "department": "Nuffield Department",
+          "role": "Senior Postdoc Scientist",
+          "start_date": "2021-03-01T00:00:00",
+          "end_date": "2022-03-02T00:00:00"
+        },
+        {
+          "institution_name": "Institute of Pharmacy and Food. Habana University",
+          "department": null,
+          "role": "Senior Scientist/Lecturer Biotechnology&Immunology",
+          "start_date": "2019-02-01T00:00:00",
+          "end_date": "2021-02-01T00:00:00"
+        },
+        {
+          "institution_name": "Finlay Institute",
+          "department": null,
+          "role": "Head of Biologics Evaluation Department",
+          "start_date": "2017-01-01T00:00:00",
+          "end_date": "2019-01-01T00:00:00"
+        },
+        {
+          "institution_name": "Finlay Institute",
+          "department": null,
+          "role": "Vice Director Research Direction",
+          "start_date": "2012-01-01T00:00:00",
+          "end_date": "2016-12-30T00:00:00"
+        },
+        {
+          "institution_name": "Finlay Institute",
+          "department": null,
+          "role": "Research Assistant/Associate/PhD ",
+          "start_date": "2002-09-01T00:00:00",
+          "end_date": "2011-12-30T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0002-4404-0229",
+      "given_name": "Senthil",
+      "family_name": "Chinnakannan",
+      "email": null,
+      "full_name": "Chinnakannan, Senthil",
+      "credit_name": "Senthil Chinnakannan",
+      "biography": null,
+      "researcher_urls": [
+        {
+          "name": "Experimental Medicine Division, John Radcliffe Hospital, Headley Way, Headington, Oxford, OX3 9DU",
+          "url": "https://www.expmedndm.ox.ac.uk/tgu/senthil-chinnakannan"
+        },
+        {
+          "name": "The Peter Medawar Building for Pathogen Research, University of Oxford, South Parks Road, Oxford, OX1 3SY, United Kingdom",
+          "url": "https://www.medawar.ox.ac.uk/team/senthil-chinnakannan"
+        }
+      ],
+      "country": {
+        "code": "GB"
+      },
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [
+        "Viral Vectored Vaccine, Hepatitis B vaccine, Hepatitis C vaccine, Chimpadeno viral vectored vaccine"
+      ],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "Peter Medawar Building, NDM, University of Oxford",
+          "department": "Nuffield Department of Medicine",
+          "role": "Postdoctoral Scientist – Immunology/Vaccinology",
+          "start_date": "2015-04-13T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "Piramal Enterprises Ltd",
+          "department": "Diabetes drug discovery ",
+          "role": "Senior research scientist",
+          "start_date": "2013-10-13T00:00:00",
+          "end_date": "2014-11-10T00:00:00"
+        },
+        {
+          "institution_name": "Jenner Institute, Univerity of Oxford",
+          "department": "Nuffield Department of Medicine",
+          "role": "Postdoctoral scientist",
+          "start_date": "2012-05-29T00:00:00",
+          "end_date": "2013-10-11T00:00:00"
+        },
+        {
+          "institution_name": "Pirbright Institute",
+          "department": "Morbillivirus Host-interaction",
+          "role": "PhD fellow",
+          "start_date": "2008-02-22T00:00:00",
+          "end_date": "2012-04-30T00:00:00"
+        },
+        {
+          "institution_name": "Pirbright Institute",
+          "department": "Morbillivirus Host-interactions",
+          "role": "Visiting scientist",
+          "start_date": "2006-02-06T00:00:00",
+          "end_date": "2008-02-21T00:00:00"
+        },
+        {
+          "institution_name": "Indian Institute of Science",
+          "department": "Microbiology",
+          "role": "Senior research fellow",
+          "start_date": "2005-11-11T00:00:00",
+          "end_date": "2006-02-05T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0002-5906-4610",
+      "given_name": "Valentina",
+      "family_name": "Ndolo",
+      "email": null,
+      "full_name": "Ndolo, Valentina",
+      "credit_name": null,
+      "biography": null,
+      "researcher_urls": [],
+      "country": null,
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "University of Salford",
+          "department": "School of Engineering and Environment",
+          "role": "Lecturer - Health Geography",
+          "start_date": "2022-09-12T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "UK Health Security Agency",
+          "department": "TB Surveillance Group",
+          "role": "Executive Officer - Information Analyst",
+          "start_date": "2022-07-01T00:00:00",
+          "end_date": "2022-08-31T00:00:00"
+        },
+        {
+          "institution_name": "University of Cambridge",
+          "department": "Cambridge Africa Society",
+          "role": "Research Officer",
+          "start_date": "2022-04-01T00:00:00",
+          "end_date": "2022-06-01T00:00:00"
+        },
+        {
+          "institution_name": "United States Department of State",
+          "department": "Young African Leadership Initiative",
+          "role": "Mandela Washington Fellow",
+          "start_date": "2018-04-01T00:00:00",
+          "end_date": "2019-04-01T00:00:00"
+        },
+        {
+          "institution_name": "Jenner Institute",
+          "department": "Malaria Vaccine Group",
+          "role": "Research Assistant",
+          "start_date": "2016-04-01T00:00:00",
+          "end_date": "2016-07-31T00:00:00"
+        },
+        {
+          "institution_name": "United States Army Medical Resarch Unit - Kenya",
+          "department": "Influenza Surveillance Group",
+          "role": "Research Intern",
+          "start_date": "2015-01-01T00:00:00",
+          "end_date": "2015-04-30T00:00:00"
+        },
+        {
+          "institution_name": "KEMRI Wellcome Trust Research Programme",
+          "department": "Malaria Immunology",
+          "role": "Intern",
+          "start_date": "2014-01-13T00:00:00",
+          "end_date": "2014-07-31T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0001-7383-0265",
+      "given_name": "Patrick Musole",
+      "family_name": "Bugeme",
+      "email": null,
+      "full_name": "Bugeme, Patrick Musole",
+      "credit_name": "Patrick Musole Bugeme",
+      "biography": "Patrick Musole Bugeme is a research assistant at the Johns Hopkins Bloomberg School of Public Health (JHBSP). He earned his Medical Doctor degree in 2021 and holds a Bachelor of Science degree in Biomedical sciences from the Université Catholique de Bukavu (UCB). He has completed the Epidemiology in Public Health Practice specialization program of the Johns Hopkins University (JHU). He has also undertaken specialized training in Intermediate Epidemiology, Clinical Research and Vaccinology. He is a health worker trained in global health and health challenges in Africa from the Université Paris Cité. \nDuring his medical studies at the UCB, he was in charge of student scientific research group and played a key role in the design and conduct of student research projets.\n\nOver the past three years, Dr Bugeme has been working at the Infectious Diseases Dynamics Group of the JHBSP as a research data coordinator and the study site manager of a research project aiming to assess the effectiveness and impact of mass oral cholera vaccination campaigns on cholera incidence and transmission dynamics in Uvira, eastern Democratic Republic of Congo (DRC). He has taken the lead in coordinating both cholera clinical surveillance, case-control vaccine effectiveness studies, and cross-sectional households surveys. He is coordinating a 2-year cohort study measuring cholera antibody kinetics in both post-infection and post vaccination period.  During a cholera mass vaccination campaign in late 2023, Dr. Bugeme coordinated the implementation of a paper-based register of over 250,000 people, which has been digitalized and is being validated for use in future vaccine studies in Uvira.\nSince the second semester of 2024, he is actively contributing to the Uvira Health Zone Monkeypox response efforts in the city, playing a significant role in case management and establishing clinical surveillance and contact tracing during the ongoing outbreak in Uvira.\n\nDr Bugeme is also affiliated with the Center for Tropical Disease and Global Health (CTDGH) of the UCB and has recently contributed to studies on vaccine confidence and uptake in the eastern DRC, working as a co-lead study investigator on the DRC-COVID-19 Vaccine-Confidence research project. Within the CTDGH, Patrick works also on surveillance of molecular markers for artemisinin resistance in Bukavu and surrounding health zones in the South Kivu province in DRC, using both human and mosquito samples. \n\nHe is also working as a volunteering physician in the pediatrics department at Uvira General Referral Hospital in Clinical and para-clinical diagnosis process. Patrick has over ten publications in peer reviewed journals both as the first author and co-author. His interests include vaccine preventable diseases, vaccine hesitancy/confidence, and global heath.",
+      "researcher_urls": [],
+      "country": null,
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "Uvira General Referral Hospital",
+          "department": "Pediatrics department ",
+          "role": "Volunteer Physician ",
+          "start_date": "2022-10-01T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "Université Catholique de Bukavu",
+          "department": "Center for Tropical Diseases and Global Health",
+          "role": "Researcher ",
+          "start_date": "2022-01-01T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "Johns Hopkins University",
+          "department": "Epidemiology",
+          "role": "Research Data Coordinator",
+          "start_date": "2021-10-01T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "Uvira Health Zone",
+          "department": null,
+          "role": "WASH Survey supervisor",
+          "start_date": "2021-09-01T00:00:00",
+          "end_date": "2021-10-01T00:00:00"
+        },
+        {
+          "institution_name": "Oxfam GB",
+          "department": null,
+          "role": "Supervisor of the Cholera vaccine coverage survey",
+          "start_date": "2021-08-01T00:00:00",
+          "end_date": "2021-08-01T00:00:00"
+        },
+        {
+          "institution_name": "Hôpital pour la Promotion de la Santé Mère et Enfant",
+          "department": "General Medicine",
+          "role": "Trainee",
+          "start_date": "2021-05-01T00:00:00",
+          "end_date": "2021-08-01T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0002-3859-5172",
+      "given_name": "Charles",
+      "family_name": "Armitage",
+      "email": {
+        "address": "charles.armitage@uq.edu.au",
+        "verified": true,
+        "primary": false
+      },
+      "full_name": "Armitage, Charles",
+      "credit_name": null,
+      "biography": null,
+      "researcher_urls": [
+        {
+          "name": "Queensland University of Technology",
+          "url": "https://www.qut.edu.au/about/our-people/academic-profiles/c2.armitage"
+        },
+        {
+          "name": "King's College London profile page",
+          "url": "https://kclpure.kcl.ac.uk/portal/en/persons/0b15b751-44c2-48aa-b639-99c4fa4d315f"
+        }
+      ],
+      "country": {
+        "code": "GB"
+      },
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [
+        "Allergy",
+        "Microbiology",
+        "Vaccines",
+        "Immunology"
+      ],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "University of Queensland",
+          "department": "Frazer Institute",
+          "role": "Postdoctoral Research Fellow",
+          "start_date": "2024-03-01T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "Queensland University of Technology",
+          "department": "Centre for Immunology and Infection Control",
+          "role": "Postdoctoral Research Fellow",
+          "start_date": "2022-04-08T00:00:00",
+          "end_date": "2023-01-01T00:00:00"
+        },
+        {
+          "institution_name": "King's College London",
+          "department": "Peter Gorer Department of Immunobiology",
+          "role": "Research Associate",
+          "start_date": "2018-11-19T00:00:00",
+          "end_date": "2021-08-18T00:00:00"
+        },
+        {
+          "institution_name": "King's College London",
+          "department": null,
+          "role": null,
+          "start_date": null,
+          "end_date": "2021-08-18T00:00:00"
+        },
+        {
+          "institution_name": "Queensland University of Technology",
+          "department": "Institute of Health and Biomedical Innovation",
+          "role": "Postdoctoral Research Fellow",
+          "start_date": "2013-03-25T00:00:00",
+          "end_date": "2018-05-25T00:00:00"
+        },
+        {
+          "institution_name": "Queensland University of Technology",
+          "department": "Health - Biomedical Science",
+          "role": "Research Assistant",
+          "start_date": "2012-10-01T00:00:00",
+          "end_date": "2013-03-01T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0001-6679-0904",
+      "given_name": "Egeruan Babatunde",
+      "family_name": "Imoukhuede",
+      "email": null,
+      "full_name": "Imoukhuede, Egeruan Babatunde",
+      "credit_name": null,
+      "biography": "I am a physician by training with post graduate and relevant training in the field of vaccinology, public health and clinical epidemiology.  I am currently the Clinical Projects Manager at Jenner Institute, University of Oxford, UK.  Prior to this, I was Director of Clinical and Regulatory Affairs at the European Vaccine Initiative were my main areas of responsibility were the supervision of EVI-funded clinical trials and acting as the Project Coordinator of the European and Developing Countries’ Clinical Trials Partnership (EDCTP) funded projects MVVC and MVVC2.   Since 2001, I have been involved in the conduct and coordination of clinical trials of malaria vaccines in Europe and Africa.  My role at the University of Oxford enables me to continue my interest in the above mentioned and other areas of public health vaccine development as well as coordinating Oxford vaccinology courses in Africa.",
+      "researcher_urls": [
+        {
+          "name": "jenner institute",
+          "url": "http://www.jenner.ac.uk/"
+        }
+      ],
+      "country": {
+        "code": "GB"
+      },
+      "last_modified": null,
+      "alternative_names": [
+        "Babatunde"
+      ],
+      "keywords": [
+        "malaria vaccine, public health, vaccinology, clinical trials"
+      ],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "Jenner Insitute, University of Oxford",
+          "department": "Nuffield Department of Medicine",
+          "role": "Clinical Project Manager",
+          "start_date": "2013-06-03T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "European Vaccine Initiative",
+          "department": "Clinical Development",
+          "role": "Director, Clinical and Regulatory Affairs",
+          "start_date": "2009-10-01T00:00:00",
+          "end_date": "2013-05-01T00:00:00"
+        },
+        {
+          "institution_name": "European Malaria Vaccine Initiative",
+          "department": "Clinical and Regulatory Affairs",
+          "role": "Director, Clinical and Regulatory Affairs",
+          "start_date": "2007-02-01T00:00:00",
+          "end_date": "2009-10-01T00:00:00"
+        },
+        {
+          "institution_name": "European Malaria Vaccine Initiative",
+          "department": null,
+          "role": "Clinical Affairs Manager",
+          "start_date": "2005-10-01T00:00:00",
+          "end_date": "2007-02-01T00:00:00"
+        },
+        {
+          "institution_name": "London School of Hygiene and Tropical Medicine",
+          "department": "Gates Malaria Partnership",
+          "role": "Clinical Research Fellow/Malaria Vaccine Trial Director",
+          "start_date": "2004-06-01T00:00:00",
+          "end_date": "2005-08-01T00:00:00"
+        },
+        {
+          "institution_name": "Medical Research Council Unit",
+          "department": null,
+          "role": "Study Physician/Clinical Epidemiologist",
+          "start_date": "2001-07-01T00:00:00",
+          "end_date": "2004-06-01T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0003-4685-4207",
+      "given_name": "Ralf",
+      "family_name": "Clemens",
+      "email": null,
+      "full_name": "Clemens, Ralf",
+      "credit_name": null,
+      "biography": null,
+      "researcher_urls": [],
+      "country": {
+        "code": "BR"
+      },
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [
+        "Vaccines, Immunisation, Immunology, Intensive Care Medicine"
+      ],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "Takeda International",
+          "department": "Vaccine Development",
+          "role": "SVP & Global Head Vaccine Development",
+          "start_date": "2012-01-01T00:00:00",
+          "end_date": "2015-01-01T00:00:00"
+        },
+        {
+          "institution_name": "Novartis Pharma AG",
+          "department": "Vaccine Development",
+          "role": "Global Head VP Vaccine Development",
+          "start_date": "2006-01-01T00:00:00",
+          "end_date": "2012-01-01T00:00:00"
+        },
+        {
+          "institution_name": "GlaxoSmithKline Latin America",
+          "department": "Business strategy",
+          "role": "VP & Head business strategy",
+          "start_date": "2001-01-01T00:00:00",
+          "end_date": "2006-01-01T00:00:00"
+        },
+        {
+          "institution_name": "GlaxoSmithKline Biologicals SA",
+          "department": "Development",
+          "role": "VP & Head Global Clinical R&D",
+          "start_date": "1990-01-01T00:00:00",
+          "end_date": "2000-01-01T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0002-5703-7360",
+      "given_name": "Maria",
+      "family_name": "Montoya",
+      "email": null,
+      "full_name": "Montoya, Maria",
+      "credit_name": null,
+      "biography": "Born in Madrid in 1966. Spanish nationality",
+      "researcher_urls": [],
+      "country": {
+        "code": "ES"
+      },
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [
+        "viral immunology"
+      ],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "Centro de Investigaciones Biológicas",
+          "department": "Medicina Celular y Molecular",
+          "role": "Group leader",
+          "start_date": "2018-01-01T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "Pirbright Institute",
+          "department": "Vector Borne Disease",
+          "role": "Group Leader position",
+          "start_date": "2014-09-15T00:00:00",
+          "end_date": "2017-08-01T00:00:00"
+        },
+        {
+          "institution_name": "Centre de Recerca en Sanitat Animal ",
+          "department": null,
+          "role": "Group leader position",
+          "start_date": "2005-04-02T00:00:00",
+          "end_date": "2014-09-14T00:00:00"
+        },
+        {
+          "institution_name": "Jenner Institute for Vaccine Research",
+          "department": null,
+          "role": "Research scientist position ",
+          "start_date": "1998-01-01T00:00:00",
+          "end_date": "2005-01-01T00:00:00"
+        },
+        {
+          "institution_name": "Centro Nacional de Biotecnología",
+          "department": null,
+          "role": "Post graduate student",
+          "start_date": null,
+          "end_date": "1990-01-01T00:00:00"
+        },
+        {
+          "institution_name": "F Hoffman La Roche Ltd",
+          "department": null,
+          "role": "Undergraduate student ",
+          "start_date": null,
+          "end_date": "1989-01-01T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0002-2833-2926",
+      "given_name": "Fenella",
+      "family_name": "Halstead",
+      "email": null,
+      "full_name": "Halstead, Fenella",
+      "credit_name": null,
+      "biography": null,
+      "researcher_urls": [],
+      "country": null,
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "Wye Valley NHS Trust",
+          "department": "Microbiology",
+          "role": "Clinical Scientist ",
+          "start_date": "2019-06-01T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "University Hospitals Birmingham NHS Foundation Trust",
+          "department": "Microbiology (SRMRC)",
+          "role": "NIHR SRMRC Clinical Scientist ",
+          "start_date": "2013-10-01T00:00:00",
+          "end_date": "2019-06-01T00:00:00"
+        },
+        {
+          "institution_name": "Royal Free London NHS Foundation Trust",
+          "department": "Clinical Microbiology",
+          "role": "Trainee Clinical Scientist ",
+          "start_date": "2010-10-01T00:00:00",
+          "end_date": "2013-09-01T00:00:00"
+        },
+        {
+          "institution_name": "Jenner Institute University of Oxford ",
+          "department": null,
+          "role": "Research Assistant (Malaria vaccine trials) ",
+          "start_date": "2010-01-01T00:00:00",
+          "end_date": "2010-10-01T00:00:00"
+        },
+        {
+          "institution_name": "Public Health England Colindale",
+          "department": "Virus Reference Department (Enteric Viruses Unit)",
+          "role": "Healthcare Scientist Practitioner ",
+          "start_date": "2007-01-01T00:00:00",
+          "end_date": "2010-01-01T00:00:00"
+        },
+        {
+          "institution_name": "Natural History Museum",
+          "department": "Entomology ",
+          "role": "Research Assistant ",
+          "start_date": "2004-01-01T00:00:00",
+          "end_date": "2005-01-01T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0003-4566-0793",
+      "given_name": "Stephen",
+      "family_name": "Todryk",
+      "email": null,
+      "full_name": "Todryk, Stephen",
+      "credit_name": null,
+      "biography": null,
+      "researcher_urls": [
+        {
+          "name": "Todryk personal website",
+          "url": "https://www.northumbria.ac.uk/about-us/our-staff/t/professor-stephen-todryk/"
+        }
+      ],
+      "country": {
+        "code": "GB"
+      },
+      "last_modified": null,
+      "alternative_names": [
+        "Steve"
+      ],
+      "keywords": [
+        "Immunology, T cells, antibodies, immune memory"
+      ],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "Northumbria University",
+          "department": "Department of Applied Sciences",
+          "role": "Professor of Immunology",
+          "start_date": "2012-11-01T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "Northumbria University",
+          "department": "Department of Applied Sciences",
+          "role": "Reader in Immunology",
+          "start_date": "2010-01-08T00:00:00",
+          "end_date": "2012-10-31T00:00:00"
+        },
+        {
+          "institution_name": "Northumbria University",
+          "department": "Department of Applied Sciences",
+          "role": "Senior Lecturer",
+          "start_date": "2007-10-01T00:00:00",
+          "end_date": "2010-07-31T00:00:00"
+        },
+        {
+          "institution_name": "Jenner Institute",
+          "department": "Centre for Clinical Vaccinology & Tropical Medicine",
+          "role": "Group Head of Human Immunology",
+          "start_date": "2004-07-01T00:00:00",
+          "end_date": "2007-10-01T00:00:00"
+        },
+        {
+          "institution_name": "University of Dublin Trinity College",
+          "department": "Department of Biochemistry",
+          "role": "Senior Research Lecturer & Group leader",
+          "start_date": "2001-12-01T00:00:00",
+          "end_date": "2004-06-30T00:00:00"
+        },
+        {
+          "institution_name": "National University of Ireland Maynooth",
+          "department": "Insitute for Immunology",
+          "role": "Principal Investigator & Group leader",
+          "start_date": "2000-05-01T00:00:00",
+          "end_date": "2001-12-01T00:00:00"
+        },
+        {
+          "institution_name": "St George's, University of London",
+          "department": "Division of Oncology",
+          "role": "Senior Postdoctoral Fellow & Team Leader",
+          "start_date": "1999-01-01T00:00:00",
+          "end_date": "2000-05-01T00:00:00"
+        },
+        {
+          "institution_name": "Cancer Research UK",
+          "department": "Hammersmith Hospital Unit",
+          "role": "Postdoctoral Research Fellow",
+          "start_date": "1997-02-01T00:00:00",
+          "end_date": "1999-12-31T00:00:00"
+        },
+        {
+          "institution_name": "University of London",
+          "department": "Department of Immunology Guy's Hospital",
+          "role": "Postdoctoral Research Fellow",
+          "start_date": "1995-07-01T00:00:00",
+          "end_date": "1997-02-01T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0002-7657-6191",
+      "given_name": "Adrian",
+      "family_name": "Smith",
+      "email": null,
+      "full_name": "Smith, Adrian",
+      "credit_name": null,
+      "biography": null,
+      "researcher_urls": [],
+      "country": null,
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "University of Oxford",
+          "department": "St Catherine's College; Dept. of Zoology",
+          "role": null,
+          "start_date": null,
+          "end_date": null
+        },
+        {
+          "institution_name": "University of Oxford",
+          "department": "Zoology",
+          "role": "Faculty",
+          "start_date": "2008-11-01T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "Pirbright Institute - Compton",
+          "department": null,
+          "role": null,
+          "start_date": "1998-12-01T00:00:00",
+          "end_date": "2008-11-09T00:00:00"
+        },
+        {
+          "institution_name": "Yale University",
+          "department": "Biology",
+          "role": "Postdocroal Fellow",
+          "start_date": "1994-11-01T00:00:00",
+          "end_date": "1998-11-01T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0003-2702-1621",
+      "given_name": "Jonathan",
+      "family_name": "Heeney",
+      "email": null,
+      "full_name": "Heeney, Jonathan",
+      "credit_name": "Jonathan Luke Heeney",
+      "biography": "I am the Professor of Comparative Pathology at the University of Cambridge and Head of the Lab of Viral Zoonotics (LVZ) and a Fellow and former vice Master of Darwin College. I study viruses that are transmitted from animals to humans (Zoonotic Viruses) that have the potential to cause high consequence human disease outbreaks. My expertise is in Viral disease, Immunology and Vaccine development. A detailed understanding of the deleterious versus protective immune responses to RNA viruses enables us to design safer vaccines with broader protection for prevention and control from highly variable RNA viruses. Research at the LVZ spans human and veterinary medicine as we trace the origins and evolution of pathogens and their hosts. In 2017 we established new technology to make vastly improved vaccine antigens, and spun-out DIOSynVax Ltd out of Cambridge to deliver NextGen vaccine antigens for vaccines to prevent future pandemics.",
+      "researcher_urls": [
+        {
+          "name": null,
+          "url": "https://www.research.vet.cam.ac.uk/research-staff-directory/principal-investigators/infection-and-immunity/Jonathan-Heeney"
+        },
+        {
+          "name": "https://scholar.google.co.uk/citations?hl=en&user=yi_suyIAAAAJ&view_op=list_works&sortby=pubdate",
+          "url": "http://scholar.google.es/citations?user=2P8mZLwAAAAJ&hl=en"
+        },
+        {
+          "name": null,
+          "url": "https://www.lvz.vet.cam.ac.uk"
+        }
+      ],
+      "country": null,
+      "last_modified": null,
+      "alternative_names": [
+        "Jon Heeney"
+      ],
+      "keywords": [
+        "viruses, vaccines, evolution, immunology, pathology"
+      ],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "University of Cambridge",
+          "department": "Department of Veterinary Medicine",
+          "role": "Professor of Comparative Pathology",
+          "start_date": "2007-02-01T00:00:00",
+          "end_date": null
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0001-7815-3830",
+      "given_name": "Gregory",
+      "family_name": "Magarian",
+      "email": null,
+      "full_name": "Magarian, Gregory",
+      "credit_name": null,
+      "biography": "Gregory P. Magarian is the Thomas and Karole Green Professor of Law at the Washington University School of Law in St. Louis.  He teaches and writes about U.S. constitutional law with emphasis on the freedom of expression.  His first book, Managed Speech: The Roberts Court’s First Amendment, was published in 2017 by Oxford University Press.  His research and writing also examine church and state, firearms regulation, and regulations of the media and the political process.  His work has been published in the Michigan Law Review, Texas Law Review, George Washington Law Review, and other leading law journals.  He has made numerous scholarly presentations and has taught and lectured at universities around the world.  Professor Magarian received his B.A. summa cum laude from Yale and his J.D. magna cum laude, as well as a master’s degree in public policy, from the University of Michigan, where he was editor-in-chief of the Michigan Law Review.  He served as a law clerk for Justice John Paul Stevens of the U.S. Supreme Court and Judge Louis Oberdorfer of the U.S. District Court for the District of Columbia.  He practiced law at Jenner and Block in Washington, D.C. and taught at Villanova University before joining the Washington University faculty in 2008.",
+      "researcher_urls": [],
+      "country": null,
+      "last_modified": null,
+      "alternative_names": [
+        "Greg Magarian",
+        "Gregory P. Magarian",
+        "Greg P. Magarian"
+      ],
+      "keywords": [],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "Washington University School of Law",
+          "department": null,
+          "role": "Thomas and Karole Green Professor of Law",
+          "start_date": "2008-07-01T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "Villanova University School of Law",
+          "department": null,
+          "role": "Professor of Law",
+          "start_date": "1999-07-01T00:00:00",
+          "end_date": "2008-07-01T00:00:00"
+        },
+        {
+          "institution_name": "Jenner and Block LLP",
+          "department": "litigation",
+          "role": "associate",
+          "start_date": "1995-08-01T00:00:00",
+          "end_date": "1999-06-01T00:00:00"
+        },
+        {
+          "institution_name": "Justice John Paul Stevens, U.S. Supreme Court",
+          "department": null,
+          "role": "law clerk",
+          "start_date": "1994-07-01T00:00:00",
+          "end_date": "1995-07-01T00:00:00"
+        },
+        {
+          "institution_name": "Judge Louis Oberdorfer, U.S. District Court",
+          "department": null,
+          "role": "law clerk",
+          "start_date": "1993-07-01T00:00:00",
+          "end_date": "1994-07-01T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0002-2161-3741",
+      "given_name": "Ana Paula",
+      "family_name": "Silva",
+      "email": {
+        "address": "anafsilva.adv@gmail.com",
+        "verified": true,
+        "primary": true
+      },
+      "full_name": "Silva, Ana Paula",
+      "credit_name": "Ana Paula Fernandes da Silva",
+      "biography": "Advogada, especialista em direito do trabalho, mestre em desenvolvimento tecnologias e sociedade pela Universidade Federal de Itajubá, doutoranda em Sociologia: Relações de trabalho, desigualdades sociais e sindicalismo pela Universidade de Coimbra em Portugal, conselheira estadual da OAB/MG (2022/2024).",
+      "researcher_urls": [],
+      "country": {
+        "code": "BR"
+      },
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [
+        "trabalho análogo a escravo",
+        "interdisciplinariedade",
+        "relações de trabalho"
+      ],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "Ana Fernandes",
+          "department": "Jurídico",
+          "role": "Advogada",
+          "start_date": "2021-02-01T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "Cezar Brito e Reis Figureiredo Advogados Associados",
+          "department": "Direito Trabalhista e Sindical",
+          "role": "Advogada",
+          "start_date": "2019-10-01T00:00:00",
+          "end_date": "2021-01-31T00:00:00"
+        },
+        {
+          "institution_name": "Jenner, Fernandes e Silva",
+          "department": null,
+          "role": "Lawyer",
+          "start_date": "2016-02-01T00:00:00",
+          "end_date": "2019-10-31T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    },
+    {
+      "orcid": "0000-0003-0498-9808",
+      "given_name": "Jagadeesh",
+      "family_name": "Bayry",
+      "email": null,
+      "full_name": "Bayry, Jagadeesh",
+      "credit_name": null,
+      "biography": null,
+      "researcher_urls": [],
+      "country": null,
+      "last_modified": null,
+      "alternative_names": [],
+      "keywords": [],
+      "subjects": [],
+      "journals": [],
+      "external_ids": {},
+      "education": [],
+      "affiliations": [
+        {
+          "institution_name": "Indian Institute of Technology Palakkad",
+          "department": "Biological Sciences & Engineering",
+          "role": "Professor",
+          "start_date": "2021-01-01T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "INSERM",
+          "department": "INSERM, Centre de Recherche des Cordeliers, Sorbonne University",
+          "role": "Director of Research",
+          "start_date": "2018-01-01T00:00:00",
+          "end_date": null
+        },
+        {
+          "institution_name": "INSERM",
+          "department": "INSERM, Centre de Recherche des Cordeliers, Sorbonne University",
+          "role": "Chargé de Recherche CRCN/ Equiv of Associate Professor",
+          "start_date": "2017-01-01T00:00:00",
+          "end_date": "2018-01-01T00:00:00"
+        },
+        {
+          "institution_name": "INSERM",
+          "department": "INSERM, Centre de Recherche des Cordeliers, Sorbonne University",
+          "role": "Chargé de Recherche CR1/ Equiv of Associate Professor",
+          "start_date": "2010-01-01T00:00:00",
+          "end_date": "2017-01-01T00:00:00"
+        },
+        {
+          "institution_name": "INSERM",
+          "department": "INSERM, Centre de Recherche des Cordeliers, Sorbonne University",
+          "role": "Chargé de Recherche CR2/Equiv of Assistant Professor",
+          "start_date": "2006-01-01T00:00:00",
+          "end_date": "2010-01-01T00:00:00"
+        },
+        {
+          "institution_name": "Jenner Institute",
+          "department": null,
+          "role": "Post-doctoral Scientist 1",
+          "start_date": "2004-01-01T00:00:00",
+          "end_date": "2006-01-01T00:00:00"
+        },
+        {
+          "institution_name": "Inserm",
+          "department": "Centre de bRecherche des Cordeliers",
+          "role": "Engineer",
+          "start_date": "2003-01-01T00:00:00",
+          "end_date": "2004-01-01T00:00:00"
+        },
+        {
+          "institution_name": "Poultry Diagnostic and Research Center/VHL",
+          "department": null,
+          "role": "Research Assistant",
+          "start_date": "1999-01-01T00:00:00",
+          "end_date": "2000-01-01T00:00:00"
+        }
+      ],
+      "publications": [],
+      "grants": []
+    }
+  ]
+}

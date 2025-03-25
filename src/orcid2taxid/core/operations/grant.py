@@ -14,13 +14,14 @@ def find_grants(researcher: ResearcherMetadata, max_results: int = 20) -> Resear
     nih = NIHReporterRepository()
     
     # Get grants from NIH Reporter
-    nih_grants = nih.get_funding_by_pi_name(researcher.full_name, max_results)
+    researcher_name = f"{researcher.given_name} {researcher.family_name}"
+    nih_grants = nih.get_funding_by_pi_name(researcher_name, max_results)
     
     # Update researcher with grants
     researcher.grants = nih_grants
     
     # Enrich grant metadata
-    for grant in researcher.grants:
-        grant = get_grant_metadata(grant)
+    # for grant in researcher.grants:
+    #     grant = get_grant_metadata(grant)
     
     return researcher 

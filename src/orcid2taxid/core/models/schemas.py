@@ -2,26 +2,15 @@ from typing import List, Dict, Optional, Set
 from datetime import datetime
 from pydantic import BaseModel, Field, ConfigDict
 from collections import defaultdict
+import json
 
 class CustomBaseModel(BaseModel):
     """Base model with custom JSON serialization configuration"""
     model_config = ConfigDict(
         json_encoders={
-            datetime: lambda v: v.isoformat() if v else None,
-            set: list
+            datetime: lambda dt: dt.isoformat() if dt else None
         }
     )
-
-    def model_dump(self, **kwargs):
-        """Custom serialization method"""
-        return super().model_dump(
-            exclude_none=True,
-            **kwargs
-        )
-
-    def to_json(self, **kwargs):
-        """Custom serialization method"""
-        return self.model_dump_json(**kwargs)
 
 class AuthorAffiliation(CustomBaseModel):
     """Represents an author's affiliation with an institution"""
@@ -72,13 +61,19 @@ class FundingInfo(CustomBaseModel):
     grant_number: Optional[str] = None
 
 class GrantMetadata(CustomBaseModel):
-    """Represents comprehensive grant information from NIH Reporter"""
+    """Represents comprehensive grant information from NIH Reporter or Europe PMC"""
+    # Core grant information
     project_title: str = Field(description="Title of the research project")
-    project_num: str = Field(description="NIH project number/identifier")
+    project_num: str = Field(description="Grant/project identifier")
+    funder: Optional[str] = Field(description="Funding agency/organization")
+    
+    # Financial information (mainly from NIH Reporter)
     fiscal_year: Optional[int] = Field(description="Fiscal year of the grant")
     award_amount: Optional[float] = Field(description="Total award amount")
     direct_costs: Optional[float] = Field(description="Direct costs of the project")
     indirect_costs: Optional[float] = Field(description="Indirect costs of the project")
+    
+    # Temporal information
     project_start_date: Optional[datetime] = Field(description="Project start date")
     project_end_date: Optional[datetime] = Field(description="Project end date")
     
@@ -98,11 +93,13 @@ class GrantMetadata(CustomBaseModel):
         default_factory=list,
         description="Project terms/keywords"
     )
+    
+    # Funding mechanism details (mainly from NIH Reporter)
     funding_mechanism: Optional[str] = Field(description="Type of funding mechanism")
     activity_code: Optional[str] = Field(description="NIH activity code")
     award_type: Optional[str] = Field(description="Type of award")
     
-    # Study section information
+    # Study section information (NIH Reporter specific)
     study_section: Optional[str] = Field(description="NIH study section name")
     study_section_code: Optional[str] = Field(description="NIH study section code")
     
@@ -111,6 +108,14 @@ class GrantMetadata(CustomBaseModel):
     is_active: Optional[bool] = Field(description="Whether the grant is currently active")
     is_arra: Optional[bool] = Field(description="Whether funded by ARRA (American Recovery and Reinvestment Act)")
     covid_response: Optional[str] = Field(description="COVID-19 response funding category if applicable")
+    
+    # Europe PMC specific fields
+    grant_type: Optional[str] = Field(description="Type of grant (e.g., research grant, fellowship)")
+    grant_status: Optional[str] = Field(description="Current status of the grant (e.g., active, completed)")
+    grant_currency: Optional[str] = Field(description="Currency of the grant amount")
+    grant_country: Optional[str] = Field(description="Country where the grant was awarded")
+    grant_department: Optional[str] = Field(description="Department or division within the funding organization")
+    grant_institution: Optional[str] = Field(description="Institution where the grant was awarded")
 
 class NCBITaxonomyInfo(CustomBaseModel):
     """Represents comprehensive taxonomy information from NCBI"""
@@ -149,7 +154,7 @@ class PaperMetadata(CustomBaseModel):
     citation_count: Optional[int] = None
     keywords: List[str] = Field(default_factory=list)
     subjects: List[str] = Field(default_factory=list)
-    funding_info: List[FundingInfo] = Field(default_factory=list)
+    funding_info: List[GrantMetadata] = Field(default_factory=list)
     organisms: List[OrganismMention] = Field(default_factory=list)
     taxids: List[NCBITaxonomyInfo] = Field(default_factory=list)
 

@@ -13,7 +13,6 @@ class NIHReporterRepository:
     Repository implementation for NIH Reporter.
     Uses the NIH Reporter API to search for funding information.
     """
-    SUPPORTS_ORCID_SEARCH = False  # NIH Reporter doesn't support direct ORCID search
     
     def __init__(self, base_url: str = "https://api.reporter.nih.gov/v2"):
         """
@@ -66,10 +65,11 @@ class NIHReporterRepository:
                     if isinstance(term, dict) and term.get('term'):
                         project_terms.append(term['term'])
             
-            # Create GrantMetadata object
+            # Create GrantMetadata object with all required fields
             return GrantMetadata(
                 project_title=nih_result.get('project_title', ''),
                 project_num=nih_result.get('project_num', ''),
+                funder='NIH',  # NIH Reporter is specifically for NIH grants
                 fiscal_year=nih_result.get('fiscal_year'),
                 award_amount=float(nih_result.get('award_amount', 0)) if nih_result.get('award_amount') else None,
                 direct_costs=float(nih_result.get('direct_cost_amt', 0)) if nih_result.get('direct_cost_amt') else None,
@@ -89,7 +89,14 @@ class NIHReporterRepository:
                 last_updated=parse_date(nih_result.get('last_update_date')),
                 is_active=nih_result.get('is_active', False),
                 is_arra=nih_result.get('arra_funded', False),
-                covid_response=nih_result.get('covid_response')
+                covid_response=nih_result.get('covid_response'),
+                # Add required fields with appropriate values
+                grant_type=nih_result.get('award_type', 'research'),  # Default to research if not specified
+                grant_status='active' if nih_result.get('is_active', False) else 'completed',
+                grant_currency='USD',  # NIH grants are always in USD
+                grant_country=org_data.get('org_country', 'United States'),
+                grant_department=org_data.get('org_dept', ''),
+                grant_institution=org_data.get('org_name', '')
             )
         except Exception as e:
             self._log_error(f"Error converting NIH Reporter result to GrantMetadata: {str(e)}")

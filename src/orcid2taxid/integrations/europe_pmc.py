@@ -4,7 +4,7 @@ import time
 import requests
 from datetime import datetime
 
-from orcid2taxid.core.models.schemas import Author, FundingInfo, PaperMetadata, ResearcherMetadata
+from orcid2taxid.core.models.schemas import Author, FundingInfo, PaperMetadata, ResearcherMetadata, GrantMetadata
 from orcid2taxid.core.utils.date import parse_date
 
 class EuropePMCRepository:
@@ -12,7 +12,6 @@ class EuropePMCRepository:
     Repository implementation for Europe PMC.
     Uses the Europe PMC REST API to search for publications.
     """
-    SUPPORTS_ORCID_SEARCH = True
     
     def __init__(self, base_url: str = "https://www.ebi.ac.uk/europepmc/webservices/rest"):
         """
@@ -90,14 +89,87 @@ class EuropePMCRepository:
 
         # Extract funding information
         funding_info = []
-        if 'grantsList' in epmc_result:
-            for grant in epmc_result['grantsList'].get('grant', []):
-                if isinstance(grant, dict):
-                    funding_info.append(FundingInfo(
-                        name=grant.get('grantTitle'),
-                        grant_number=grant.get('grantId'),
-                        funder=grant.get('agency')
-                    ))
+        if 'grantsList' in epmc_result and isinstance(epmc_result['grantsList'], dict):
+            grants = epmc_result['grantsList'].get('grant', [])
+            if not isinstance(grants, list):
+                grants = [grants]  # Handle case where single grant is returned as dict
+            
+            for grant in grants:
+                if not isinstance(grant, dict):
+                    continue
+                    
+                # Extract organization information safely
+                organization = {}
+                if grant.get('institution'):
+                    organization['name'] = grant['institution']
+                if grant.get('department'):
+                    organization['department'] = grant['department']
+                if grant.get('country'):
+                    organization['country'] = grant['country']
+                if grant.get('city'):
+                    organization['city'] = grant['city']
+                if grant.get('state'):
+                    organization['state'] = grant['state']
+                if grant.get('zip'):
+                    organization['zip'] = grant['zip']
+                
+                # Extract project terms safely
+                project_terms = []
+                if grant.get('grantTitle'):
+                    project_terms.append(grant['grantTitle'])
+                if grant.get('grantType'):
+                    project_terms.append(grant['grantType'])
+                if grant.get('keywords'):
+                    if isinstance(grant['keywords'], list):
+                        project_terms.extend(grant['keywords'])
+                    elif isinstance(grant['keywords'], str):
+                        project_terms.append(grant['keywords'])
+                
+                # Try to extract fiscal year from grant ID if available
+                fiscal_year = None
+                if grant.get('grantId'):
+                    try:
+                        # Try to extract year from grant ID (common formats: YYYY-XXXX or YYYY/XXXX)
+                        year_str = grant['grantId'].split('-')[0] if '-' in grant['grantId'] else grant['grantId'].split('/')[0]
+                        if len(year_str) == 4 and year_str.isdigit():
+                            fiscal_year = int(year_str)
+                    except (ValueError, IndexError):
+                        pass
+                
+                # Create GrantMetadata object with available information
+                grant_metadata = GrantMetadata(
+                    project_title=grant.get('grantTitle', ''),
+                    project_num=grant.get('grantId', ''),
+                    funder=grant.get('agency', ''),
+                    fiscal_year=fiscal_year,
+                    award_amount=float(grant.get('amount', 0)) if grant.get('amount') else None,
+                    direct_costs=None,  # Europe PMC doesn't provide direct/indirect costs
+                    indirect_costs=None,
+                    project_start_date=parse_date(grant.get('startDate')),
+                    project_end_date=parse_date(grant.get('endDate')),
+                    organization=organization,
+                    pi_name=grant.get('piName', ''),
+                    pi_profile_id=grant.get('piId', ''),
+                    abstract_text=grant.get('description', ''),
+                    project_terms=project_terms,
+                    funding_mechanism=grant.get('mechanism', ''),
+                    activity_code=None,  # Europe PMC specific
+                    award_type=grant.get('grantType', ''),
+                    study_section=None,  # NIH specific
+                    study_section_code=None,  # NIH specific
+                    last_updated=parse_date(grant.get('lastUpdateDate')),
+                    is_active=bool(grant.get('isCurrent')),
+                    is_arra=False,  # NIH specific
+                    covid_response=None,  # NIH specific
+                    # Europe PMC specific fields
+                    grant_type=grant.get('grantType', ''),
+                    grant_status='active' if grant.get('isCurrent') else 'completed',
+                    grant_currency=grant.get('currency', ''),
+                    grant_country=grant.get('country', ''),
+                    grant_department=grant.get('department', ''),
+                    grant_institution=grant.get('institution', '')
+                )
+                funding_info.append(grant_metadata)
 
         # Ensure keywords is always a list, even if empty
         keywords = []

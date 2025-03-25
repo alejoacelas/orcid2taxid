@@ -24,3 +24,4 @@ venv/
 ENV/
 .idea/
 .vscode/
+logs/

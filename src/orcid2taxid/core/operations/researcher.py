@@ -98,4 +98,10 @@ def _enrich_from_publications(researcher: ResearcherMetadata) -> None:
                 )
                 # Only add if not already present
                 if not any(a.institution_name == aff.institution_name for a in researcher.affiliations):
-                    researcher.affiliations.append(aff) 
+                    researcher.affiliations.append(aff)
+
+        # Add grants from publication
+        for grant in paper.funding_info:
+            # Only add if not already present (based on project number)
+            if not any(g.project_num == grant.project_num for g in researcher.grants):
+                researcher.grants.append(grant) 

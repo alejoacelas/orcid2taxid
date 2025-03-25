@@ -237,3 +237,56 @@ class NIHReporterRepository:
         except Exception as e:
             self._log_error(f"Error fetching NIH Reporter funding data: {str(e)}")
             return {}
+
+    def get_grant_by_number(self, project_number: str) -> Optional[GrantMetadata]:
+        """
+        Get a single grant by its project number from NIH Reporter.
+        :param project_number: The NIH project number to search for.
+        :return: GrantMetadata object if found, None otherwise.
+        """
+        try:
+            raw_data = self.fetch_grant_by_number(project_number)
+            if not raw_data or not raw_data.get('results'):
+                self._log_warning(f"No grant found for project number: {project_number}")
+                return None
+            
+            # Get the first result and convert it to GrantMetadata
+            result = raw_data['results'][0]
+            return self._convert_to_grant_metadata(result)
+            
+        except Exception as e:
+            self._log_error(f"Error getting grant by project number: {str(e)}")
+            return None
+
+    def fetch_grant_by_number(self, project_number: str) -> Dict:
+        """
+        Fetch raw grant data from NIH Reporter API using project number.
+        :param project_number: The NIH project number to search for.
+        :return: Raw API response as a dictionary.
+        """
+        try:
+            # Construct the search URL
+            search_url = f"{self.base_url}/projects/search"
+            
+            # Construct the search criteria
+            search_criteria = {
+                "criteria": {
+                    "project_nums": [project_number]
+                },
+                "limit": 1,  # We only need one result
+                "offset": 0
+            }
+            
+            # Make the request
+            response = requests.post(
+                search_url,
+                headers=self.headers,
+                json=search_criteria
+            )
+            response.raise_for_status()
+            
+            return response.json()
+            
+        except Exception as e:
+            self._log_error(f"Error fetching NIH Reporter grant data: {str(e)}")
+            return {}

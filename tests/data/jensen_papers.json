@@ -539,7 +539,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Accelerated and intensified manufacturing of an adenovirus-vectored vaccine to enable rapid outbreak response.",
@@ -845,7 +845,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "A screen for Plasmodium falciparum sporozoite surface protein binding to human hepatocyte surface receptors identifies novel host-pathogen interactions",
@@ -1116,7 +1116,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "A conserved Plasmodium structural integrity maintenance protein (SIMP) is associated with sporozoite membrane and is essential for maintaining shape and infectivity.",
@@ -1329,7 +1329,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Structure of trimeric pre-fusion rabies virus glycoprotein in complex with two protective antibodies.",
@@ -1781,7 +1781,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "PAMAM dendrimer as a talented multifunctional biomimetic nanocarrier for cancer diagnosis and therapy.",
@@ -1952,7 +1952,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Microparticulate and nanotechnology mediated drug delivery system for the delivery of herbal extracts.",
@@ -2173,7 +2173,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Recent advances in nanoparticles mediated photothermal therapy induced tumor regression.",
@@ -2303,7 +2303,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Cancer stem cell plasticity in glioblastoma multiforme: a perspective on future directions in oncolytic virotherapy.",
@@ -2358,7 +2358,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Will SARS-CoV-2 Infection Elicit Long-Lasting Protective or Sterilising Immunity? Implications for Vaccine Strategies (2020).",
@@ -2436,7 +2436,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Hypnotic and Melatonin/Melatonin-Receptor Agonist Treatment in Bipolar Disorder: A Systematic Review and Meta-Analysis.",
@@ -2586,7 +2586,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Infection and mortality of healthcare workers worldwide from COVID-19: a systematic review.",
@@ -3494,7 +3494,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "T cell assays differentiate clinical and subclinical SARS-CoV-2 infections from cross-reactive antiviral responses",
@@ -4516,7 +4516,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "'Re-Wilding' an Animal Model With Microbiota Shifts Immunity and Stress Gene Expression During Infection.",
@@ -4675,7 +4675,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Live attenuated pertussis vaccine for prevention and treatment of allergic airway inflammation in mice.",
@@ -4790,7 +4790,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "The evolution of Bordetella pertussis has selected for mutations of acr that lead to sensitivity to hydrophobic molecules and fatty acids.",
@@ -4938,7 +4938,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "A curated genome-scale metabolic model of Bordetella pertussis metabolism.",
@@ -5130,7 +5130,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Bordetella pertussis evolution in the (functional) genomics era.",
@@ -5225,7 +5225,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Challenges in Developing a Controlled Human Tuberculosis Challenge Model.",
@@ -5279,7 +5279,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Controlled human infection models in COVID-19 and tuberculosis: current progress and future challenges.",
@@ -5384,7 +5384,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Safety, tolerability, viral kinetics, and immune correlates of protection in healthy, seropositive UK adults inoculated with SARS-CoV-2: a single-centre, open-label, phase 1 controlled human infection study.",
@@ -6001,7 +6001,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Author Correction: T cell and antibody responses induced by a single dose of ChAdOx1 nCoV-19 (AZD1222) vaccine in a phase 1/2 clinical trial.",
@@ -7017,7 +7017,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Author Correction: Phase 1/2 trial of SARS-CoV-2 vaccine ChAdOx1 nCoV-19 with a booster dose induces multifunctional antibody responses.",
@@ -8021,7 +8021,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "THE SPLICING FACTOR PTBP1 REPRESSES <i>TP63 γ</i> ISOFORM PRODUCTION IN SQUAMOUS CELL CARCINOMA",
@@ -8097,7 +8097,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "The RNA-binding proteins CELF1 and ELAVL1 cooperatively control the alternative splicing of CD44.",
@@ -8255,7 +8255,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "The Splicing Factor PTBP1 Represses <i>TP63 γ</i> Isoform Production in Squamous Cell Carcinoma.",
@@ -8406,7 +8406,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Inducing Sequential Cycles of Epithelial-Mesenchymal and Mesenchymal-Epithelial Transitions in Mammary Epithelial Cells.",
@@ -8513,7 +8513,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "The RNA-binding proteins CELF1 and ELAVL1 cooperatively control RNA isoform production",
@@ -8635,7 +8635,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Emulsion and liposome-based adjuvanted R21 vaccine formulations mediate protection against malaria through distinct immune mechanisms.",
@@ -9013,7 +9013,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Production of a high purity, C-tagged hepatitis B surface antigen fusion protein VLP vaccine for malaria expressed in Pichia pastoris under cGMP conditions.",
@@ -9411,7 +9411,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Screening of viral-vectored P. falciparum pre-erythrocytic candidate vaccine antigens using chimeric rodent parasites.",
@@ -9638,7 +9638,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Phase 1/2 trial of SARS-CoV-2 vaccine ChAdOx1 nCoV-19 with a booster dose induces multifunctional antibody responses.",
@@ -11109,7 +11109,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Safety and immunogenicity of ChAdOx1 nCoV-19 vaccine administered in a prime-boost regimen in young and old adults (COV002): a single-blind, randomised, controlled, phase 2/3 trial.",
@@ -12751,7 +12751,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Repertoire, function, and structure of serological antibodies induced by the R21/Matrix-M malaria vaccine",
@@ -12935,7 +12935,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "R21 malaria vaccine is protective against intradermal but not intravenous<i>Plasmodium falciparum</i>sporozoites in a randomized controlled human malaria infection study in Kenyan adults",
@@ -13497,7 +13497,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Safety and immunogenicity of varied doses of R21/Matrix-M™ vaccine at three years follow-up: A phase 1b age de-escalation, dose-escalation trial in adults, children, and infants in Kilifi-Kenya",
@@ -13843,7 +13843,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "The public health impact and cost-effectiveness of the R21/Matrix-M malaria vaccine: a mathematical modelling study.",
@@ -14321,7 +14321,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Validation of a multiplexed immunoassay for use in vaccine clinical trials and immunology studies of pre-erythrocytic malaria",
@@ -14454,7 +14454,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Eosinophils as potential biomarkers in respiratory viral infections.",
@@ -14617,7 +14617,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "IL-33 stimulates the anticancer activities of eosinophils through extracellular vesicle-driven reprogramming of tumor cells.",
@@ -14943,7 +14943,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Author Correction: Type I IFNs promote cancer cell stemness by triggering the epigenetic regulator KDM1B.",
@@ -16135,7 +16135,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Basophils from allergy to cancer.",
@@ -16311,7 +16311,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Trogocytosis in innate immunity to cancer is an intimate relationship with unexpected outcomes.",
@@ -16552,7 +16552,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Non-small cell lung cancer evaluated with quantitative contrast-enhanced CT and PET-CT: net enhancement and standardized uptake values are related to tumour size and histology.",
@@ -16738,7 +16738,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Global event-based surveillance of chemical incidents.",
@@ -16832,7 +16832,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Development of a mechanism for the rapid risk assessment of cross-border chemical health threats.",
@@ -16943,7 +16943,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "EU alerting and reporting systems for potential chemical public health threats and hazards.",
@@ -17108,7 +17108,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Development of a new categorization system for pesticides exposure to support harmonized reporting between EU Member States.",
@@ -17308,7 +17308,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Cell cycle dependent changes in membrane stored curvature elastic energy: evidence from lipidomic studies.",
@@ -17383,7 +17383,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Direct thin-layer agar for bedaquiline-susceptibility testing of <i>Mycobacterium tuberculosis</i> at BSL2 level yields high accuracy in 15 days from sputum processing.",
@@ -17608,7 +17608,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Safety of high-dose amikacin in the first week of all-oral rifampicin-resistant tuberculosis treatment for the prevention of acquired resistance (STAKE): protocol for a single-arm clinical trial.",
@@ -18003,7 +18003,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Rifampicin resistance conferring mutations among <i>Mycobacterium tuberculosis</i> strains in Rwanda.",
@@ -18294,7 +18294,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "A public antibody class recognizes an S2 epitope exposed on open conformations of SARS-CoV-2 spike.",
@@ -18971,7 +18971,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Germline-targeting HIV vaccination induces neutralizing antibodies to the CD4 binding site.",
@@ -19918,7 +19918,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Crystallographic analysis of the laminin β2 short arm reveals how the LF domain is inserted into a regular array of LE domains.",
@@ -20046,7 +20046,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Crystal Structure of the Heterotrimeric Integrin-Binding Region of Laminin-111.",
@@ -20187,7 +20187,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Editorial: Role of Ribonucleases in Immune Response Regulation During Infection and Cancer.",
@@ -20275,7 +20275,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Human Antimicrobial RNases Inhibit Intracellular Bacterial Growth and Induce Autophagy in Mycobacteria-Infected Macrophages.",
@@ -20461,7 +20461,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Host Antimicrobial Peptides: The Promise of New Treatment Strategies against Tuberculosis.",
@@ -20619,7 +20619,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Targeting the \"cytokine storm\" for therapeutic benefit.",
@@ -20700,7 +20700,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Recombinant Plasmodium vivax circumsporozoite surface protein allelic variants: antibody recognition by individuals from three communities in the Brazilian Amazon.",
@@ -21058,7 +21058,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Vaccinia Virus Uses Retromer-Independent Cellular Retrograde Transport Pathways To Facilitate the Wrapping of Intracellular Mature Virions during Virus Morphogenesis.",
@@ -21263,7 +21263,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "A single dose of ChAdOx1 Chik vaccine induces neutralizing antibodies against four chikungunya virus lineages in a phase 1 clinical trial.",
@@ -21667,7 +21667,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Inhibitors of retrograde trafficking active against ricin and Shiga toxins also protect cells from several viruses, Leishmania and Chlamydiales.",
@@ -22229,7 +22229,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Life beyond Loss: A Retrospective Analysis of the Impact of Meaning of Life Therapy on the Grieving Process of Cancer Patients' Family Caregivers.",
@@ -22340,7 +22340,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Mucosal and systemic immune responses following mucosal immunisation of tetanus toxoid entrapped in lipid nanoparticles prepared by microwave reactor.",
@@ -22485,7 +22485,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "The Role of Antibodies in the Treatment of SARS-CoV-2 Virus Infection, and Evaluating Their Contribution to Antibody-Dependent Enhancement of Infection.",
@@ -22712,7 +22712,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Correction.",
@@ -22728,7 +22728,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Repeat-Dose Toxicity Study Using the AFPL1-Conjugate Nicotine Vaccine in Male Sprague Dawley Rats.",
@@ -23040,7 +23040,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Liposomes derived from <i>Mycobacterium smegmatis</i> promote immune activation of mice bone marrow-derived dendritic cells.",
@@ -23179,7 +23179,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Divergent memory responses driven by adenoviral vectors are impacted by epitope competition.",
@@ -23504,7 +23504,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Viral vectored hepatitis C virus vaccines generate pan-genotypic T cell responses to conserved subdominant epitopes.",
@@ -23966,7 +23966,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "A pan-genotype hepatitis C virus viral vector vaccine generates T cells and neutralizing antibodies in mice.",
@@ -24465,7 +24465,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Activation of MAIT cells plays a critical role in viral vector vaccine immunogenicity",
@@ -24670,7 +24670,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Morbillivirus v proteins exhibit multiple mechanisms to block type 1 and type 2 interferon signalling pathways.",
@@ -24848,7 +24848,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Economic cost of a case of diarrhoea in Uvira, Democratic Republic of the Congo: a cost of illness study",
@@ -24944,7 +24944,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Addressing tuberculosis in artisanal and small-scale mining activities in sub-Saharan Africa: meta-analysis and a call for actions",
@@ -25055,7 +25055,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Effectiveness of one dose of killed oral cholera vaccine in an endemic community in the Democratic Republic of the Congo: a matched case-control study.",
@@ -25515,7 +25515,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Cholera deaths during outbreaks in Uvira, eastern Democratic Republic of the Congo, 10-35 months after mass vaccination",
@@ -25802,7 +25802,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "COVID-19 Vaccine Hesitancy and Associated Oral Cholera Vaccine Hesitancy in a Cholera-Endemic Country: A Community-Based Cross-Sectional Study in the Democratic Republic of Congo.",
@@ -26069,7 +26069,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "IgG exacerbates genital chlamydial pathology in females by enhancing pathogenic CD8&lt;sup&gt;+&lt;/sup&gt; T cell responses.",
@@ -26298,7 +26298,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Pathogenic NKT cells attenuate urogenital chlamydial clearance and enhance infertility.",
@@ -26479,7 +26479,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Rodent Infections for Chlamydia spp.",
@@ -26559,7 +26559,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Chlamydia pneumoniae can infect the central nervous system via the olfactory and trigeminal nerves and contributes to Alzheimer's disease risk.",
@@ -26741,7 +26741,7 @@
         }
       ],
       "full_text_url": "https://www.nature.com/articles/s41598-022-06749-9.pdf",
-      "citation_count": 25,
+      "citation_count": 32,
       "keywords": [],
       "subjects": [
         "Olfactory Nerve",
@@ -26912,7 +26912,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Mediation of Interleukin-23 and Tumor Necrosis Factor-Driven Reactive Arthritis by Chlamydia-Infected Macrophages in SKG Mice.",
@@ -27372,7 +27372,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "European Malaria Vaccine Initiative: portfolio and perspectives for the future.",
@@ -27457,7 +27457,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Malaria Vectored Vaccines Consortium (MVVC).",
@@ -27516,7 +27516,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Digitised audio questionnaire for assessment of informed consent comprehension in a low-literacy African research population: development and psychometric evaluation.",
@@ -27892,7 +27892,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Comparative decline in funding of European Commission malaria vaccine projects: what next for the European scientists working in this field?",
@@ -28052,7 +28052,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "European Vaccine Initiative: lessons from developing malaria vaccines.",
@@ -28188,7 +28188,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Indirect effectiveness of a novel SARS-COV-2 vaccine (SCB-2019) in unvaccinated household contacts in the Philippines: A cluster randomised analysis.",
@@ -28517,7 +28517,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Clinical trial capacity building in a pandemic-outcome of a rapid site readiness project in Latin America.",
@@ -28604,7 +28604,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Interchangeability of different COVID-19 vaccine platforms as booster doses: A phase 3 study mimicking real-world practice.",
@@ -28774,7 +28774,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Pertussis antibodies and vaccination coverage among healthcare professionals in Brazil is inadequate: A cross-sectional serological study.",
@@ -28928,7 +28928,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Novel Oral Polio Vaccine Type 2 Use for Polio Outbreak Response: A Global Effort for a Global Health Emergency.",
@@ -29095,7 +29095,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Induction of the inflammasome by the SARS-CoV-2 accessory protein ORF9b, abrogated by small-molecule ORF9b homodimerization inhibitors",
@@ -29252,7 +29252,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Overview of Modern Commercial Kits for Laboratory Diagnosis of African Swine Fever and Swine Influenza A Viruses.",
@@ -29577,7 +29577,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Induction of the Inflammasome by the SARS-CoV-2 Accessory Protein ORF9b, Abrogated by Small-Molecule ORF9b Homodimerization Inhibitors.",
@@ -29857,7 +29857,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Exosome-Based Vaccines: Pros and Cons in the World of Animal Health.",
@@ -29948,7 +29948,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Contributions of Farm Animals to Immunology.",
@@ -30064,7 +30064,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "The potential of visible blue light (405 nm) as a novel decontamination strategy for carbapenemase-producing enterobacteriaceae (CPE).",
@@ -30187,7 +30187,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Use of an engineered honey to eradicate preformed biofilms of important wound pathogens: an in vitro study.",
@@ -30267,7 +30267,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "A systematic review of quantitative burn wound microbiology in the management of burns patients.",
@@ -30444,7 +30444,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Antibacterial Activity of Blue Light against Nosocomial Wound Pathogens Growing Planktonically and as Mature Biofilms.",
@@ -30644,7 +30644,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Protocol for a systematic review of quantitative burn wound microbiology in the management of burns patients.",
@@ -30778,7 +30778,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Role of monocytes/macrophages in renin-angiotensin system-induced hypertension and end organ damage.",
@@ -30862,7 +30862,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "The Bisdioxopiperazine ICRF-193 Attenuates LPS-induced IL-1β Secretion by Macrophages.",
@@ -30958,7 +30958,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Topoisomerase II Inhibition Attenuates LPS-induced IL- 1β Secretion by Macrophages",
@@ -31032,7 +31032,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Tracking Circulating HLA-Specific IgG-Producing Memory B Cells with the B-Cell ImmunoSpot Assay.",
@@ -31139,7 +31139,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Next generation organoid engineering to replace animals in cancer drug testing.",
@@ -31481,7 +31481,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Reconstructing the history of helminth prevalence in the UK.",
@@ -31992,7 +31992,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Comparison of CpG- and UpA-mediated restriction of RNA virus replication in mammalian and avian cells and investigation of potential ZAP-mediated shaping of host transcriptome compositions.",
@@ -32460,7 +32460,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Author Correction: Selectively targeting haemagglutinin antigen to chicken CD83 receptor induces faster and stronger immunity against avian influenza.",
@@ -32859,7 +32859,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Effects of Weather Conditions on Oxidative Stress, Oxidative Damage, and Antioxidant Capacity in a Wild-Living Mammal, the European Badger (Meles meles).",
@@ -32977,7 +32977,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Identification of Circovirus Genome in a Chinstrap Penguin (<i>Pygoscelis antarcticus</i>) and Adélie Penguin (<i>Pygoscelis adeliae</i>) on the Antarctic Peninsula.",
@@ -33246,7 +33246,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Replicative fitness and pathogenicity of primate lentiviruses in lymphoid tissue, primary human and chimpanzee cells: relation to possible jumps to humans.",
@@ -33605,7 +33605,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Inhibition of the Lectin Pathway of Complement Activation Reduces Acute Respiratory Distress Syndrome Severity in a Mouse Model of SARS-CoV-2 Infection.",
@@ -34262,7 +34262,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Immunogenicity of a silica nanoparticle-based SARS-CoV-2 vaccine in mice.",
@@ -34464,7 +34464,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Evolution of protective SARS-CoV-2-specific B- and T-cell responses upon vaccination and Omicron breakthrough infection",
@@ -34709,7 +34709,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Correlation between pseudotyped virus and authentic virus neutralisation assays, a systematic review and meta-analysis of the literature.",
@@ -35012,7 +35012,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "The Yin and Yang of TLR4 in COVID-19.",
@@ -35076,7 +35076,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Comparative Analysis of the Aspergillus fumigatus Cell Wall Modification and Ensuing Human Dendritic Cell Responses by β-(1,3)-Glucan Synthase Inhibitors-Caspofungin and Enfumafungin.",
@@ -35264,7 +35264,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Emerging trends in the cystatin C sensing technologies: towards better chronic kidney disease management.",
@@ -35338,7 +35338,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "A hike of postdoc salary alone will not retain the best researchers in low- or middle-income countries.",
@@ -35376,7 +35376,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Non-Ti MXenes: new biocompatible and biodegradable candidates for biomedical applications.",
@@ -35504,7 +35504,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     }
   ]
 }

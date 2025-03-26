@@ -9,15 +9,23 @@ def get_organisms(paper: PaperMetadata) -> PaperMetadata:
         paper.organisms = extractor.extract_organisms_from_abstract(paper)
     return paper
 
+def get_classification(paper: PaperMetadata) -> PaperMetadata:
+    """Extract classification from paper title and abstract"""
+    if not paper.classification:
+        extractor = PaperExtractor()
+        paper.classification = extractor.extract_classification_from_abstract(paper)
+    return paper
+
 def get_taxonomy_info(paper: PaperMetadata) -> PaperMetadata:
     """Get taxonomy information for organisms in the paper"""
     paper = get_organisms(paper)
-    if not paper.taxids:
-        lookup = TaxIDLookup()
-        paper.taxids = [
-            lookup.get_taxid(org.searchable_name) 
-            for org in paper.organisms
-        ]
+    lookup = TaxIDLookup()
+    
+    # Update each organism mention with its taxonomy info
+    for organism in paper.organisms:
+        if not organism.taxonomy_info:
+            organism.taxonomy_info = lookup.get_taxid(organism.searchable_name)
+    
     return paper
 
 def find_full_text_url(paper: PaperMetadata) -> PaperMetadata:

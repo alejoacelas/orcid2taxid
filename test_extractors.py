@@ -47,11 +47,14 @@ for paper in test_papers:
         for org in organisms:
             print(f"        {org.searchable_name} ({org.confidence})")
     
-
-paper_with_taxonomy = get_taxonomy_info(paper)
-print("Paper with added taxonomy info:")
-print(f"TAXIDs found: {paper_with_taxonomy.taxids}\n\n")
-print(paper_with_taxonomy.to_json(indent=2))
+    paper_with_taxonomy = get_taxonomy_info(paper)
+    print("Paper with added taxonomy info:")
+    print("Organisms with taxonomy info:")
+    for org in paper_with_taxonomy.organisms:
+        if org.taxonomy_info:
+            print(f"    {org.searchable_name}: {org.taxonomy_info.scientific_name} (TaxID: {org.taxonomy_info.taxid})")
+    print("\n")
+    print(paper_with_taxonomy.to_json(indent=2))
 
 # %%
 

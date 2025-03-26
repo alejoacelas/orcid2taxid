@@ -50,13 +50,14 @@ def find_grants(researcher: ResearcherMetadata, max_results: int = 20) -> Resear
     nsf = NSFRepository()
     epmc = EuropePMCRepository()
     
-    # Get grants from publications
-    publication_grants: Set[GrantMetadata] = set()
+    # Get grants from publications - using a list instead of a set to avoid hash errors
+    publication_grants: List[GrantMetadata] = []
     for publication in researcher.publications:
         for grant in publication.funding_info:
             # Enhance grant metadata if it's from NIH/NSF
             enhanced_grant = _enhance_grant_metadata(grant)
-            publication_grants.add(enhanced_grant)
+            if enhanced_grant not in publication_grants:
+                publication_grants.append(enhanced_grant)
     
     # Get grants from NIH Reporter by PI name
     researcher_name = f"{researcher.given_name} {researcher.family_name}"
@@ -66,7 +67,7 @@ def find_grants(researcher: ResearcherMetadata, max_results: int = 20) -> Resear
     nsf_grants = nsf.get_funding_by_pi_name(researcher_name, max_results)
     
     # Combine all grants
-    all_grants = list(publication_grants) + nih_grants + nsf_grants
+    all_grants = publication_grants + nih_grants + nsf_grants
     
     # Remove duplicates based on project number
     unique_grants = {}

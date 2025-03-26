@@ -244,7 +244,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "6-azacytidine--compound with wide spectrum of antiviral activity.",
@@ -415,7 +415,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Circulating Mutant of Foot and Mouth Disease virus serotype A-African- Genotype IV in Egypt during 2022",
@@ -577,7 +577,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Circulating foot-and-mouth disease virus serotype A African-genotype IV in Egypt during 2022.",
@@ -774,7 +774,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "First detection of emerging HoBi-like Pestivirus (BVD-3) among some persistently infected dairy cattle herds in Egypt.",
@@ -944,7 +944,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Molecular characterization and pathological identification of a novel strain of delta papillomavirus-4 (bovine papillomavirus-2) in Egypt.",
@@ -1184,7 +1184,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Schistosomiasis Seroprevalence among Children Aged 0-14 Years in Nigeria, 2018.",
@@ -1459,7 +1459,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Performance of SARS-CoV-2 Antigens in a Multiplex Bead Assay for Integrated Serological Surveillance of Neglected Tropical and Other Diseases.",
@@ -1784,7 +1784,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Considerations for quality assurance of multiplex malaria antigen detection assays with large sample sets.",
@@ -2128,7 +2128,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Validation of xMAP SARS-CoV-2 Multi-Antigen IgG assay in Nigeria.",
@@ -2628,7 +2628,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Case of Fatal Hepatitis Related to HEV-3 Infection in Central Italy.",
@@ -2836,7 +2836,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Antimicrobial activity, membrane interaction and structural features of short arginine-rich antimicrobial peptides.",
@@ -3040,7 +3040,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "A Reliable Multifaceted Solution against Foodborne Viral Infections: The Case of RiLK1 Decapeptide.",
@@ -3266,7 +3266,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Presence of Zonula Occludens Toxin-Coding Genes among <i>Vibrio parahaemolyticus</i> Isolates of Clinical and Environmental Origin.",
@@ -3730,7 +3730,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Droplet Digital RT-PCR (dd RT-PCR) Detection of SARS-CoV-2 in Honey Bees and Honey Collected in Apiaries across the Campania Region.",
@@ -3923,7 +3923,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "The human cytomegalovirus nuclear egress complex unites multiple functions: Recruitment of effectors, nuclear envelope rearrangement, and docking to nuclear capsids.",
@@ -4029,7 +4029,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Epstein-Barr virus and autoimmunity: effective preventive and therapeutic strategies are urgently needed.",
@@ -4076,7 +4076,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "The Potential Proallergenic Activity of &lt;i&gt;Tranzschelia pruni-spinosae&lt;/i&gt; and &lt;i&gt;Phragmidium rubi-idaei&lt;/i&gt; in vitro Studies.",
@@ -4174,7 +4174,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Fungal Aeroallergens-The Impact of Climate Change.",
@@ -4289,7 +4289,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "The COVID-19 Vaccination Still Matters: Omicron Variant Is a Final Wake-Up Call for the Rich to Help the Poor.",
@@ -4342,7 +4342,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Lipopolysaccharide of <i>Legionella pneumophila</i> Serogroup 1 Facilitates Interaction with Host Cells.",
@@ -4556,7 +4556,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Regulation of Human Papillomavirus 18 Genome Replication, Establishment, and Persistence by Sequences in the Viral Upstream Regulatory Region.",
@@ -4712,7 +4712,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Persistent Human Papillomavirus Infection.",
@@ -4881,7 +4881,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Hitchhiking of Viral Genomes on Cellular Chromosomes.",
@@ -4979,7 +4979,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Arabidopsis RNA Polymerases IV and V Are Required To Establish H3K9 Methylation, but Not Cytosine Methylation, on Geminivirus Chromatin.",
@@ -5093,7 +5093,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Arabidopsis RNA Polymerase V Mediates Enhanced Compaction and Silencing of Geminivirus and Transposon Chromatin during Host Recovery from Infection.",
@@ -5325,7 +5325,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Pioneer factor GATA6 promotes colorectal cancer through 3D genome regulation.",
@@ -5684,7 +5684,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Herpesvirus Epigenetic Reprogramming and Oncogenesis.",
@@ -5760,7 +5760,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "The embers underneath the CoV-2 pandemic: a semblance of the persistent burn of health inequities and disparities in the United States.",
@@ -5845,7 +5845,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "The Minority Scientists' Experience: Challenging and Overcoming Barriers to Enhancing Diversity and Career Advancement.",
@@ -6584,7 +6584,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Controlling Much? Viral Control of Host Chromatin Dynamics.",
@@ -6673,7 +6673,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Endothelial activation and dysfunction caused by influenza A virus (&lt;i&gt;Alphainfluenzavirus influenzae&lt;/i&gt;).",
@@ -6735,7 +6735,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Comparison of Fragments in Human Hemostatic Proteins That Mimics Fragments in Proteins of A/H1N1 Viruses and Coronaviruses.",
@@ -6801,7 +6801,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "[Dynamics of the cell cycle in human endothelial cell culture infected with influenza virus].",
@@ -6898,7 +6898,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "[Modulation of endothelial factors activity in human endothelial cells in influenza A(H1N1)pdm09 virus infection].",
@@ -7011,7 +7011,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "[Ability of the influenza viruses and their envelope proteins to stimulates endothelial cells apoptosis in vitro].",
@@ -7112,7 +7112,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Complete genome sequence of a new virus, a tentative member of the family Geminiviridae, infecting hedge bindweed (Calystegia sepium) in South Korea.",
@@ -7294,7 +7294,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Complete genome sequence of a new putative member of the genus Pelarspovirus that infects Quercus aliena Blume in South Korea.",
@@ -7445,7 +7445,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Complete nucleotide sequence of chrysanthemum virus D, a polero-like virus.",
@@ -7575,7 +7575,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Molecular characterization and identification of Stellaria aquatica virus C, a novel putative member of the genus Closterovirus infecting Stellaria aquatica in South Korea.",
@@ -7694,7 +7694,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Complete genome sequence and genome characterization of a novel potyvirus from Lamprocapnos spectabilis.",
@@ -7847,7 +7847,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Infection-induced peripheral mitochondria fission drives ER encapsulations and inter-mitochondria contacts that rescue bioenergetics.",
@@ -8488,7 +8488,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Targeted mutagenesis of the herpesvirus fusogen central helix captures transition states.",
@@ -8953,7 +8953,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Gal power: the diverse roles of galectins in regulating viral infections.",
@@ -9056,7 +9056,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "DNA origami signposts for identifying proteins on cell membranes by electron cryotomography.",
@@ -9233,8 +9233,8 @@
         "Dna Origami",
         "Protein Localisation",
         "Cellular Electron Cryotomography",
-        "Molecular Arrows",
-        "Signpost Origami Tags"
+        "Signpost Origami Tags",
+        "Molecular Arrows"
       ],
       "subjects": [
         "Cell Line",
@@ -9563,7 +9563,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Cellular Electron Cryo-Tomography to Study Virus-Host Interactions.",
@@ -9835,7 +9835,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Development of learning objectives to support undergraduate virology curriculum guidelines.",
@@ -9952,7 +9952,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Epigenetic weapons in plant-herbivore interactions: Sulforaphane disrupts histone deacetylases, gene expression, and larval development in Spodoptera exigua while the specialist feeder Trichoplusia ni is largely resistant to these effects.",
@@ -10124,7 +10124,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "CURE on yeast genes of unknown function increases students' bioinformatics proficiency and research confidence.",
@@ -10270,7 +10270,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Updated ASM Curriculum Guidelines describe core microbiology content to modernize the framework for microbiology education.",
@@ -10472,7 +10472,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Virology in the Classroom: Current Approaches and Challenges to Undergraduate- and Graduate-Level Virology Education.",
@@ -10534,7 +10534,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Molecular Research of Lipid Peroxidation and Antioxidant Enzyme Activity of <i>Comamonas testosteroni</i> Bacterial Cells under the Hexachlorobenzene Impact.",
@@ -10694,7 +10694,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Ancient viral genomes reveal introduction of human pathogenic viruses into Mexico during the transatlantic slave trade.",
@@ -11077,7 +11077,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Structures and Mechanisms of Nonsegmented, Negative-Strand RNA Virus Polymerases.",
@@ -11137,7 +11137,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Structural basis for dimerization of a paramyxovirus polymerase complex.",
@@ -11389,7 +11389,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "The HIV-1 Nucleocapsid Regulates Its Own Condensation by Phase-Separated Activity-Enhancing Sequestration of the Viral Protease during Maturation.",
@@ -11682,7 +11682,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "A Druggable Pocket at the Nucleocapsid/Phosphoprotein Interaction Site of Human Respiratory Syncytial Virus.",
@@ -11965,7 +11965,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "A simple and rapid approach to prepare Sindbis and West Nile viral RNA controls for differentiation between positive samples and laboratory contamination.",
@@ -12219,7 +12219,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Publisher Correction: Innate immune control of influenza virus interspecies adaptation via IFITM3.",
@@ -12428,7 +12428,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Innate immune control of influenza virus interspecies adaptation via IFITM3.",
@@ -12872,7 +12872,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Human IL-35 Inhibits the Bioactivity of IL-12 and Its Interaction with IL-12Rβ2.",
@@ -13012,7 +13012,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "RIG-I-like Receptor Regulation of Immune Cell Function and Therapeutic Implications.",
@@ -13192,7 +13192,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Beyond Good and Evil: Molecular Mechanisms of Type I and III IFN Functions.",
@@ -13282,7 +13282,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Water-Based Epidemiological Investigation of Hepatitis E Virus in South Africa.",
@@ -13564,7 +13564,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Viral G Protein-Coupled Receptors Encoded by β- and γ-Herpesviruses.",
@@ -13730,7 +13730,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Molecular Properties and Therapeutic Targeting of the EBV-Encoded Receptor BILF1.",
@@ -13863,7 +13863,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Scorpion Venom: Detriments and Benefits.",
@@ -14055,7 +14055,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Sporadic phage defense in epidemic &lt;i&gt;Vibrio cholerae&lt;/i&gt; mediated by the toxin-antitoxin system DarTG is countered by a phage-encoded antitoxin mimic.",
@@ -14210,7 +14210,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Bacteriophage ICP1: A Persistent Predator of <i>Vibrio cholerae</i>.",
@@ -14419,7 +14419,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Enterovirus A71 crosses a human blood-brain barrier model through infected immune cells.",
@@ -14667,7 +14667,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Natural non-homologous recombination led to the emergence of a duplicated V3-NS5A region in HCV-1b strains associated with hepatocellular carcinoma.",
@@ -15163,7 +15163,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Role of the membrane-associated accessory protein (MAAP) in adeno-associated virus (AAV) infection.",
@@ -15485,7 +15485,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "N6-methyladenosine modification of a parvovirus-encoded small noncoding RNA facilitates viral DNA replication through recruiting Y-family DNA polymerases.",
@@ -16052,7 +16052,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "High-Throughput Screening Identifies Inhibitors for Parvovirus B19 Infection of Human Erythroid Progenitors.",
@@ -16388,7 +16388,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "The N-terminal 5-68 amino acids domain of the minor capsid protein VP1 of human parvovirus B19 enters human erythroid progenitors and inhibits B19 infection.",
@@ -16625,7 +16625,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Identification of host essential factors for recombinant AAV transduction of the polarized human airway epithelium.",
@@ -17197,7 +17197,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Possible Emergence of Zika Virus of African Lineage in Brazil and the Risk for New Outbreaks.",
@@ -17406,7 +17406,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Prevalence and identification of arthropod-transmitted viruses in Kassala state, Eastern Sudan.",
@@ -17580,7 +17580,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Immune-related therapeutics: an update on antiviral drugs and vaccines to tackle the COVID-19 pandemic.",
@@ -17728,7 +17728,7 @@
       "subjects": [],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Molecular characterization and risk factors of oral high-risk human papillomavirus among females in Punjab, Pakistan.",
@@ -17842,7 +17842,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Comparing the risk of hypothyroidism in HCV patients treated with different DAA drugs combinations (sofosbuvir + interferon + ribavirin and sofosbuvir + daclatasvir + ribavirin).",
@@ -17971,7 +17971,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Prevalence of thyroid stimulating hormone dysfunction among sofosbuvir-treated HCV-infected patients: A real-world clinical experience.",
@@ -18114,7 +18114,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Extracellular vesicles from Zika virus-infected cells display viral E protein that binds ZIKV-neutralizing antibodies to prevent infection enhancement.",
@@ -18353,7 +18353,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Identification of novel totiviruses from the ascomycetous fungus Geotrichum candidum.",
@@ -18668,7 +18668,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "Cryphonectria nitschkei chrysovirus 1 with unique molecular features and a very narrow host range.",
@@ -18791,7 +18791,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "A novel deltapartitivirus from red clover.",
@@ -19028,7 +19028,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "In-Tree Behavior of Diverse Viruses Harbored in the Chestnut Blight Fungus, <i>Cryphonectria parasitica</i>.",
@@ -19371,7 +19371,7 @@
         }
       ],
       "organisms": [],
-      "taxids": []
+      "classification": null
     },
     {
       "title": "A new tetra-segmented splipalmivirus with divided RdRP domains from Cryphonectria naterciae, a fungus found on chestnut and cork oak trees in Europe.",
@@ -19518,7 +19518,7 @@
       ],
       "funding_info": [],
       "organisms": [],
-      "taxids": []
+      "classification": null
     }
   ]
 }

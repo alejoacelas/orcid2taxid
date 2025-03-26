@@ -24,15 +24,15 @@
       "last_modified": null,
       "alternative_names": [],
       "keywords": [
-        "Antiviral innate immune response",
-        "Sustained virological response",
-        "Virus bio-imaging",
-        "Viral transactivation",
         "Cell homeostasis",
         "RNA-sequencing",
         "Antiretroviral therapy",
         "Drug resistance",
-        "Viral replication"
+        "Sustained virological response",
+        "Viral replication",
+        "Virus bio-imaging",
+        "Viral transactivation",
+        "Antiviral innate immune response"
       ],
       "subjects": [],
       "journals": [],
@@ -1200,12 +1200,12 @@
       "last_modified": null,
       "alternative_names": [],
       "keywords": [
-        "Infectious Disease Epidemiology",
-        "Infectious Disease Surveillance",
-        "Emerging Infectious Disease",
-        "Wastewater",
         "Molecular Epidemiology",
-        "Virology"
+        "Virology",
+        "Emerging Infectious Disease",
+        "Infectious Disease Surveillance",
+        "Wastewater",
+        "Infectious Disease Epidemiology"
       ],
       "subjects": [],
       "journals": [],
@@ -1436,9 +1436,9 @@
       "last_modified": null,
       "alternative_names": [],
       "keywords": [
-        "Biology",
         "Virology",
-        "Microbiology"
+        "Microbiology",
+        "Biology"
       ],
       "subjects": [],
       "journals": [],
@@ -1580,9 +1580,9 @@
       },
       "last_modified": null,
       "alternative_names": [
-        "Idrees M",
         "Idrees Khan",
-        "Idrees"
+        "Idrees",
+        "Idrees M"
       ],
       "keywords": [
         "hepatitis"
@@ -1720,8 +1720,8 @@
       "last_modified": null,
       "alternative_names": [],
       "keywords": [
-        "Molecular virology",
-        "Virology"
+        "Virology",
+        "Molecular virology"
       ],
       "subjects": [],
       "journals": [],

@@ -149,13 +149,13 @@
       "last_modified": null,
       "alternative_names": [],
       "keywords": [
-        "immunology",
-        "cyanobacteria",
+        "covid-19",
+        "global health",
         "vaccines",
         "medicine",
         "carbon capture",
-        "global health",
-        "covid-19"
+        "immunology",
+        "cyanobacteria"
       ],
       "subjects": [],
       "journals": [],
@@ -216,15 +216,15 @@
       "last_modified": null,
       "alternative_names": [],
       "keywords": [
-        "Immunology",
-        "Neisseria gonorrhoeae",
-        "Bvg",
-        "Vaccines",
-        "Microbial evolution",
-        "Microbial metabolism",
         "Outer membrane vesicles",
-        "Microbiology",
-        "Bordetella pertussis"
+        "Microbial metabolism",
+        "Microbial evolution",
+        "Neisseria gonorrhoeae",
+        "Immunology",
+        "Vaccines",
+        "Bordetella pertussis",
+        "Bvg",
+        "Microbiology"
       ],
       "subjects": [],
       "journals": [],
@@ -654,12 +654,12 @@
       "alternative_names": [],
       "keywords": [
         "Biophysics",
-        "Vaccine development",
-        "Infection",
-        "Structural biology",
         "Extracellular matrix",
+        "Structural biology",
+        "Vaccine development",
         "Host-Pathogen interaction",
-        "Antimicrobial peptides"
+        "Antimicrobial peptides",
+        "Infection"
       ],
       "subjects": [],
       "journals": [],
@@ -802,8 +802,8 @@
       },
       "last_modified": null,
       "alternative_names": [
-        "Reinaldo Acevedo Grogues",
-        "R Acevedo"
+        "R Acevedo",
+        "Reinaldo Acevedo Grogues"
       ],
       "keywords": [],
       "subjects": [],
@@ -1104,9 +1104,9 @@
       "last_modified": null,
       "alternative_names": [],
       "keywords": [
-        "Allergy",
-        "Microbiology",
         "Vaccines",
+        "Microbiology",
+        "Allergy",
         "Immunology"
       ],
       "subjects": [],
@@ -1693,9 +1693,9 @@
       "last_modified": null,
       "alternative_names": [],
       "keywords": [
-        "trabalho análogo a escravo",
+        "relações de trabalho",
         "interdisciplinariedade",
-        "relações de trabalho"
+        "trabalho análogo a escravo"
       ],
       "subjects": [],
       "journals": [],

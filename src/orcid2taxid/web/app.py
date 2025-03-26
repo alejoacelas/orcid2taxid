@@ -2,9 +2,12 @@ import streamlit as st
 from orcid2taxid.integrations.europe_pmc import EuropePMCRepository
 from orcid2taxid.analysis.extraction.paper import PaperExtractor
 from orcid2taxid.integrations.ncbi import TaxIDLookup
+from orcid2taxid.core.operations.researcher import get_researcher_by_orcid, find_publications
+from orcid2taxid.core.operations.paper import get_classification, get_organisms, get_taxonomy_info
+from orcid2taxid.core.operations.grant import find_grants
 from collections import defaultdict
-from typing import List
-from orcid2taxid.core.models.schemas import PaperMetadata, OrganismMention
+from typing import List, Dict, Tuple, Optional
+from orcid2taxid.core.models.schemas import PaperMetadata, OrganismMention, ResearcherMetadata, GrantMetadata
 
 # Custom hash functions for Pydantic models
 def hash_paper_metadata(paper: PaperMetadata) -> tuple:
@@ -13,145 +16,367 @@ def hash_paper_metadata(paper: PaperMetadata) -> tuple:
         paper.title,
         paper.abstract,
         paper.doi,
-        paper.publication_date
+        paper.publication_date,
+        paper.journal_name,  # Added to improve uniqueness
+        # Include a hash of authors' names if available
+        tuple(author.full_name for author in paper.authors) if paper.authors else None
     )
 
-@st.cache_data(hash_funcs={PaperMetadata: hash_paper_metadata})
-def fetch_publications(orcid: str, max_results: int = 20) -> List[PaperMetadata]:
-    """Cached function to fetch publications from Europe PMC"""
-    return europe_pmc.get_publications_by_orcid(orcid, max_results=max_results)
+def hash_grant_metadata(grant: GrantMetadata) -> tuple:
+    """Create a hashable tuple from essential grant fields"""
+    return (
+        grant.project_title,
+        grant.project_num,
+        grant.funder,
+        grant.pi_name,  # Added to improve uniqueness
+        grant.project_start_date  # Added to distinguish between versions of the same grant
+    )
 
-@st.cache_data(hash_funcs={PaperMetadata: hash_paper_metadata})
-def extract_organisms_from_paper(paper: PaperMetadata) -> List[OrganismMention]:
-    """Cached function to extract organisms from a paper"""
-    return organism_extractor.extract_organisms_from_abstract(paper)
+def hash_researcher_metadata(researcher: ResearcherMetadata) -> tuple:
+    """Create a hashable tuple from essential researcher fields"""
+    return (
+        researcher.orcid,
+        researcher.full_name,
+        researcher.given_name,
+        researcher.family_name,
+        researcher.last_modified,  # Added to detect updates to the profile
+        len(researcher.publications)  # Added to detect when publications have been added
+    )
 
-def display_results():
-    """Display both organisms and papers in a single update"""
-    # Display organisms
-    if st.session_state.organism_to_papers:
-        st.subheader("🦠 Organisms Identified")
-        for (scientific_name, taxid), papers in st.session_state.organism_to_papers.items():
-            with st.expander(f"{scientific_name} (TAXID: {taxid})"):
-                for paper in papers:
-                    st.markdown(f"**{paper['title']}** ({paper['year']})")
-                    if paper['doi']:
-                        st.markdown(f"DOI: [{paper['doi']}](https://doi.org/{paper['doi']})")
-                    st.markdown("---")
+@st.cache_data()
+def fetch_researcher_by_orcid(orcid: str) -> ResearcherMetadata:
+    """Cached function to fetch basic researcher metadata"""
+    return get_researcher_by_orcid(orcid)
+
+@st.cache_data(hash_funcs={ResearcherMetadata: hash_researcher_metadata})
+def fetch_publications(researcher: ResearcherMetadata) -> ResearcherMetadata:
+    """Cached function to fetch publications for a researcher
     
-    # Display papers
-    if st.session_state.analyzed_papers:
-        st.subheader("📚 Analyzed Papers")
-        for paper in st.session_state.analyzed_papers:
-            with st.expander(f"{paper.title} ({paper.publication_date.strftime('%Y') if paper.publication_date else 'Unknown'})"):
-                if paper.doi:
-                    st.markdown(f"**DOI**: [{paper.doi}](https://doi.org/{paper.doi})")
-                if paper.abstract:
+    Uses underscore prefix to prevent Streamlit from hashing the researcher object"""
+    return find_publications(researcher)
+
+@st.cache_data(hash_funcs={ResearcherMetadata: hash_researcher_metadata})
+def fetch_grants(researcher: ResearcherMetadata) -> ResearcherMetadata:
+    """Cached function to fetch grants for a researcher
+    
+    Uses underscore prefix to prevent Streamlit from hashing the researcher object"""
+    return find_grants(researcher)
+
+@st.cache_data(hash_funcs={PaperMetadata: hash_paper_metadata})
+def extract_organisms_from_paper(paper: PaperMetadata) -> PaperMetadata:
+    """Cached function to extract organisms from a paper
+    
+    Uses underscore prefix to prevent Streamlit from hashing the paper object"""
+    return get_organisms(paper)
+
+@st.cache_data(hash_funcs={PaperMetadata: hash_paper_metadata})
+def classify_paper(paper: PaperMetadata) -> PaperMetadata:
+    """Cached function to classify a paper
+    
+    Uses underscore prefix to prevent Streamlit from hashing the paper object"""
+    return get_classification(paper)
+
+@st.cache_data(hash_funcs={PaperMetadata: hash_paper_metadata})
+def get_taxonomy(paper: PaperMetadata) -> PaperMetadata:
+    """Cached function to get taxonomy info for a paper
+    
+    Uses underscore prefix to prevent Streamlit from hashing the paper object"""
+    return get_taxonomy_info(paper)
+
+def process_single_paper(researcher: ResearcherMetadata, paper_index: int, taxid_client: TaxIDLookup) -> ResearcherMetadata:
+    """Process a single paper and update the researcher object
+    
+    This function updates the researcher's publication at the specified index with:
+    1. Extracted organisms
+    2. Classification information
+    3. Taxonomy information
+    
+    Returns the updated researcher object
+    """
+    if paper_index >= len(researcher.publications):
+        return researcher
+        
+    # Get the paper to process
+    paper = researcher.publications[paper_index]
+    
+    # Extract organisms and classify paper
+    updated_paper = extract_organisms_from_paper(paper)
+    updated_paper = classify_paper(updated_paper)
+    
+    # Process organisms and taxonomy
+    for organism in updated_paper.organisms:
+        if not organism.taxonomy_info:  # Only get taxonomy info if not already present
+            tax_info = taxid_client.get_taxid(organism.searchable_name)
+            if tax_info:
+                organism.taxonomy_info = tax_info
+    
+    # Update the paper in the researcher object
+    researcher.publications[paper_index] = updated_paper
+    return researcher
+
+def display_researcher_info(researcher: ResearcherMetadata):
+    """Display researcher information"""
+    st.subheader("Researcher Profile")
+    full_name = f"{researcher.given_name} {researcher.family_name}"
+    st.markdown(f"**Name:** {full_name}")
+    
+    # Display affiliations
+    st.markdown("#### Employment History")
+    if researcher.affiliations:
+        for affiliation in researcher.affiliations:
+            st.markdown(f"- {affiliation.institution_name}" + 
+                        (f", {affiliation.department}" if affiliation.department else ""))
+    else:
+        st.info("No employment history found on their ORCID profile.")
+    
+    # Display education
+    st.markdown("#### Education")
+    if researcher.education:
+        for education in researcher.education:
+            st.markdown(f"- {education.institution_name}" + 
+                        (f", {education.department}" if education.department else ""))
+    else:
+        st.info("No education history found on their ORCID profile.")
+
+def display_highlights(researcher: ResearcherMetadata):
+    """Display paper highlights from the researcher's publications"""
+    st.subheader("📌 Highlights")
+    
+    processed_papers = [p for p in researcher.publications if p.classification]
+    has_highlights = False
+    
+    for paper in processed_papers:
+        # Check for specific highlights
+        if paper.classification.wet_lab_work == "yes":
+            st.warning(f"⚗️ Wet lab work detected in paper: \"{paper.title}\"")
+            has_highlights = True
+        
+        if paper.classification.bsl_level in ["bsl_2", "bsl_3", "bsl_4"]:
+            st.error(f"🧪 {paper.classification.bsl_level.upper()} lab work detected in paper: \"{paper.title}\"")
+            has_highlights = True
+        
+        if "vaccine_development" in paper.classification.dna_use:
+            st.success(f"💉 Vaccine development work detected in paper: \"{paper.title}\"")
+            has_highlights = True
+        
+        if "synthetic_genome" in paper.classification.dna_type:
+            st.warning(f"🧬 Synthetic genome work detected in paper: \"{paper.title}\"")
+            has_highlights = True
+    
+    if not has_highlights and processed_papers:
+        st.info("No highlights detected in the analyzed papers.")
+    elif not processed_papers:
+        st.info("No papers have been analyzed yet.")
+
+def display_organisms(researcher: ResearcherMetadata):
+    """Display organisms from the researcher's publications"""
+    st.subheader("🦠 Organisms Identified")
+    
+    organism_to_papers = researcher.get_publications_by_organism()
+    
+    if organism_to_papers:
+        for scientific_name, papers_list in organism_to_papers.items():
+            paper_titles = ", ".join([p.title for p in papers_list])
+            st.markdown(f"- **{scientific_name}**", help=f"Found in: {paper_titles}")
+    else:
+        st.info("No organisms identified yet.")
+
+def display_papers(researcher: ResearcherMetadata):
+    """Display paper list from the researcher's publications"""
+    st.subheader("📚 Publications")
+    
+    processed_papers = [p for p in researcher.publications if p.classification]
+    
+    if processed_papers:
+        for paper in processed_papers:
+            if paper.doi:
+                st.markdown(f"- [{paper.title}](https://doi.org/{paper.doi})")
+            else:
+                st.markdown(f"- {paper.title}")
+    else:
+        st.info("No processed publications yet.")
+
+def display_grants(researcher: ResearcherMetadata):
+    """Display grant information from the researcher's grants"""
+    st.subheader("💰 Grants Information")
+    
+    if researcher.grants:
+        for grant in researcher.grants:
+            with st.expander(f"{grant.project_title[:100]}..."):
+                st.markdown(f"**Project Number**: {grant.project_num}")
+                if grant.funder:
+                    st.markdown(f"**Funder**: {grant.funder}")
+                if grant.pi_name:
+                    st.markdown(f"**PI**: {grant.pi_name}")
+                if grant.abstract_text:
                     st.markdown("**Abstract**")
-                    st.markdown(f"> {paper.abstract}")
-                else:
-                    st.markdown("*No abstract available*")
+                    st.markdown(f"> {grant.abstract_text[:500]}..." if len(grant.abstract_text) > 500 else f"> {grant.abstract_text}")
+    else:
+        st.info("No grant information available.")
+
+def initialize_session_state():
+    """Initialize all session state variables if they don't exist"""
+    if 'researcher' not in st.session_state:
+        st.session_state.researcher = None
+    if 'processing_state' not in st.session_state:
+        st.session_state.processing_state = "idle"
+    if 'current_paper_index' not in st.session_state:
+        st.session_state.current_paper_index = 0
+    if 'progress_percentage' not in st.session_state:
+        st.session_state.progress_percentage = 0
+    if 'publications_loaded' not in st.session_state:
+        st.session_state.publications_loaded = False
+    if 'grants_loaded' not in st.session_state:
+        st.session_state.grants_loaded = False
+
+def reset_session_state():
+    """Reset session state for a new search"""
+    st.session_state.researcher = None
+    st.session_state.processing_state = "idle"
+    st.session_state.current_paper_index = 0
+    st.session_state.progress_percentage = 0
+    st.session_state.publications_loaded = False
+    st.session_state.grants_loaded = False
 
 def handle_search():
     """Handle the search button click"""
-    # Reset the data
-    st.session_state.organism_to_papers = defaultdict(list)
-    st.session_state.analyzed_papers = []
+    reset_session_state()
+    st.session_state.processing_state = "fetch_researcher"
 
-# Initialize components
-europe_pmc = EuropePMCRepository()
-organism_extractor = PaperExtractor()
-taxid_client = TaxIDLookup()
+def main():
+    # Initialize components
+    taxid_client = TaxIDLookup()
 
-# Set up page config
-st.set_page_config(
-    page_title="ORCID to TAXID",
-    page_icon="🧬",
-    layout="wide"
-)
-st.title("🧬 ORCID to TAXID")
-st.markdown("Paste an ORCID ID to discover which dangerous organisms "
-            "a researcher has worked with before.")
-
-# Initialize session state
-if 'organism_to_papers' not in st.session_state:
-    st.session_state.organism_to_papers = defaultdict(list)
-if 'analyzed_papers' not in st.session_state:
-    st.session_state.analyzed_papers = []
-
-# Move description and input to sidebar
-with st.sidebar:
+    # Set up page config
+    st.set_page_config(
+        page_title="ORCID to TAXID",
+        page_icon="🧬",
+        layout="wide"
+    )
     st.title("🧬 ORCID to TAXID")
-    st.markdown("""
-    This app helps you discover which organisms a researcher has worked with based on their publications.
-    Just enter an ORCID ID and we'll:
-    1. Fetch their publications
-    2. Analyze them for organism mentions
-    3. Map those organisms to their NCBI Taxonomy IDs
-    """)
+    st.markdown("Paste an ORCID ID to discover which dangerous organisms "
+                "a researcher has worked with before.")
 
-    # Input for ORCID ID
-    orcid = st.text_input(
-        "Enter ORCID ID",
-        placeholder="e.g. 0000-0002-1825-0097",
-        help="Enter the ORCID ID of the researcher you want to analyze"
-    )
+    # Initialize session state
+    initialize_session_state()
 
-    # Add number input for max papers
-    max_papers = st.number_input(
-        "Maximum number of papers",
-        min_value=1,
-        max_value=100,
-        value=20,
-        help="Maximum number of papers to analyze"
-    )
+    # Move description and input to sidebar
+    with st.sidebar:
+        st.title("🧬 BioSec ProfileScout")
+        # Input for ORCID ID
+        orcid = st.text_input(
+            "Enter ORCID ID",
+            placeholder="e.g. 0000-0002-1825-0097",
+            help="Enter the ORCID ID of the researcher you want to analyze"
+        )
+        # Add search button
+        search_clicked = st.button("Search", type="primary", on_click=handle_search)
+        
+        # Status placeholder for spinner
+        status_placeholder = st.empty()
 
-    # Add search button
-    search_clicked = st.button("Search", type="primary", on_click=handle_search)
+    # Create tabs for the main sections
+    tab1, tab2, tab3 = st.tabs(["Researcher", "Publications", "Grants"])
 
-# Main content area
-if orcid and search_clicked:
-    with st.spinner("Fetching publications..."):
-        # Get publications using cached function
-        publications = fetch_publications(orcid, max_results=max_papers)
-        if not publications:
-            st.warning("No publications found for this ORCID ID")
+    # Main application UI rendering logic
+    with tab1:
+        if st.session_state.researcher:
+            display_researcher_info(st.session_state.researcher)
         else:
-            st.success(f"Found {len(publications)} publications")
+            st.info("Enter an ORCID ID and click 'Search' to see researcher information.")
+
+    with tab2:
+        # Always create all containers unconditionally to avoid errors
+        progress_container = st.container()
+        highlights_container = st.container(height=200)
+        organisms_container = st.container(height=200)
+        publications_container = st.container(height=200)
+        
+        # Display the current progress if we're processing papers
+        if st.session_state.processing_state in ["process_papers", "process_grants"]:
+            with progress_container:
+                if st.session_state.researcher and st.session_state.researcher.publications:
+                    st.success(f"Found {len(st.session_state.researcher.publications)} publications")
+                    if st.session_state.current_paper_index < len(st.session_state.researcher.publications):
+                        current_paper = st.session_state.researcher.publications[st.session_state.current_paper_index]
+                        st.text(f"Processing: {current_paper.title[:180]}...")
+                    st.progress(st.session_state.progress_percentage)
+        
+        # Show results in the analysis tab
+        if st.session_state.researcher and st.session_state.publications_loaded:
+            with highlights_container:
+                display_highlights(st.session_state.researcher)
             
-            # Create a status container for current paper
-            status_container = st.empty()
-            progress_bar = st.progress(0)
-            results_placeholder = st.empty()
+            with organisms_container:
+                display_organisms(st.session_state.researcher)
             
-            for i, paper in enumerate(publications):
-                # Update status
-                status_container.text(f"Processing: {paper.title[:180]}...")
+            with publications_container:
+                display_papers(st.session_state.researcher)
+        else:
+            st.info("Publication analysis will appear here after searching.")
+
+    with tab3:
+        if st.session_state.researcher and st.session_state.grants_loaded:
+            display_grants(st.session_state.researcher)
+        else:
+            st.info("Grant information will appear here after searching.")
+
+    # Processing state machine
+    if st.session_state.processing_state == "fetch_researcher":
+        with status_placeholder:
+            with st.spinner("Fetching researcher information..."):
+                researcher = fetch_researcher_by_orcid(orcid)
+                st.session_state.researcher = researcher
+                st.session_state.processing_state = "fetch_publications"
+                st.rerun()
+    
+    elif st.session_state.processing_state == "fetch_publications":
+        with status_placeholder:
+            with st.spinner("Fetching publications..."):
+                researcher = fetch_publications(st.session_state.researcher)
+                st.session_state.researcher = researcher
                 
-                # Store paper for display
-                st.session_state.analyzed_papers.append(paper)
-                
-                # Extract organisms using cached function
-                organisms = extract_organisms_from_paper(paper)
-                
-                # For each organism, look up its taxonomy info and store paper reference
-                for organism in organisms:
-                    # Get taxonomy info
-                    tax_info = taxid_client.get_taxid(organism.searchable_name)
-                    if tax_info:
-                        # Create a key that includes scientific name and taxid
-                        key = (tax_info.scientific_name, tax_info.taxid)
-                        # Store paper reference if not already present
-                        paper_info = {
-                            'title': paper.title,
-                            'doi': paper.doi,
-                            'year': paper.publication_date.strftime('%Y') if paper.publication_date else 'Unknown'
-                        }
-                        if paper_info not in st.session_state.organism_to_papers[key]:
-                            st.session_state.organism_to_papers[key].append(paper_info)
-                
-                with results_placeholder:
-                    with st.container():
-                        display_results()
-                # Update progress
-                progress_bar.progress((i + 1) / len(publications))
+                if not researcher.publications:
+                    st.session_state.publications_loaded = True
+                    st.session_state.processing_state = "fetch_grants"
+                else:
+                    st.session_state.processing_state = "process_papers"
+                st.rerun()
+    
+    elif st.session_state.processing_state == "process_papers":
+        with status_placeholder:
+            if st.session_state.current_paper_index < len(st.session_state.researcher.publications):
+                with st.spinner(f"Processing publication {st.session_state.current_paper_index + 1} of {len(st.session_state.researcher.publications)}..."):
+                    # Process the current paper and update the researcher object
+                    researcher = process_single_paper(
+                        st.session_state.researcher, 
+                        st.session_state.current_paper_index,
+                        taxid_client
+                    )
+                    
+                    # Update the researcher in session state
+                    st.session_state.researcher = researcher
+                    
+                    # Update progress
+                    st.session_state.current_paper_index += 1
+                    st.session_state.progress_percentage = st.session_state.current_paper_index / len(st.session_state.researcher.publications)
+                    
+                    # Rerun to process next paper
+                    st.rerun()
+            else:
+                # All papers processed, mark publications as loaded
+                st.session_state.publications_loaded = True
+                st.session_state.processing_state = "fetch_grants"
+                st.rerun()
+    
+    elif st.session_state.processing_state == "fetch_grants":
+        with status_placeholder:
+            with st.spinner("Fetching grants information..."):
+                researcher = fetch_grants(st.session_state.researcher)
+                st.session_state.researcher = researcher
+                st.session_state.grants_loaded = True
+                st.session_state.processing_state = "complete"
+                st.rerun()
+
+if __name__ == "__main__":
+    main()

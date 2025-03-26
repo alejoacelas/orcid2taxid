@@ -8,17 +8,14 @@ app = FastAPI()
 
 @app.get("/orcid2taxid/{orcid_id}", response_model=List[PaperMetadata])
 async def get_papers_with_taxids(orcid_id: str, max_results: int = 20):
-    # Initialize repositories
-    europe_pmc = EuropePMCRepository()
+    """Get papers with taxonomy information for a given ORCID ID."""
+    repository = EuropePMCRepository()
+    papers = await repository.get_publications_by_orcid(orcid_id, max_results=max_results)
     
-    # Get publications
-    papers = europe_pmc.get_publications_by_orcid(orcid_id, max_results=max_results)
-    
-    # Process each paper to get taxonomy info
+    # Get papers that have organisms with taxonomy info
     papers_with_taxids = []
     for paper in papers:
-        paper_with_tax = get_taxonomy_info(paper)
-        if paper_with_tax.taxids:  # Only include papers that have taxids
-            papers_with_taxids.append(paper_with_tax)
-            
+        if any(org.taxonomy_info for org in paper.organisms):  # Only include papers that have organisms with taxonomy info
+            papers_with_taxids.append(paper)
+    
     return papers_with_taxids

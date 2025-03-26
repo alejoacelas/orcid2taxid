@@ -4,6 +4,19 @@ logging.getLogger('httpx').setLevel(logging.WARNING)
 
 # %%
 
+from orcid2taxid.analysis.extraction.paper import PaperExtractor
+from tests.utils.load_data import load_test_papers
+extractor = PaperExtractor()
+
+papers = load_test_papers(n=3, force_refresh=True)
+for paper in papers:
+    print(paper.title)
+    classification = extractor.extract_classification_from_abstract(paper)
+    print(classification.model_dump_json(indent=2))
+
+# %%
+
+# %%
 from orcid2taxid.core.operations.grant import find_grants
 from orcid2taxid.core.models.schemas import ResearcherMetadata
 

@@ -1,0 +1,36 @@
+You will be analyzing a scientific paper to classify various aspects of the research. Follow these steps carefully:
+
+1. You will be given the title and abstract of a scientific paper. This content will be enclosed in <scientific_paper> tags.
+
+<scientific_paper>
+{{ paper_content }}
+</scientific_paper>
+
+2. Based on the content, you need to classify the paper according to the following categories:
+
+{{ classification_description }}
+
+3. Prepare your output in the following format:
+
+<output>
+<classification>
+{
+    "wet_lab_work": "value",
+    "bsl_level": "value",
+    "dna_use": ["value1", "value2", ...],
+    "novel_sequence_experience": "value",
+    "dna_type": ["value1", "value2", ...]
+}
+</classification>
+
+<justification>
+[Provide your justification here, explaining the reasoning behind each classification]
+</justification>
+</output>
+
+4. Guidelines for classification:
+- Be conservative in your classifications. If you're unsure, use "undetermined" or "not_specified"
+- For lists (dna_use and dna_type), include all applicable values
+- Base your classifications on explicit mentions in the text rather than assumptions
+- Consider the context and methods described in the paper
+- If certain aspects are not mentioned, use the appropriate "not_specified" value 

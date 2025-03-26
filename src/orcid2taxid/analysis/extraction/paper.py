@@ -1,9 +1,10 @@
-from typing import List, Dict
+from typing import List, Dict, Type, get_type_hints, get_args
 from pathlib import Path
-from orcid2taxid.core.models.schemas import OrganismMention, PaperMetadata
+from orcid2taxid.core.models.schemas import OrganismMention, PaperMetadata, PaperClassificationMetadata
 from orcid2taxid.core.utils.llm import LLMClient
 from orcid2taxid.core.utils.data import load_yaml_data, render_prompt
 from orcid2taxid.core.utils.llm import extract_tagged_content
+import json
 
 PROMPT_DIR = Path(__file__).parent / "prompts"
 DATA_DIR = Path(__file__).parent / "data"
@@ -84,4 +85,91 @@ class PaperExtractor:
         return {
             "organisms": organisms,
             "justification": justification or ""
-        } 
+        }
+
+    def _generate_classification_prompt(self) -> str:
+        """
+        Generate the classification prompt description from the schema.
+        
+        :return: String containing the formatted prompt description
+        """
+        prompt_lines = []
+        
+        # Get the model fields and their types
+        model_fields = PaperClassificationMetadata.model_fields
+        
+        # Process each field
+        for field_name, field in model_fields.items():
+            if field_name == "additional_notes":
+                continue  # Skip additional notes as it's not a classification
+                
+            # Get the field type and description
+            field_type = field.annotation
+            description = field.description
+            
+            # Handle List types
+            if hasattr(field_type, "__origin__") and field_type.__origin__ is list:
+                base_type = get_args(field_type)[0]
+                values = get_args(base_type)
+                prompt_lines.append(f"\na) {description} ({field_name}):")
+                for value in values:
+                    prompt_lines.append(f"- \"{value}\"")
+            else:
+                # Handle single value types
+                values = get_args(field_type)
+                prompt_lines.append(f"\na) {description} ({field_name}):")
+                for value in values:
+                    prompt_lines.append(f"- \"{value}\"")
+        
+        return "\n".join(prompt_lines)
+
+    def extract_classification_from_abstract(self, paper: PaperMetadata) -> PaperClassificationMetadata:
+        """
+        Uses an LLM to classify various aspects of the paper based on its content.
+        
+        :param paper: The paper metadata containing title and abstract
+        :return: PaperClassificationMetadata object with classifications
+        """
+        template_data = {
+            "paper_content": f"Title: {paper.title}\n\nAbstract: {paper.abstract}",
+            "classification_description": self._generate_classification_prompt()
+        }
+        
+        prompt = render_prompt(PROMPT_DIR, "classification_extraction.txt", **template_data)
+        response_text = self.llm.call(prompt)
+        parsed_result = self._parse_classification_response(response_text)
+        
+        return PaperClassificationMetadata(**parsed_result)
+
+    def _parse_classification_response(self, response_text: str) -> Dict:
+        """
+        Parse the LLM response for paper classification.
+        
+        :param response_text: The raw response text from the LLM
+        :return: Dictionary containing parsed classifications
+        """
+        classification_section = extract_tagged_content(response_text, "classification")
+        justification = extract_tagged_content(response_text, "justification")
+        
+        if not classification_section:
+            raise ValueError("No classification section found in LLM response")
+            
+        try:
+            # Parse the JSON classification section
+            classification_dict = json.loads(classification_section)
+            
+            # Validate required fields
+            required_fields = {
+                "wet_lab_work", "bsl_level", "dna_use", 
+                "novel_sequence_experience", "dna_type"
+            }
+            missing_fields = required_fields - set(classification_dict.keys())
+            if missing_fields:
+                raise ValueError(f"Missing required fields in classification: {missing_fields}")
+                
+            return classification_dict
+            
+        except json.JSONDecodeError as e:
+            raise ValueError(f"Failed to parse classification JSON: {e}")
+        except Exception as e:
+            raise ValueError(f"Error processing classification response: {e}") 

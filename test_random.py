@@ -3,7 +3,45 @@ import logging
 logging.getLogger('httpx').setLevel(logging.WARNING)
 
 # %%
+from orcid2taxid.core.operations.researcher import get_researcher_by_orcid
+from orcid2taxid.integrations.orcid import OrcidClient
+import json
 
+client = OrcidClient()
+
+orcid = "0000-0002-7115-407X"
+researcher = get_researcher_by_orcid(orcid)
+print(researcher.model_dump_json(indent=2))
+
+print(json.dumps(client.fetch_author_metadata(orcid), indent=2))
+
+# %%
+
+
+# %%
+from orcid2taxid.core.operations.paper import get_organisms
+from orcid2taxid.core.operations.researcher import get_researcher_by_orcid, find_publications
+from orcid2taxid.integrations.europe_pmc import EuropePMCRepository
+
+epmc = EuropePMCRepository()
+
+researcher = get_researcher_by_orcid("0009-0009-2183-7559")
+researcher = find_publications(researcher)
+print(researcher.publications)
+
+# for paper in epmc.get_publications_by_orcid(researcher.orcid):
+#     print("EPMCPAPER", paper.model_dump_json(indent=2))
+
+for paper in researcher.publications:
+    new_paper = get_organisms(paper)
+    print(new_paper.organisms[0].model_dump_json(indent=2))
+    
+researcher.publications = [new_paper]
+print(researcher.publications)
+
+
+
+# %%
 from orcid2taxid.analysis.extraction.paper import PaperExtractor
 from tests.utils.load_data import load_test_papers
 extractor = PaperExtractor()

@@ -33,7 +33,7 @@ class PaperExtractor:
             "paper_content": f"Title: {paper.title}\n\nAbstract: {paper.abstract}"
         }
         
-        prompt = render_prompt(PROMPT_DIR, "organism_extraction.txt", **template_data)
+        prompt = render_prompt(PROMPT_DIR, "abstract_only_organism_extraction.txt", **template_data)
         response_text = self.llm.call(prompt)
         parsed_result = self._parse_organism_response(response_text)
         
@@ -42,7 +42,7 @@ class PaperExtractor:
             organisms.append(OrganismMention(
                 original_name=org["original_name"],
                 searchable_name=org["searchable_name"],
-                context="",  # Default empty context
+                context=org["evidence"],
                 confidence=1.0,  # Default confidence
                 justification=parsed_result["justification"],
             ))
@@ -57,34 +57,36 @@ class PaperExtractor:
         :return: Dictionary containing parsed organisms and justification
         """
         # Check for the "No organisms" response
-        if "No organisms from the provided list were directly worked with in this study" in response_text:
+        if "<no_organisms_found>" in response_text:
             return {
                 "organisms": [],
-                "justification": "No organisms from the provided list were found in the study."
+                "justification": extract_tagged_content(response_text, "justification") or "No organisms from the provided list were found in the study."
             }
             
-        organisms_section = extract_tagged_content(response_text, "organisms_worked_with")
-        justification = extract_tagged_content(response_text, "justification")
-        
         organisms = []
-        if organisms_section:
-            for line in organisms_section.split("\n"):
-                if line.strip():
-                    # Split the line into original and searchable names if both are provided
-                    parts = line.strip().split(" -> ")
-                    if len(parts) == 2:
-                        original_name, searchable_name = parts
-                    else:
-                        original_name = searchable_name = parts[0]
-                    
-                    organisms.append({
-                        "original_name": original_name.strip(),
-                        "searchable_name": searchable_name.strip()
-                    })
+        # Extract all organism blocks
+        organism_blocks = response_text.split("<organism>")[1:]  # Skip the first split as it's before any organism tag
+        
+        for block in organism_blocks:
+            # Extract fields from the XML block
+            name = extract_tagged_content(block, "name")
+            on_list = extract_tagged_content(block, "on_list")
+            work_type = extract_tagged_content(block, "work_type")
+            searchable_term = extract_tagged_content(block, "searchable_term")
+            evidence = extract_tagged_content(block, "evidence")
+            
+            if name:  # Only process if we have at least a name
+                organisms.append({
+                    "original_name": name.strip(),
+                    "searchable_name": searchable_term.strip() if searchable_term else name.strip(),
+                    "on_list": on_list.strip() if on_list else "No",
+                    "work_type": work_type.strip() if work_type else "Undetermined",
+                    "evidence": evidence.strip() if evidence else ""
+                })
         
         return {
             "organisms": organisms,
-            "justification": justification or ""
+            "justification": extract_tagged_content(response_text, "justification") or ""
         }
 
     def _generate_classification_prompt(self) -> str:

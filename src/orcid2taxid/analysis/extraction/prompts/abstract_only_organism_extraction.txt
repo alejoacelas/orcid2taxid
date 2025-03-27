@@ -1,48 +1,66 @@
-You will be analyzing the abstract of a scientific paper to identify organisms from a list of pandemic potential pathogens that were directly worked with in the study. Follow these steps carefully:
+You are an expert system designed to analyze scientific paper abstracts and identify organisms from a list of pandemic potential pathogens that were directly worked with in the study. Your task requires careful analysis and precise output.
 
-1. First, you will be provided with a list of pandemic potential pathogens. This list will be enclosed in <pathogen_list> tags.
+First, review the list of pandemic potential pathogens:
 
 <pathogen_list>
-{{ pathogen_list }}
+{{pathogen_list}}
 </pathogen_list>
 
-2. Next, you will be given the title and abstract of a scientific paper. This content will be enclosed in <scientific_paper> tags.
+Next, examine the title and abstract of the scientific paper:
 
-<scientific_paper>
-{{ paper_content }}
-</scientific_paper>
+<paper_content>
+{{paper_content}}
+</paper_content>
 
-3. Carefully read through the abstract, paying close attention to mentions about methods. Look for mentions of organisms that are directly manipulated, cultured, or experimented upon in the study.
+Please follow these instructions carefully:
 
-4. To determine if an organism was directly worked with, consider the following criteria:
+1. Read through the abstract, focusing on methods and organisms mentioned.
+
+2. Identify organisms that were directly manipulated, cultured, or experimented upon in the study. Consider these criteria:
    a. The organism is mentioned in the context of laboratory procedures, experiments, or manipulations.
    b. There are specific details about how the organism was handled, cultured, or analyzed.
-   c. The paper presents original, primary data or results related to the organism.
-   d. The organism is central to the study's objectives or hypotheses.
 
-5. Do not include organisms that are merely mentioned in passing, used as comparisons, or referenced from other studies without direct experimentation in the current paper.
+3. Do not include organisms that are merely mentioned in passing, used as comparisons, or referenced from other studies without direct experimentation in the current paper.
 
-6. Cross-reference the organisms you've identified as being directly worked with against the provided list of pandemic potential pathogens. Output any pathogenic organism found even if it is not on the list. Flag if the organism is included on the list.
+4. Cross-reference the identified organisms against the provided list of pandemic potential pathogens.
 
-7. Prepare your output in the following format:
-   a. If no organisms from the pathogen list were directly worked with in the paper, state "No organisms from the provided list were directly worked with in this study."
-   b. If one or more organisms from the list were directly worked with, list them in <organisms_worked_with> tags, with each organism on a new line. 
-   c. Display whether the organism was worked on directly, in a wet-lab, or if it was only computational work. If you cannot determine this, say so.
-   d.  Make sure that the organisms are searchable in the NCBI database. If the extracted organism name is not immediately searchable, translate it to a searchable term. List the searchable term next to the original name.
+5. For each identified organism, determine if the work was done directly in a wet-lab or if it was computational work.
 
+6. Ensure that the organism names are searchable in the NCBI database. If an extracted organism name is not immediately searchable, provide a searchable term.
 
-8. After the list (or statement of no organisms found), provide a one-sentence summary for your findings in <justification> tags. Explain why you included or excluded certain organisms based on the paper's content.
+7. For each organism, extract a text snippet (maximum 140 characters) that provides the strongest evidence of the organism being worked with in the study.
 
-Present your final output in this structure:
+Before providing your final output, break down your thought process for each step of the analysis in <organism_analysis> tags. Follow these steps:
+
+1. List all organisms mentioned in the abstract.
+2. For each organism, consider whether it meets the criteria for direct manipulation. Explain your reasoning.
+3. Cross-reference the identified organisms with the pathogen list. Note which ones match.
+4. For each matching organism:
+   a. Determine the work type (Direct wet-lab/Computational/Undetermined).
+   b. Extract a snippet of evidence (ensure it's no more than 140 characters by counting).
+   c. Determine if a searchable term is needed.
+
+This structured analysis will help ensure a thorough interpretation of the data.
+
+After your analysis, provide your output in the following XML structure:
 
 <output>
-<organisms_worked_with>
-[List organisms here, one per line]
-</organisms_worked_with>
-
-<justification>
-[Provide your justification here]
-</justification>
+  <organism>
+    <name>[Organism name]</name>
+    <on_list>[Yes/No]</on_list>
+    <work_type>[Direct wet-lab/Computational/Undetermined]</work_type>
+    <searchable_term>[If different from name, otherwise leave blank]</searchable_term>
+    <evidence>[Text snippet, max 140 characters]</evidence>
+  </organism>
+  <!-- Repeat <organism> block for each identified organism -->
+  <justification>[One-sentence summary explaining your findings]</justification>
 </output>
 
-Remember, accuracy is crucial. Only include organisms that were unambiguously worked with directly in the study, as evidenced by the paper's content.
+If no organisms from the pathogen list were directly worked with in the paper, use this structure instead:
+
+<output>
+  <no_organisms_found>No organisms from the provided list were directly worked with in this study.</no_organisms_found>
+  <justification>[One-sentence explanation for why no organisms were identified]</justification>
+</output>
+
+Remember to be thorough in your analysis and precise in your output.

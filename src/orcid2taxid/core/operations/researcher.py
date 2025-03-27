@@ -12,18 +12,18 @@ def get_researcher_by_orcid(orcid_id: str) -> ResearcherMetadata:
     metadata = client.get_author_metadata(orcid_id)
     return ResearcherMetadata(**metadata.model_dump())
 
-def find_publications(researcher: ResearcherMetadata, max_results: int = 20) -> ResearcherMetadata:
+def find_publications(researcher: ResearcherMetadata, max_results: Optional[int] = None) -> ResearcherMetadata:
     """Fetch and add publications to researcher metadata"""
-    client = OrcidClient()
     epmc = EuropePMCRepository()
+    client = OrcidClient()
     
     # Get publications from both sources
-    orcid_papers = client.get_publications_by_orcid(researcher.orcid)
     epmc_papers = epmc.get_publications_by_orcid(researcher.orcid, max_results)
+    orcid_papers = client.get_publications_by_orcid(researcher.orcid)
     
     # Deduplicate and update researcher
-    unique_papers = _deduplicate_publications(orcid_papers + epmc_papers)
-    researcher.publications = unique_papers
+    unique_papers = _deduplicate_publications(epmc_papers + orcid_papers)
+    researcher.publications = unique_papers[:max_results]
     
     # Enrich researcher metadata from publications
     _enrich_from_publications(researcher)

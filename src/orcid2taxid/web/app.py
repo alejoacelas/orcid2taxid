@@ -53,7 +53,7 @@ def fetch_publications(researcher: ResearcherMetadata) -> ResearcherMetadata:
     """Cached function to fetch publications for a researcher
     
     Uses underscore prefix to prevent Streamlit from hashing the researcher object"""
-    return find_publications(researcher)
+    return find_publications(researcher, max_results=50)
 
 @st.cache_data(hash_funcs={ResearcherMetadata: hash_researcher_metadata})
 def fetch_grants(researcher: ResearcherMetadata) -> ResearcherMetadata:
@@ -140,8 +140,6 @@ def display_researcher_info(researcher: ResearcherMetadata):
 
 def display_highlights(researcher: ResearcherMetadata):
     """Display paper highlights from the researcher's publications"""
-    st.subheader("📌 Highlights")
-    
     processed_papers = [p for p in researcher.publications if p.classification]
     has_highlights = False
     
@@ -170,20 +168,33 @@ def display_highlights(researcher: ResearcherMetadata):
 
 def display_organisms(researcher: ResearcherMetadata):
     """Display organisms from the researcher's publications"""
-    st.subheader("🦠 Organisms Identified")
-    
     organism_to_papers = researcher.get_publications_by_organism()
     
     if organism_to_papers:
         for scientific_name, papers_list in organism_to_papers.items():
-            paper_titles = ", ".join([p.title for p in papers_list])
-            st.markdown(f"- **{scientific_name}**", help=f"Found in: {paper_titles}")
+            # Get the first paper's organism to access taxonomy info
+            first_paper = papers_list[0]
+            organism = next(o for o in first_paper.organisms if o.taxonomy_info and o.taxonomy_info.scientific_name == scientific_name)
+            taxid = organism.taxonomy_info.taxid
+            
+            # Create help text with context and paper links
+            help_text = []
+            for paper in papers_list:
+                # Find the organism mention in this paper
+                paper_organism = next(o for o in paper.organisms if o.taxonomy_info and o.taxonomy_info.scientific_name == scientific_name)
+                context = f'"{paper_organism.context}"' if paper_organism.context else "No context available"
+                
+                # Create paper link if DOI is available
+                paper_link = f"[(link)](https://doi.org/{paper.doi})" if paper.doi else paper.title
+                help_text.append(f"* {context} {paper_link}")
+            
+            taxid_link = f"[TaxID {taxid}](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id={taxid})"
+            st.markdown(f"- **{scientific_name.capitalize()}** ({taxid_link})", help="\n\n".join(help_text))
     else:
         st.info("No organisms identified yet.")
 
 def display_papers(researcher: ResearcherMetadata):
     """Display paper list from the researcher's publications"""
-    st.subheader("📚 Publications")
     
     processed_papers = [p for p in researcher.publications if p.classification]
     
@@ -198,8 +209,6 @@ def display_papers(researcher: ResearcherMetadata):
 
 def display_grants(researcher: ResearcherMetadata):
     """Display grant information from the researcher's grants"""
-    st.subheader("💰 Grants Information")
-    
     if researcher.grants:
         for grant in researcher.grants:
             with st.expander(f"{grant.project_title[:100]}..."):
@@ -254,7 +263,7 @@ def main():
         layout="wide"
     )
     st.title("🧬 ORCID to TAXID")
-    st.markdown("Paste an ORCID ID to discover which dangerous organisms "
+    st.markdown("Paste an ORCID ID to discover which pathogens "
                 "a researcher has worked with before.")
 
     # Initialize session state
@@ -292,12 +301,24 @@ def main():
         organisms_container = st.container(height=200)
         publications_container = st.container(height=200)
         
+        with highlights_container:
+            st.subheader("📌 Highlights")
+        with organisms_container:
+            st.subheader("🦠 Pathogens")
+        with publications_container:
+            st.subheader("📚 Publications")
+    
+        
         # Display the current progress if we're processing papers
         if st.session_state.processing_state in ["process_papers", "process_grants"]:
             with progress_container:
                 if st.session_state.researcher and st.session_state.researcher.publications:
-                    st.success(f"Found {len(st.session_state.researcher.publications)} publications")
-                    if st.session_state.current_paper_index < len(st.session_state.researcher.publications):
+                    num_papers = len(st.session_state.researcher.publications)
+                    if num_papers == 50:
+                        st.success(f"Found more than {num_papers} publications, only 50 of them will be processed.")
+                    else:
+                        st.success(f"Found {num_papers} publications")
+                    if st.session_state.current_paper_index < num_papers:
                         current_paper = st.session_state.researcher.publications[st.session_state.current_paper_index]
                         st.text(f"Processing: {current_paper.title[:180]}...")
                     st.progress(st.session_state.progress_percentage)
@@ -312,10 +333,9 @@ def main():
             
             with publications_container:
                 display_papers(st.session_state.researcher)
-        else:
-            st.info("Publication analysis will appear here after searching.")
 
     with tab3:
+        st.subheader("Grants")
         if st.session_state.researcher and st.session_state.grants_loaded:
             display_grants(st.session_state.researcher)
         else:

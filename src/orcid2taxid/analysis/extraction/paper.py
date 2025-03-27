@@ -1,5 +1,6 @@
 from typing import List, Dict, Type, get_type_hints, get_args
 from pathlib import Path
+import asyncio
 from orcid2taxid.core.models.schemas import OrganismMention, PaperMetadata, PaperClassificationMetadata
 from orcid2taxid.core.utils.llm import LLMClient
 from orcid2taxid.core.utils.data import load_yaml_data, render_prompt
@@ -20,12 +21,11 @@ class PaperExtractor:
         self.llm = LLMClient(model=model)
         self.pathogens = load_yaml_data(DATA_DIR / "pathogens.yaml")["pathogens"]
 
-    def extract_organisms_from_abstract(self, paper: PaperMetadata) -> List[OrganismMention]:
+    async def extract_organisms_from_abstract(self, paper: PaperMetadata) -> List[OrganismMention]:
         """
         Uses an LLM to detect organism names from text.
         
-        :param title: The title of the paper.
-        :param abstract: The abstract of the paper.
+        :param paper: The paper metadata containing title and abstract
         :return: List of recognized organism names.
         """
         template_data = {
@@ -34,7 +34,7 @@ class PaperExtractor:
         }
         
         prompt = render_prompt(PROMPT_DIR, "abstract_only_organism_extraction.txt", **template_data)
-        response_text = self.llm.call(prompt)
+        response_text = await self.llm.call_async(prompt)
         parsed_result = self._parse_organism_response(response_text)
         
         organisms = []
@@ -125,7 +125,7 @@ class PaperExtractor:
         
         return "\n".join(prompt_lines)
 
-    def extract_classification_from_abstract(self, paper: PaperMetadata) -> PaperClassificationMetadata:
+    async def extract_classification_from_abstract(self, paper: PaperMetadata) -> PaperClassificationMetadata:
         """
         Uses an LLM to classify various aspects of the paper based on its content.
         
@@ -138,7 +138,7 @@ class PaperExtractor:
         }
         
         prompt = render_prompt(PROMPT_DIR, "classification_extraction.txt", **template_data)
-        response_text = self.llm.call(prompt)
+        response_text = await self.llm.call_async(prompt)
         parsed_result = self._parse_classification_response(response_text)
         
         return PaperClassificationMetadata(**parsed_result)
@@ -174,4 +174,24 @@ class PaperExtractor:
         except json.JSONDecodeError as e:
             raise ValueError(f"Failed to parse classification JSON: {e}")
         except Exception as e:
-            raise ValueError(f"Error processing classification response: {e}") 
+            raise ValueError(f"Error processing classification response: {e}")
+            
+    async def process_paper(self, paper: PaperMetadata) -> PaperMetadata:
+        """
+        Process a paper asynchronously, extracting organisms and classification.
+        
+        :param paper: The paper metadata to process
+        :return: Updated paper metadata with organisms and classification
+        """
+        # Run both extractions in parallel
+        organisms_task = self.extract_organisms_from_abstract(paper)
+        classification_task = self.extract_classification_from_abstract(paper)
+        
+        # Await both tasks
+        organisms, classification = await asyncio.gather(organisms_task, classification_task)
+        
+        # Update the paper with the results
+        paper.organisms = organisms
+        paper.classification = classification
+        
+        return paper 

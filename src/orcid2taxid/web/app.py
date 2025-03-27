@@ -1,9 +1,10 @@
 import streamlit as st
+import asyncio
 from orcid2taxid.integrations.europe_pmc import EuropePMCRepository
 from orcid2taxid.analysis.extraction.paper import PaperExtractor
 from orcid2taxid.integrations.ncbi import TaxIDLookup
 from orcid2taxid.core.operations.researcher import get_researcher_by_orcid, find_publications
-from orcid2taxid.core.operations.paper import get_classification, get_organisms, get_taxonomy_info
+from orcid2taxid.core.operations.paper import get_classification, get_organisms, get_taxonomy_info, process_paper_async
 from orcid2taxid.core.operations.grant import find_grants
 from collections import defaultdict
 from typing import List, Dict, Tuple, Optional
@@ -83,6 +84,29 @@ def get_taxonomy(paper: PaperMetadata) -> PaperMetadata:
     Uses underscore prefix to prevent Streamlit from hashing the paper object"""
     return get_taxonomy_info(paper)
 
+# IMPORTANT: Do NOT cache async functions directly with st.cache_data
+# Instead, we'll create a sync function for caching results after processing
+
+# We'll maintain a simple in-memory cache for processed papers
+_paper_cache = {}
+
+async def process_paper_async_wrapper(paper: PaperMetadata) -> PaperMetadata:
+    """Async wrapper for processing a paper that checks an in-memory cache first"""
+    # Create a cache key using the hash_paper_metadata function
+    cache_key = hash_paper_metadata(paper)
+    
+    # Check if we already processed this paper
+    if cache_key in _paper_cache:
+        return _paper_cache[cache_key]
+    
+    # Process the paper
+    processed_paper = await process_paper_async(paper)
+    
+    # Cache the result
+    _paper_cache[cache_key] = processed_paper
+    
+    return processed_paper
+
 def process_single_paper(researcher: ResearcherMetadata, paper_index: int, taxid_client: TaxIDLookup) -> ResearcherMetadata:
     """Process a single paper and update the researcher object
     
@@ -112,6 +136,34 @@ def process_single_paper(researcher: ResearcherMetadata, paper_index: int, taxid
     
     # Update the paper in the researcher object
     researcher.publications[paper_index] = updated_paper
+    return researcher
+
+async def process_papers_in_batch(researcher: ResearcherMetadata, batch_size: int = 10) -> ResearcherMetadata:
+    """Process papers in batches asynchronously
+    
+    This function processes papers in batches to respect rate limits while
+    maximizing concurrency. Each batch is processed in parallel.
+    
+    Returns the updated researcher object
+    """
+    if not researcher.publications:
+        return researcher
+        
+    # Process papers in batches
+    for i in range(0, len(researcher.publications), batch_size):
+        batch = researcher.publications[i:i+batch_size]
+        
+        # Process batch asynchronously
+        tasks = [process_paper_async_wrapper(paper) for paper in batch]
+        processed_papers = await asyncio.gather(*tasks)
+        
+        # Update papers in researcher object
+        for j, processed_paper in enumerate(processed_papers):
+            researcher.publications[i+j] = processed_paper
+            
+        # Update progress
+        st.session_state.current_paper_index = i + len(batch)
+        
     return researcher
 
 def display_researcher_info(researcher: ResearcherMetadata):
@@ -231,8 +283,6 @@ def initialize_session_state():
         st.session_state.processing_state = "idle"
     if 'current_paper_index' not in st.session_state:
         st.session_state.current_paper_index = 0
-    if 'progress_percentage' not in st.session_state:
-        st.session_state.progress_percentage = 0
     if 'publications_loaded' not in st.session_state:
         st.session_state.publications_loaded = False
     if 'grants_loaded' not in st.session_state:
@@ -243,14 +293,24 @@ def reset_session_state():
     st.session_state.researcher = None
     st.session_state.processing_state = "idle"
     st.session_state.current_paper_index = 0
-    st.session_state.progress_percentage = 0
     st.session_state.publications_loaded = False
     st.session_state.grants_loaded = False
+    # Clear paper cache when starting a new search
+    global _paper_cache
+    _paper_cache = {}
 
 def handle_search():
     """Handle the search button click"""
     reset_session_state()
     st.session_state.processing_state = "fetch_researcher"
+
+async def process_papers_async():
+    """Process papers asynchronously and update the session state"""
+    researcher = await process_papers_in_batch(st.session_state.researcher)
+    st.session_state.researcher = researcher
+    st.session_state.publications_loaded = True
+    st.session_state.processing_state = "fetch_grants"
+    # No rerun needed as this will be called in a loop from main
 
 def main():
     # Initialize components
@@ -280,70 +340,74 @@ def main():
         )
         # Add search button
         search_clicked = st.button("Search", type="primary", on_click=handle_search)
-        
-        # Status placeholder for spinner
-        status_placeholder = st.empty()
 
     # Create tabs for the main sections
     tab1, tab2, tab3 = st.tabs(["Researcher", "Publications", "Grants"])
 
     # Main application UI rendering logic
     with tab1:
-        if st.session_state.researcher:
-            display_researcher_info(st.session_state.researcher)
-        else:
-            st.info("Enter an ORCID ID and click 'Search' to see researcher information.")
+        researcher_container = st.container()
+        with researcher_container:
+            if st.session_state.researcher:
+                display_researcher_info(st.session_state.researcher)
+            else:
+                st.info("Enter an ORCID ID and click 'Search' to see researcher information.")
 
     with tab2:
         # Always create all containers unconditionally to avoid errors
-        progress_container = st.container()
-        highlights_container = st.container(height=200)
-        organisms_container = st.container(height=200)
         publications_container = st.container(height=200)
+        organisms_container = st.container(height=200)
+        highlights_container = st.container(height=200)
         
-        with highlights_container:
-            st.subheader("📌 Highlights")
-        with organisms_container:
-            st.subheader("🦠 Pathogens")
         with publications_container:
             st.subheader("📚 Publications")
+        with organisms_container:
+            st.subheader("🦠 Pathogens")
+        with highlights_container:
+            st.subheader("📌 Highlights")
     
         
         # Display the current progress if we're processing papers
         if st.session_state.processing_state in ["process_papers", "process_grants"]:
-            with progress_container:
-                if st.session_state.researcher and st.session_state.researcher.publications:
-                    num_papers = len(st.session_state.researcher.publications)
-                    if num_papers == 50:
-                        st.success(f"Found more than {num_papers} publications, only 50 of them will be processed.")
-                    else:
-                        st.success(f"Found {num_papers} publications")
-                    if st.session_state.current_paper_index < num_papers:
-                        current_paper = st.session_state.researcher.publications[st.session_state.current_paper_index]
-                        st.text(f"Processing: {current_paper.title[:180]}...")
-                    st.progress(st.session_state.progress_percentage)
+            if st.session_state.researcher and st.session_state.researcher.publications:
+                num_papers = len(st.session_state.researcher.publications)
+                if num_papers == 50:
+                    st.success(f"Found more than {num_papers} publications, only 50 of them will be processed.")
+                else:
+                    st.success(f"Found {num_papers} publications")
         
         # Show results in the analysis tab
-        if st.session_state.researcher and st.session_state.publications_loaded:
-            with highlights_container:
-                display_highlights(st.session_state.researcher)
+        if st.session_state.researcher:
+            # Show publications as soon as they're fetched
+            if st.session_state.researcher.publications:
+                with publications_container:
+                    # Display publications without waiting for processing
+                    for paper in st.session_state.researcher.publications:
+                        if paper.doi:
+                            st.markdown(f"- [{paper.title}](https://doi.org/{paper.doi})")
+                        else:
+                            st.markdown(f"- {paper.title}")
             
-            with organisms_container:
-                display_organisms(st.session_state.researcher)
-            
-            with publications_container:
-                display_papers(st.session_state.researcher)
+            # Show processed results only after publications are processed
+            if st.session_state.publications_loaded:
+                with organisms_container:
+                    display_organisms(st.session_state.researcher)
+                
+                with highlights_container:
+                    display_highlights(st.session_state.researcher)
 
     with tab3:
-        st.subheader("Grants")
-        if st.session_state.researcher and st.session_state.grants_loaded:
-            display_grants(st.session_state.researcher)
-        else:
-            st.info("Grant information will appear here after searching.")
+        grants_container = st.container()
+        with grants_container:
+            st.subheader("Grants")
+            if st.session_state.researcher and st.session_state.grants_loaded:
+                display_grants(st.session_state.researcher)
+            else:
+                st.info("Grant information will appear here after searching.")
 
     # Processing state machine
     if st.session_state.processing_state == "fetch_researcher":
-        with status_placeholder:
+        with researcher_container:
             with st.spinner("Fetching researcher information..."):
                 researcher = fetch_researcher_by_orcid(orcid)
                 st.session_state.researcher = researcher
@@ -351,7 +415,7 @@ def main():
                 st.rerun()
     
     elif st.session_state.processing_state == "fetch_publications":
-        with status_placeholder:
+        with publications_container:
             with st.spinner("Fetching publications..."):
                 researcher = fetch_publications(st.session_state.researcher)
                 st.session_state.researcher = researcher
@@ -364,33 +428,19 @@ def main():
                 st.rerun()
     
     elif st.session_state.processing_state == "process_papers":
-        with status_placeholder:
-            if st.session_state.current_paper_index < len(st.session_state.researcher.publications):
-                with st.spinner(f"Processing publication {st.session_state.current_paper_index + 1} of {len(st.session_state.researcher.publications)}..."):
-                    # Process the current paper and update the researcher object
-                    researcher = process_single_paper(
-                        st.session_state.researcher, 
-                        st.session_state.current_paper_index,
-                        taxid_client
-                    )
-                    
-                    # Update the researcher in session state
-                    st.session_state.researcher = researcher
-                    
-                    # Update progress
-                    st.session_state.current_paper_index += 1
-                    st.session_state.progress_percentage = st.session_state.current_paper_index / len(st.session_state.researcher.publications)
-                    
-                    # Rerun to process next paper
+        with organisms_container:
+            with st.spinner("Processing publications to extract organisms..."):
+                # Create a new async task to process papers
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+                try:
+                    loop.run_until_complete(process_papers_async())
                     st.rerun()
-            else:
-                # All papers processed, mark publications as loaded
-                st.session_state.publications_loaded = True
-                st.session_state.processing_state = "fetch_grants"
-                st.rerun()
+                finally:
+                    loop.close()
     
     elif st.session_state.processing_state == "fetch_grants":
-        with status_placeholder:
+        with grants_container:
             with st.spinner("Fetching grants information..."):
                 researcher = fetch_grants(st.session_state.researcher)
                 st.session_state.researcher = researcher

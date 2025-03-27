@@ -189,19 +189,31 @@ class OrcidClient:
                 )
                 education_response.raise_for_status()
                 education_data = education_response.json()
-                education_summaries = education_data.get('education-summary', [])
-                for edu in education_summaries:
-                    if isinstance(edu, dict):
-                        org = edu.get('organization', {})
-                        if org and org.get('name'):
-                            education.append(AuthorAffiliation(
-                                institution_name=org['name'],
-                                department=edu.get('department-name'),
-                                role=edu.get('role-title'),
-                                start_date=parse_date(edu.get('start-date')),
-                                end_date=parse_date(edu.get('end-date')),
-                                visibility=edu.get('visibility')
-                            ))
+                
+                # Update to handle correct education structure
+                if education_data and isinstance(education_data, dict):
+                    affiliation_groups = education_data.get('affiliation-group', [])
+                    for group in affiliation_groups:
+                        if not isinstance(group, dict):
+                            self._log_warning(f"Skipping invalid education group format for ORCID {orcid_id}")
+                            continue
+                            
+                        # Get summaries array from each affiliation group
+                        summaries = group.get('summaries', [])
+                        for summary in summaries:
+                            # Get education-summary from each summary item
+                            edu = summary.get('education-summary', {})
+                            if isinstance(edu, dict):
+                                org = edu.get('organization', {})
+                                if isinstance(org, dict) and org.get('name'):
+                                    education.append(AuthorAffiliation(
+                                        institution_name=org['name'],
+                                        department=edu.get('department-name'),
+                                        role=edu.get('role-title'),
+                                        start_date=parse_date(edu.get('start-date')),
+                                        end_date=parse_date(edu.get('end-date')),
+                                        visibility=edu.get('visibility')
+                                    ))
             except Exception:
                 self._log_error("Error fetching education data")
             researcher_info['education'] = education

@@ -3,9 +3,7 @@ import json
 import asyncio
 from typing import Dict, Any, Optional, List
 from dotenv import load_dotenv
-import anthropic
-from anthropic import AsyncAnthropic
-from anthropic.types.message_param import MessageParam
+from google import genai
 import logging
 from aiolimiter import AsyncLimiter
 
@@ -41,9 +39,9 @@ class LLMClient:
     """Client for interacting with LLMs."""
     
     # Class-level rate limiter for all instances - 3 requests per minute (one every 20 seconds)
-    _rate_limiter = AsyncLimiter(6, 60)
+    _rate_limiter = AsyncLimiter(100, 60)
     
-    def __init__(self, model: str = "claude-3-7-sonnet-20250219"):
+    def __init__(self, model: str = "gemini-2.0-flash"):
         """
         Initialize an LLM client.
         
@@ -52,9 +50,11 @@ class LLMClient:
         """
         load_dotenv()
         self.model = model
-        self.async_client = AsyncAnthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
+        self.async_client = genai.Client(
+            api_key=os.getenv("GEMINI_API_KEY")
+        )
 
-    async def call_async(self, prompt: str, max_tokens: int = 4000) -> str:
+    async def call_async(self, prompt: str) -> str:
         """
         Make an asynchronous call to the LLM.
         
@@ -67,14 +67,13 @@ class LLMClient:
         """
         # Apply rate limiting
         async with self._rate_limiter:
-            message = await self.async_client.messages.create(
+            response = await self.async_client.aio.models.generate_content(
                 model=self.model,
-                max_tokens=max_tokens,
-                messages=[{"role": "user", "content": prompt}]
+                contents=prompt
             )
-            return message.content[0].text
+            return response.text
             
-    def call(self, prompt: str, max_tokens: int = 4000) -> str:
+    def call(self, prompt: str) -> str:
         """
         Make a synchronous call to the LLM.
         This is a thin wrapper around call_async that creates and runs an event loop.

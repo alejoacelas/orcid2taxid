@@ -3,6 +3,7 @@ requests
 pytest
 ipykernel
 anthropic
+google-genai
 python-dotenv
 ipykernel
 aiohttp

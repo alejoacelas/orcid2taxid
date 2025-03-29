@@ -12,8 +12,5 @@ gatherUsageStats = true
 [client]
 showErrorDetails = "none"
 
-[[theme.fontFaces]]
-family = "Roboto"
-url = "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
-weight = 400
-style = "normal"
+[secrets]
+files = ["/Users/alejo/Code/orcid2taxid/.env"]

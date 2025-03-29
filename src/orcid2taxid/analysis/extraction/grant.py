@@ -12,11 +12,11 @@ class GrantExtractor:
     """
     Uses an LLM to extract and standardize terms from grant abstracts.
     """
-    def __init__(self, model: str = "claude-3-7-sonnet-20250219"):
+    def __init__(self):
         """
         :param model: Name of the LLM model to be used (only Anthropic models are supported for now).
         """
-        self.llm = LLMClient(model=model)
+        self.llm = LLMClient()
 
     def extract_terms_from_abstract(self, grant: GrantMetadata) -> List[str]:
         """

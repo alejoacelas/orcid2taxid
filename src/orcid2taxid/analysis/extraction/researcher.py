@@ -13,11 +13,11 @@ class ResearcherExtractor:
     """
     Uses an LLM to extract and generate information about researchers.
     """
-    def __init__(self, model: str = "claude-3-7-sonnet-20250219"):
+    def __init__(self):
         """
         :param model: Name of the LLM model to be used (only Anthropic models are supported for now).
         """
-        self.llm = LLMClient(model=model)
+        self.llm = LLMClient()
 
     def generate_researcher_bio(self, researcher: ResearcherMetadata) -> Dict[str, str]:
         """

@@ -14,11 +14,11 @@ class PaperExtractor:
     """
     Uses an LLM to extract and standardize organisms from text.
     """
-    def __init__(self, model: str = "claude-3-7-sonnet-20250219"):
+    def __init__(self):
         """
         :param model: Name of the LLM model to be used (only Anthropic models are supported for now).
         """
-        self.llm = LLMClient(model=model)
+        self.llm = LLMClient()
         self.pathogens = load_yaml_data(DATA_DIR / "pathogens.yaml")["pathogens"]
 
     async def extract_organisms_from_abstract(self, paper: PaperMetadata) -> List[OrganismMention]:
@@ -89,60 +89,6 @@ class PaperExtractor:
             "justification": extract_tagged_content(response_text, "justification") or ""
         }
 
-    def _generate_classification_prompt(self) -> str:
-        """
-        Generate the classification prompt description from the schema.
-        
-        :return: String containing the formatted prompt description
-        """
-        prompt_lines = []
-        
-        # Get the model fields and their types
-        model_fields = PaperClassificationMetadata.model_fields
-        
-        # Process each field
-        for field_name, field in model_fields.items():
-            if field_name == "additional_notes":
-                continue  # Skip additional notes as it's not a classification
-                
-            # Get the field type and description
-            field_type = field.annotation
-            description = field.description
-            
-            # Handle List types
-            if hasattr(field_type, "__origin__") and field_type.__origin__ is list:
-                base_type = get_args(field_type)[0]
-                values = get_args(base_type)
-                prompt_lines.append(f"\na) {description} ({field_name}):")
-                for value in values:
-                    prompt_lines.append(f"- \"{value}\"")
-            else:
-                # Handle single value types
-                values = get_args(field_type)
-                prompt_lines.append(f"\na) {description} ({field_name}):")
-                for value in values:
-                    prompt_lines.append(f"- \"{value}\"")
-        
-        return "\n".join(prompt_lines)
-
-    async def extract_classification_from_abstract(self, paper: PaperMetadata) -> PaperClassificationMetadata:
-        """
-        Uses an LLM to classify various aspects of the paper based on its content.
-        
-        :param paper: The paper metadata containing title and abstract
-        :return: PaperClassificationMetadata object with classifications
-        """
-        template_data = {
-            "paper_content": f"Title: {paper.title}\n\nAbstract: {paper.abstract}",
-            "classification_description": self._generate_classification_prompt()
-        }
-        
-        prompt = render_prompt(PROMPT_DIR, "classification_extraction.txt", **template_data)
-        response_text = await self.llm.call_async(prompt)
-        parsed_result = self._parse_classification_response(response_text)
-        
-        return PaperClassificationMetadata(**parsed_result)
-
     def _parse_classification_response(self, response_text: str) -> Dict:
         """
         Parse the LLM response for paper classification.
@@ -151,7 +97,6 @@ class PaperExtractor:
         :return: Dictionary containing parsed classifications
         """
         classification_section = extract_tagged_content(response_text, "classification")
-        justification = extract_tagged_content(response_text, "justification")
         
         if not classification_section:
             raise ValueError("No classification section found in LLM response")
@@ -168,6 +113,30 @@ class PaperExtractor:
             missing_fields = required_fields - set(classification_dict.keys())
             if missing_fields:
                 raise ValueError(f"Missing required fields in classification: {missing_fields}")
+
+            # Validate and map dna_type values
+            if "dna_type" in classification_dict:
+                dna_types = classification_dict["dna_type"]
+                if not isinstance(dna_types, list):
+                    dna_types = [dna_types]
+                
+                # Map invalid values to valid ones
+                dna_type_mapping = {
+                    "primers_probes": "oligonucleotides",  # Map primers/probes to oligonucleotides
+                    "synthetic_dna": "oligonucleotides",   # Map synthetic DNA to oligonucleotides
+                    "pcr_primers": "oligonucleotides",     # Map PCR primers to oligonucleotides
+                    "dna_probes": "oligonucleotides",      # Map DNA probes to oligonucleotides
+                }
+                
+                # Replace invalid values with mapped values
+                mapped_types = []
+                for dna_type in dna_types:
+                    if dna_type in dna_type_mapping:
+                        mapped_types.append(dna_type_mapping[dna_type])
+                    else:
+                        mapped_types.append(dna_type)
+                
+                classification_dict["dna_type"] = mapped_types
                 
             return classification_dict
             
@@ -176,6 +145,23 @@ class PaperExtractor:
         except Exception as e:
             raise ValueError(f"Error processing classification response: {e}")
             
+    async def extract_classification_from_abstract(self, paper: PaperMetadata) -> PaperClassificationMetadata:
+        """
+        Uses an LLM to classify various aspects of the paper based on its content.
+        
+        :param paper: The paper metadata containing title and abstract
+        :return: PaperClassificationMetadata object with classifications
+        """
+        template_data = {
+            "paper_content": f"Title: {paper.title}\n\nAbstract: {paper.abstract}"
+        }
+        
+        prompt = render_prompt(PROMPT_DIR, "classification_extraction.txt", **template_data)
+        response_text = await self.llm.call_async(prompt)
+        parsed_result = self._parse_classification_response(response_text)
+        
+        return PaperClassificationMetadata(**parsed_result)
+
     async def process_paper(self, paper: PaperMetadata) -> PaperMetadata:
         """
         Process a paper asynchronously, extracting organisms and classification.
@@ -188,10 +174,26 @@ class PaperExtractor:
         classification_task = self.extract_classification_from_abstract(paper)
         
         # Await both tasks
-        organisms, classification = await asyncio.gather(organisms_task, classification_task)
+        organisms, classification = await asyncio.gather(
+            organisms_task,
+            classification_task,
+            return_exceptions=True
+        )
         
         # Update the paper with the results
-        paper.organisms = organisms
-        paper.classification = classification
+        paper.organisms = organisms if not isinstance(organisms, Exception) else []
+        
+        # Only set classification if it's not an exception
+        if not isinstance(classification, Exception):
+            paper.classification = classification
+        else:
+            # Set a default classification with safe values
+            paper.classification = PaperClassificationMetadata(
+                wet_lab_work="undetermined",
+                bsl_level="not_specified",
+                dna_use=["not_specified"],
+                novel_sequence_experience="unclear",
+                dna_type=["not_specified"]
+            )
         
         return paper 

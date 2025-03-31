@@ -439,7 +439,7 @@ def render_sidebar():
         st.markdown("---")  # Add a horizontal line for separation
         st.markdown("""
                     Don't see what you're looking for?  
-                    [Request a feature here!](https://bit.ly/rose-scout-survey)
+                    [Request a feature here!](https://docs.google.com/forms/d/e/1FAIpQLSd4vxRtwB_f7cUo_hfeTLHUAqH9qZOZ4fvAKBBQa-NuIMC8SA/viewform)
         """)
         
         return orcid, search_clicked

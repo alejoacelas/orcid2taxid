@@ -241,12 +241,12 @@ def display_highlights(researcher: ResearcherMetadata):
         if paper.classification.wet_lab_work == "yes":
             highlight_groups["wet_lab"].append(paper)
         
-        if paper.classification.bsl_level == "bsl_2":
-            highlight_groups["bsl_2"].append(paper)
-        elif paper.classification.bsl_level == "bsl_3":
-            highlight_groups["bsl_3"].append(paper)
-        elif paper.classification.bsl_level == "bsl_4":
-            highlight_groups["bsl_4"].append(paper)
+        # if paper.classification.bsl_level == "bsl_2":
+        #     highlight_groups["bsl_2"].append(paper)
+        # elif paper.classification.bsl_level == "bsl_3":
+        #     highlight_groups["bsl_3"].append(paper)
+        # elif paper.classification.bsl_level == "bsl_4":
+        #     highlight_groups["bsl_4"].append(paper)
         
         if "vaccine_development" in paper.classification.dna_use:
             highlight_groups["vaccine"].append(paper)

@@ -225,27 +225,62 @@ def display_researcher_info(researcher: ResearcherMetadata):
 def display_highlights(researcher: ResearcherMetadata):
     """Display paper highlights from the researcher's publications"""
     processed_papers = [p for p in researcher.publications if p.classification and isinstance(p.classification, PaperClassificationMetadata)]
-    has_highlights = False
     
+    # Group papers by highlight type
+    highlight_groups = {
+        "wet_lab": [],
+        "bsl_2": [],
+        "bsl_3": [],
+        "bsl_4": [],
+        "vaccine": [],
+        "synthetic_genome": []
+    }
+    
+    # Group papers by highlight type
     for paper in processed_papers:
-        # Check for specific highlights
         if paper.classification.wet_lab_work == "yes":
-            st.warning(f"⚗️ Wet lab work detected in paper: \"{paper.title}\"")
-            has_highlights = True
+            highlight_groups["wet_lab"].append(paper)
         
-        if paper.classification.bsl_level in ["bsl_2", "bsl_3", "bsl_4"]:
-            st.error(f"🧪 {paper.classification.bsl_level.upper()} lab work detected in paper: \"{paper.title}\"")
-            has_highlights = True
+        if paper.classification.bsl_level == "bsl_2":
+            highlight_groups["bsl_2"].append(paper)
+        elif paper.classification.bsl_level == "bsl_3":
+            highlight_groups["bsl_3"].append(paper)
+        elif paper.classification.bsl_level == "bsl_4":
+            highlight_groups["bsl_4"].append(paper)
         
         if "vaccine_development" in paper.classification.dna_use:
-            st.success(f"💉 Vaccine development work detected in paper: \"{paper.title}\"")
-            has_highlights = True
+            highlight_groups["vaccine"].append(paper)
         
         if "synthetic_genome" in paper.classification.dna_type:
-            st.warning(f"🧬 Synthetic genome work detected in paper: \"{paper.title}\"")
-            has_highlights = True
+            highlight_groups["synthetic_genome"].append(paper)
     
-    if not has_highlights:
+    def get_paper_list(papers: list[PaperMetadata]) -> str:
+        markdown_list = []
+        for paper in papers:
+            paper_link = f"[{paper.title}](https://doi.org/{paper.doi})" if paper.doi else paper.title
+            markdown_list.append(f"* {paper_link}")
+        return "\n\n".join(markdown_list)
+    
+    # Display highlights in checklist format
+    if any(highlight_groups.values()):
+        if papers := highlight_groups["wet_lab"]:
+            st.markdown("- [x] Has done wet lab work", help=get_paper_list(papers))
+        
+        # if papers := highlight_groups["bsl_2"]:
+        #     st.markdown("- [x] Has done work requiring a BSL-2 lab", help=get_paper_list(papers))
+        
+        # if papers := highlight_groups["bsl_3"]:
+        #     st.markdown("- [x] Has done work requiring a BSL-3 lab", help=get_paper_list(papers))
+        
+        # if papers := highlight_groups["bsl_4"]:
+        #     st.markdown("- [x] Has done work requiring a BSL-4 lab", help=get_paper_list(papers))
+        
+        if papers := highlight_groups["vaccine"]:
+            st.markdown("- [x] Has done vaccine development work", help=get_paper_list(papers))
+        
+        if papers := highlight_groups["synthetic_genome"]:
+            st.markdown("- [x] Has done synthetic genome work", help=get_paper_list(papers))
+    else:
         st.info("No highlights detected in the analyzed papers.")
 
 def display_organisms(researcher: ResearcherMetadata):
@@ -376,7 +411,8 @@ def render_header():
     """Render the page header with logo and title"""
     logo_html, _ = get_base64_encoded_image("rose-scout-logo.png")
     st.markdown(f'{logo_html}<span class="title-text">ROSE Scout</span>', unsafe_allow_html=True)
-    st.markdown("Discover which pathogens a researcher has worked with before.")
+    st.markdown("Rapid researcher profiling to simplify DNA synthesis screening.")
+    # st.markdown("Discover which pathogens a researcher has worked with before.")
 
 def render_sidebar():
     """Render the sidebar content"""
@@ -391,16 +427,17 @@ def render_sidebar():
         )
         search_clicked = st.button("Search", type="primary", on_click=handle_search)
         
-        st.markdown(
-            "ROSE Scout fetches publicly available information from researchers. "
-        )
         st.markdown("""
-            Currently it draws from the following sources:
+            ROSE Scout fetches information from:
             - [ORCID](https://orcid.org/)
             - [PubMed](https://pubmed.ncbi.nlm.nih.gov/) 
             - [NIH RePORTER](https://reporter.nih.gov/)
             - [NSF Grant Data](https://www.nsf.gov/awardsearch/)
         """)
+        
+        # Add feature request message at the bottom
+        st.markdown("---")  # Add a horizontal line for separation
+        st.markdown("Don't see what you're looking for? [Request a feature here!](https://bit.ly/rose-scout-survey)")
         
         return orcid, search_clicked
 

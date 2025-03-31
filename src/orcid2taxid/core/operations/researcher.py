@@ -89,16 +89,16 @@ def _enrich_from_publications(researcher: ResearcherMetadata) -> None:
                     researcher.external_ids[id_type] = ExternalId(value=id_value)
         
         # Add affiliations
-        for affiliation in author.affiliations:
-            if affiliation:
-                # Create AuthorAffiliation object
-                aff = AuthorAffiliation(
-                    institution_name=affiliation,
-                    visibility='public'
-                )
-                # Only add if not already present
-                if not any(a.institution_name == aff.institution_name for a in researcher.affiliations):
-                    researcher.affiliations.append(aff)
+        # for affiliation in author.affiliations:
+        #     if affiliation:
+        #         # Create AuthorAffiliation object
+        #         aff = AuthorAffiliation(
+        #             institution_name=affiliation,
+        #             visibility='public'
+        #         )
+        #         # Only add if not already present
+        #         if not any(a.institution_name == aff.institution_name for a in researcher.affiliations):
+        #             researcher.affiliations.append(aff)
 
         # Add grants from publication
         for grant in paper.funding_info:

@@ -82,8 +82,6 @@ def get_taxonomy(paper: PaperMetadata) -> PaperMetadata:
     Uses underscore prefix to prevent Streamlit from hashing the paper object"""
     return get_taxonomy_info(paper)
 
-# IMPORTANT: Do NOT cache async functions directly with st.cache_data
-# Instead, we'll create a sync function for caching results after processing
 
 # We'll maintain a simple in-memory cache for processed papers
 _paper_cache = {}
@@ -160,69 +158,69 @@ async def process_papers_in_batch(researcher: ResearcherMetadata, batch_size: in
             if not isinstance(processed_paper, Exception):
                 researcher.publications[i+j] = processed_paper
             
-        # Update progress
-        st.session_state.current_paper_index = i + len(batch)
-        
     return researcher
 
 def display_researcher_info(researcher: ResearcherMetadata):
     """Display researcher information"""
-    st.subheader("Researcher Profile")
-    full_name = f"{researcher.given_name} {researcher.family_name}"
-    st.markdown(f"**Name:** {full_name}")
-    
-    # Display affiliations
-    st.markdown("#### Employment History")
-    if researcher.affiliations:
-        # Get affiliations grouped by institution
-        by_institution = researcher.get_affiliations_by_institution()
+    if st.session_state.researcher:
+        st.subheader("Researcher Profile")
+        full_name = f"{researcher.given_name} {researcher.family_name}"
+        st.markdown(f"**Name:** {full_name}")
         
-        # Display each institution and its roles
-        for institution, affiliations in by_institution.items():
-            st.markdown(f"**{institution}**")
-            for affiliation in affiliations:
-                # Format time range and role
-                time_range = researcher.format_affiliation_time_range(affiliation)
-                role_info = researcher.format_affiliation_role(affiliation)
-                
-                # Create the role line
-                role_line = " - "
-                if role_info:
-                    role_line += role_info
-                else:
-                    role_line += "Unknown role"
-                if time_range:
-                    role_line += f" {time_range}"
-                st.markdown(role_line)
-    else:
-        st.info("No employment history found on their ORCID profile.")
-    
-    # Display education
-    st.markdown("#### Education")
-    if researcher.education:
-        # Sort education by start date in descending order (most recent first)
-        sorted_education = sorted(
-            [e for e in researcher.education if e.start_date],
-            key=lambda x: x.start_date,
-            reverse=True
-        )
-        
-        for education in sorted_education:
-            # Format the education line
-            education_line = f"- {education.institution_name}"
-            if education.department:
-                education_line += f", {education.department}"
-            if education.role:  # Add degree/field if available
-                education_line += f" ({education.role})"
+        # Display affiliations
+        st.markdown("#### Employment History")
+        if researcher.affiliations:
+            # Get affiliations grouped by institution
+            by_institution = researcher.get_affiliations_by_institution()
             
-            # Add time range if available
-            time_range = researcher.format_education_time_range(education)
-            if time_range:
-                education_line += f" {time_range}"
+            # Display each institution and its roles
+            for institution, affiliations in by_institution.items():
+                st.markdown(f"**{institution}**")
+                for affiliation in affiliations:
+                    # Format time range and role
+                    time_range = researcher.format_affiliation_time_range(affiliation)
+                    role_info = researcher.format_affiliation_role(affiliation)
+                    
+                    # Create the role line
+                    role_line = " - "
+                    if role_info:
+                        role_line += role_info
+                    else:
+                        role_line += "Unknown role"
+                    if time_range:
+                        role_line += f" {time_range}"
+                    st.markdown(role_line)
+        else:
+            st.info("No employment history found on their ORCID profile.")
+        
+        # Display education
+        st.markdown("#### Education")
+        if researcher.education:
+            # Sort education by start date in descending order (most recent first)
+            sorted_education = sorted(
+                [e for e in researcher.education if e.start_date],
+                key=lambda x: x.start_date,
+                reverse=True
+            )
+            
+            for education in sorted_education:
+                # Format the education line
+                education_line = f"- {education.institution_name}"
+                if education.department:
+                    education_line += f", {education.department}"
+                if education.role:  # Add degree/field if available
+                    education_line += f" ({education.role})"
                 
-            st.markdown(education_line)
+                # Add time range if available
+                time_range = researcher.format_education_time_range(education)
+                if time_range:
+                    education_line += f" {time_range}"
+                    
+                st.markdown(education_line)
+        else:
+            st.info("No education history found on their ORCID profile.")
     else:
-        st.info("No education history found on their ORCID profile.")
+        st.info("Enter an ORCID ID and click 'Search' to see researcher information.")
 
 def display_highlights(researcher: ResearcherMetadata):
     """Display paper highlights from the researcher's publications"""
@@ -249,8 +247,6 @@ def display_highlights(researcher: ResearcherMetadata):
     
     if not has_highlights and processed_papers:
         st.info("No highlights detected in the analyzed papers.")
-    elif not processed_papers:
-        st.info("No papers have been analyzed yet.")
 
 def display_organisms(researcher: ResearcherMetadata):
     """Display organisms from the researcher's publications"""
@@ -336,7 +332,6 @@ def reset_session_state():
     """Reset session state for a new search"""
     st.session_state.researcher = None
     st.session_state.processing_state = "idle"
-    st.session_state.current_paper_index = 0
     st.session_state.publications_loaded = False
     st.session_state.grants_loaded = False
     # Clear paper cache when starting a new search
@@ -428,8 +423,27 @@ def render_publications_tab():
     with highlights_container:
         st.subheader("📌 Highlights")
         
-    handle_publications_display(publications_container, organisms_container, highlights_container)
-    
+    if st.session_state.researcher and st.session_state.researcher.publications:
+        num_papers = len(st.session_state.researcher.publications)
+        if num_papers == 50:
+            publications_container.markdown(f"Found more than {num_papers} publications, only 50 of them will be processed:")
+        else:
+            publications_container.markdown(f"Found {num_papers} publications:")
+        
+        with publications_container:
+            display_papers(st.session_state.researcher)
+        
+    if st.session_state.researcher and st.session_state.publications_loaded:
+        with organisms_container:
+            display_organisms(st.session_state.researcher)
+        with highlights_container:
+            display_highlights(st.session_state.researcher)
+        
+        if not st.session_state.researcher.publications:
+            no_publications_message = "We didn't find any publications associated with the researcher's ORCID"
+            with publications_container:
+                st.info(no_publications_message)
+        
     return publications_container, organisms_container, highlights_container
 
 def render_grants_tab():
@@ -442,37 +456,7 @@ def render_grants_tab():
         else:
             st.info("Grant information will appear here after searching.")
     return grants_container
-
-def handle_publications_display(publications_container, organisms_container, highlights_container):
-    """Handle the display logic for publications tab"""
-    if st.session_state.processing_state in ["process_papers", "process_grants"]:
-        if st.session_state.researcher and st.session_state.researcher.publications:
-            num_papers = len(st.session_state.researcher.publications)
-            if num_papers == 50:
-                publications_container.markdown(f"Found more than {num_papers} publications, only 50 of them will be processed:")
-            else:
-                publications_container.markdown(f"Found {num_papers} publications:")
     
-    if st.session_state.researcher:
-        if st.session_state.researcher.publications:
-            with publications_container:
-                for paper in st.session_state.researcher.publications:
-                    if paper.doi:
-                        st.markdown(f"- [{paper.title}](https://doi.org/{paper.doi})")
-                    else:
-                        st.markdown(f"- {paper.title}")
-            
-            if st.session_state.publications_loaded:
-                with organisms_container:
-                    display_organisms(st.session_state.researcher)
-                with highlights_container:
-                    display_highlights(st.session_state.researcher)
-        else:
-            no_publications_message = "We didn't find any publications associated with the researcher's ORCID"
-            for container in [publications_container, organisms_container, highlights_container]:
-                with container:
-                    st.info(no_publications_message)
-
 def handle_processing_state(
     researcher_container,
     publications_container,
@@ -480,7 +464,8 @@ def handle_processing_state(
     highlights_container,
     grants_container
 ):
-    """Handle the processing state machine"""
+    """Handle the processing state machine"""    
+    # State machine for processing
     if st.session_state.processing_state == "fetch_researcher":
         with researcher_container:
             with st.spinner("Fetching researcher information..."):
@@ -503,15 +488,26 @@ def handle_processing_state(
                 st.rerun()
     
     elif st.session_state.processing_state == "process_papers":
-        with organisms_container:
-            with st.spinner("Processing publications to extract organisms..."):
-                loop = asyncio.new_event_loop()
-                asyncio.set_event_loop(loop)
-                try:
-                    loop.run_until_complete(process_papers_async())
-                    st.rerun()
-                finally:
-                    loop.close()
+        if st.session_state.researcher.publications:
+            with organisms_container:
+                with st.spinner("Processing publications to extract organisms..."):
+                    loop = asyncio.new_event_loop()
+                    asyncio.set_event_loop(loop)
+                    try:
+                        loop.run_until_complete(process_papers_async())
+                        st.session_state.publications_loaded = True
+                        st.session_state.processing_state = "fetch_grants"
+                        st.rerun()
+                    finally:
+                        loop.close()
+        else:
+            no_publications_message = "We didn't find any publications associated with the researcher's ORCID"
+            for container in [publications_container, organisms_container, highlights_container]:
+                with container:
+                    st.info(no_publications_message)
+            st.session_state.publications_loaded = True
+            st.session_state.processing_state = "fetch_grants"
+            st.rerun()
     
     elif st.session_state.processing_state == "fetch_grants":
         with grants_container:
@@ -552,10 +548,7 @@ def main():
     with tab1:
         researcher_container = st.container()
         with researcher_container:
-            if st.session_state.researcher:
-                display_researcher_info(st.session_state.researcher)
-            else:
-                st.info("Enter an ORCID ID and click 'Search' to see researcher information.")
+            display_researcher_info(st.session_state.researcher)
 
     with tab2:
         publications_container, organisms_container, highlights_container = render_publications_tab()

@@ -437,7 +437,10 @@ def render_sidebar():
         
         # Add feature request message at the bottom
         st.markdown("---")  # Add a horizontal line for separation
-        st.markdown("Don't see what you're looking for? [Request a feature here!](https://bit.ly/rose-scout-survey)")
+        st.markdown("""
+                    Don't see what you're looking for?  
+                    [Request a feature here!](https://bit.ly/rose-scout-survey)
+        """)
         
         return orcid, search_clicked
 

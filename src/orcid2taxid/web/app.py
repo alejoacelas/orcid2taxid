@@ -419,7 +419,8 @@ def render_publications_tab():
         
     # Show publications as soon as they're available
     if st.session_state.researcher:
-        if num_papers := len(st.session_state.researcher.publications) > 0:
+        num_papers = len(st.session_state.researcher.publications)
+        if num_papers > 0:
             if num_papers == 50:
                 publications_container.markdown("Found more than 50 publications, only 50 of them will be processed:")
             else:
@@ -428,7 +429,7 @@ def render_publications_tab():
             with publications_container:
                 display_papers(st.session_state.researcher)
         
-        elif st.session_state.publications_loaded:
+        if num_papers == 0 and st.session_state.publications_loaded:
             publications_container.info("No publications found associated with the researcher's ORCID.")
         
     else:

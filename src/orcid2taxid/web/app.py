@@ -245,7 +245,7 @@ def display_highlights(researcher: ResearcherMetadata):
             st.warning(f"🧬 Synthetic genome work detected in paper: \"{paper.title}\"")
             has_highlights = True
     
-    if not has_highlights and processed_papers:
+    if not has_highlights:
         st.info("No highlights detected in the analyzed papers.")
 
 def display_organisms(researcher: ResearcherMetadata):
@@ -277,17 +277,11 @@ def display_organisms(researcher: ResearcherMetadata):
 
 def display_papers(researcher: ResearcherMetadata):
     """Display paper list from the researcher's publications"""
-    
-    processed_papers = [p for p in researcher.publications if p.classification]
-    
-    if processed_papers:
-        for paper in processed_papers:
-            if paper.doi:
-                st.markdown(f"- [{paper.title}](https://doi.org/{paper.doi})")
-            else:
-                st.markdown(f"- {paper.title}")
-    else:
-        st.info("No processed publications yet.")
+    for paper in researcher.publications:
+        if paper.doi:
+            st.markdown(f"- [{paper.title}](https://doi.org/{paper.doi})")
+        else:
+            st.markdown(f"- {paper.title}")
 
 def display_grants(researcher: ResearcherMetadata):
     """Display grant information from the researcher's grants"""
@@ -423,27 +417,31 @@ def render_publications_tab():
     with highlights_container:
         st.subheader("📌 Highlights")
         
-    if st.session_state.researcher and st.session_state.researcher.publications:
-        num_papers = len(st.session_state.researcher.publications)
-        if num_papers == 50:
-            publications_container.markdown(f"Found more than {num_papers} publications, only 50 of them will be processed:")
-        else:
-            publications_container.markdown(f"Found {num_papers} publications:")
+    # Show publications as soon as they're available
+    if st.session_state.researcher:
+        if num_papers := len(st.session_state.researcher.publications) > 0:
+            if num_papers == 50:
+                publications_container.markdown("Found more than 50 publications, only 50 of them will be processed:")
+            else:
+                publications_container.markdown(f"Found {num_papers} publications:")
+            
+            with publications_container:
+                display_papers(st.session_state.researcher)
         
+        elif st.session_state.publications_loaded:
+            publications_container.info("No publications found associated with the researcher's ORCID.")
+        
+    else:
         with publications_container:
-            display_papers(st.session_state.researcher)
-        
+            st.info("No publications found yet.")
+    
+    # Show organisms and highlights only after processing is complete
     if st.session_state.researcher and st.session_state.publications_loaded:
         with organisms_container:
             display_organisms(st.session_state.researcher)
         with highlights_container:
             display_highlights(st.session_state.researcher)
-        
-        if not st.session_state.researcher.publications:
-            no_publications_message = "We didn't find any publications associated with the researcher's ORCID"
-            with publications_container:
-                st.info(no_publications_message)
-        
+    
     return publications_container, organisms_container, highlights_container
 
 def render_grants_tab():

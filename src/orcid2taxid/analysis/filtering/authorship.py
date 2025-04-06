@@ -1,12 +1,12 @@
 from typing import Dict, List
-from orcid2taxid.core.models.schemas import PaperMetadata
+from orcid2taxid.core.models.customer import PublicationRecord
 
 class AuthorshipVerificationFilter:
     """
     Verifies that a publication belongs to the target author.
     """
     
-    def __init__(self, known_papers: List[PaperMetadata], threshold: float = 0.8):
+    def __init__(self, known_papers: List[PublicationRecord], threshold: float = 0.8):
         """
         Initialize with a set of verified papers for comparison.
         
@@ -16,7 +16,7 @@ class AuthorshipVerificationFilter:
         self.known_papers = known_papers
         self.threshold = threshold
 
-    def verify_authorship(self, candidate_papers: List[PaperMetadata]) -> Dict[PaperMetadata, float]:
+    def verify_authorship(self, candidate_papers: List[PublicationRecord]) -> Dict[PublicationRecord, float]:
         """
         Analyzes candidate papers to determine likelihood of authorship.
         Uses multiple signals:

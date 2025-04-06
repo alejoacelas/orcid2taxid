@@ -1,20 +1,20 @@
 import json
 from pathlib import Path
 from typing import List
-from orcid2taxid.core.models.schemas import (
-    ResearcherMetadata, 
-    PaperMetadata,
-    CustomBaseModel
+from orcid2taxid.core.models.customer import (
+    ResearcherProfile, 
+    PublicationRecord,
+    JSONSerializableBaseModel
 )
-from orcid2taxid.integrations.orcid import OrcidClient
+from orcid2taxid.integrations.orcid_profiles import OrcidClient
 from orcid2taxid.integrations.epmc_publications import EuropePMCRepository
 
 # Specific container models for each type
-class ResearcherList(CustomBaseModel):
-    items: List[ResearcherMetadata]
+class ResearcherList(JSONSerializableBaseModel):
+    items: List[ResearcherProfile]
 
-class PaperList(CustomBaseModel):
-    items: List[PaperMetadata]
+class PaperList(JSONSerializableBaseModel):
+    items: List[PublicationRecord]
 
 # Path constants
 TEST_DATA_DIR = Path('tests/data')
@@ -31,7 +31,7 @@ def load_test_orcids(n: int = 5, keyword: str = 'virology') -> List[str]:
         orcids = json.load(f)
     return orcids[:n]
 
-def load_test_researchers(n: int = 5, force_refresh: bool = False, keyword: str = 'virology') -> List[ResearcherMetadata]:
+def load_test_researchers(n: int = 5, force_refresh: bool = False, keyword: str = 'virology') -> List[ResearcherProfile]:
     """Load test author metadata from a JSON file or regenerate it from ORCID API."""
     filename = f"{keyword}_author_metadata.json"
     metadata_file = TEST_DATA_DIR / filename
@@ -63,7 +63,7 @@ def load_test_researchers(n: int = 5, force_refresh: bool = False, keyword: str 
         container = ResearcherList.model_validate_json(json_data)
         return container.items[:n]
 
-def load_test_papers(n: int = 5, force_refresh: bool = False, keyword: str = 'virology') -> List[PaperMetadata]:
+def load_test_papers(n: int = 5, force_refresh: bool = False, keyword: str = 'virology') -> List[PublicationRecord]:
     """Load test paper metadata from a JSON file or fetch them from Europe PMC API."""
     filename = f"{keyword}_papers.json"
     papers_file = TEST_DATA_DIR / filename

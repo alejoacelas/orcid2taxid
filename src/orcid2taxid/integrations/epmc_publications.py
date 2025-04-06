@@ -4,7 +4,7 @@ import time
 import requests
 from datetime import datetime
 
-from orcid2taxid.core.models.schemas import Author, FundingInfo, PaperMetadata, ResearcherMetadata, GrantMetadata
+from orcid2taxid.core.models.customer import Author, FundingInfo, PublicationRecord, ResearcherProfile, GrantMetadata
 from orcid2taxid.core.utils.date import parse_date
 
 class EuropePMCRepository:
@@ -20,7 +20,7 @@ class EuropePMCRepository:
         """
         self.base_url = base_url
 
-    def _convert_to_paper_metadata(self, epmc_result: Dict) -> PaperMetadata:
+    def _convert_to_paper_metadata(self, epmc_result: Dict) -> PublicationRecord:
         """Helper method to convert Europe PMC result to PaperMetadata"""
         # Parse publication date to datetime object
         pub_date = None
@@ -180,7 +180,7 @@ class EuropePMCRepository:
                 keywords = [k for k in keyword_array if isinstance(k, str)]
 
         # Build PaperMetadata object with enhanced information
-        return PaperMetadata(
+        return PublicationRecord(
             title=epmc_result.get('title', ''),
             abstract=epmc_result.get('abstractText', ''),
             doi=epmc_result.get('doi'),
@@ -195,7 +195,7 @@ class EuropePMCRepository:
             funding_info=funding_info
         )
 
-    def get_publications_by_orcid(self, orcid: str, max_results: int = 20) -> List[PaperMetadata]:
+    def get_publications_by_orcid(self, orcid: str, max_results: int = 20) -> List[PublicationRecord]:
         """
         Search Europe PMC by ORCID ID and convert results to PaperMetadata objects.
         :param orcid: ORCID ID.
@@ -221,7 +221,7 @@ class EuropePMCRepository:
             logging.error("Error searching Europe PMC by ORCID", exc_info=True)
             return []
 
-    def get_publications_by_researcher_metadata(self, researcher_metadata: Dict, max_results: int = 20) -> List[PaperMetadata]:
+    def get_publications_by_researcher_metadata(self, researcher_metadata: Dict, max_results: int = 20) -> List[PublicationRecord]:
         """
         Search Europe PMC by researcher metadata and convert results to PaperMetadata objects.
         :param researcher_metadata: Researcher metadata dictionary.
@@ -283,7 +283,7 @@ class EuropePMCRepository:
         """
         try:
             # Convert AuthorMetadata object to dict if needed
-            if isinstance(researcher_metadata, ResearcherMetadata):
+            if isinstance(researcher_metadata, ResearcherProfile):
                 researcher_metadata = researcher_metadata.model_dump()
             
             query_parts = []

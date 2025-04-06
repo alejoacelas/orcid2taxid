@@ -4,7 +4,7 @@ from typing import Optional, Dict
 import json
 import os
 from dotenv import load_dotenv
-from orcid2taxid.core.models.schemas import NCBITaxonomyInfo
+from orcid2taxid.core.models.customer import NCBITaxonomyInfo
 
 # Load environment variables
 load_dotenv()

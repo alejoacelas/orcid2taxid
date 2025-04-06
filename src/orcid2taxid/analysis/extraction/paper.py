@@ -1,7 +1,7 @@
 from typing import List, Dict, Type, get_type_hints, get_args
 from pathlib import Path
 import asyncio
-from orcid2taxid.core.models.schemas import OrganismMention, PaperMetadata, PaperClassificationMetadata
+from orcid2taxid.core.models.customer import OrganismMention, PublicationRecord, PaperClassificationMetadata
 from orcid2taxid.core.utils.llm import LLMClient
 from orcid2taxid.core.utils.data import load_yaml_data, render_prompt
 from orcid2taxid.core.utils.llm import extract_tagged_content
@@ -21,7 +21,7 @@ class PaperExtractor:
         self.llm = LLMClient()
         self.pathogens = load_yaml_data(DATA_DIR / "pathogens.yaml")["pathogens"]
 
-    async def extract_organisms_from_abstract(self, paper: PaperMetadata) -> List[OrganismMention]:
+    async def extract_organisms_from_abstract(self, paper: PublicationRecord) -> List[OrganismMention]:
         """
         Uses an LLM to detect organism names from text.
         
@@ -145,7 +145,7 @@ class PaperExtractor:
         except Exception as e:
             raise ValueError(f"Error processing classification response: {e}")
             
-    async def extract_classification_from_abstract(self, paper: PaperMetadata) -> PaperClassificationMetadata:
+    async def extract_classification_from_abstract(self, paper: PublicationRecord) -> PaperClassificationMetadata:
         """
         Uses an LLM to classify various aspects of the paper based on its content.
         
@@ -162,7 +162,7 @@ class PaperExtractor:
         
         return PaperClassificationMetadata(**parsed_result)
 
-    async def process_paper(self, paper: PaperMetadata) -> PaperMetadata:
+    async def process_paper(self, paper: PublicationRecord) -> PublicationRecord:
         """
         Process a paper asynchronously, extracting organisms and classification.
         

@@ -1,6 +1,6 @@
 from typing import List, Dict
 from pathlib import Path
-from orcid2taxid.core.models.schemas import GrantMetadata
+from orcid2taxid.core.models.customer import GrantMetadata
 from orcid2taxid.core.utils.llm import LLMClient
 from orcid2taxid.core.utils.data import render_prompt
 from orcid2taxid.core.utils.llm import extract_tagged_content

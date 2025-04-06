@@ -4,8 +4,8 @@ from typing import Dict, Any, Optional, List
 from dataclasses import dataclass
 from datetime import datetime
 
-from orcid2taxid.integrations.orcid import OrcidClient
-from orcid2taxid.core.models.schemas import ResearcherMetadata, PaperMetadata
+from orcid2taxid.integrations.orcid_profiles import OrcidClient
+from orcid2taxid.core.models.customer import ResearcherProfile, PublicationRecord
 from tests.utils.load_data import load_test_orcids, load_test_researchers, load_test_papers
 
 # Initialize client
@@ -20,7 +20,7 @@ class AuthorTestResult:
     """Container for author metadata test results"""
     orcid: str
     raw_response: Dict[str, Any]
-    formatted_response: Optional[ResearcherMetadata]
+    formatted_response: Optional[ResearcherProfile]
     success: bool = True
     error_message: Optional[str] = None
     
@@ -29,7 +29,7 @@ class PublicationTestResult:
     """Container for publication test results"""
     orcid: str
     raw_response: Dict[str, Any]
-    formatted_response: Optional[List[PaperMetadata]]
+    formatted_response: Optional[List[PublicationRecord]]
     success: bool = True
     error_message: Optional[str] = None
 

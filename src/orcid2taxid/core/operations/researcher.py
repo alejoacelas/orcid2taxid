@@ -1,18 +1,18 @@
 from typing import List, Optional
-from orcid2taxid.core.models.schemas import (
-    ResearcherMetadata, PaperMetadata, Author,
-    AuthorAffiliation, ExternalId
+from orcid2taxid.core.models.customer import (
+    ResearcherProfile, PublicationRecord, Author,
+    InstitutionalAffiliation, ExternalId
 )
-from orcid2taxid.integrations.orcid import OrcidClient
+from orcid2taxid.integrations.orcid_profiles import OrcidClient
 from orcid2taxid.integrations.epmc_publications import EuropePMCRepository
 
-def get_researcher_by_orcid(orcid_id: str) -> ResearcherMetadata:
+def get_researcher_by_orcid(orcid_id: str) -> ResearcherProfile:
     """Get researcher metadata from ORCID ID"""
     client = OrcidClient()
     metadata = client.get_author_metadata(orcid_id)
-    return ResearcherMetadata(**metadata.model_dump())
+    return ResearcherProfile(**metadata.model_dump())
 
-def find_publications(researcher: ResearcherMetadata, max_results: Optional[int] = None) -> ResearcherMetadata:
+def find_publications(researcher: ResearcherProfile, max_results: Optional[int] = None) -> ResearcherProfile:
     """Fetch and add publications to researcher metadata"""
     epmc = EuropePMCRepository()
     client = OrcidClient()
@@ -29,7 +29,7 @@ def find_publications(researcher: ResearcherMetadata, max_results: Optional[int]
     _enrich_from_publications(researcher)
     return researcher
 
-def _deduplicate_publications(publications: List[PaperMetadata]) -> List[PaperMetadata]:
+def _deduplicate_publications(publications: List[PublicationRecord]) -> List[PublicationRecord]:
     """Deduplicate publications based on DOI"""
     seen_dois = set()
     unique_pubs = []
@@ -41,7 +41,7 @@ def _deduplicate_publications(publications: List[PaperMetadata]) -> List[PaperMe
         unique_pubs.append(paper)
     return unique_pubs
 
-def _find_matching_author(researcher: ResearcherMetadata, authors: List[Author]) -> Optional[Author]:
+def _find_matching_author(researcher: ResearcherProfile, authors: List[Author]) -> Optional[Author]:
     """Find the author entry that matches this researcher"""
     for author in authors:
         # Match by ORCID if available
@@ -66,7 +66,7 @@ def _find_matching_author(researcher: ResearcherMetadata, authors: List[Author])
     
     return None
 
-def _enrich_from_publications(researcher: ResearcherMetadata) -> None:
+def _enrich_from_publications(researcher: ResearcherProfile) -> None:
     """Enrich researcher metadata from publications"""
     for paper in researcher.publications:
         author = _find_matching_author(researcher, paper.authors)

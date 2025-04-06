@@ -1,6 +1,6 @@
 from typing import Dict
 from pathlib import Path
-from orcid2taxid.core.models.schemas import ResearcherMetadata
+from orcid2taxid.core.models.customer import ResearcherProfile
 from orcid2taxid.core.utils.llm import LLMClient
 from orcid2taxid.core.utils.data import render_prompt
 from orcid2taxid.core.utils.llm import extract_tagged_content
@@ -19,7 +19,7 @@ class ResearcherExtractor:
         """
         self.llm = LLMClient()
 
-    def generate_researcher_bio(self, researcher: ResearcherMetadata) -> Dict[str, str]:
+    def generate_researcher_bio(self, researcher: ResearcherProfile) -> Dict[str, str]:
         """
         Generates a biographical summary of a researcher based on their metadata and publications.
         

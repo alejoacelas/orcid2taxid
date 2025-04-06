@@ -1,10 +1,20 @@
 # %%
-import logging
-logging.getLogger('httpx').setLevel(logging.WARNING)
+from orcid2taxid.integrations.orcid_profiles import fetch_orcid_data, get_profile
+import json
+
+orcid_id = "0000-0002-7115-407X"
+
+# researcher_raw = await fetch_orcid_data(orcid_id, "works")
+# print(json.dumps(researcher_raw, indent=4))
+
+
+researcher = await get_profile(orcid_id)
+print(researcher.model_dump_json(indent=4))
+
 
 # %%
 from orcid2taxid.core.operations.researcher import get_researcher_by_orcid
-from orcid2taxid.integrations.orcid import OrcidClient
+from orcid2taxid.integrations.orcid_profiles import OrcidClient
 import json
 
 client = OrcidClient()
@@ -56,9 +66,9 @@ for paper in papers:
 
 # %%
 from orcid2taxid.core.operations.grant import find_grants
-from orcid2taxid.core.models.schemas import ResearcherMetadata
+from orcid2taxid.core.models.customer import ResearcherProfile
 
-researcher = ResearcherMetadata(
+researcher = ResearcherProfile(
     orcid="0000-0001-9248-9365",
     given_name="Craig",
     family_name="Thompson",

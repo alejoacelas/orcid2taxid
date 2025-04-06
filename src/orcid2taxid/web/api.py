@@ -1,12 +1,12 @@
 from fastapi import FastAPI
 from typing import List
-from orcid2taxid.core.models.schemas import PaperMetadata
+from orcid2taxid.core.models.customer import PublicationRecord
 from orcid2taxid.integrations.epmc_publications import EuropePMCRepository
 from orcid2taxid.core.operations.paper import get_taxonomy_info
 
 app = FastAPI()
 
-@app.get("/orcid2taxid/{orcid_id}", response_model=List[PaperMetadata])
+@app.get("/orcid2taxid/{orcid_id}", response_model=List[PublicationRecord])
 async def get_papers_with_taxids(orcid_id: str, max_results: int = 20):
     """Get papers with taxonomy information for a given ORCID ID."""
     repository = EuropePMCRepository()

@@ -6,10 +6,10 @@ from orcid2taxid.integrations.ncbi_taxids import TaxIDLookup
 from orcid2taxid.core.operations.researcher import get_researcher_by_orcid, find_publications
 from orcid2taxid.core.operations.paper import get_classification, get_organisms, get_taxonomy_info, process_paper_async
 from orcid2taxid.core.operations.grant import find_grants
-from orcid2taxid.core.models.schemas import PaperMetadata, ResearcherMetadata, GrantMetadata, PaperClassificationMetadata
+from orcid2taxid.core.models.customer import PublicationRecord, ResearcherProfile, GrantMetadata, PaperClassificationMetadata
 
 # Custom hash functions for Pydantic models
-def hash_paper_metadata(paper: PaperMetadata) -> tuple:
+def hash_paper_metadata(paper: PublicationRecord) -> tuple:
     """Create a hashable tuple from essential paper fields"""
     return (
         paper.title,
@@ -31,7 +31,7 @@ def hash_grant_metadata(grant: GrantMetadata) -> tuple:
         grant.project_start_date  # Added to distinguish between versions of the same grant
     )
 
-def hash_researcher_metadata(researcher: ResearcherMetadata) -> tuple:
+def hash_researcher_metadata(researcher: ResearcherProfile) -> tuple:
     """Create a hashable tuple from essential researcher fields"""
     return (
         researcher.orcid,
@@ -43,40 +43,40 @@ def hash_researcher_metadata(researcher: ResearcherMetadata) -> tuple:
     )
 
 @st.cache_data()
-def fetch_researcher_by_orcid(orcid: str) -> ResearcherMetadata:
+def fetch_researcher_by_orcid(orcid: str) -> ResearcherProfile:
     """Cached function to fetch basic researcher metadata"""
     return get_researcher_by_orcid(orcid)
 
-@st.cache_data(hash_funcs={ResearcherMetadata: hash_researcher_metadata})
-def fetch_publications(researcher: ResearcherMetadata) -> ResearcherMetadata:
+@st.cache_data(hash_funcs={ResearcherProfile: hash_researcher_metadata})
+def fetch_publications(researcher: ResearcherProfile) -> ResearcherProfile:
     """Cached function to fetch publications for a researcher
     
     Uses underscore prefix to prevent Streamlit from hashing the researcher object"""
     return find_publications(researcher, max_results=50)
 
-@st.cache_data(hash_funcs={ResearcherMetadata: hash_researcher_metadata})
-def fetch_grants(researcher: ResearcherMetadata) -> ResearcherMetadata:
+@st.cache_data(hash_funcs={ResearcherProfile: hash_researcher_metadata})
+def fetch_grants(researcher: ResearcherProfile) -> ResearcherProfile:
     """Cached function to fetch grants for a researcher
     
     Uses underscore prefix to prevent Streamlit from hashing the researcher object"""
     return find_grants(researcher)
 
-@st.cache_data(hash_funcs={PaperMetadata: hash_paper_metadata})
-def extract_organisms_from_paper(paper: PaperMetadata) -> PaperMetadata:
+@st.cache_data(hash_funcs={PublicationRecord: hash_paper_metadata})
+def extract_organisms_from_paper(paper: PublicationRecord) -> PublicationRecord:
     """Cached function to extract organisms from a paper
     
     Uses underscore prefix to prevent Streamlit from hashing the paper object"""
     return get_organisms(paper)
 
-@st.cache_data(hash_funcs={PaperMetadata: hash_paper_metadata})
-def classify_paper(paper: PaperMetadata) -> PaperMetadata:
+@st.cache_data(hash_funcs={PublicationRecord: hash_paper_metadata})
+def classify_paper(paper: PublicationRecord) -> PublicationRecord:
     """Cached function to classify a paper
     
     Uses underscore prefix to prevent Streamlit from hashing the paper object"""
     return get_classification(paper)
 
-@st.cache_data(hash_funcs={PaperMetadata: hash_paper_metadata})
-def get_taxonomy(paper: PaperMetadata) -> PaperMetadata:
+@st.cache_data(hash_funcs={PublicationRecord: hash_paper_metadata})
+def get_taxonomy(paper: PublicationRecord) -> PublicationRecord:
     """Cached function to get taxonomy info for a paper
     
     Uses underscore prefix to prevent Streamlit from hashing the paper object"""
@@ -86,7 +86,7 @@ def get_taxonomy(paper: PaperMetadata) -> PaperMetadata:
 # We'll maintain a simple in-memory cache for processed papers
 _paper_cache = {}
 
-async def process_paper_async_wrapper(paper: PaperMetadata) -> PaperMetadata:
+async def process_paper_async_wrapper(paper: PublicationRecord) -> PublicationRecord:
     """Async wrapper for processing a paper that checks an in-memory cache first"""
     # Create a cache key using the hash_paper_metadata function
     cache_key = hash_paper_metadata(paper)
@@ -103,7 +103,7 @@ async def process_paper_async_wrapper(paper: PaperMetadata) -> PaperMetadata:
     
     return processed_paper
 
-def process_single_paper(researcher: ResearcherMetadata, paper_index: int, taxid_client: TaxIDLookup) -> ResearcherMetadata:
+def process_single_paper(researcher: ResearcherProfile, paper_index: int, taxid_client: TaxIDLookup) -> ResearcherProfile:
     """Process a single paper and update the researcher object
     
     This function updates the researcher's publication at the specified index with:
@@ -134,7 +134,7 @@ def process_single_paper(researcher: ResearcherMetadata, paper_index: int, taxid
     researcher.publications[paper_index] = updated_paper
     return researcher
 
-async def process_papers_in_batch(researcher: ResearcherMetadata, batch_size: int = 10) -> ResearcherMetadata:
+async def process_papers_in_batch(researcher: ResearcherProfile, batch_size: int = 10) -> ResearcherProfile:
     """Process papers in batches asynchronously
     
     This function processes papers in batches to respect rate limits while
@@ -160,7 +160,7 @@ async def process_papers_in_batch(researcher: ResearcherMetadata, batch_size: in
             
     return researcher
 
-def display_researcher_info(researcher: ResearcherMetadata):
+def display_researcher_info(researcher: ResearcherProfile):
     """Display researcher information"""
     if st.session_state.researcher:
         st.subheader("Researcher Profile")
@@ -222,7 +222,7 @@ def display_researcher_info(researcher: ResearcherMetadata):
     else:
         st.info("Enter an ORCID ID and click 'Search' to see researcher information.")
 
-def display_highlights(researcher: ResearcherMetadata):
+def display_highlights(researcher: ResearcherProfile):
     """Display paper highlights from the researcher's publications"""
     processed_papers = [p for p in researcher.publications if p.classification and isinstance(p.classification, PaperClassificationMetadata)]
     
@@ -254,7 +254,7 @@ def display_highlights(researcher: ResearcherMetadata):
         if "synthetic_genome" in paper.classification.dna_type:
             highlight_groups["synthetic_genome"].append(paper)
     
-    def get_paper_list(papers: list[PaperMetadata]) -> str:
+    def get_paper_list(papers: list[PublicationRecord]) -> str:
         markdown_list = []
         for paper in papers:
             paper_link = f"[{paper.title}](https://doi.org/{paper.doi})" if paper.doi else paper.title
@@ -283,7 +283,7 @@ def display_highlights(researcher: ResearcherMetadata):
     else:
         st.info("No highlights detected in the analyzed papers.")
 
-def display_organisms(researcher: ResearcherMetadata):
+def display_organisms(researcher: ResearcherProfile):
     """Display organisms from the researcher's publications"""
     organism_to_papers = researcher.get_publications_by_organism()
     
@@ -310,7 +310,7 @@ def display_organisms(researcher: ResearcherMetadata):
     else:
         st.info("No organisms were identified in the researcher's publications.")
 
-def display_papers(researcher: ResearcherMetadata):
+def display_papers(researcher: ResearcherProfile):
     """Display paper list from the researcher's publications"""
     for paper in researcher.publications:
         if paper.doi:
@@ -318,7 +318,7 @@ def display_papers(researcher: ResearcherMetadata):
         else:
             st.markdown(f"- {paper.title}")
 
-def display_grants(researcher: ResearcherMetadata):
+def display_grants(researcher: ResearcherProfile):
     """Display grant information from the researcher's grants"""
     if researcher.grants:
         # Get grants grouped by funder

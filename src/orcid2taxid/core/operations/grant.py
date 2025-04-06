@@ -1,4 +1,4 @@
-from orcid2taxid.core.models.schemas import GrantMetadata, ResearcherMetadata
+from orcid2taxid.core.models.customer import GrantMetadata, ResearcherProfile
 from orcid2taxid.analysis.extraction.grant import GrantExtractor
 from orcid2taxid.integrations.nih_grants import NIHReporterRepository
 from orcid2taxid.integrations.nsf_grants import NSFRepository
@@ -44,7 +44,7 @@ def _enhance_grant_metadata(grant: GrantMetadata) -> GrantMetadata:
             
     return grant
 
-def find_grants(researcher: ResearcherMetadata, max_results: int = 20) -> ResearcherMetadata:
+def find_grants(researcher: ResearcherProfile, max_results: int = 20) -> ResearcherProfile:
     """Fetch and add grants to researcher metadata"""
     nih = NIHReporterRepository()
     nsf = NSFRepository()

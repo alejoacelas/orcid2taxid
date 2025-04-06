@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from datetime import datetime
 
 from orcid2taxid.integrations.epmc_publications import EuropePMCRepository
-from orcid2taxid.core.models.schemas import PaperMetadata
+from orcid2taxid.core.models.customer import PublicationRecord
 from tests.utils.load_data import load_test_orcids, load_test_researchers
 
 # Initialize repository
@@ -21,7 +21,7 @@ class PublicationTestResult:
     """Container for publication test results"""
     orcid: str
     raw_response: Dict[str, Any]
-    formatted_response: Optional[List[PaperMetadata]]
+    formatted_response: Optional[List[PublicationRecord]]
     success: bool = True
     error_message: Optional[str] = None
     failing_paper_index: Optional[int] = None  # Track which paper caused the failure

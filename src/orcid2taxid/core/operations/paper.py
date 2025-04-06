@@ -1,6 +1,6 @@
 from typing import List, Optional
 import asyncio
-from orcid2taxid.core.models.schemas import PaperMetadata, PaperClassificationMetadata
+from orcid2taxid.core.models.customer import PublicationRecord, PaperClassificationMetadata
 from orcid2taxid.analysis.extraction.paper import PaperExtractor
 from orcid2taxid.integrations.ncbi_taxids import TaxIDLookup
 
@@ -8,7 +8,7 @@ from orcid2taxid.integrations.ncbi_taxids import TaxIDLookup
 _paper_extractor = PaperExtractor()
 _taxid_lookup = TaxIDLookup()
 
-async def get_organisms_async(paper: PaperMetadata) -> PaperMetadata:
+async def get_organisms_async(paper: PublicationRecord) -> PublicationRecord:
     """
     Extract organisms from a paper's abstract asynchronously.
     
@@ -22,7 +22,7 @@ async def get_organisms_async(paper: PaperMetadata) -> PaperMetadata:
     paper.organisms = await _paper_extractor.extract_organisms_from_abstract(paper)
     return paper
 
-def get_organisms(paper: PaperMetadata) -> PaperMetadata:
+def get_organisms(paper: PublicationRecord) -> PublicationRecord:
     """
     Extract organisms from a paper's abstract.
     This is a thin wrapper around get_organisms_async.
@@ -37,7 +37,7 @@ def get_organisms(paper: PaperMetadata) -> PaperMetadata:
     finally:
         loop.close()
 
-async def get_classification_async(paper: PaperMetadata) -> PaperMetadata:
+async def get_classification_async(paper: PublicationRecord) -> PublicationRecord:
     """
     Classify a paper based on its abstract asynchronously.
     
@@ -51,7 +51,7 @@ async def get_classification_async(paper: PaperMetadata) -> PaperMetadata:
     paper.classification = await _paper_extractor.extract_classification_from_abstract(paper)
     return paper
 
-def get_classification(paper: PaperMetadata) -> PaperMetadata:
+def get_classification(paper: PublicationRecord) -> PublicationRecord:
     """
     Classify a paper based on its abstract.
     This is a thin wrapper around get_classification_async.
@@ -66,7 +66,7 @@ def get_classification(paper: PaperMetadata) -> PaperMetadata:
     finally:
         loop.close()
 
-async def get_taxonomy_info_async(paper: PaperMetadata) -> PaperMetadata:
+async def get_taxonomy_info_async(paper: PublicationRecord) -> PublicationRecord:
     """
     Get taxonomy information for organisms in a paper asynchronously.
     
@@ -84,7 +84,7 @@ async def get_taxonomy_info_async(paper: PaperMetadata) -> PaperMetadata:
                 
     return paper
 
-def get_taxonomy_info(paper: PaperMetadata) -> PaperMetadata:
+def get_taxonomy_info(paper: PublicationRecord) -> PublicationRecord:
     """
     Get taxonomy information for organisms in a paper.
     This is a thin wrapper around get_taxonomy_info_async.
@@ -99,7 +99,7 @@ def get_taxonomy_info(paper: PaperMetadata) -> PaperMetadata:
     finally:
         loop.close()
 
-async def process_paper_async(paper: PaperMetadata) -> PaperMetadata:
+async def process_paper_async(paper: PublicationRecord) -> PublicationRecord:
     """
     Process a paper asynchronously by extracting organisms and classification in parallel.
     
@@ -114,7 +114,7 @@ async def process_paper_async(paper: PaperMetadata) -> PaperMetadata:
     
     return processed_paper
 
-def find_full_text_url(paper: PaperMetadata) -> PaperMetadata:
+def find_full_text_url(paper: PublicationRecord) -> PublicationRecord:
     """Find the full text URL for the paper using Unpaywall"""
     # TODO: Implement Unpaywall integration
     return paper 

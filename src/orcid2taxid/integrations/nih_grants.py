@@ -4,7 +4,7 @@ import requests
 from datetime import datetime
 import json
 
-from orcid2taxid.core.models.schemas import GrantMetadata
+from orcid2taxid.core.models.customer import GrantMetadata
 from orcid2taxid.core.utils.date import parse_date
 from orcid2taxid.core.config.logging import get_logger
 

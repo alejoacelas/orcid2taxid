@@ -1,6 +1,6 @@
 # %%
 import logging
-from orcid2taxid.integrations.ncbi import TaxIDLookup
+from orcid2taxid.integrations.ncbi_taxids import TaxIDLookup
 from orcid2taxid.analysis.extraction.paper import PaperExtractor
 from tests.utils.load_data import load_test_papers
 

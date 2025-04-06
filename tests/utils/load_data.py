@@ -7,7 +7,7 @@ from orcid2taxid.core.models.schemas import (
     CustomBaseModel
 )
 from orcid2taxid.integrations.orcid import OrcidClient
-from orcid2taxid.integrations.europe_pmc import EuropePMCRepository
+from orcid2taxid.integrations.epmc_publications import EuropePMCRepository
 
 # Specific container models for each type
 class ResearcherList(CustomBaseModel):

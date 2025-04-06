@@ -1,8 +1,8 @@
 from orcid2taxid.core.models.schemas import GrantMetadata, ResearcherMetadata
 from orcid2taxid.analysis.extraction.grant import GrantExtractor
-from orcid2taxid.integrations.nih_reporter import NIHReporterRepository
+from orcid2taxid.integrations.nih_grants import NIHReporterRepository
 from orcid2taxid.integrations.nsf_grants import NSFRepository
-from orcid2taxid.integrations.europe_pmc import EuropePMCRepository
+from orcid2taxid.integrations.epmc_publications import EuropePMCRepository
 from typing import List, Set
 
 def get_grant_metadata(grant: GrantMetadata) -> GrantMetadata:

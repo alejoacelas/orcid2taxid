@@ -6,7 +6,7 @@ from typing import Dict, Any, Optional, List
 from dataclasses import dataclass
 from datetime import datetime
 
-from orcid2taxid.integrations.europe_pmc import EuropePMCRepository
+from orcid2taxid.integrations.epmc_publications import EuropePMCRepository
 from orcid2taxid.core.models.schemas import PaperMetadata
 from tests.utils.load_data import load_test_orcids, load_test_researchers
 

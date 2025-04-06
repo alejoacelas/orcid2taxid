@@ -21,7 +21,7 @@ print(json.dumps(client.fetch_author_metadata(orcid), indent=2))
 # %%
 from orcid2taxid.core.operations.paper import get_organisms
 from orcid2taxid.core.operations.researcher import get_researcher_by_orcid, find_publications
-from orcid2taxid.integrations.europe_pmc import EuropePMCRepository
+from orcid2taxid.integrations.epmc_publications import EuropePMCRepository
 
 epmc = EuropePMCRepository()
 
@@ -70,7 +70,7 @@ for grant in researcher.grants:
     print(grant.model_dump_json(indent=2))
 
 # %%
-from orcid2taxid.integrations.nih_reporter import NIHReporterRepository
+from orcid2taxid.integrations.nih_grants import NIHReporterRepository
 
 nih_reporter = NIHReporterRepository()
 grant = nih_reporter.get_grant_by_number("R01 HG009906")   

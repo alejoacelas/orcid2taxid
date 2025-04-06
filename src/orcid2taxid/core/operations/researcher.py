@@ -4,7 +4,7 @@ from orcid2taxid.core.models.schemas import (
     AuthorAffiliation, ExternalId
 )
 from orcid2taxid.integrations.orcid import OrcidClient
-from orcid2taxid.integrations.europe_pmc import EuropePMCRepository
+from orcid2taxid.integrations.epmc_publications import EuropePMCRepository
 
 def get_researcher_by_orcid(orcid_id: str) -> ResearcherMetadata:
     """Get researcher metadata from ORCID ID"""

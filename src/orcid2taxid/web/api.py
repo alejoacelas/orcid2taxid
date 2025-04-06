@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from typing import List
 from orcid2taxid.core.models.schemas import PaperMetadata
-from orcid2taxid.integrations.europe_pmc import EuropePMCRepository
+from orcid2taxid.integrations.epmc_publications import EuropePMCRepository
 from orcid2taxid.core.operations.paper import get_taxonomy_info
 
 app = FastAPI()

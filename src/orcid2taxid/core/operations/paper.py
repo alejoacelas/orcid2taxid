@@ -2,7 +2,7 @@ from typing import List, Optional
 import asyncio
 from orcid2taxid.core.models.schemas import PaperMetadata, PaperClassificationMetadata
 from orcid2taxid.analysis.extraction.paper import PaperExtractor
-from orcid2taxid.integrations.ncbi import TaxIDLookup
+from orcid2taxid.integrations.ncbi_taxids import TaxIDLookup
 
 # Singleton instances
 _paper_extractor = PaperExtractor()

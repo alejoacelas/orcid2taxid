@@ -22,6 +22,7 @@ class PublicationRecord(DatetimeSerializableBaseModel):
     citation_count: Optional[int] = None
     keywords: List[str] = Field(default_factory=list)
     subjects: List[str] = Field(default_factory=list)
-    funding_info: List[GrantMetadata] = Field(default_factory=list)
-    organisms: List[OrganismMention] = Field(default_factory=list)
-    classification: Optional[PaperClassificationMetadata] = None
+    grants: List[GrantMetadata] = Field(default_factory=list)
+    
+    # organisms: List[OrganismMention] = Field(default_factory=list)
+    # classification: Optional[PaperClassificationMetadata] = None

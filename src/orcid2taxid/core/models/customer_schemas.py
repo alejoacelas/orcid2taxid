@@ -2,7 +2,10 @@ from typing import List, Dict
 from collections import defaultdict
 from datetime import datetime
 from pydantic import Field
-from orcid2taxid.core.models.base_schemas import ResearcherID, ExternalReference, InstitutionalAffiliation, ResearcherDescription, ResearcherProfile, EmailInfo
+from orcid2taxid.core.models.base_schemas import (
+    ResearcherID, ExternalReference, InstitutionalAffiliation,
+    ResearcherDescription, ResearcherProfile, EmailInfo
+)
 from orcid2taxid.core.models.grant_schemas import GrantMetadata
 from orcid2taxid.core.models.publication_schemas import PublicationRecord
 from orcid2taxid.core.models.integrations.orcid_schemas import OrcidProfile
@@ -46,7 +49,7 @@ class CustomerProfile(ResearcherProfile):
     def add_educations_from_orcid(self, educations: List['OrcidAffiliation']) -> 'CustomerProfile':
         """Add educations from ORCID affiliations"""
         for education in educations:
-            self.educations.append(InstitutionalAffiliation(
+            self.educations.append(InstitutionalAffiliation(  # pylint: disable=no-member
                 institution=education.organization.name,
                 department=education.department_name,
                 role=education.role_title,
@@ -58,7 +61,7 @@ class CustomerProfile(ResearcherProfile):
     def add_employments_from_orcid(self, employments: List['OrcidAffiliation']) -> 'CustomerProfile':
         """Add employments from ORCID affiliations"""
         for employment in employments:
-            self.employments.append(InstitutionalAffiliation(
+            self.employments.append(InstitutionalAffiliation(  # pylint: disable=no-member
                 institution=employment.organization.name,
                 department=employment.department_name,
                 role=employment.role_title,
@@ -95,7 +98,7 @@ class CustomerProfile(ResearcherProfile):
                 doi=doi
             )
             
-            self.publications.append(pub_record)
+            self.publications.append(pub_record)  # pylint: disable=no-member
         return self
     
     def get_publication_count(self) -> int:

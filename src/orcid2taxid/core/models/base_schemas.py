@@ -1,6 +1,6 @@
-from pydantic import BaseModel, ConfigDict, Field
 from datetime import datetime
-from typing import Optional, List, Any
+from pydantic import BaseModel, ConfigDict, Field
+from typing import Optional, List
 
 class EmailInfo(BaseModel):
     """Represents an email address with its metadata"""

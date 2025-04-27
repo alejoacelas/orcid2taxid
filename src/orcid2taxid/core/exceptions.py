@@ -80,6 +80,44 @@ class OrcidDataError(OrcidError):
             details=details
         )
 
+# Europe PMC-specific exceptions
+class EpmcError(IntegrationError):
+    """Base exception for Europe PMC API errors"""
+    def __init__(
+        self,
+        message: str,
+        error_code: str,
+        status_code: int = status.HTTP_502_BAD_GATEWAY,
+        details: Optional[Dict[str, Any]] = None
+    ):
+        super().__init__(
+            message=message,
+            error_code=error_code,
+            integration="epmc",
+            status_code=status_code,
+            details=details
+        )
+
+class EpmcAPIError(EpmcError):
+    """Exception for Europe PMC API communication errors"""
+    def __init__(self, message: str, details: Optional[Dict[str, Any]] = None):
+        super().__init__(
+            message=message,
+            error_code="api_error",
+            status_code=status.HTTP_502_BAD_GATEWAY,
+            details=details
+        )
+
+class EpmcDataError(EpmcError):
+    """Exception for Europe PMC data parsing/validation errors"""
+    def __init__(self, message: str, details: Optional[Dict[str, Any]] = None):
+        super().__init__(
+            message=message,
+            error_code="data_error",
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            details=details
+        )
+
 # LLM-specific exceptions
 class LLMError(IntegrationError):
     """Base exception for LLM-related errors"""

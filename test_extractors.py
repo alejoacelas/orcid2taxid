@@ -1,8 +1,8 @@
 # %%
 import logging
 
-from orcid2taxid.core.operations.researcher import get_researcher_by_orcid, find_publications
-from orcid2taxid.core.operations.paper import get_taxonomy_info
+from orcid2taxid.researchers.services import get_researcher_by_orcid, find_publications
+from orcid2taxid.publications.services import get_taxonomy_info
 
 from orcid2taxid.analysis.extraction.paper import PaperExtractor
 from orcid2taxid.analysis.extraction.researcher import ResearcherExtractor

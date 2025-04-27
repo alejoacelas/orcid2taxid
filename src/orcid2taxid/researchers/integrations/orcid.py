@@ -1,13 +1,14 @@
 from typing import Dict, Any, Optional, List
 import httpx
 from pydantic import BaseModel, Field, ValidationError
-from orcid2taxid.core.models.base_schemas import InstitutionalAffiliation
-from orcid2taxid.core.models.integrations.orcid_schemas import (
+
+from orcid2taxid.shared.schemas import InstitutionalAffiliation
+from orcid2taxid.researchers.schemas.orcid import (
     OrcidProfile, OrcidAffiliation, OrcidWorks
 )
-from orcid2taxid.core.models.customer_schemas import CustomerProfile
-from orcid2taxid.core.config.logging import get_logger, log_event
-from orcid2taxid.core.exceptions import OrcidAPIError, OrcidDataError
+from orcid2taxid.researchers.schemas.base import CustomerProfile
+from orcid2taxid.core.logging import get_logger, log_event
+from orcid2taxid.researchers.exceptions import OrcidAPIError, OrcidDataError, OrcidError
 
 logger = get_logger(__name__)
 
@@ -83,8 +84,9 @@ async def get_profile(orcid_id: str, config: Optional[OrcidConfig] = None) -> Cu
         employment_data = await fetch_orcid_data(orcid_id, "employments", config)
         
         if not person_data:
-            raise OrcidDataError(
+            raise OrcidError(
                 "No person data found",
+                error_code="no_data",
                 details={"orcid_id": orcid_id}
             )
 
@@ -104,14 +106,20 @@ async def get_profile(orcid_id: str, config: Optional[OrcidConfig] = None) -> Cu
         except ValidationError as e:
             raise OrcidDataError(
                 "Failed to validate ORCID data",
+                validation_error=e,
                 details={
                     "orcid_id": orcid_id,
-                    "validation_errors": str(e)
+                    "raw_data": {
+                        "person": person_data,
+                        "works": works_data,
+                        "education": education_data,
+                        "employment": employment_data
+                    }
                 }
             ) from e
             
     except Exception as e:
-        if not isinstance(e, (OrcidAPIError, OrcidDataError)):
+        if not isinstance(e, (OrcidAPIError, OrcidError)):
             logger.error("Error processing author metadata for ORCID %s: %s", orcid_id, str(e))
             raise OrcidAPIError(
                 "Failed to process author metadata",

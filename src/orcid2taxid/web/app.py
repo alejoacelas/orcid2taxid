@@ -2,10 +2,10 @@ import streamlit as st
 import asyncio
 import base64
 from pathlib import Path
-from orcid2taxid.integrations.ncbi_taxids import TaxIDLookup
-from orcid2taxid.core.operations.researcher import get_researcher_by_orcid, find_publications
-from orcid2taxid.core.operations.paper import get_classification, get_organisms, get_taxonomy_info, process_paper_async
-from orcid2taxid.core.operations.grant import find_grants
+from orcid2taxid.organisms.integrations.ncbi import TaxIDLookup
+from orcid2taxid.researchers.services import get_researcher_by_orcid, find_publications
+from orcid2taxid.publications.services import get_classification, get_organisms, get_taxonomy_info, process_paper_async
+from orcid2taxid.grants.services import find_grants
 from orcid2taxid.core.models.customer import PublicationRecord, ResearcherProfile, GrantMetadata, PaperClassificationMetadata
 
 # Custom hash functions for Pydantic models

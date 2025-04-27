@@ -2,19 +2,19 @@ from typing import List, Dict
 from collections import defaultdict
 from datetime import datetime
 from pydantic import Field
-from orcid2taxid.core.models.base_schemas import (
+from orcid2taxid.shared.schemas import (
     ResearcherID, ExternalReference, InstitutionalAffiliation,
     ResearcherDescription, ResearcherProfile, EmailInfo
 )
-from orcid2taxid.core.models.grant_schemas import GrantMetadata
-from orcid2taxid.core.models.publication_schemas import PublicationRecord
-from orcid2taxid.core.models.integrations.orcid_schemas import OrcidProfile
+from orcid2taxid.grants.schemas import GrantRecord
+from orcid2taxid.publications.schemas.base import PublicationRecord
+from orcid2taxid.researchers.schemas.orcid import OrcidProfile, OrcidAffiliation, OrcidWorks
 from orcid2taxid.core.utils.date import parse_date
 
 class CustomerProfile(ResearcherProfile):
     """Core customer profile information"""    
     publications: List[PublicationRecord] = Field(default_factory=list)
-    grants: List[GrantMetadata] = Field(default_factory=list)
+    grants: List[GrantRecord] = Field(default_factory=list)
     
     @classmethod
     def from_orcid_profile(cls, orcid_profile: OrcidProfile, orcid_id: str) -> "CustomerProfile":
@@ -46,7 +46,7 @@ class CustomerProfile(ResearcherProfile):
             external_references=external_references
         )
             
-    def add_educations_from_orcid(self, educations: List['OrcidAffiliation']) -> 'CustomerProfile':
+    def add_educations_from_orcid(self, educations: List[OrcidAffiliation]) -> 'CustomerProfile':
         """Add educations from ORCID affiliations"""
         for education in educations:
             self.educations.append(InstitutionalAffiliation(  # pylint: disable=no-member
@@ -58,7 +58,7 @@ class CustomerProfile(ResearcherProfile):
             ))
         return self
     
-    def add_employments_from_orcid(self, employments: List['OrcidAffiliation']) -> 'CustomerProfile':
+    def add_employments_from_orcid(self, employments: List[OrcidAffiliation]) -> 'CustomerProfile':
         """Add employments from ORCID affiliations"""
         for employment in employments:
             self.employments.append(InstitutionalAffiliation(  # pylint: disable=no-member
@@ -70,7 +70,7 @@ class CustomerProfile(ResearcherProfile):
             ))
         return self
     
-    def add_publications_from_orcid(self, works: List['OrcidWorks']) -> 'CustomerProfile':
+    def add_publications_from_orcid(self, works: List[OrcidWorks]) -> 'CustomerProfile':
         """Add publications from ORCID works"""
         for work in works.works:
             summaries = work.work_summaries
@@ -79,7 +79,7 @@ class CustomerProfile(ResearcherProfile):
             pub_date = next((summary.publication_date for summary in summaries if summary.publication_date), None)
             journal = next((summary.journal_title for summary in summaries if summary.journal_title), None)
             
-            types = [summary.type for summary in summaries if summary.type]
+            # types = [summary.type for summary in summaries if summary.type]
             sources = [summary.source for summary in summaries if summary.source]
         
             # Find DOI from external IDs
@@ -135,7 +135,7 @@ class CustomerProfile(ResearcherProfile):
                         by_organism[organism.taxonomy_info.scientific_name].append(paper)
         return dict(by_organism)
 
-    def get_grants_by_funder(self) -> Dict[str, List[GrantMetadata]]:
+    def get_grants_by_funder(self) -> Dict[str, List[GrantRecord]]:
         """Get grants grouped by funder, with special handling for single-grant funders.
         
         Returns:

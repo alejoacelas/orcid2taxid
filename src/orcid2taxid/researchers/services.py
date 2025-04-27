@@ -1,10 +1,11 @@
 from typing import List, Optional
-from orcid2taxid.core.models.customer import (
-    ResearcherProfile, PublicationRecord, Author,
+from orcid2taxid.shared.schemas import (
+    ResearcherProfile, Author,
     InstitutionalAffiliation, ExternalId
 )
-from orcid2taxid.integrations.orcid_profiles import OrcidClient
-from orcid2taxid.integrations.epmc_publications import EuropePMCRepository
+from orcid2taxid.publications.schemas import PublicationRecord
+from orcid2taxid.researchers.integrations.orcid import OrcidClient
+from orcid2taxid.publications.integrations.epmc import EuropePMCRepository
 
 def get_researcher_by_orcid(orcid_id: str) -> ResearcherProfile:
     """Get researcher metadata from ORCID ID"""

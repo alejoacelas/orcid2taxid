@@ -1,14 +1,15 @@
-from pydantic import Field
-from typing import Optional, List, Dict
+from typing import Optional, List
 from datetime import datetime
-from orcid2taxid.core.models.base_schemas import DatetimeSerializableBaseModel
-from orcid2taxid.core.models.customer_schemas import ResearcherProfile
+from pydantic import Field
+from orcid2taxid.shared.schemas import (
+    DatetimeSerializableBaseModel, ResearcherProfile
+)
 
-class GrantMetadata(DatetimeSerializableBaseModel):
+class GrantRecord(DatetimeSerializableBaseModel):
     """Represents comprehensive grant information from NIH Reporter or Europe PMC"""
     # Core grant information
-    title: str = Field(description="Title of the research project")
     id: str = Field(description="Grant/project identifier")
+    title: Optional[str] = Field(description="Title of the research project")
     funder: Optional[str] = Field(description="Funding agency/organization")
     
     # Financial information (mainly from NIH Reporter)

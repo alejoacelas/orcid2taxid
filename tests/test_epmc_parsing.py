@@ -1,6 +1,6 @@
 import json
 from pydantic import ValidationError
-from orcid2taxid.core.models.integrations.epmc_schemas import EpmcResponse
+from orcid2taxid.publications.schemas.epmc import EpmcResponse
 import os
 
 # Construct the absolute path to the JSON file

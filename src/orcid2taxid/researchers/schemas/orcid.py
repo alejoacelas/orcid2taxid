@@ -1,6 +1,6 @@
 from typing import Optional, Dict, Any, List
-from pydantic import BaseModel, Field, ConfigDict, AliasPath
 from datetime import datetime
+from pydantic import BaseModel, Field, ConfigDict, AliasPath
 
 class OrcidBaseModel(BaseModel):
     """Base model for all ORCID models with shared config"""

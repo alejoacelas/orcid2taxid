@@ -6,8 +6,8 @@ from orcid2taxid.core.models.customer import (
     PublicationRecord,
     JSONSerializableBaseModel
 )
-from orcid2taxid.integrations.orcid_profiles import OrcidClient
-from orcid2taxid.integrations.epmc_publications import EuropePMCRepository
+from orcid2taxid.researchers.integrations.orcid import OrcidClient
+from orcid2taxid.publications.integrations.epmc import EuropePMCRepository
 
 # Specific container models for each type
 class ResearcherList(JSONSerializableBaseModel):

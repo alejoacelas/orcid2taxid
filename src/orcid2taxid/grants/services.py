@@ -1,11 +1,13 @@
-from orcid2taxid.core.models.customer import GrantMetadata, ResearcherProfile
-from orcid2taxid.analysis.extraction.grant import GrantExtractor
-from orcid2taxid.integrations.nih_grants import NIHReporterRepository
-from orcid2taxid.integrations.nsf_grants import NSFRepository
-from orcid2taxid.integrations.epmc_publications import EuropePMCRepository
-from typing import List, Set
+from typing import List
 
-def get_grant_metadata(grant: GrantMetadata) -> GrantMetadata:
+from orcid2taxid.grants.schemas import GrantRecord
+from orcid2taxid.analysis.extraction.grant import GrantExtractor
+from orcid2taxid.grants.integrations.nih import NIHReporterRepository
+from orcid2taxid.grants.integrations.nsf import NSFRepository
+from orcid2taxid.publications.integrations.epmc import EuropePMCRepository
+from orcid2taxid.shared.schemas import ResearcherProfile
+
+def get_grant_metadata(grant: GrantRecord) -> GrantRecord:
     """Extract metadata from grant title and abstract"""
     if not grant.project_terms:
         extractor = GrantExtractor()
@@ -22,7 +24,7 @@ def _is_nsf_grant(funder: str) -> bool:
     nsf_keywords = {'nsf', 'national science foundation'}
     return any(keyword in funder.lower() for keyword in nsf_keywords)
 
-def _enhance_grant_metadata(grant: GrantMetadata) -> GrantMetadata:
+def _enhance_grant_metadata(grant: GrantRecord) -> GrantRecord:
     """Enhance grant metadata using NIH/NSF APIs if applicable"""
     if not grant.project_num:
         return grant
@@ -51,7 +53,7 @@ def find_grants(researcher: ResearcherProfile, max_results: int = 20) -> Researc
     epmc = EuropePMCRepository()
     
     # Get grants from publications - using a list instead of a set to avoid hash errors
-    publication_grants: List[GrantMetadata] = []
+    publication_grants: List[GrantRecord] = []
     for publication in researcher.publications:
         for grant in publication.funding_info:
             # Enhance grant metadata if it's from NIH/NSF

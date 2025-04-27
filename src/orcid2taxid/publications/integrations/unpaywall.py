@@ -1,3 +1,7 @@
+from orcid2taxid.core.logging import get_logger
+
+logger = get_logger(__name__)
+
 class UnpaywallFetcher:
     """
     Uses the Unpaywall API to download a publication's PDF when available for a given DOI.
@@ -7,7 +11,6 @@ class UnpaywallFetcher:
         """
         :param email: Email address required by Unpaywall's usage policy.
         """
-        pass
 
     def fetch_fulltext_link(self, doi: str) -> dict:
         """
@@ -15,7 +18,6 @@ class UnpaywallFetcher:
         :param doi: The paper's DOI.
         :return: A dictionary with info on the OA status, link to PDF/HTML, etc.
         """
-        pass
 
     def download_pdf(self, doi: str, save_path: str) -> bool:
         """
@@ -23,5 +25,4 @@ class UnpaywallFetcher:
         :param doi: Paper's DOI.
         :param save_path: Where to store the downloaded PDF locally.
         :return: True if download succeeded, False otherwise.
-        """
-        pass 
+        """ 

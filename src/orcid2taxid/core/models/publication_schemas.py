@@ -1,8 +1,7 @@
-from typing import Optional, List, Dict
+from typing import Optional, List
 from datetime import datetime
 from pydantic import Field
-from orcid2taxid.core.models.base_schemas import DatetimeSerializableBaseModel
-from orcid2taxid.core.models.customer import ResearcherProfile
+from orcid2taxid.core.models.base_schemas import DatetimeSerializableBaseModel, ResearcherProfile
 from orcid2taxid.core.models.grant_schemas import GrantMetadata
 from orcid2taxid.core.models.extraction_schemas import PaperClassificationMetadata
 from orcid2taxid.core.models.integrations.ncbi_schemas import OrganismMention

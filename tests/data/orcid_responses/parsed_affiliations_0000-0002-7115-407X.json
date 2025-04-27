@@ -1,0 +1,158 @@
+{
+  "educations": [],
+  "employments": [
+    {
+      "organization": {
+        "name": "University of St Andrews",
+        "address": {
+          "city": "St Andrews",
+          "region": null,
+          "country": "GB"
+        },
+        "disambiguation_source": "RINGGOLD"
+      },
+      "department_name": null,
+      "role_title": null,
+      "start_date": null,
+      "end_date": null,
+      "source_name": "University of St Andrews CRIS",
+      "created-date": {
+        "value": 1629027603462
+      },
+      "last-modified-date": {
+        "value": 1682422233537
+      },
+      "put-code": 15542484,
+      "url": null,
+      "external-ids": null,
+      "display-index": "0",
+      "visibility": "public",
+      "path": "/0000-0002-7115-407X/employment/15542484"
+    },
+    {
+      "organization": {
+        "name": "University of St. Andrews",
+        "address": {
+          "city": "St. Andrews",
+          "region": "Scotland",
+          "country": "GB"
+        },
+        "disambiguation_source": null,
+        "disambiguated-organization": null
+      },
+      "department_name": "Biomedical Sciences Research Complex",
+      "role_title": "Reader in Virology",
+      "start_date": {
+        "year": {
+          "value": "2015"
+        },
+        "month": {
+          "value": "03"
+        },
+        "day": {
+          "value": "01"
+        }
+      },
+      "end_date": null,
+      "source_name": "Michael Martin Nevels",
+      "created-date": {
+        "value": 1431533333866
+      },
+      "last-modified-date": {
+        "value": 1431533368913
+      },
+      "put-code": 910775,
+      "url": null,
+      "external-ids": null,
+      "display-index": "0",
+      "visibility": "public",
+      "path": "/0000-0002-7115-407X/employment/910775"
+    },
+    {
+      "organization": {
+        "name": "University of Regensburg",
+        "address": {
+          "city": "Regensburg",
+          "region": null,
+          "country": "DE"
+        },
+        "disambiguation_source": "RINGGOLD"
+      },
+      "department_name": "Institute of Medical Microbiology and Hygiene",
+      "role_title": null,
+      "start_date": {
+        "year": {
+          "value": "2003"
+        },
+        "month": {
+          "value": "09"
+        },
+        "day": {
+          "value": "01"
+        }
+      },
+      "end_date": null,
+      "source_name": "Michael Martin Nevels",
+      "created-date": {
+        "value": 1408275501237
+      },
+      "last-modified-date": {
+        "value": 1431533385282
+      },
+      "put-code": 404310,
+      "url": null,
+      "external-ids": null,
+      "display-index": "0",
+      "visibility": "public",
+      "path": "/0000-0002-7115-407X/employment/404310"
+    },
+    {
+      "organization": {
+        "name": "Princeton University",
+        "address": {
+          "city": "Princeton",
+          "region": "NJ",
+          "country": "US"
+        },
+        "disambiguation_source": "RINGGOLD"
+      },
+      "department_name": "Molecular Biology",
+      "role_title": null,
+      "start_date": {
+        "year": {
+          "value": "2000"
+        },
+        "month": {
+          "value": "01"
+        },
+        "day": {
+          "value": "01"
+        }
+      },
+      "end_date": {
+        "year": {
+          "value": "2003"
+        },
+        "month": {
+          "value": "08"
+        },
+        "day": {
+          "value": "31"
+        }
+      },
+      "source_name": "Michael Martin Nevels",
+      "created-date": {
+        "value": 1408275439904
+      },
+      "last-modified-date": {
+        "value": 1408275439904
+      },
+      "put-code": 404309,
+      "url": null,
+      "external-ids": null,
+      "display-index": "0",
+      "visibility": "public",
+      "path": "/0000-0002-7115-407X/employment/404309"
+    }
+  ]
+}

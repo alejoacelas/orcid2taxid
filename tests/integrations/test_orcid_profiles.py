@@ -1,0 +1,134 @@
+import json
+import os
+from pathlib import Path
+import pytest
+from datetime import datetime
+from typing import Dict, Any
+
+from orcid2taxid.integrations.orcid_profiles import (
+    OrcidConfig,
+    fetch_orcid_data,
+    get_profile,
+    parse_affiliations
+)
+from orcid2taxid.core.models.customer_schemas import CustomerProfile
+
+# Configure pytest-asyncio
+pytestmark = pytest.mark.asyncio
+
+# Test data paths
+TEST_DATA_DIR = Path(__file__).parent.parent / "data"
+ORCID_RESPONSES_DIR = TEST_DATA_DIR / "orcid_responses"
+ORCID_RESPONSES_DIR.mkdir(exist_ok=True)
+
+# Test ORCID ID - using a real ORCID ID for testing
+TEST_ORCID_ID = "0000-0002-7115-407X"  # Example ORCID ID
+
+def save_orcid_response(endpoint: str, data: Dict[str, Any]) -> None:
+    """Save ORCID API response to a file."""
+    file_path = ORCID_RESPONSES_DIR / f"{endpoint}_{TEST_ORCID_ID}.json"
+    with open(file_path, 'w') as f:
+        json.dump(data, f, indent=2)
+
+def load_orcid_response(endpoint: str) -> Dict[str, Any]:
+    """Load saved ORCID API response from file."""
+    file_path = ORCID_RESPONSES_DIR / f"{endpoint}_{TEST_ORCID_ID}.json"
+    if not file_path.exists():
+        return None
+    with open(file_path, 'r') as f:
+        return json.load(f)
+
+def compare_responses(original: Dict[str, Any], new: Dict[str, Any]) -> bool:
+    """Compare two ORCID API responses, ignoring timestamp fields."""
+    def clean_response(data: Dict[str, Any]) -> Dict[str, Any]:
+        """Remove timestamp fields and sort keys for comparison."""
+        if isinstance(data, dict):
+            return {
+                k: clean_response(v)
+                for k, v in data.items()
+                if k not in ['last-modified-date', 'created-date', 'updated-date']
+            }
+        elif isinstance(data, list):
+            return [clean_response(item) for item in data]
+        return data
+
+    return clean_response(original) == clean_response(new)
+
+async def test_orcid_api_responses_consistency():
+    """Test that ORCID API responses remain consistent with stored versions."""
+    config = OrcidConfig()
+    endpoints = ["person", "works", "educations", "employments"]
+    
+    for endpoint in endpoints:
+        # Fetch current response
+        current_response = await fetch_orcid_data(TEST_ORCID_ID, endpoint, config)
+        
+        # Load stored response
+        stored_response = load_orcid_response(endpoint)
+        
+        if stored_response is None:
+            # First time running the test, save the response
+            save_orcid_response(endpoint, current_response)
+            pytest.skip(f"No stored response for {endpoint}, saved current response")
+        
+        # Compare responses
+        assert compare_responses(stored_response, current_response), \
+            f"ORCID API response for {endpoint} has changed from stored version"
+
+async def test_orcid_profile_parsing():
+    """Test that ORCID profile data can be parsed correctly."""
+    config = OrcidConfig()
+    
+    # Fetch and parse profile
+    profile = await get_profile(TEST_ORCID_ID, config)
+    
+    # Save parsed profile if it doesn't exist
+    profile_path = ORCID_RESPONSES_DIR / f"parsed_profile_{TEST_ORCID_ID}.json"
+    if not profile_path.exists():
+        with open(profile_path, 'w') as f:
+            json.dump(profile.model_dump(mode='json'), f, indent=2)
+        pytest.skip("No stored parsed profile, saved current profile")
+    
+    # Load stored profile
+    with open(profile_path, 'r') as f:
+        stored_profile = CustomerProfile.model_validate(json.load(f))
+    
+    # Compare profiles
+    assert profile.model_dump(mode='json') == stored_profile.model_dump(mode='json'), \
+        "Parsed profile differs from stored version"
+
+async def test_affiliation_parsing():
+    """Test that ORCID affiliations can be parsed correctly."""
+    config = OrcidConfig()
+    
+    # Fetch education and employment data
+    education_data = await fetch_orcid_data(TEST_ORCID_ID, "educations", config)
+    employment_data = await fetch_orcid_data(TEST_ORCID_ID, "employments", config)
+    
+    # Parse affiliations
+    educations = parse_affiliations(education_data)
+    employments = parse_affiliations(employment_data)
+    
+    # Save parsed affiliations if they don't exist
+    affiliations_path = ORCID_RESPONSES_DIR / f"parsed_affiliations_{TEST_ORCID_ID}.json"
+    if not affiliations_path.exists():
+        with open(affiliations_path, 'w') as f:
+            json.dump({
+                'educations': [edu.model_dump(mode='json') for edu in educations],
+                'employments': [emp.model_dump(mode='json') for emp in employments]
+            }, f, indent=2)
+        pytest.skip("No stored parsed affiliations, saved current affiliations")
+    
+    # Load stored affiliations
+    with open(affiliations_path, 'r') as f:
+        stored_data = json.load(f)
+        stored_educations = [parse_affiliations({'affiliation-group': [{'summaries': [{'education-summary': edu}]}]})[0] 
+                           for edu in stored_data['educations']]
+        stored_employments = [parse_affiliations({'affiliation-group': [{'summaries': [{'employment-summary': emp}]}]})[0] 
+                            for emp in stored_data['employments']]
+    
+    # Compare affiliations
+    assert [edu.model_dump(mode='json') for edu in educations] == [edu.model_dump(mode='json') for edu in stored_educations], \
+        "Parsed educations differ from stored version"
+    assert [emp.model_dump(mode='json') for emp in employments] == [emp.model_dump(mode='json') for emp in stored_employments], \
+        "Parsed employments differ from stored version" 

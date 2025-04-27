@@ -1,6 +1,6 @@
 from pydantic import BaseModel, ConfigDict, Field
 from datetime import datetime
-from typing import Optional, List
+from typing import Optional, List, Any
 
 class EmailInfo(BaseModel):
     """Represents an email address with its metadata"""
@@ -38,8 +38,10 @@ class ResearcherDescription(BaseModel):
 class DatetimeSerializableBaseModel(BaseModel):
     """Base model with custom JSON serialization configuration"""
     model_config = ConfigDict(
-        json_encoders={
-            datetime: lambda dt: dt.isoformat() if dt else None
+        json_schema_extra={
+            "json_serializers": {
+                datetime: lambda dt: dt.isoformat() if dt else None
+            }
         }
     )
 

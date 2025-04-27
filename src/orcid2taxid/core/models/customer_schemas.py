@@ -1,7 +1,7 @@
-from typing import List, Dict, Set, Any
-from pydantic import BaseModel, Field
+from typing import List, Dict
 from collections import defaultdict
 from datetime import datetime
+from pydantic import Field
 from orcid2taxid.core.models.base_schemas import ResearcherID, ExternalReference, InstitutionalAffiliation, ResearcherDescription, ResearcherProfile, EmailInfo
 from orcid2taxid.core.models.grant_schemas import GrantMetadata
 from orcid2taxid.core.models.publication_schemas import PublicationRecord

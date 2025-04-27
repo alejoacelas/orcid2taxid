@@ -4,12 +4,12 @@ import json
 
 orcid_id = "0000-0002-7115-407X"
 
-# researcher_raw = await fetch_orcid_data(orcid_id, "works")
-# print(json.dumps(researcher_raw, indent=4))
+researcher_raw = await fetch_orcid_data(orcid_id, "works")
+print(json.dumps(researcher_raw, indent=4))
 
 
-researcher = await get_profile(orcid_id)
-print(researcher.model_dump_json(indent=4))
+# researcher = await get_profile(orcid_id)
+# print(researcher.model_dump_json(indent=4))
 
 
 # %%

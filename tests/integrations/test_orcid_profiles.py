@@ -1,9 +1,7 @@
 import json
-import os
+from typing import Dict, Any
 from pathlib import Path
 import pytest
-from datetime import datetime
-from typing import Dict, Any
 
 from orcid2taxid.integrations.orcid_profiles import (
     OrcidConfig,
@@ -22,12 +20,12 @@ ORCID_RESPONSES_DIR = TEST_DATA_DIR / "orcid_responses"
 ORCID_RESPONSES_DIR.mkdir(exist_ok=True)
 
 # Test ORCID ID - using a real ORCID ID for testing
-TEST_ORCID_ID = "0000-0002-7115-407X"  # Example ORCID ID
+TEST_ORCID_ID = "0000-0002-7115-407X"
 
 def save_orcid_response(endpoint: str, data: Dict[str, Any]) -> None:
     """Save ORCID API response to a file."""
     file_path = ORCID_RESPONSES_DIR / f"{endpoint}_{TEST_ORCID_ID}.json"
-    with open(file_path, 'w') as f:
+    with open(file_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2)
 
 def load_orcid_response(endpoint: str) -> Dict[str, Any]:
@@ -35,7 +33,7 @@ def load_orcid_response(endpoint: str) -> Dict[str, Any]:
     file_path = ORCID_RESPONSES_DIR / f"{endpoint}_{TEST_ORCID_ID}.json"
     if not file_path.exists():
         return None
-    with open(file_path, 'r') as f:
+    with open(file_path, 'r', encoding='utf-8') as f:
         return json.load(f)
 
 def compare_responses(original: Dict[str, Any], new: Dict[str, Any]) -> bool:
@@ -70,6 +68,7 @@ async def test_orcid_api_responses_consistency():
             # First time running the test, save the response
             save_orcid_response(endpoint, current_response)
             pytest.skip(f"No stored response for {endpoint}, saved current response")
+            continue
         
         # Compare responses
         assert compare_responses(stored_response, current_response), \
@@ -85,12 +84,12 @@ async def test_orcid_profile_parsing():
     # Save parsed profile if it doesn't exist
     profile_path = ORCID_RESPONSES_DIR / f"parsed_profile_{TEST_ORCID_ID}.json"
     if not profile_path.exists():
-        with open(profile_path, 'w') as f:
+        with open(profile_path, 'w', encoding='utf-8') as f:
             json.dump(profile.model_dump(mode='json'), f, indent=2)
         pytest.skip("No stored parsed profile, saved current profile")
     
     # Load stored profile
-    with open(profile_path, 'r') as f:
+    with open(profile_path, 'r', encoding='utf-8') as f:
         stored_profile = CustomerProfile.model_validate(json.load(f))
     
     # Compare profiles
@@ -112,7 +111,7 @@ async def test_affiliation_parsing():
     # Save parsed affiliations if they don't exist
     affiliations_path = ORCID_RESPONSES_DIR / f"parsed_affiliations_{TEST_ORCID_ID}.json"
     if not affiliations_path.exists():
-        with open(affiliations_path, 'w') as f:
+        with open(affiliations_path, 'w', encoding='utf-8') as f:
             json.dump({
                 'educations': [edu.model_dump(mode='json') for edu in educations],
                 'employments': [emp.model_dump(mode='json') for emp in employments]
@@ -120,7 +119,7 @@ async def test_affiliation_parsing():
         pytest.skip("No stored parsed affiliations, saved current affiliations")
     
     # Load stored affiliations
-    with open(affiliations_path, 'r') as f:
+    with open(affiliations_path, 'r', encoding='utf-8') as f:
         stored_data = json.load(f)
         stored_educations = [parse_affiliations({'affiliation-group': [{'summaries': [{'education-summary': edu}]}]})[0] 
                            for edu in stored_data['educations']]

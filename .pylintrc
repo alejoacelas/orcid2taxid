@@ -1,0 +1,6 @@
+[MASTER]
+# C0111: missing-docstring - Warns when a module, class, or function has no docstring
+# C0114: missing-module-docstring - Specifically for missing module-level docstrings
+# C0115: missing-class-docstring - Specifically for missing class docstrings
+# C0116: missing-function-docstring - Specifically for missing function docstrings
+disable=C0111,C0114,C0115,C0116 

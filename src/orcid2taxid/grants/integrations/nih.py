@@ -1,7 +1,7 @@
 from typing import List, Dict, Optional
 import requests
 
-from orcid2taxid.core.models.customer import GrantMetadata
+from orcid2taxid.grants.schemas import GrantRecord
 from orcid2taxid.core.utils.date import parse_date
 from orcid2taxid.core.logging import get_logger
 
@@ -31,8 +31,8 @@ class NIHReporterRepository:
         """Log a warning"""
         self.logger.warning(message)
 
-    def _convert_to_grant_metadata(self, nih_result: Dict) -> GrantMetadata:
-        """Helper method to convert NIH Reporter result to GrantMetadata"""
+    def _convert_to_grant_metadata(self, nih_result: Dict) -> GrantRecord:
+        """Helper method to convert NIH Reporter result to GrantRecord"""
         try:
             # Extract organization information
             org_data = nih_result.get('organization', {})
@@ -63,29 +63,26 @@ class NIHReporterRepository:
                         project_terms.append(term['term'])
             
             # Create GrantMetadata object with all required fields
-            return GrantMetadata(
-                project_title=nih_result.get('project_title', ''),
-                project_num=nih_result.get('project_num', ''),
+            return GrantRecord(
+                title=nih_result.get('project_title', ''),
+                id=nih_result.get('project_num', ''),
                 funder='NIH',  # NIH Reporter is specifically for NIH grants
                 fiscal_year=nih_result.get('fiscal_year'),
-                award_amount=float(nih_result.get('award_amount', 0)) if nih_result.get('award_amount') else None,
+                amount=float(nih_result.get('award_amount', 0)) if nih_result.get('award_amount') else None,
                 direct_costs=float(nih_result.get('direct_cost_amt', 0)) if nih_result.get('direct_cost_amt') else None,
                 indirect_costs=float(nih_result.get('indirect_cost_amt', 0)) if nih_result.get('indirect_cost_amt') else None,
-                project_start_date=parse_date(nih_result.get('project_start_date')),
-                project_end_date=parse_date(nih_result.get('project_end_date')),
-                organization=organization,
-                pi_name=pi_name,
-                pi_profile_id=pi_data.get('profile_id'),
-                abstract_text=nih_result.get('abstract_text'),
+                start_date=parse_date(nih_result.get('project_start_date')),
+                end_date=parse_date(nih_result.get('project_end_date')),
+                recipient=organization,
+                principal_investigator=pi_name,
+                abstract=nih_result.get('abstract_text'),
                 project_terms=project_terms,
-                funding_mechanism=nih_result.get('funding_mechanism'),
-                activity_code=nih_result.get('activity_code'),
                 award_type=nih_result.get('award_type'),
                 study_section=nih_result.get('study_section'),
                 study_section_code=nih_result.get('study_section_code'),
                 last_updated=parse_date(nih_result.get('last_update_date')),
                 is_active=nih_result.get('is_active', False),
-                is_arra=nih_result.get('arra_funded', False),
+                is_array_funded=nih_result.get('arra_funded', False),
                 covid_response=nih_result.get('covid_response'),
                 # Add required fields with appropriate values
                 grant_type=nih_result.get('award_type', 'research'),  # Default to research if not specified
@@ -99,9 +96,9 @@ class NIHReporterRepository:
             self._log_error(f"Error converting NIH Reporter result to GrantMetadata: {str(e)}")
             return None
 
-    def get_funding_by_pi_name(self, pi_name: str, max_results: int = 20) -> List[GrantMetadata]:
+    def get_funding_by_pi_name(self, pi_name: str, max_results: int = 20) -> List[GrantRecord]:
         """
-        Search NIH Reporter by PI name and convert results to GrantMetadata objects.
+        Search NIH Reporter by PI name and convert results to GrantRecord objects.
         :param pi_name: Principal Investigator name.
         :param max_results: Maximum number of results to fetch.
         :return: List of grant metadata.
@@ -167,9 +164,9 @@ class NIHReporterRepository:
             self._log_error(f"Error fetching NIH Reporter funding data: {str(e)}")
             return {}
 
-    def get_funding_by_organization(self, org_name: str, max_results: int = 20) -> List[GrantMetadata]:
+    def get_funding_by_organization(self, org_name: str, max_results: int = 20) -> List[GrantRecord]:
         """
-        Search NIH Reporter by organization name and convert results to GrantMetadata objects.
+        Search NIH Reporter by organization name and convert results to GrantRecord objects.
         :param org_name: Organization name.
         :param max_results: Maximum number of results to fetch.
         :return: List of grant metadata.
@@ -181,7 +178,7 @@ class NIHReporterRepository:
             
             results = raw_data.get('results', [])
             
-            # Convert results to GrantMetadata objects
+            # Convert results to GrantRecord objects
             grant_list = []
             for result in results:
                 grant = self._convert_to_grant_metadata(result)
@@ -235,11 +232,11 @@ class NIHReporterRepository:
             self._log_error(f"Error fetching NIH Reporter funding data: {str(e)}")
             return {}
 
-    def get_grant_by_number(self, project_number: str) -> Optional[GrantMetadata]:
+    def get_grant_by_number(self, project_number: str) -> Optional[GrantRecord]:
         """
         Get a single grant by its project number from NIH Reporter.
         :param project_number: The NIH project number to search for.
-        :return: GrantMetadata object if found, None otherwise.
+        :return: GrantRecord object if found, None otherwise.
         """
         try:
             raw_data = self.fetch_grant_by_number(project_number)
@@ -247,7 +244,7 @@ class NIHReporterRepository:
                 self._log_warning(f"No grant found for project number: {project_number}")
                 return None
             
-            # Get the first result and convert it to GrantMetadata
+            # Get the first result and convert it to GrantRecord
             result = raw_data['results'][0]
             return self._convert_to_grant_metadata(result)
             

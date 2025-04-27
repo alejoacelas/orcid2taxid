@@ -1,5 +1,10 @@
 # ORCID2TAXID Mapper
 
+## TODO
+
+* Check which fields should be required from integration API responses
+* Create comprehensive repo planning to guide the AI
+
 ## Overview
 
 ORCID2TAXID works by analyzing a researcher's publication history through multiple sources and extracting organism mentions from their publications which are mapped to TAXIDs using NCBI's e-search API.

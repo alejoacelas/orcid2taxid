@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, ValidationError
 from orcid2taxid.publications.schemas.base import PublicationRecord
 from orcid2taxid.publications.schemas.epmc import EpmcResponse
 from orcid2taxid.core.logging import get_logger, log_event
-from orcid2taxid.publications.exceptions import EpmcAPIError, EpmcDataError
+from orcid2taxid.publications.exceptions import EpmcAPIError, EpmcValidationError
 
 logger = get_logger(__name__)
 
@@ -55,7 +55,7 @@ def parse_publication(data: Dict[str, Any]) -> List[PublicationRecord]:
         epmc_response = EpmcResponse.model_validate(data)
         return PublicationRecord.from_epmc_response(epmc_response)
     except ValidationError as e:
-        raise EpmcDataError(
+        raise EpmcValidationError(
             "Failed to validate Europe PMC publication data",
             validation_error=e,
             details={
@@ -85,7 +85,7 @@ async def get_publications_by_orcid(
         return parse_publication(data)
         
     except Exception as e:
-        if not isinstance(e, (EpmcAPIError, EpmcDataError)):
+        if not isinstance(e, (EpmcAPIError, EpmcValidationError)):
             logger.error("Error processing publications for ORCID %s: %s", orcid_id, str(e))
             raise EpmcAPIError(
                 "Failed to process publications",

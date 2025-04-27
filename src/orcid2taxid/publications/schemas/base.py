@@ -32,31 +32,6 @@ class PublicationRecord(DatetimeSerializableBaseModel):
     # organisms: List[OrganismMention] = Field(default_factory=list)
     # classification: Optional[PaperClassificationMetadata] = None
 
-    @staticmethod
-    def _map_source_code(source_code: str) -> str:
-        """Map a source code to its full name.
-        
-        Args:
-            source_code: The source code from EPMC (e.g., 'MED', 'PMC', etc.)
-            
-        Returns:
-            str: The full name of the source
-        """
-        source_mapping = {
-            'AGR': 'Agricola',
-            'CBA': 'Chinese Biological Abstracts',
-            'CTX': 'CiteXplore',
-            'ETH': 'EthOs',
-            'HIR': 'NHS Evidence',
-            'MED': 'PubMed/MEDLINE',
-            'NBK': 'Europe PMC Book metadata',
-            'PAT': 'Biological Patents',
-            'PMC': 'PubMed Central',
-            'EUROPEPMC': 'Europe PMC'
-        }
-        
-        return source_mapping.get(source_code, source_code)
-
     @classmethod
     def from_epmc_response(cls, epmc_response: EpmcResponse) -> List['PublicationRecord']:
         """Convert an EpmcResponse object to a list of PublicationRecord objects.
@@ -76,6 +51,9 @@ class PublicationRecord(DatetimeSerializableBaseModel):
             authors = []
             if result.author_list:
                 for author in result.author_list:
+                    if not author.full_name:
+                        continue
+                    
                     # Handle author IDs
                     external_references = []
                     orcid = None
@@ -94,7 +72,7 @@ class PublicationRecord(DatetimeSerializableBaseModel):
                     
                     # Create researcher profile with all available information
                     researcher_id = ResearcherID(
-                        given_name=author.first_name,
+                        given_name=author.first_name or author.initials,
                         family_name=author.last_name,
                         credit_name=author.full_name,
                         orcid=orcid
@@ -156,9 +134,9 @@ class PublicationRecord(DatetimeSerializableBaseModel):
                     
                     subjects.append(subject_str)
             
-            # Map source code to full name
-            source = cls._map_source_code(result.source or "")
-            
+            if not result.title or not result.abstract_text:
+                continue
+
             publication = cls(
                 title=result.title or "",
                 abstract=result.abstract_text,
@@ -167,7 +145,7 @@ class PublicationRecord(DatetimeSerializableBaseModel):
                 journal_name=result.journal_info.journal.title if result.journal_info and result.journal_info.journal else None,
                 journal_issn=result.journal_info.journal.issn if result.journal_info and result.journal_info.journal else None,
                 authors=authors,
-                source=source,
+                source="Europe PMC",
                 full_text_url=full_text_url,
                 citation_count=result.cited_by_count,
                 keywords=result.keyword_list or [],

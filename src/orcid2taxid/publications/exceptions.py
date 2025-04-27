@@ -29,7 +29,7 @@ class EpmcAPIError(EpmcError):
             details=details
         )
 
-class EpmcDataError(DataValidationError):
+class EpmcValidationError(DataValidationError):
     """Exception for Europe PMC data parsing/validation errors"""
     def __init__(
         self,
@@ -43,3 +43,43 @@ class EpmcDataError(DataValidationError):
             integration="epmc",
             details=details
         )
+        
+    def __str__(self):
+        # Get the original ValidationError
+        original_error = self.__cause__
+        error_details = []
+        
+        # Process validation errors from the parent class
+        if hasattr(self, 'details') and self.details and 'validation_errors' in self.details:
+            for error in self.details['validation_errors']:
+                field = error.get('field', 'unknown field')
+                msg = error.get('message', 'unknown error')
+                input_val = error.get('input')
+                error_details.append(f"Field '{field}': {msg} (received: {input_val!r})")
+        
+        # Get contextual information from the details
+        context_info = ""
+        if hasattr(self, 'details') and self.details:
+            # Extract useful fields from raw data if available
+            if 'raw_data' in self.details:
+                raw_data = self.details['raw_data']
+                # Add identifier information if available
+                if isinstance(raw_data, dict):
+                    if 'resultList' in raw_data and 'result' in raw_data['resultList']:
+                        results = raw_data['resultList']['result']
+                        if results and len(results) > 0:
+                            result = results[0]
+                            if 'doi' in result and result['doi']:
+                                context_info += f"\nDOI: {result['doi']}"
+                            if 'title' in result and result['title']:
+                                context_info += f"\nTitle: {result['title'][:50]}..." if len(result['title']) > 50 else f"\nTitle: {result['title']}"
+                            if 'authorString' in result and result['authorString']:
+                                context_info += f"\nAuthors: {result['authorString'][:50]}..." if len(result['authorString']) > 50 else f"\nAuthors: {result['authorString']}"
+                            if 'authorList' in result and result['authorList']:
+                                authors = result['authorList']['author']
+                                for author in authors:
+                                    context_info += f"\nAuthor: {author['firstName']}, {author['lastName']}"
+        
+        # Combine validation errors with context info
+        detailed_message = "\n".join(error_details) if error_details else str(original_error)
+        return f"{self.message}\n{detailed_message}{context_info}"

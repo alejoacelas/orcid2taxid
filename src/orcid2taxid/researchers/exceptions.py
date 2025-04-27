@@ -30,7 +30,7 @@ class OrcidAPIError(OrcidError):
             details=details
         )
 
-class OrcidDataError(DataValidationError):
+class OrcidValidationError(DataValidationError):
     """Exception for ORCID data parsing/validation errors"""
     def __init__(
         self,

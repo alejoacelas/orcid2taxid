@@ -1,6 +1,6 @@
 from typing import List, Dict
 from pathlib import Path
-from orcid2taxid.core.models.customer import GrantMetadata
+from orcid2taxid.grants.schemas import GrantRecord
 from orcid2taxid.core.utils.llm import LLMClient
 from orcid2taxid.core.utils.data import render_prompt
 from orcid2taxid.core.utils.llm import extract_tagged_content
@@ -18,15 +18,15 @@ class GrantExtractor:
         """
         self.llm = LLMClient()
 
-    def extract_terms_from_abstract(self, grant: GrantMetadata) -> List[str]:
+    def extract_terms_from_abstract(self, grant: GrantRecord) -> List[str]:
         """
         Uses an LLM to detect key terms from grant title and abstract.
         
-        :param grant: GrantMetadata object containing grant information
+        :param grant: GrantRecord object containing grant information
         :return: List of key terms extracted from the grant
         """
         template_data = {
-            "grant_content": f"Title: {grant.project_title}\n\nAbstract: {grant.abstract_text}"
+            "grant_content": f"Title: {grant.title}\n\nAbstract: {grant.abstract}"
         }
         
         prompt = render_prompt(PROMPT_DIR, "grant_terms.txt", **template_data)

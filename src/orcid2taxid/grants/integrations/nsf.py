@@ -4,7 +4,7 @@ import requests
 from datetime import datetime
 import json
 
-from orcid2taxid.core.models.customer import GrantMetadata
+from orcid2taxid.grants.schemas import GrantRecord
 from orcid2taxid.core.utils.date import parse_date
 from orcid2taxid.core.logging import get_logger
 
@@ -47,8 +47,8 @@ class NSFRepository:
         # Check if all words from the search query are in the PI name
         return all(word in pi_name_lower for word in search_words)
 
-    def _convert_to_grant_metadata(self, nsf_result: Dict) -> GrantMetadata:
-        """Helper method to convert NSF result to GrantMetadata"""
+    def _convert_to_grant_metadata(self, nsf_result: Dict) -> GrantRecord:
+        """Helper method to convert NSF result to GrantRecord"""
         try:
             # Extract organization information
             organization = {
@@ -72,23 +72,20 @@ class NSFRepository:
                 project_terms.append(nsf_result.get('abstractText'))
             
             # Create GrantMetadata object with all required fields
-            return GrantMetadata(
-                project_title=nsf_result.get('title', ''),
-                project_num=nsf_result.get('id', ''),
+            return GrantRecord(
+                title=nsf_result.get('title', ''),
+                id=nsf_result.get('id', ''),
                 funder='NSF',  # NSF Grants API is specifically for NSF grants
                 fiscal_year=None,  # Not provided in basic fields
-                award_amount=None,  # Not provided in basic fields
+                amount=None,  # Not provided in basic fields
                 direct_costs=None,  # NSF doesn't provide direct/indirect costs
                 indirect_costs=None,
-                project_start_date=parse_date(nsf_result.get('date')),  # Using award date as start date
-                project_end_date=None,  # Not provided in basic fields
-                organization=organization,
-                pi_name=pi_name,
-                pi_profile_id='',  # Not provided in basic fields
-                abstract_text=nsf_result.get('abstractText', ''),
+                start_date=parse_date(nsf_result.get('date')),  # Using award date as start date
+                end_date=None,  # Not provided in basic fields
+                recipient=organization,
+                principal_investigator=pi_name,
+                abstract=nsf_result.get('abstractText', ''),
                 project_terms=project_terms,
-                funding_mechanism='',  # Not provided in basic fields
-                activity_code='',  # Not provided in basic fields
                 award_type='',  # Not provided in basic fields
                 study_section=None,  # NIH specific
                 study_section_code=None,  # NIH specific
@@ -108,9 +105,9 @@ class NSFRepository:
             self._log_error(f"Error converting NSF result to GrantMetadata: {str(e)}")
             return None
 
-    def get_funding_by_pi_name(self, pi_name: str, max_results: int = 20) -> List[GrantMetadata]:
+    def get_funding_by_pi_name(self, pi_name: str, max_results: int = 20) -> List[GrantRecord]:
         """
-        Search NSF Grants by PI name and convert results to GrantMetadata objects.
+        Search NSF Grants by PI name and convert results to GrantRecord objects.
         Only returns results where the PI name contains all words from the search query.
         :param pi_name: Principal Investigator name.
         :param max_results: Maximum number of results to fetch.
@@ -172,9 +169,9 @@ class NSFRepository:
             self._log_error(f"Error fetching NSF Grants data: {str(e)}")
             return {}
 
-    def get_funding_by_organization(self, org_name: str, max_results: int = 20) -> List[GrantMetadata]:
+    def get_funding_by_organization(self, org_name: str, max_results: int = 20) -> List[GrantRecord]:
         """
-        Search NSF Grants by organization name and convert results to GrantMetadata objects.
+        Search NSF Grants by organization name and convert results to GrantRecord objects.
         :param org_name: Organization name.
         :param max_results: Maximum number of results to fetch.
         :return: List of grant metadata.
@@ -228,12 +225,12 @@ class NSFRepository:
             self._log_error(f"Error fetching NSF Grants data: {str(e)}")
             return {}
 
-    def get_grant_by_number(self, project_number: str) -> Optional[GrantMetadata]:
+    def get_grant_by_number(self, project_number: str) -> Optional[GrantRecord]:
         """
         Get a single grant by its project number from NSF Grants.
         Since NSF API doesn't support direct field filtering, we fetch results and filter in memory.
         :param project_number: The NSF project number to search for.
-        :return: GrantMetadata object if found, None otherwise.
+        :return: GrantRecord object if found, None otherwise.
         """
         try:
             raw_data = self.fetch_grant_by_number(project_number)

@@ -8,7 +8,7 @@ from orcid2taxid.researchers.schemas.orcid import (
 )
 from orcid2taxid.researchers.schemas.base import CustomerProfile
 from orcid2taxid.core.logging import get_logger, log_event
-from orcid2taxid.researchers.exceptions import OrcidAPIError, OrcidDataError, OrcidError
+from orcid2taxid.researchers.exceptions import OrcidAPIError, OrcidValidationError, OrcidError
 
 logger = get_logger(__name__)
 
@@ -104,7 +104,7 @@ async def get_profile(orcid_id: str, config: Optional[OrcidConfig] = None) -> Cu
             return profile
             
         except ValidationError as e:
-            raise OrcidDataError(
+            raise OrcidValidationError(
                 "Failed to validate ORCID data",
                 validation_error=e,
                 details={

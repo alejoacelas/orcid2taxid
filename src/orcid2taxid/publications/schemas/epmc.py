@@ -20,10 +20,11 @@ class EpmcAuthorAffiliation(EpmcBaseModel):
 class EpmcAuthor(EpmcBaseModel):
     """Author details from EPMC response"""
     full_name: Optional[str] = Field(None, validation_alias=AliasPath('fullName'))
-    first_name: Optional[str] = Field(None, validation_alias=AliasPath('firstName'))
     last_name: Optional[str] = Field(None, validation_alias=AliasPath('lastName'))
+    first_name: Optional[str] = Field(None, validation_alias=AliasPath('firstName'))
     initials: Optional[str] = Field(None)
     author_id: Optional[EpmcAuthorId] = Field(None, validation_alias=AliasPath('authorId'))
+    collective_name: Optional[str] = Field(None, validation_alias=AliasPath('collectiveName'))
     affiliation_details: Optional[List[EpmcAuthorAffiliation]] = Field(
         default_factory=list,
         validation_alias=AliasPath('authorAffiliationDetailsList', 'authorAffiliation')

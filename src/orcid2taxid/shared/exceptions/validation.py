@@ -48,11 +48,14 @@ class ValidationErrorMixin:
                 except (AttributeError, IndexError):
                     pass
             
+            # Store the full input value without truncation
+            input_value = error.get("input")
+            
             formatted_errors.append({
                 "field": field_path,
                 "message": error["msg"],
                 "type": error["type"],
-                "input": error["input"],
+                "input": input_value,
                 "model": model_name
             })
         return formatted_errors
@@ -76,3 +79,18 @@ class DataValidationError(IntegrationError, ValidationErrorMixin):
             status_code=status_code,
             details=details
         )
+        
+    def __str__(self):
+        """Custom string representation to include detailed error information"""
+        original_error = self.__cause__
+        error_details = []
+        
+        if hasattr(self, 'details') and self.details and 'validation_errors' in self.details:
+            for error in self.details['validation_errors']:
+                field = error.get('field', 'unknown field')
+                msg = error.get('message', 'unknown error')
+                input_val = error.get('input')
+                error_details.append(f"Field '{field}': {msg} (received: {input_val!r})")
+        
+        detailed_message = "\n".join(error_details) if error_details else str(original_error)
+        return f"{self.message}\n{detailed_message}"

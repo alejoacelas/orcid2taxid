@@ -1,6 +1,4 @@
 import json
-from typing import Dict, Any
-from pathlib import Path
 import pytest
 
 from orcid2taxid.researcher.integrations.orcid import (
@@ -10,47 +8,22 @@ from orcid2taxid.researcher.integrations.orcid import (
     parse_affiliations
 )
 from orcid2taxid.researcher.schemas.base import CustomerProfile
+from tests.integrations.api_test_cases import TEST_ORCID_ID
+from tests.utils.utils import (
+    get_responses_dir,
+    save_response,
+    load_response,
+    compare_responses
+)
 
 # Configure pytest-asyncio
 pytestmark = pytest.mark.asyncio
 
 # Test data paths
-TEST_DATA_DIR = Path(__file__).parent.parent / "data"
-ORCID_RESPONSES_DIR = TEST_DATA_DIR / "orcid_responses"
-ORCID_RESPONSES_DIR.mkdir(exist_ok=True)
+ORCID_RESPONSES_DIR = get_responses_dir("researcher_orcid")
 
-# Test ORCID ID - using a real ORCID ID for testing
-TEST_ORCID_ID = "0000-0002-7115-407X"
-
-def save_orcid_response(endpoint: str, data: Dict[str, Any]) -> None:
-    """Save ORCID API response to a file."""
-    file_path = ORCID_RESPONSES_DIR / f"{endpoint}_{TEST_ORCID_ID}.json"
-    with open(file_path, 'w', encoding='utf-8') as f:
-        json.dump(data, f, indent=2)
-
-def load_orcid_response(endpoint: str) -> Dict[str, Any]:
-    """Load saved ORCID API response from file."""
-    file_path = ORCID_RESPONSES_DIR / f"{endpoint}_{TEST_ORCID_ID}.json"
-    if not file_path.exists():
-        return None
-    with open(file_path, 'r', encoding='utf-8') as f:
-        return json.load(f)
-
-def compare_responses(original: Dict[str, Any], new: Dict[str, Any]) -> bool:
-    """Compare two ORCID API responses, ignoring timestamp fields."""
-    def clean_response(data: Dict[str, Any]) -> Dict[str, Any]:
-        """Remove timestamp fields and sort keys for comparison."""
-        if isinstance(data, dict):
-            return {
-                k: clean_response(v)
-                for k, v in data.items()
-                if k not in ['last-modified-date', 'created-date', 'updated-date']
-            }
-        elif isinstance(data, list):
-            return [clean_response(item) for item in data]
-        return data
-
-    return clean_response(original) == clean_response(new)
+# Timestamp fields to ignore in ORCID responses
+ORCID_TIMESTAMP_FIELDS = ['last-modified-date', 'created-date', 'updated-date']
 
 async def test_orcid_api_responses_consistency():
     """Test that ORCID API responses remain consistent with stored versions."""
@@ -62,16 +35,16 @@ async def test_orcid_api_responses_consistency():
         current_response = await fetch_orcid_data(TEST_ORCID_ID, endpoint, config)
         
         # Load stored response
-        stored_response = load_orcid_response(endpoint)
+        stored_response = load_response("researcher_orcid", f"{endpoint}_{TEST_ORCID_ID}.json")
         
         if stored_response is None:
             # First time running the test, save the response
-            save_orcid_response(endpoint, current_response)
+            save_response("researcher_orcid", f"{endpoint}_{TEST_ORCID_ID}.json", current_response)
             pytest.skip(f"No stored response for {endpoint}, saved current response")
             continue
         
         # Compare responses
-        assert compare_responses(stored_response, current_response), \
+        assert compare_responses(stored_response, current_response, ORCID_TIMESTAMP_FIELDS), \
             f"ORCID API response for {endpoint} has changed from stored version"
 
 async def test_orcid_profile_parsing():

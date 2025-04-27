@@ -8,7 +8,7 @@ from orcid2taxid.publication.services import get_classification, get_organisms, 
 from orcid2taxid.grant.services import find_grants
 from orcid2taxid.publication.schemas import PublicationRecord
 from orcid2taxid.researcher.schemas import ResearcherProfile
-from orcid2taxid.grant.schemas import GrantRecord
+from orcid2taxid.grant.schemas.base import GrantRecord
 from orcid2taxid.core.models.extraction_schemas import PaperClassificationMetadata
 
 # Custom hash functions for Pydantic models

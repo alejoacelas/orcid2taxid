@@ -1,49 +1,97 @@
 from typing import List, Optional
 from orcid2taxid.shared.schemas import (
-    ResearcherProfile, Author,
-    InstitutionalAffiliation, ExternalId
+    ResearcherProfile,
+    ExternalReference
 )
-from orcid2taxid.publications.schemas import PublicationRecord
-from orcid2taxid.researchers.integrations.orcid import OrcidClient
-from orcid2taxid.publications.integrations.epmc import EuropePMCRepository
+from orcid2taxid.publication.schemas import PublicationRecord
+from orcid2taxid.publication.integrations.epmc import get_epmc_publications_by_orcid as get_epmc_publications
+from orcid2taxid.researcher.integrations.orcid import get_profile
+from orcid2taxid.core.logging import log_event, get_logger
 
-def get_researcher_by_orcid(orcid_id: str) -> ResearcherProfile:
-    """Get researcher metadata from ORCID ID"""
-    client = OrcidClient()
-    metadata = client.get_author_metadata(orcid_id)
-    return ResearcherProfile(**metadata.model_dump())
+logger = get_logger(__name__)
 
-def find_publications(researcher: ResearcherProfile, max_results: Optional[int] = None) -> ResearcherProfile:
-    """Fetch and add publications to researcher metadata"""
-    epmc = EuropePMCRepository()
-    client = OrcidClient()
+@log_event(__name__)
+async def get_researcher_by_orcid(orcid_id: str) -> ResearcherProfile:
+    """
+    Get researcher metadata from ORCID ID
     
-    # Get publications from both sources
-    epmc_papers = epmc.get_publications_by_orcid(researcher.orcid, max_results)
-    orcid_papers = client.get_publications_by_orcid(researcher.orcid)
+    Args:
+        orcid_id: The ORCID identifier for the researcher
+        
+    Returns:
+        ResearcherProfile: Complete researcher profile with metadata
+    """
+    profile = await get_profile(orcid_id)
+    return profile
+
+@log_event(__name__)
+async def find_publications(
+    researcher: ResearcherProfile, 
+    max_results: Optional[int] = None
+) -> ResearcherProfile:
+    """
+    Fetch and add publications to researcher metadata
+    
+    Args:
+        researcher: The researcher profile to enrich
+        max_results: Maximum number of publications to fetch
+        
+    Returns:
+        ResearcherProfile: The enriched researcher profile
+    """
+    # Get publications from Europe PMC source
+    epmc_papers = await get_epmc_publications(researcher.orcid, max_results)
+    
+    # Get publications from ORCID (already in the profile)
+    orcid_papers = researcher.publications if hasattr(researcher, 'publications') else []
     
     # Deduplicate and update researcher
     unique_papers = _deduplicate_publications(epmc_papers + orcid_papers)
-    researcher.publications = unique_papers[:max_results]
+    if max_results is not None:
+        unique_papers = unique_papers[:max_results]
+    
+    researcher.publications = unique_papers
     
     # Enrich researcher metadata from publications
     _enrich_from_publications(researcher)
     return researcher
 
 def _deduplicate_publications(publications: List[PublicationRecord]) -> List[PublicationRecord]:
-    """Deduplicate publications based on DOI"""
+    """
+    Deduplicate publications based on DOI
+    
+    Args:
+        publications: List of publications to deduplicate
+        
+    Returns:
+        List[PublicationRecord]: Deduplicated list of publications
+    """
     seen_dois = set()
     unique_pubs = []
+    
     for paper in publications:
         if paper.doi and paper.doi in seen_dois:
             continue
         if paper.doi:
             seen_dois.add(paper.doi)
         unique_pubs.append(paper)
+    
     return unique_pubs
 
-def _find_matching_author(researcher: ResearcherProfile, authors: List[Author]) -> Optional[Author]:
-    """Find the author entry that matches this researcher"""
+def _find_matching_author(
+    researcher: ResearcherProfile, 
+    authors: List[ResearcherProfile]
+) -> Optional[ResearcherProfile]:
+    """
+    Find the author entry that matches this researcher
+    
+    Args:
+        researcher: The researcher to match
+        authors: List of authors to search through
+        
+    Returns:
+        Optional[ResearcherProfile]: Matching author if found
+    """
     for author in authors:
         # Match by ORCID if available
         if author.orcid and author.orcid == researcher.orcid:
@@ -51,7 +99,7 @@ def _find_matching_author(researcher: ResearcherProfile, authors: List[Author]) 
         
         # Match by email if available
         if (author.email and researcher.email and 
-            author.email == researcher.email.address):
+            author.email.address == researcher.email.address):
             return author
         
         # Match by name if available
@@ -68,7 +116,26 @@ def _find_matching_author(researcher: ResearcherProfile, authors: List[Author]) 
     return None
 
 def _enrich_from_publications(researcher: ResearcherProfile) -> None:
-    """Enrich researcher metadata from publications"""
+    """
+    Enrich researcher metadata from publications
+    
+    Args:
+        researcher: The researcher profile to enrich
+    """
+    # Ensure fields exist before trying to update them
+    if not hasattr(researcher, 'alternative_names'):
+        researcher.alternative_names = set()
+    if not hasattr(researcher, 'keywords'):
+        researcher.keywords = set()
+    if not hasattr(researcher, 'subjects'):
+        researcher.subjects = set()
+    if not hasattr(researcher, 'journals'):
+        researcher.journals = set()
+    if not hasattr(researcher, 'external_ids'):
+        researcher.external_ids = {}
+    if not hasattr(researcher, 'grants'):
+        researcher.grants = []
+        
     for paper in researcher.publications:
         author = _find_matching_author(researcher, paper.authors)
         if not author:
@@ -76,33 +143,29 @@ def _enrich_from_publications(researcher: ResearcherProfile) -> None:
             
         if author.full_name and author.full_name != researcher.full_name:
             researcher.alternative_names.add(author.full_name)
+        
         if paper.keywords:
             researcher.keywords.update(paper.keywords)
+        
         if paper.subjects:
             researcher.subjects.update(paper.subjects)
+        
         if paper.journal_name:
             researcher.journals.add(paper.journal_name)
         
         # Add external IDs
-        if author.identifiers:
+        if hasattr(author, 'identifiers') and author.identifiers:
             for id_type, id_value in author.identifiers.items():
                 if id_type not in researcher.external_ids:
-                    researcher.external_ids[id_type] = ExternalId(value=id_value)
+                    researcher.external_ids[id_type] = ExternalReference(
+                        url=f"https://{id_type}.org/{id_value}",
+                        name=id_type,
+                        source="Publication Metadata"
+                    )
         
-        # Add affiliations
-        # for affiliation in author.affiliations:
-        #     if affiliation:
-        #         # Create AuthorAffiliation object
-        #         aff = AuthorAffiliation(
-        #             institution_name=affiliation,
-        #             visibility='public'
-        #         )
-        #         # Only add if not already present
-        #         if not any(a.institution_name == aff.institution_name for a in researcher.affiliations):
-        #             researcher.affiliations.append(aff)
-
         # Add grants from publication
-        for grant in paper.funding_info:
-            # Only add if not already present (based on project number)
-            if not any(g.project_num == grant.project_num for g in researcher.grants):
-                researcher.grants.append(grant) 
+        if paper.grants:
+            for grant in paper.grants:
+                # Only add if not already present (based on project number)
+                if not any(g.id == grant.id for g in researcher.grants):
+                    researcher.grants.append(grant) 

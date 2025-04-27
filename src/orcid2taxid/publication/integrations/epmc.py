@@ -1,10 +1,10 @@
 from typing import Dict, Any, Optional, List
 import httpx
 from pydantic import BaseModel, Field, ValidationError
-from orcid2taxid.publications.schemas.base import PublicationRecord
-from orcid2taxid.publications.schemas.epmc import EpmcResponse
+from orcid2taxid.publication.schemas.base import PublicationRecord
+from orcid2taxid.publication.schemas.epmc import EpmcResponse
 from orcid2taxid.core.logging import get_logger, log_event
-from orcid2taxid.publications.exceptions import EpmcAPIError, EpmcValidationError
+from orcid2taxid.publication.exceptions import EpmcAPIError, EpmcValidationError
 
 logger = get_logger(__name__)
 
@@ -18,19 +18,21 @@ class EpmcConfig(BaseModel):
         return {'Accept': 'application/json'}
 
 async def fetch_epmc_data(
-    endpoint: str,
-    params: Dict[str, Any],
-    config: Optional[EpmcConfig] = None
+    payload: Dict[str, Any],
+    config: Optional[EpmcConfig] = None,
+    endpoint: str = 'search',
 ) -> Dict[str, Any]:
     """Generic function to fetch data from Europe PMC API"""
     if config is None:
         config = EpmcConfig()
+    if payload is None:
+        payload = {}
         
     async with httpx.AsyncClient(timeout=config.timeout) as client:
         try:
             response = await client.get(
                 f"{config.base_url}/{endpoint}",
-                params=params,
+                params=payload,
                 headers=config.headers
             )
             response.raise_for_status()
@@ -41,7 +43,7 @@ async def fetch_epmc_data(
                 f"Failed to fetch {endpoint} data",
                 details={
                     "endpoint": endpoint,
-                    "params": params,
+                    "params": payload,
                     "error": str(e)
                 }
             ) from e
@@ -64,7 +66,7 @@ def parse_publication(data: Dict[str, Any]) -> List[PublicationRecord]:
         ) from e
 
 @log_event(__name__)
-async def get_publications_by_orcid(
+async def get_epmc_publications_by_orcid(
     orcid_id: str,
     max_results: int = 20,
     config: Optional[EpmcConfig] = None
@@ -72,7 +74,7 @@ async def get_publications_by_orcid(
     """Fetch and parse publications from Europe PMC using ORCID ID"""
     try:
         # Construct query parameters for ORCID search
-        params = {
+        payload = {
             'query': f'AUTHORID:"{orcid_id}"',
             'resultType': 'core',
             'pageSize': max_results,
@@ -80,7 +82,7 @@ async def get_publications_by_orcid(
         }
         
         # Fetch data from EPMC
-        data = await fetch_epmc_data('search', params, config)
+        data = await fetch_epmc_data(payload=payload, config=config)
         # Parse and return publications
         return parse_publication(data)
         

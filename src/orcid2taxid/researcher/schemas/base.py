@@ -6,9 +6,9 @@ from orcid2taxid.shared.schemas import (
     ResearcherID, ExternalReference, InstitutionalAffiliation,
     ResearcherDescription, ResearcherProfile, EmailInfo
 )
-from orcid2taxid.grants.schemas import GrantRecord
-from orcid2taxid.publications.schemas.base import PublicationRecord
-from orcid2taxid.researchers.schemas.orcid import OrcidProfile, OrcidAffiliation, OrcidWorks
+from orcid2taxid.grant.schemas.base import GrantRecord
+from orcid2taxid.publication.schemas import PublicationRecord
+from orcid2taxid.researcher.schemas.orcid import OrcidProfile, OrcidAffiliation, OrcidWorks
 from orcid2taxid.core.utils.date import parse_date
 
 class CustomerProfile(ResearcherProfile):

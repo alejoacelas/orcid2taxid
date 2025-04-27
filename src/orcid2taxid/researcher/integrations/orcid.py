@@ -3,12 +3,12 @@ import httpx
 from pydantic import BaseModel, Field, ValidationError
 
 from orcid2taxid.shared.schemas import InstitutionalAffiliation
-from orcid2taxid.researchers.schemas.orcid import (
+from orcid2taxid.researcher.schemas.orcid import (
     OrcidProfile, OrcidAffiliation, OrcidWorks
 )
-from orcid2taxid.researchers.schemas.base import CustomerProfile
+from orcid2taxid.researcher.schemas.base import CustomerProfile
 from orcid2taxid.core.logging import get_logger, log_event
-from orcid2taxid.researchers.exceptions import OrcidAPIError, OrcidValidationError, OrcidError
+from orcid2taxid.researcher.exceptions import OrcidAPIError, OrcidValidationError, OrcidError
 
 logger = get_logger(__name__)
 

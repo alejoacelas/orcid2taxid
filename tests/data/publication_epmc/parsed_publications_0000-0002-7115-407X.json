@@ -1,0 +1,4797 @@
+[
+  {
+    "title": "Specific human gene expression in response to infection is an effective marker for diagnosis of latent and active tuberculosis.",
+    "abstract": "RNA sequencing and microarray analysis revealed transcriptional markers expressed in whole blood can differentiate active pulmonary TB (ATB) from other respiratory diseases (ORDs), and latent TB infection (LTBI) from healthy controls (HC). Here we describe a streamlined reverse transcriptase quantitative polymerase chain reaction (RT-qPCR) assay that could be applied at near point-of-care for diagnosing\u00a0and distinguishing ATB from ORDs and LTBI from HC. A literature review was undertaken to identify the most plausible host-gene markers (HGM) of TB infection. Primers, and dual labelled hydrolysis probes were designed and analytically evaluated for accuracy in an in-vitro model of infection using a lung fibroblast cell-line. Best performing genes were multiplexed into panels of 2-4 targets and taken forward for clinical evaluation. Mycobacteria Growth Indicator Tube and QuantiFERON-TB Gold Plus were used as reference tests for ATB and LTBI respectively. A total of 16 HGM were selected and incorporated into five multiplex RT-qPCR panels. PCR assay efficiency of all evaluated targets was \u2265\u200990% with a median analytical sensitivity of 292 copies/\u00b5l [IQR: 215.0-358.3 copies/\u00b5l], and a median limit of quantification of 61.7 copies/\u00b5l [IQR: 29.4-176.3 copies/\u00b5l]. Clinically, ATB was characterised by higher gene expression than ORDs, while LTBI was associated with lower gene expression than HC, Kruskal-Wallis p\u2009<\u20090.0001. Crucially, BATF2, CD64, GBP5, C1QB, GBP6, DUSP3, and GAS6 exhibited high differentiative ability for ATB from ORDs, LTBI or HC while KLF2, PTPRC, NEMF, ASUN, and ZNF296 independently discriminated LTBI from HC. Our results show that different HGM maybe required for ATB and LTBI differentiation from ORDs or HC respectively and demonstrate the feasibility of host gene-based RT-qPCR to diagnose ATB and LTBI at near point-of-care.",
+    "doi": "10.1038/s41598-024-77164-5",
+    "publication_date": "2024-11-06T00:00:00",
+    "journal_name": "Scientific reports",
+    "journal_issn": "2045-2322",
+    "authors": [
+      {
+        "researcher_id": {
+          "given_name": "Ritah",
+          "family_name": "Nakiboneka",
+          "credit_name": "Nakiboneka R",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Division of Infection and Global Health, School of Medicine, University of St Andrews, St Andrews, KY16 9TF, UK.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          },
+          {
+            "institution": "Department of Pathology, Kamuzu University of Health Sciences, Blantyre, Malawi.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          },
+          {
+            "institution": "Helse Nord Tuberculosis Initiative (HNTI), Pathology Department, Kamuzu University of Health Sciences, Blantyre, Malawi.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          },
+          {
+            "institution": "Africa Centre for Public Health and Herbal Medicines (ACEPHEM), Kamuzu University of Health Sciences, Blantyre, Malawi.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Natasha",
+          "family_name": "Walbaum",
+          "credit_name": "Walbaum N",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Division of Infection and Global Health, School of Medicine, University of St Andrews, St Andrews, KY16 9TF, UK.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Emmanuel",
+          "family_name": "Musisi",
+          "credit_name": "Musisi E",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Division of Infection and Global Health, School of Medicine, University of St Andrews, St Andrews, KY16 9TF, UK.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          },
+          {
+            "institution": "Adroit Biomedical and Bio-entrepreneurship Research Services (ABBRS), Kampala, Uganda.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Michael",
+          "family_name": "Nevels",
+          "credit_name": "Nevels M",
+          "orcid": "0000-0002-7115-407X",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Biomedical Sciences Research Complex (BSRC), School of Biology, University of St Andrews, St Andrews, UK.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Tonney",
+          "family_name": "Nyirenda",
+          "credit_name": "Nyirenda T",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Department of Pathology, Kamuzu University of Health Sciences, Blantyre, Malawi.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Marriott",
+          "family_name": "Nliwasa",
+          "credit_name": "Nliwasa M",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Department of Pathology, Kamuzu University of Health Sciences, Blantyre, Malawi.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          },
+          {
+            "institution": "Helse Nord Tuberculosis Initiative (HNTI), Pathology Department, Kamuzu University of Health Sciences, Blantyre, Malawi.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Chisomo L",
+          "family_name": "Msefula",
+          "credit_name": "Msefula CL",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Department of Pathology, Kamuzu University of Health Sciences, Blantyre, Malawi.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          },
+          {
+            "institution": "Helse Nord Tuberculosis Initiative (HNTI), Pathology Department, Kamuzu University of Health Sciences, Blantyre, Malawi.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          },
+          {
+            "institution": "Africa Centre for Public Health and Herbal Medicines (ACEPHEM), Kamuzu University of Health Sciences, Blantyre, Malawi.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Derek",
+          "family_name": "Sloan",
+          "credit_name": "Sloan D",
+          "orcid": "0000-0002-7888-5449",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Division of Infection and Global Health, School of Medicine, University of St Andrews, St Andrews, KY16 9TF, UK.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Wilber",
+          "family_name": "Sabiiti",
+          "credit_name": "Sabiiti W",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Division of Infection and Global Health, School of Medicine, University of St Andrews, St Andrews, KY16 9TF, UK. ws31@st-andrews.ac.uk.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      }
+    ],
+    "source": "Europe PMC",
+    "full_text_url": "https://doi.org/10.1038/s41598-024-77164-5",
+    "citation_count": 3,
+    "keywords": [
+      "Diagnosis",
+      "Latent Tuberculosis",
+      "Active Tuberculosis",
+      "Reverse Transcriptase-quantitative Pcr",
+      "Host Gene Expression"
+    ],
+    "subjects": [
+      "Humans",
+      "Mycobacterium tuberculosis/genetics",
+      "Tuberculosis/diagnosis/genetics/microbiology",
+      "Tuberculosis, Pulmonary/diagnosis/genetics/microbiology",
+      "Adult",
+      "Female",
+      "Male",
+      "*Latent Tuberculosis/diagnosis/genetics/microbiology",
+      "*Biomarkers"
+    ],
+    "grants": [
+      {
+        "id": "204821/Z/16/Z",
+        "title": null,
+        "funder": "Wellcome Trust",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      }
+    ]
+  },
+  {
+    "title": "SARS-CoV-2 ORF8 as a Modulator of Cytokine Induction: Evidence and Search for Molecular Mechanisms.",
+    "abstract": "Severe cases of SARS-CoV-2 infection are characterized by an immune response that leads to the overproduction of pro-inflammatory cytokines, resulting in lung damage, cardiovascular symptoms, hematologic symptoms, acute kidney injury and multiple organ failure that can lead to death. This remarkable increase in cytokines and other inflammatory molecules is primarily caused by viral proteins, and particular interest has been given to ORF8, a unique accessory protein specific to SARS-CoV-2. Despite plenty of research, the precise mechanisms by which ORF8 induces proinflammatory cytokines are not clear. Our investigations demonstrated that ORF8 augments production of IL-6 induced by Poly(I:C) in human embryonic kidney (HEK)-293 and monocyte-derived dendritic cells (mono-DCs). We discuss our findings and the multifaceted roles of ORF8 as a modulator of cytokine response, focusing on type I interferon and IL-6, a key component of the immune response to SARS-CoV-2. In addition, we explore the hypothesis that ORF8 may act through pattern recognition receptors of dsRNA such as TLRs.",
+    "doi": "10.3390/v16010161",
+    "publication_date": "2024-01-22T00:00:00",
+    "journal_name": "Viruses",
+    "journal_issn": "1999-4915",
+    "authors": [
+      {
+        "researcher_id": {
+          "given_name": "Mar\u00edlia In\u00eas",
+          "family_name": "M\u00f3vio",
+          "credit_name": "M\u00f3vio MI",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Laborat\u00f3rio de Neurogen\u00e9tica, Universidade Federal do ABC (UFABC), S\u00e3o Bernardo do Campo, S\u00e3o Paulo 09606-070, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Giovana Waner Carneiro de",
+          "family_name": "Almeida",
+          "credit_name": "Almeida GWC",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Centro de Ci\u00eancias Naturais e Humanas (CCNH), Universidade Federal do UFABC (UFABC), S\u00e3o Bernardo do Campo, S\u00e3o Paulo 09606-070, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Isabella das Gra\u00e7as Lopes",
+          "family_name": "Martines",
+          "credit_name": "Martines IDGL",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Centro de Ci\u00eancias Naturais e Humanas (CCNH), Universidade Federal do UFABC (UFABC), S\u00e3o Bernardo do Campo, S\u00e3o Paulo 09606-070, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Gilmara",
+          "family_name": "Barros de Lima",
+          "credit_name": "Barros de Lima G",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Centro de Ci\u00eancias Naturais e Humanas (CCNH), Universidade Federal do UFABC (UFABC), S\u00e3o Bernardo do Campo, S\u00e3o Paulo 09606-070, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Sergio Daishi",
+          "family_name": "Sasaki",
+          "credit_name": "Sasaki SD",
+          "orcid": "0000-0002-6233-3316",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Centro de Ci\u00eancias Naturais e Humanas (CCNH), Universidade Federal do UFABC (UFABC), S\u00e3o Bernardo do Campo, S\u00e3o Paulo 09606-070, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Alexandre Hiroaki",
+          "family_name": "Kihara",
+          "credit_name": "Kihara AH",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Laborat\u00f3rio de Neurogen\u00e9tica, Universidade Federal do ABC (UFABC), S\u00e3o Bernardo do Campo, S\u00e3o Paulo 09606-070, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Emma",
+          "family_name": "Poole",
+          "credit_name": "Poole E",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Division of Virology, Department of Pathology, Cambridge University, Level 5, Addenbrooke's Hospital, Hills Road, Cambridge CB2 0QQ, UK.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Michael",
+          "family_name": "Nevels",
+          "credit_name": "Nevels M",
+          "orcid": "0000-0002-7115-407X",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "School of Biology, University of St Andrews, St Andrews KY16 9ST, UK.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Maria Cristina",
+          "family_name": "Carlan da Silva",
+          "credit_name": "Carlan da Silva MC",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Centro de Ci\u00eancias Naturais e Humanas (CCNH), Universidade Federal do UFABC (UFABC), S\u00e3o Bernardo do Campo, S\u00e3o Paulo 09606-070, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      }
+    ],
+    "source": "Europe PMC",
+    "full_text_url": "https://www.mdpi.com/1999-4915/16/1/161/pdf?version=1705913639",
+    "citation_count": 4,
+    "keywords": [
+      "Cytokine Storm",
+      "Orf8",
+      "Covid-19",
+      "Sars-cov-2"
+    ],
+    "subjects": [
+      "Humans",
+      "Interleukin-6",
+      "Cytokines",
+      "HEK293 Cells",
+      "*COVID-19",
+      "*SARS-CoV-2/genetics"
+    ],
+    "grants": [
+      {
+        "id": "204821/Z/16/Z",
+        "title": null,
+        "funder": "Federal University of ABC (UFABC), S\u00e3o Bernardo do Campo, S\u00e3o Paulo, Brazil",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "#2020/11667-",
+        "title": null,
+        "funder": "FAPESP",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      }
+    ]
+  },
+  {
+    "title": "SARS\u2010COV\u20102 ORF8 as a Modulator of Cytokine Induction: Evidence and Search for Molecular Mechanisms",
+    "abstract": "Severe cases of SARS-CoV-2 infection are characterized by an immune response that leads to the overproduction of pro-inflammatory cytokines, resulting in damage to the lungs and other organs. This remarkable increase in cytokines and other inflammatory molecules is primary caused by viral proteins, in particular ORF8, a unique accessory protein specific to SARS-CoV-2. In addition to its role in cytokine induction, ORF8 is attributed with various other functions, including its ability to evade type I interferon responses. Despite the evidence, the mechanisms through which ORF8 exerts these functions remains a subject of controversy. In this mini review, we discuss the multifaceted roles of ORF8 as a modulator of cytokine response, focusing on type I interferon and IL-6. We also discuss data from our studies indicating that ORF8 augments production of IL-6 induced by Poly(I:C) in human embryonic kidney (HEK)-293 and monocyte-derived dendritic cells (mono-DCs).",
+    "doi": "10.20944/preprints202311.1976.v1",
+    "publication_date": "2023-11-30T00:00:00",
+    "journal_name": null,
+    "journal_issn": null,
+    "authors": [
+      {
+        "researcher_id": {
+          "given_name": "Marilia In\u00eas",
+          "family_name": "M\u00f3vio",
+          "credit_name": "M\u00f3vio MI",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Giovana",
+          "family_name": "Carneiro",
+          "credit_name": "Carneiro G",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Isabella",
+          "family_name": "Lopes Martines",
+          "credit_name": "Lopes Martines I",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Gilmara",
+          "family_name": "Barros de Lima",
+          "credit_name": "Barros de Lima G",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Sergio Daishi",
+          "family_name": "Sasaki",
+          "credit_name": "Sasaki SD",
+          "orcid": "0000-0002-6233-3316",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Alexandre Hiroaki",
+          "family_name": "KIhara",
+          "credit_name": "KIhara AH",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Emma",
+          "family_name": "Poole",
+          "credit_name": "Poole E",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Michael",
+          "family_name": "Nevels",
+          "credit_name": "Nevels M",
+          "orcid": "0000-0002-7115-407X",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Maria Cristina",
+          "family_name": "Carlan da Silva",
+          "credit_name": "Carlan da Silva MC",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      }
+    ],
+    "source": "Europe PMC",
+    "full_text_url": "https://www.mdpi.com/1999-4915/16/1/161/pdf?version=1705913639",
+    "citation_count": 0,
+    "keywords": [],
+    "subjects": [],
+    "grants": []
+  },
+  {
+    "title": "Evidence for Tethering of Human Cytomegalovirus Genomes to Host Chromosomes.",
+    "abstract": "Tethering of viral genomes to host chromosomes has been recognized in a variety of DNA and RNA viruses. It can occur during both the productive cycle and latent infection and may impact viral genomes in manifold ways including their protection, localization, transcription, replication, integration, and segregation. Tethering is typically accomplished by dedicated viral proteins that simultaneously associate with both the viral genome and cellular chromatin via nucleic acid, histone and/or non-histone protein interactions. Some of the most prominent tethering proteins have been identified in DNA viruses establishing sustained latent infections, including members of the papillomaviruses and herpesviruses. Herpesvirus particles have linear genomes that circularize in infected cell nuclei and usually persist as extrachromosomal episomes. In several \u03b3-herpesviruses, tethering facilitates the nuclear retention and faithful segregation of viral episomes during cell division, thus contributing to persistence of these viruses in the absence of infectious particle production. However, it has not been studied whether the genomes of human Cytomegalovirus (hCMV), the prototypical \u03b2-herpesvirus, are tethered to host chromosomes. Here we provide evidence by fluorescence <i>in situ</i> hybridization that hCMV genomes associate with the surface of human mitotic chromosomes following infection of both non-permissive myeloid and permissive fibroblast cells. This chromosome association occurs at lower frequency in the absence of the immediate-early 1 (IE1) proteins, which bind to histones and have been implicated in the maintenance of hCMV episomes. Our findings point to a mechanism of hCMV genome maintenance through mitosis and suggest a supporting but non-essential role of IE1 in this process.",
+    "doi": "10.3389/fcimb.2020.577428",
+    "publication_date": "2020-09-30T00:00:00",
+    "journal_name": "Frontiers in cellular and infection microbiology",
+    "journal_issn": "2235-2988",
+    "authors": [
+      {
+        "researcher_id": {
+          "given_name": "Katrin",
+          "family_name": "Mauch-M\u00fccke",
+          "credit_name": "Mauch-M\u00fccke K",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute for Medical Microbiology and Hygiene, University of Regensburg, Regensburg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Kathrin",
+          "family_name": "Sch\u00f6n",
+          "credit_name": "Sch\u00f6n K",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute for Medical Microbiology and Hygiene, University of Regensburg, Regensburg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Christina",
+          "family_name": "Paulus",
+          "credit_name": "Paulus C",
+          "orcid": "0000-0002-4123-5629",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Biomedical Sciences Research Complex, University of St Andrews, St Andrews, United Kingdom.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Michael M",
+          "family_name": "Nevels",
+          "credit_name": "Nevels MM",
+          "orcid": "0000-0002-7115-407X",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Biomedical Sciences Research Complex, University of St Andrews, St Andrews, United Kingdom.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      }
+    ],
+    "source": "Europe PMC",
+    "full_text_url": "https://www.frontiersin.org/articles/10.3389/fcimb.2020.577428/pdf",
+    "citation_count": 7,
+    "keywords": [
+      "Fluorescence in situ hybridization",
+      "Human cytomegalovirus",
+      "Human herpesvirus",
+      "Genome Maintenance",
+      "Mitotic Chromosome",
+      "Chromatin Tethering",
+      "Immediate-early 1",
+      "Viral Episome"
+    ],
+    "subjects": [
+      "Chromosomes",
+      "Humans",
+      "*Cytomegalovirus/genetics",
+      "*Immediate-Early Proteins/genetics",
+      "Viral Proteins",
+      "In Situ Hybridization, Fluorescence"
+    ],
+    "grants": []
+  },
+  {
+    "title": "Molecular modelling of the HCMV IL-10 protein isoforms and analysis of their interaction with the human IL-10 receptor.",
+    "abstract": "The human cytomegalovirus (HCMV) UL111A gene encodes several homologs of the cellular interleukin 10 (cIL-10). Alternative splicing in the UL111A region produces two relatively well-characterized transcripts designated cmvIL-10 (isoform A) and LAcmvIL-10 (isoform B). The cmvIL-10 protein is the best characterized, both structurally and functionally, and has many immunosuppressive activities similar to cIL-10, while LAcmvIL-10 has more restricted biological activities. Alternative splicing also results in five less studied UL111A transcripts encoding additional proteins homologous to cIL-10 (isoforms C to G). These transcripts were identified during productive HCMV infection of MRC-5 cells with the high passage laboratory adapted AD169 strain, and the structure and properties of the corresponding proteins are largely unknown. Moreover, it is unclear whether these protein isoforms are able to bind the cellular IL-10 receptor and induce signalling. In the present study, we investigated the expression spectrum of UL111A transcripts in fully permissive MRC-5 cells and semi permissive U251 cells infected with the low passage HCMV strain TB40E. We identified a new spliced transcript (H) expressed during productive infection. Using computational methods, we carried out molecular modelling studies on the three-dimensional structures of the HCMV IL-10 proteins encoded by the transcripts detected in our work (cmvIL-10 (A), LAcmvIL-10 (B), E, F and H) and on their interaction with the human IL-10 receptor (IL-10R1). The modelling predicts clear differences between the isoform structures. Furthermore, the in silico simulations (molecular dynamics simulation and normal-mode analyses) allowed us to evaluate regions that contain potential receptor binding sites in each isoform. The analyses demonstrate that the complexes between the isoforms and IL-10R1 present different types of molecular interactions and consequently different affinities and stabilities. The knowledge about structure and expression of specific viral IL-10 isoforms has implications for understanding of their properties and role in HCMV immune evasion and pathogenesis.",
+    "doi": "10.1371/journal.pone.0277953",
+    "publication_date": "2022-11-28T00:00:00",
+    "journal_name": "PloS one",
+    "journal_issn": "1932-6203",
+    "authors": [
+      {
+        "researcher_id": {
+          "given_name": "Simone Queiroz",
+          "family_name": "Pantale\u00e3o",
+          "credit_name": "Pantale\u00e3o SQ",
+          "orcid": "0000-0002-5183-7906",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Center for Mathematics, Computing and Cognition, Federal University of ABC, Santo Andr\u00e9, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "L\u00edvia de Moraes Bomediano",
+          "family_name": "Camillo",
+          "credit_name": "Camillo LMB",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Center for Natural and Humanities Sciences, Federal University of ABC, S\u00e3o Bernardo do Campo, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Tainan Cerqueira",
+          "family_name": "Neves",
+          "credit_name": "Neves TC",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Center for Natural and Humanities Sciences, Federal University of ABC, S\u00e3o Bernardo do Campo, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Isabela de Godoy",
+          "family_name": "Menezes",
+          "credit_name": "Menezes IG",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Center for Natural and Humanities Sciences, Federal University of ABC, S\u00e3o Bernardo do Campo, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Lucas Matheus",
+          "family_name": "Stangherlin",
+          "credit_name": "Stangherlin LM",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Center for Natural and Humanities Sciences, Federal University of ABC, S\u00e3o Bernardo do Campo, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Helena Beatriz de Carvalho Ruthner",
+          "family_name": "Batista",
+          "credit_name": "Batista HBCR",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Pasteur Institute, S\u00e3o Paulo, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Emma",
+          "family_name": "Poole",
+          "credit_name": "Poole E",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Department of Medicine, University of Cambridge, Cambridge, United Kingdom.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Michael",
+          "family_name": "Nevels",
+          "credit_name": "Nevels M",
+          "orcid": "0000-0002-7115-407X",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "School of Biology, University of St Andrews, St Andrews, United Kingdom.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Eric Alisson",
+          "family_name": "Philot",
+          "credit_name": "Philot EA",
+          "orcid": "0000-0002-0642-4467",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Center for Mathematics, Computing and Cognition, Federal University of ABC, Santo Andr\u00e9, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Ana Ligia",
+          "family_name": "Scott",
+          "credit_name": "Scott AL",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Center for Mathematics, Computing and Cognition, Federal University of ABC, Santo Andr\u00e9, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Maria Cristina",
+          "family_name": "Carlan da Silva",
+          "credit_name": "Carlan da Silva MC",
+          "orcid": "0000-0003-4081-8272",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Center for Natural and Humanities Sciences, Federal University of ABC, S\u00e3o Bernardo do Campo, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      }
+    ],
+    "source": "Europe PMC",
+    "full_text_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0277953&type=printable",
+    "citation_count": 3,
+    "keywords": [],
+    "subjects": [
+      "Humans",
+      "*Cytomegalovirus/genetics",
+      "Protein Isoforms/genetics",
+      "Interleukin-10/genetics",
+      "Receptors, Interleukin-10/genetics",
+      "Molecular Dynamics Simulation"
+    ],
+    "grants": [
+      {
+        "id": "2020/07767-9",
+        "title": null,
+        "funder": "Funda\u00e7\u00e3o de Amparo \u00e0 Pesquisa do Estado de S\u00e3o Paulo",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "2020/08527-1",
+        "title": null,
+        "funder": "Funda\u00e7\u00e3o de Amparo \u00e0 Pesquisa do Estado de S\u00e3o Paulo",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "164052/2020-8",
+        "title": null,
+        "funder": "Conselho Nacional de Desenvolvimento Cient\u00edfico e Tecnol\u00f3gico",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      }
+    ]
+  },
+  {
+    "title": "Bright and Early: Inhibiting Human Cytomegalovirus by Targeting Major Immediate-Early Gene Expression or Protein Function.",
+    "abstract": "The human cytomegalovirus (HCMV), one of eight human herpesviruses, establishes lifelong latent infections in most people worldwide. Primary or reactivated HCMV infections cause severe disease in immunosuppressed patients and congenital defects in children. There is no vaccine for HCMV, and the currently approved antivirals come with major limitations. Most approved HCMV antivirals target late molecular processes in the viral replication cycle including DNA replication and packaging. \"Bright and early\" events in HCMV infection have not been exploited for systemic prevention or treatment of disease. Initiation of HCMV replication depends on transcription from the viral major immediate-early (IE) gene. Alternative transcripts produced from this gene give rise to the IE1 and IE2 families of viral proteins, which localize to the host cell nucleus. The IE1 and IE2 proteins are believed to control all subsequent early and late events in HCMV replication, including reactivation from latency, in part by antagonizing intrinsic and innate immune responses. Here we provide an update on the regulation of major IE gene expression and the functions of IE1 and IE2 proteins. We will relate this insight to experimental approaches that target IE gene expression or protein function via molecular gene silencing and editing or small chemical inhibitors.",
+    "doi": "10.3390/v12010110",
+    "publication_date": "2020-01-16T00:00:00",
+    "journal_name": "Viruses",
+    "journal_issn": "1999-4915",
+    "authors": [
+      {
+        "researcher_id": {
+          "given_name": "Catherine S",
+          "family_name": "Adamson",
+          "credit_name": "Adamson CS",
+          "orcid": "0000-0001-7673-5212",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "School of Biology, Biomedical Sciences Research Complex, University of St Andrews, St Andrews KY16 9ST, Scotland, UK.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Michael M",
+          "family_name": "Nevels",
+          "credit_name": "Nevels MM",
+          "orcid": "0000-0002-7115-407X",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "School of Biology, Biomedical Sciences Research Complex, University of St Andrews, St Andrews KY16 9ST, Scotland, UK.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      }
+    ],
+    "source": "Europe PMC",
+    "full_text_url": "https://www.mdpi.com/1999-4915/12/1/110/pdf",
+    "citation_count": 37,
+    "keywords": [
+      "Ribozyme",
+      "Herpesvirus",
+      "RNA interference",
+      "Cytomegalovirus",
+      "Antiviral",
+      "Small Molecule",
+      "Ie1",
+      "Ie2",
+      "Crispr/cas",
+      "Immediate-early"
+    ],
+    "subjects": [
+      "Humans",
+      "Cytomegalovirus/drug effects/genetics",
+      "Cytomegalovirus Infections/therapy",
+      "RNA, Catalytic/drug effects/genetics",
+      "Immediate-Early Proteins/drug effects/genetics/metabolism",
+      "Viral Proteins/drug effects/genetics/metabolism",
+      "Antiviral Agents/therapeutic use",
+      "Virus Replication/drug effects",
+      "*Gene Expression Regulation, Viral",
+      "RNA Interference",
+      "Genes, Immediate-Early/genetics",
+      "CRISPR-Cas Systems"
+    ],
+    "grants": [
+      {
+        "id": "MR/P022146/1",
+        "title": null,
+        "funder": "Medical Research Council",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      }
+    ]
+  },
+  {
+    "title": "Human Cytomegalovirus Genomes Survive Mitosis via the IE19 Chromatin-Tethering Domain.",
+    "abstract": "The genomes of DNA tumor viruses regain nuclear localization after nuclear envelope breakdown during mitosis through the action of a viral protein with a chromatin-tethering domain (CTD). Here, we report that the human cytomegalovirus (HCMV) genome is maintained during mitosis by the CTD of the viral IE19 protein. Deletion of the IE19 CTD or disruption of the IE19 splice acceptor site reduced viral genome maintenance and progeny virion formation during infection of dividing fibroblasts, both of which were rescued by IE19 ectopic expression. The discovery of a viral genome maintenance factor during productive infection provides new insight into the mode of HCMV infection implicated in birth defects, organ transplant failure, and cancer.<b>IMPORTANCE</b> Human cytomegalovirus (HCMV) is the leading infectious cause of birth defects, represents a serious complication for immunocompromised HIV/AIDS and organ transplant patients, and contributes to both immunosenescence and cardiovascular diseases. HCMV is also implicated in cancers such as glioblastoma multiforme (GBM) and infects <i>ex vivo</i>-cultured GBM tumor cells. In dividing tumor cells, the genomes of DNA tumor viruses regain nuclear localization after nuclear envelope breakdown during mitosis. This mitotic survival is mediated by a viral protein with a chromatin-tethering domain (CTD). Here, we report that the HCMV genome is maintained in dividing fibroblasts by the CTD of the viral IE19 protein. The discovery of a viral genome maintenance factor during productive infection could help explain viral genome dynamics within HCMV-positive tumors as well as during latency.",
+    "doi": "10.1128/mbio.02410-20",
+    "publication_date": "2020-09-29T00:00:00",
+    "journal_name": "mBio",
+    "journal_issn": "2150-7511",
+    "authors": [
+      {
+        "researcher_id": {
+          "given_name": "Shelby M",
+          "family_name": "Lyon",
+          "credit_name": "Lyon SM",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute for Molecular Virology, University of Wisconsin-Madison, Madison, Wisconsin, USA.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          },
+          {
+            "institution": "McArdle Laboratory for Cancer Research, University of Wisconsin-Madison, Madison, Wisconsin, USA.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Kristen D",
+          "family_name": "Yetming",
+          "credit_name": "Yetming KD",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute for Molecular Virology, University of Wisconsin-Madison, Madison, Wisconsin, USA.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          },
+          {
+            "institution": "McArdle Laboratory for Cancer Research, University of Wisconsin-Madison, Madison, Wisconsin, USA.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Christina",
+          "family_name": "Paulus",
+          "credit_name": "Paulus C",
+          "orcid": "0000-0002-4123-5629",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Biomedical Sciences Research Complex, University of St. Andrews, St. Andrews, United Kingdom.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Michael",
+          "family_name": "Nevels",
+          "credit_name": "Nevels M",
+          "orcid": "0000-0002-7115-407X",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Biomedical Sciences Research Complex, University of St. Andrews, St. Andrews, United Kingdom.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Robert F",
+          "family_name": "Kalejta",
+          "credit_name": "Kalejta RF",
+          "orcid": "0000-0002-7116-3355",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute for Molecular Virology, University of Wisconsin-Madison, Madison, Wisconsin, USA rfkalejta@wisc.edu.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          },
+          {
+            "institution": "McArdle Laboratory for Cancer Research, University of Wisconsin-Madison, Madison, Wisconsin, USA.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      }
+    ],
+    "source": "Europe PMC",
+    "full_text_url": "https://research-repository.st-andrews.ac.uk/bitstream/10023/20787/1/Lyon_2020_mBio_humancytomegalovirus_VoR_CCBY.pdf",
+    "citation_count": 9,
+    "keywords": [
+      "Transcription",
+      "Cancer",
+      "Mitosis",
+      "Latency",
+      "chromatin",
+      "Herpes"
+    ],
+    "subjects": [
+      "Cells, Cultured",
+      "Cell Line",
+      "Chromatin/genetics/metabolism",
+      "Fibroblasts/virology",
+      "Humans",
+      "Cytomegalovirus/genetics/physiology",
+      "Immediate-Early Proteins/genetics",
+      "Mitosis/genetics",
+      "*Genome, Viral",
+      "Host-Pathogen Interactions",
+      "HEK293 Cells"
+    ],
+    "grants": [
+      {
+        "id": "AI139180",
+        "title": null,
+        "funder": "HHS | National Institutes of Health",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "R01 AI139180",
+        "title": null,
+        "funder": "NIAID NIH HHS",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "T32 CA009135",
+        "title": null,
+        "funder": "NCI NIH HHS",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "AI130089",
+        "title": null,
+        "funder": "HHS | NIH | NIH Office of the Director",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "CA009135",
+        "title": null,
+        "funder": "HHS | NIH | NIH Office of the Director",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "R01 AI130089",
+        "title": null,
+        "funder": "NIAID NIH HHS",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      }
+    ]
+  },
+  {
+    "title": "Revisiting promyelocytic leukemia protein targeting by human cytomegalovirus immediate-early protein 1.",
+    "abstract": "Promyelocytic leukemia (PML) bodies are nuclear organelles implicated in intrinsic and innate antiviral defense. The eponymous PML proteins, central to the self-organization of PML bodies, and other restriction factors found in these organelles are common targets of viral antagonism. The 72-kDa immediate-early protein 1 (IE1) is the principal antagonist of PML bodies encoded by the human cytomegalovirus (hCMV). IE1 is believed to disrupt PML bodies by inhibiting PML SUMOylation, while PML was proposed to act as an E3 ligase for IE1 SUMOylation. PML targeting by IE1 is considered to be crucial for hCMV replication at low multiplicities of infection, in part via counteracting antiviral gene induction linked to the cellular interferon (IFN) response. However, current concepts of IE1-PML interaction are largely derived from mutant IE1 proteins known or predicted to be metabolically unstable and globally misfolded. We performed systematic clustered charge-to-alanine scanning mutagenesis and identified a stable IE1 mutant protein (IE1cc172-176) with wild-type characteristics except for neither interacting with PML proteins nor inhibiting PML SUMOylation. Consequently, IE1cc172-176 does not associate with PML bodies and is selectively impaired for disrupting these organelles. Surprisingly, functional analysis of IE1cc172-176 revealed that the protein is hypermodified by mixed SUMO chains and that IE1 SUMOylation depends on nucleosome rather than PML binding. Furthermore, a mutant hCMV expressing IE1cc172-176 was only slightly attenuated compared to an IE1-null virus even at low multiplicities of infection. Finally, hCMV-induced expression of cytokine and IFN-stimulated genes turned out to be reduced rather than increased in the presence of IE1cc172-176 relative to wild-type IE1. Our findings challenge present views on the relationship of IE1 with PML and the role of PML in hCMV replication. This study also provides initial evidence for the idea that disruption of PML bodies upon viral infection is linked to activation rather than inhibition of innate immunity.",
+    "doi": "10.1371/journal.ppat.1008537",
+    "publication_date": "2020-05-04T00:00:00",
+    "journal_name": "PLoS pathogens",
+    "journal_issn": "1553-7366",
+    "authors": [
+      {
+        "researcher_id": {
+          "given_name": "Christina",
+          "family_name": "Paulus",
+          "credit_name": "Paulus C",
+          "orcid": "0000-0002-4123-5629",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Biomedical Sciences Research Complex, University of St Andrews, St Andrews, United Kingdom.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Thomas",
+          "family_name": "Harwardt",
+          "credit_name": "Harwardt T",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute for Medical Microbiology and Hygiene, University of Regensburg, Regensburg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Bernadette",
+          "family_name": "Walter",
+          "credit_name": "Walter B",
+          "orcid": "0000-0003-2548-4577",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Biomedical Sciences Research Complex, University of St Andrews, St Andrews, United Kingdom.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Andrea",
+          "family_name": "Marxreiter",
+          "credit_name": "Marxreiter A",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute for Medical Microbiology and Hygiene, University of Regensburg, Regensburg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Marion",
+          "family_name": "Zenger",
+          "credit_name": "Zenger M",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute for Medical Microbiology and Hygiene, University of Regensburg, Regensburg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Edith",
+          "family_name": "Reuschel",
+          "credit_name": "Reuschel E",
+          "orcid": "0000-0001-5841-1812",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Department of Obstetrics and Gynecology, Clinic St. Hedwig at Hospital Barmherzige Br\u00fcder Regensburg, Regensburg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Michael M",
+          "family_name": "Nevels",
+          "credit_name": "Nevels MM",
+          "orcid": "0000-0002-7115-407X",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Biomedical Sciences Research Complex, University of St Andrews, St Andrews, United Kingdom.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      }
+    ],
+    "source": "Europe PMC",
+    "full_text_url": "https://journals.plos.org/plospathogens/article/file?id=10.1371/journal.ppat.1008537&type=printable",
+    "citation_count": 14,
+    "keywords": [],
+    "subjects": [
+      "Cell Line",
+      "Humans",
+      "Cytomegalovirus/physiology",
+      "*Cytomegalovirus Infections/genetics/immunology/pathology",
+      "*Immediate-Early Proteins/genetics/immunology",
+      "*Virus Replication/genetics/immunology",
+      "Gene Expression Regulation, Viral/immunology",
+      "Mutation",
+      "*Immunity, Innate",
+      "Sumoylation/immunology",
+      "*Promyelocytic Leukemia Protein/genetics/immunology"
+    ],
+    "grants": [
+      {
+        "id": "MR/P022146/1",
+        "title": null,
+        "funder": "Medical Research Council",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "T16/28",
+        "title": null,
+        "funder": "Tenovus Cancer Care",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      }
+    ]
+  },
+  {
+    "title": "Human Cytomegalovirus Immediate-Early 1 Protein Rewires Upstream STAT3 to Downstream STAT1 Signaling Switching an IL6-Type to an IFN\u03b3-Like Response.",
+    "abstract": "The human cytomegalovirus (hCMV) major immediate-early 1 protein (IE1) is best known for activating transcription to facilitate viral replication. Here we present transcriptome data indicating that IE1 is as significant a repressor as it is an activator of host gene expression. Human cells induced to express IE1 exhibit global repression of IL6- and oncostatin M-responsive STAT3 target genes. This repression is followed by STAT1 phosphorylation and activation of STAT1 target genes normally induced by IFN\u03b3. The observed repression and subsequent activation are both mediated through the same region (amino acids 410 to 445) in the C-terminal domain of IE1, and this region serves as a binding site for STAT3. Depletion of STAT3 phenocopies the STAT1-dependent IFN\u03b3-like response to IE1. In contrast, depletion of the IL6 receptor (IL6ST) or the STAT kinase JAK1 prevents this response. Accordingly, treatment with IL6 leads to prolonged STAT1 instead of STAT3 activation in wild-type IE1 expressing cells, but not in cells expressing a mutant protein (IE1dl410-420) deficient for STAT3 binding. A very similar STAT1-directed response to IL6 is also present in cells infected with a wild-type or revertant hCMV, but not an IE1dl410-420 mutant virus, and this response results in restricted viral replication. We conclude that IE1 is sufficient and necessary to rewire upstream IL6-type to downstream IFN\u03b3-like signaling, two pathways linked to opposing actions, resulting in repressed STAT3- and activated STAT1-responsive genes. These findings relate transcriptional repressor and activator functions of IE1 and suggest unexpected outcomes relevant to viral pathogenesis in response to cytokines or growth factors that signal through the IL6ST-JAK1-STAT3 axis in hCMV-infected cells. Our results also reveal that IE1, a protein considered to be a key activator of the hCMV productive cycle, has an unanticipated role in tempering viral replication.",
+    "doi": "10.1371/journal.ppat.1005748",
+    "publication_date": "2016-07-07T00:00:00",
+    "journal_name": "PLoS pathogens",
+    "journal_issn": "1553-7366",
+    "authors": [
+      {
+        "researcher_id": {
+          "given_name": "Thomas",
+          "family_name": "Harwardt",
+          "credit_name": "Harwardt T",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute for Medical Microbiology and Hygiene, University of Regensburg, Regensburg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Simone",
+          "family_name": "Lukas",
+          "credit_name": "Lukas S",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute for Medical Microbiology and Hygiene, University of Regensburg, Regensburg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Marion",
+          "family_name": "Zenger",
+          "credit_name": "Zenger M",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute for Medical Microbiology and Hygiene, University of Regensburg, Regensburg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Tobias",
+          "family_name": "Reitberger",
+          "credit_name": "Reitberger T",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute for Medical Microbiology and Hygiene, University of Regensburg, Regensburg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Daniela",
+          "family_name": "Danzer",
+          "credit_name": "Danzer D",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute for Medical Microbiology and Hygiene, University of Regensburg, Regensburg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Theresa",
+          "family_name": "\u00dcbner",
+          "credit_name": "\u00dcbner T",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute for Medical Microbiology and Hygiene, University of Regensburg, Regensburg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Diane C",
+          "family_name": "Munday",
+          "credit_name": "Munday DC",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Biomedical Sciences Research Complex, University of St Andrews, St Andrews, United Kingdom.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Michael",
+          "family_name": "Nevels",
+          "credit_name": "Nevels M",
+          "orcid": "0000-0002-7115-407X",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute for Medical Microbiology and Hygiene, University of Regensburg, Regensburg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          },
+          {
+            "institution": "Biomedical Sciences Research Complex, University of St Andrews, St Andrews, United Kingdom.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Christina",
+          "family_name": "Paulus",
+          "credit_name": "Paulus C",
+          "orcid": "0000-0002-4123-5629",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute for Medical Microbiology and Hygiene, University of Regensburg, Regensburg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          },
+          {
+            "institution": "Biomedical Sciences Research Complex, University of St Andrews, St Andrews, United Kingdom.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      }
+    ],
+    "source": "Europe PMC",
+    "full_text_url": "https://journals.plos.org/plospathogens/article/file?id=10.1371/journal.ppat.1005748&type=printable",
+    "citation_count": 33,
+    "keywords": [],
+    "subjects": [
+      "Cell Line",
+      "Fibroblasts/virology",
+      "Humans",
+      "Cytomegalovirus/immunology/metabolism/pathogenicity",
+      "Cytomegalovirus Infections/immunology/metabolism",
+      "Immediate-Early Proteins/metabolism",
+      "Interleukin-6/biosynthesis/immunology",
+      "Immunoblotting",
+      "Oligonucleotide Array Sequence Analysis",
+      "Mutagenesis, Site-Directed",
+      "Polymerase Chain Reaction",
+      "Immunoprecipitation",
+      "Virus Replication/physiology",
+      "Gene Expression Regulation/physiology",
+      "STAT1 Transcription Factor/metabolism",
+      "STAT3 Transcription Factor/metabolism",
+      "Interferon-gamma/biosynthesis/immunology"
+    ],
+    "grants": [
+      {
+        "id": "ISSF",
+        "title": null,
+        "funder": "Wellcome Trust",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "PA 815/2-1",
+        "title": null,
+        "funder": "Deutsche Forschungsgemeinschaft",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      }
+    ]
+  },
+  {
+    "title": "Determination of the transforming activities of adenovirus oncogenes.",
+    "abstract": "The last 50 years of molecular biological investigations into human adenoviruses (Ads) have contributed enormously to our understanding of the basic principles of normal and malignant cell growth. Much of this knowledge stems from analyses of the Ad productive infection cycle in permissive host cells. Also, initial observations concerning the transforming potential of human Ads subsequently revealed decisive insights into the molecular mechanisms of the origins of cancer and established Ads as a model system for explaining virus-mediated transformation processes. Today it is well established that cell transformation by human Ads is a multistep process involving several gene products encoded in early transcription units 1A (E1A) and 1B (E1B). Moreover, a large body of evidence now indicates that alternative or additional mechanisms are engaged in Ad-mediated oncogenic transformation involving gene products encoded in early region 4 (E4) as well as epigenetic changes resulting from viral DNA integration. In particular, studies on the transforming potential of several E4 gene products have now revealed new pathways that point to novel general mechanisms of virus-mediated oncogenesis. In this chapter we describe in vitro and in vivo assays to determine the transforming and oncogenic activities of the E1A, E1B, and E4 oncoproteins in primary baby rat kidney cells, human amniotic fluid cells and athymic nude mice.",
+    "doi": "10.1007/978-1-62703-679-5_8",
+    "publication_date": "2014-01-01T00:00:00",
+    "journal_name": "Methods in molecular biology (Clifton, N.J.)",
+    "journal_issn": "1064-3745",
+    "authors": [
+      {
+        "researcher_id": {
+          "given_name": "Thomas",
+          "family_name": "Speiseder",
+          "credit_name": "Speiseder T",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Department of Viral Transformation, Heinrich Pette Institute, Leibniz Institute for Experimental Virology, Hamburg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Michael",
+          "family_name": "Nevels",
+          "credit_name": "Nevels M",
+          "orcid": "0000-0002-7115-407X",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Thomas",
+          "family_name": "Dobner",
+          "credit_name": "Dobner T",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      }
+    ],
+    "source": "Europe PMC",
+    "full_text_url": "https://doi.org/10.1007/978-1-62703-679-5_8",
+    "citation_count": 3,
+    "keywords": [],
+    "subjects": [
+      "Animals",
+      "Humans",
+      "Mice",
+      "Rats",
+      "Adenoviruses, Human/genetics/metabolism",
+      "Cell Transformation, Viral/genetics",
+      "Viral Proteins/genetics/metabolism",
+      "Tumor Stem Cell Assay",
+      "Transduction, Genetic",
+      "*Oncogenes",
+      "Primary Cell Culture",
+      "Heterografts"
+    ],
+    "grants": []
+  },
+  {
+    "title": "Human Cytomegalovirus Immediate Early 1 Protein Causes Loss of SOX2 from Neural Progenitor Cells by Trapping Unphosphorylated STAT3 in the Nucleus.",
+    "abstract": "The mechanisms underlying neurodevelopmental damage caused by virus infections remain poorly defined. Congenital human cytomegalovirus (HCMV) infection is the leading cause of fetal brain development disorders. Previous work has linked HCMV infection to perturbations of neural cell fate, including premature differentiation of neural progenitor cells (NPCs). Here, we show that HCMV infection of NPCs results in loss of the SOX2 protein, a key pluripotency-associated transcription factor. SOX2 depletion maps to the HCMV major immediate early (IE) transcription unit and is individually mediated by the IE1 and IE2 proteins. IE1 causes SOX2 downregulation by promoting the nuclear accumulation and inhibiting the phosphorylation of STAT3, a transcriptional activator of SOX2 expression. Deranged signaling resulting in depletion of a critical stem cell protein is an unanticipated mechanism by which the viral major IE proteins may contribute to brain development disorders caused by congenital HCMV infection.<b>IMPORTANCE</b> Human cytomegalovirus (HCMV) infections are a leading cause of brain damage, hearing loss, and other neurological disabilities in children. We report that the HCMV proteins known as IE1 and IE2 target expression of human SOX2, a central pluripotency-associated transcription factor that governs neural progenitor cell (NPC) fate and is required for normal brain development. Both during HCMV infection and when expressed alone, IE1 causes the loss of SOX2 from NPCs. IE1 mediates SOX2 depletion by targeting STAT3, a critical upstream regulator of SOX2 expression. Our findings reveal an unanticipated mechanism by which a common virus may cause damage to the developing nervous system and suggest novel targets for medical intervention.",
+    "doi": "10.1128/jvi.00340-18",
+    "publication_date": "2018-08-16T00:00:00",
+    "journal_name": "Journal of virology",
+    "journal_issn": "0022-538X",
+    "authors": [
+      {
+        "researcher_id": {
+          "given_name": "Cong-Cong",
+          "family_name": "Wu",
+          "credit_name": "Wu CC",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "State Key Laboratory of Virology, Chinese Academy of Sciences Center for Excellence in Brain Science and Intelligence Technology, Wuhan Institute of Virology, Wuhan, China.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          },
+          {
+            "institution": "University of Chinese Academy of Sciences, Beijing, China.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Xuan",
+          "family_name": "Jiang",
+          "credit_name": "Jiang X",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Guangzhou Women and Children's Medical Center, Guangzhou Medical University, Guangzhou, China.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Xian-Zhang",
+          "family_name": "Wang",
+          "credit_name": "Wang XZ",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "State Key Laboratory of Virology, Chinese Academy of Sciences Center for Excellence in Brain Science and Intelligence Technology, Wuhan Institute of Virology, Wuhan, China.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          },
+          {
+            "institution": "University of Chinese Academy of Sciences, Beijing, China.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Xi-Juan",
+          "family_name": "Liu",
+          "credit_name": "Liu XJ",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "State Key Laboratory of Virology, Chinese Academy of Sciences Center for Excellence in Brain Science and Intelligence Technology, Wuhan Institute of Virology, Wuhan, China.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Xiao-Jun",
+          "family_name": "Li",
+          "credit_name": "Li XJ",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "State Key Laboratory of Virology, Chinese Academy of Sciences Center for Excellence in Brain Science and Intelligence Technology, Wuhan Institute of Virology, Wuhan, China.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Bo",
+          "family_name": "Yang",
+          "credit_name": "Yang B",
+          "orcid": "0000-0002-4315-1808",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "State Key Laboratory of Virology, Chinese Academy of Sciences Center for Excellence in Brain Science and Intelligence Technology, Wuhan Institute of Virology, Wuhan, China.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Han-Qing",
+          "family_name": "Ye",
+          "credit_name": "Ye HQ",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "State Key Laboratory of Virology, Chinese Academy of Sciences Center for Excellence in Brain Science and Intelligence Technology, Wuhan Institute of Virology, Wuhan, China.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Thomas",
+          "family_name": "Harwardt",
+          "credit_name": "Harwardt T",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute for Medical Microbiology and Hygiene, University of Regensburg, Regensburg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Man",
+          "family_name": "Jiang",
+          "credit_name": "Jiang M",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Department of Physiology, School of Basic Medicine and Tongji Medical College, Huazhong University of Science and Technology, Wuhan, China.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Hui-Min",
+          "family_name": "Xia",
+          "credit_name": "Xia HM",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Guangzhou Women and Children's Medical Center, Guangzhou Medical University, Guangzhou, China.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Wei",
+          "family_name": "Wang",
+          "credit_name": "Wang W",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "The Third Xiangya Hospital, Central South University, Changsha, China.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "William J",
+          "family_name": "Britt",
+          "credit_name": "Britt WJ",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Department of Pediatrics, University of Alabama School of Medicine, Birmingham, Alabama, USA.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Christina",
+          "family_name": "Paulus",
+          "credit_name": "Paulus C",
+          "orcid": "0000-0002-4123-5629",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute for Medical Microbiology and Hygiene, University of Regensburg, Regensburg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          },
+          {
+            "institution": "Biomedical Sciences Research Complex, University of St. Andrews, St. Andrews, United Kingdom.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Michael",
+          "family_name": "Nevels",
+          "credit_name": "Nevels M",
+          "orcid": "0000-0002-7115-407X",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Biomedical Sciences Research Complex, University of St. Andrews, St. Andrews, United Kingdom mmn3@st-andrews.ac.uk luomh@wh.iov.cn.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Min-Hua",
+          "family_name": "Luo",
+          "credit_name": "Luo MH",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "State Key Laboratory of Virology, Chinese Academy of Sciences Center for Excellence in Brain Science and Intelligence Technology, Wuhan Institute of Virology, Wuhan, China mmn3@st-andrews.ac.uk luomh@wh.iov.cn.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          },
+          {
+            "institution": "University of Chinese Academy of Sciences, Beijing, China.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          },
+          {
+            "institution": "Guangzhou Women and Children's Medical Center, Guangzhou Medical University, Guangzhou, China.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      }
+    ],
+    "source": "Europe PMC",
+    "full_text_url": "https://jvi.asm.org/content/jvi/92/17/e00340-18.full.pdf",
+    "citation_count": 21,
+    "keywords": [
+      "Stat3",
+      "HCMV",
+      "neural progenitor cells",
+      "Sox2",
+      "Ie1"
+    ],
+    "subjects": [
+      "Cells, Cultured",
+      "Humans",
+      "Cytomegalovirus/growth & development",
+      "Immediate-Early Proteins/metabolism",
+      "STAT3 Transcription Factor/metabolism",
+      "*Host-Pathogen Interactions",
+      "SOXB1 Transcription Factors/metabolism",
+      "Neural Stem Cells/pathology/virology"
+    ],
+    "grants": [
+      {
+        "id": "81427801",
+        "title": null,
+        "funder": "National Natural Science Foundation of China",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "2015CB755600",
+        "title": null,
+        "funder": "Ministry of Science and Technology of the People&apos;s Republic of China",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "31170155",
+        "title": null,
+        "funder": "National Natural Science Foundation of China",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "T15/38",
+        "title": null,
+        "funder": "Tenovus Scotland",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "81620108021",
+        "title": null,
+        "funder": "National Natural Science Foundation of China",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "YDP-764",
+        "title": null,
+        "funder": "University of Idaho",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "MR/P022146/1",
+        "title": null,
+        "funder": "Medical Research Council",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "MR/P022146/1",
+        "title": null,
+        "funder": "Wellcome Trust Institutional Strategic Support Fund",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "SAJC201605",
+        "title": null,
+        "funder": "Sino-Africa Joint Research Centre",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "PA 815/2-1",
+        "title": null,
+        "funder": "Deutsche Forschungsgemeinschaft",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      }
+    ]
+  },
+  {
+    "title": "Impact of human cytomegalovirus on glioblastoma cell viability and chemotherapy treatment.",
+    "abstract": "The relationship between human cytomegalovirus (HCMV) and tumours has been extensively investigated, mainly in glioblastoma multiforme (GBM), a malignant tumour of the central nervous system with low overall survival rates. Several reports have demonstrated the presence of HCMV in GBM, although typically restricted to a low number of cells, and studies have indicated that viral proteins have the ability to dysregulate cellular processes and increase tumour malignancy. Treatment of GBM involves the use of the chemotherapeutic agents temozolomide (TMZ) and carmustine (bis-chloroethylnitrosourea, BCNU), which lead to the attachment of adducts to the DNA backbone, causing errors during replication and consequent cell death. It is known that HCMV infection can modulate DNA repair pathways, but what effects the virus may exhibit during chemotherapy are unknown. Here we approach this question by analysing HCMV infection and viral protein accumulation in GBM cell lines with different genotypes and their response to TMZ and BCNU in the presence of the virus. We demonstrate that A172, TP365MG and U251MG GBM cells are efficiently infected by both low-passage (TB40E) and high-passage (AD169) HCMV strains. However, the GBM cell lines vary widely in their permissiveness to viral gene expression and exhibit very different patterns of immediate early, early and late protein accumulation. HCMV reduces the viability of permissive GBM cells in a multiplicity-dependent manner in both the absence and presence of TMZ or BNCU. In sum, we demonstrate that GBM cell lines are equally susceptible but differentially permissive to infection by both low- and high-passage strains of HCMV. This observation not only indicates that viral replication is largely controlled by cellular factors in this system, but also provides a possible explanation for why viral gene products are only found in a subset of cells in GBM tumours. Furthermore, we conclude that the virus does not confer increased resistance to chemotherapeutic drugs in various GBM cell lines, but instead reduces tumour cell viability. These results highlight that the oncomodulatory potential of HCMV is not limited to cancer-promoting activities, but also includes adverse effects on tumour cell proliferation or survival.",
+    "doi": "10.1099/jgv.0.001118",
+    "publication_date": "2018-07-27T00:00:00",
+    "journal_name": "The Journal of general virology",
+    "journal_issn": "0022-1317",
+    "authors": [
+      {
+        "researcher_id": {
+          "given_name": "Claudia Janu\u00e1rio",
+          "family_name": "Dos Santos",
+          "credit_name": "Dos Santos CJ",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "1\u200bCenter for Natural and Humanities Sciences, Federal University of ABC (UFABC), S\u00e3o Bernardo do Campo, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Fabiane Lucy",
+          "family_name": "Ferreira Castro",
+          "credit_name": "Ferreira Castro FL",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "1\u200bCenter for Natural and Humanities Sciences, Federal University of ABC (UFABC), S\u00e3o Bernardo do Campo, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Rodrigo Barbosa",
+          "family_name": "de Aguiar",
+          "credit_name": "de Aguiar RB",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "2\u200bDepartment of Biophysics, Paulista Medical School, Federal University of S\u00e3o Paulo (UNIFESP), S\u00e3o Paulo, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Isabela Godoy",
+          "family_name": "Menezes",
+          "credit_name": "Menezes IG",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "1\u200bCenter for Natural and Humanities Sciences, Federal University of ABC (UFABC), S\u00e3o Bernardo do Campo, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Ana Carolina",
+          "family_name": "Santos",
+          "credit_name": "Santos AC",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "1\u200bCenter for Natural and Humanities Sciences, Federal University of ABC (UFABC), S\u00e3o Bernardo do Campo, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Christina",
+          "family_name": "Paulus",
+          "credit_name": "Paulus C",
+          "orcid": "0000-0002-4123-5629",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "3\u200bBiomedical Sciences Research Complex, University of St Andrews, St Andrews, UK.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Michael",
+          "family_name": "Nevels",
+          "credit_name": "Nevels M",
+          "orcid": "0000-0002-7115-407X",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "3\u200bBiomedical Sciences Research Complex, University of St Andrews, St Andrews, UK.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Maria Cristina",
+          "family_name": "Carlan da Silva",
+          "credit_name": "Carlan da Silva MC",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "1\u200bCenter for Natural and Humanities Sciences, Federal University of ABC (UFABC), S\u00e3o Bernardo do Campo, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      }
+    ],
+    "source": "Europe PMC",
+    "full_text_url": "https://doi.org/10.1099/jgv.0.001118",
+    "citation_count": 3,
+    "keywords": [
+      "Human cytomegalovirus",
+      "Chemotherapy",
+      "Glioblastoma Multiforme",
+      "Temozolomide",
+      "Carmustina"
+    ],
+    "subjects": [
+      "Cell Line, Tumor",
+      "Humans",
+      "*Cytomegalovirus",
+      "Glioblastoma/drug therapy/virology",
+      "Carmustine/administration & dosage/pharmacology",
+      "Viral Proteins/genetics/metabolism",
+      "Antineoplastic Agents/administration & dosage/pharmacology",
+      "Cell Survival/drug effects",
+      "Gene Expression Regulation, Viral",
+      "Temozolomide/administration & dosage/pharmacology"
+    ],
+    "grants": []
+  },
+  {
+    "title": "Viral DNA Binding Protein SUMOylation Promotes PML Nuclear Body Localization Next to Viral Replication Centers.",
+    "abstract": "Human adenoviruses (HAdVs) have developed mechanisms to manipulate cellular antiviral measures to ensure proper DNA replication, with detailed processes far from being understood. Host cells repress incoming viral genomes through a network of transcriptional regulators that normally control cellular homeostasis. The nuclear domains involved are promyelocytic leukemia protein nuclear bodies (PML-NBs), interferon-inducible, dot-like nuclear structures and hot spots of SUMO posttranslational modification (PTM). In HAdV-infected cells, such SUMO factories are found in close proximity to newly established viral replication centers (RCs) marked by the adenoviral DNA binding protein (DBP) E2A. Here, we show that E2A is a novel target of host SUMOylation, leading to PTMs supporting E2A function in promoting productive infection. Our data show that SUMOylated E2A interacts with PML. Decreasing SUMO-E2A protein levels by generating HAdV variants mutated in the three main SUMO conjugation motifs (SCMs) led to lower numbers of viral RCs and PML-NBs, and these two structures were no longer next to each other. Our data further indicate that SUMOylated E2A binds the host transcription factor Sp100A, promoting HAdV gene expression, and represents the molecular bridge between PML tracks and adjacent viral RCs. Consequently, E2A SCM mutations repressed late viral gene expression and progeny production. These data highlight a novel mechanism used by the virus to benefit from host antiviral responses by exploiting the cellular SUMO conjugation machinery.<b>IMPORTANCE</b> PML nuclear bodies (PML-NBs) are implicated in general antiviral defense based on recruiting host restriction factors; however, it is not understood so far why viruses would establish viral replication centers (RCs) juxtaposed to such \"antiviral\" compartments. To understand this enigma, we investigate the cross talk between PML-NB components and viral RCs to find the missing link connecting both compartments to promote efficient viral replication and gene expression. Taken together, the current concept is more intricate than originally believed, since viruses apparently take advantage of several specific PML-NB-associated proteins to promote productive infection. Simultaneously, they efficiently inhibit antiviral measures to maintain the viral infectious program. Our data provide evidence that SUMOylation of the viral RC marker protein E2A represents the basis of this virus-host interface and regulates various downstream events to support HAdV productive infection. These results are the basis of our current attempts to generate and screen for specific E2A SUMOylation inhibitors to constitute novel therapeutic approaches to limit and prevent HAdV-mediated diseases and mortality of immunosuppressed patients.",
+    "doi": "10.1128/mbio.00049-20",
+    "publication_date": "2020-03-17T00:00:00",
+    "journal_name": "mBio",
+    "journal_issn": "2150-7511",
+    "authors": [
+      {
+        "researcher_id": {
+          "given_name": "Miona",
+          "family_name": "Stubbe",
+          "credit_name": "Stubbe M",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute of Virology, School of Medicine, Technical University Munich, Neuherberg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Julia",
+          "family_name": "Mai",
+          "credit_name": "Mai J",
+          "orcid": "0000-0001-9501-5691",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute of Virology, School of Medicine, Technical University Munich, Neuherberg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Christina",
+          "family_name": "Paulus",
+          "credit_name": "Paulus C",
+          "orcid": "0000-0002-4123-5629",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Biomedical Sciences Research Complex, University of St. Andrews, St. Andrews, United Kingdom.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Hans Christian",
+          "family_name": "Stubbe",
+          "credit_name": "Stubbe HC",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Department of Medicine II, University Hospital, LMU Munich, Munich, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Julia",
+          "family_name": "Berscheminski",
+          "credit_name": "Berscheminski J",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Heinrich Pette Institute, Leibniz Institute for Experimental Virology, Hamburg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Maryam",
+          "family_name": "Karimi",
+          "credit_name": "Karimi M",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute of Virology, School of Medicine, Technical University Munich, Neuherberg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Samuel",
+          "family_name": "Hofmann",
+          "credit_name": "Hofmann S",
+          "orcid": "0000-0002-4787-8107",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute of Virology, School of Medicine, Technical University Munich, Neuherberg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Elisabeth",
+          "family_name": "Weber",
+          "credit_name": "Weber E",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Assay Development and Screening Platform, Institute of Molecular Toxicology and Pharmacology, Helmholtz Zentrum M\u00fcnchen, Neuherberg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Kamyar",
+          "family_name": "Hadian",
+          "credit_name": "Hadian K",
+          "orcid": "0000-0001-8727-2575",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Assay Development and Screening Platform, Institute of Molecular Toxicology and Pharmacology, Helmholtz Zentrum M\u00fcnchen, Neuherberg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Ron",
+          "family_name": "Hay",
+          "credit_name": "Hay R",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Wellcome Trust Centre for Gene Regulation and Expression, College of Life Sciences, University of Dundee, Dundee, United Kingdom.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Peter",
+          "family_name": "Groitl",
+          "credit_name": "Groitl P",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute of Virology, School of Medicine, Technical University Munich, Neuherberg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Michael",
+          "family_name": "Nevels",
+          "credit_name": "Nevels M",
+          "orcid": "0000-0002-7115-407X",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Biomedical Sciences Research Complex, University of St. Andrews, St. Andrews, United Kingdom.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Thomas",
+          "family_name": "Dobner",
+          "credit_name": "Dobner T",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Heinrich Pette Institute, Leibniz Institute for Experimental Virology, Hamburg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Sabrina",
+          "family_name": "Schreiner",
+          "credit_name": "Schreiner S",
+          "orcid": "0000-0002-5744-7159",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute of Virology, School of Medicine, Technical University Munich, Neuherberg, Germany sabrina.schreiner@tum.de.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          },
+          {
+            "institution": "Helmholtz Zentrum M\u00fcnchen, Institute of Virology, Neuherberg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      }
+    ],
+    "source": "Europe PMC",
+    "full_text_url": "https://mbio.asm.org/content/mbio/11/2/e00049-20.full.pdf",
+    "citation_count": 24,
+    "keywords": [
+      "Transcription",
+      "Virus",
+      "Human adenovirus",
+      "DNA binding protein",
+      "SUMO",
+      "Sp100",
+      "Pml-nb",
+      "Hadv",
+      "E2a/dbp",
+      "Replication Centers"
+    ],
+    "subjects": [
+      "Cell Line",
+      "Humans",
+      "Adenoviruses, Human/physiology",
+      "Adenovirus E2 Proteins/genetics/metabolism",
+      "Viral Proteins/genetics/metabolism",
+      "*Virus Replication",
+      "Protein Processing, Post-Translational",
+      "Mutation",
+      "*Host-Pathogen Interactions",
+      "*Sumoylation",
+      "Promyelocytic Leukemia Protein/genetics/metabolism"
+    ],
+    "grants": [
+      {
+        "id": "TRR179",
+        "title": null,
+        "funder": "Deutsche Forschungsgemeinschaft",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      }
+    ]
+  },
+  {
+    "title": "Non-canonical Activation of the DNA Sensing Adaptor STING by ATM and IFI16 Mediates NF-\u03baB Signaling after Nuclear DNA Damage.",
+    "abstract": "DNA damage can be sensed as a danger-associated molecular pattern by the innate immune system. Here we find that keratinocytes and other human cells mount an innate immune response within hours of etoposide-induced DNA damage, which involves the DNA sensing adaptor STING but is independent of the cytosolic DNA receptor cGAS. This non-canonical activation of STING is mediated by the DNA binding protein IFI16, together with the DNA damage response factors ATM and PARP-1, resulting in the assembly of an alternative STING signaling complex that includes the tumor suppressor p53 and the E3 ubiquitin ligase TRAF6. TRAF6 catalyzes the formation of K63-linked ubiquitin chains on STING, leading to the activation of the transcription factor NF-\u03baB and the induction of an alternative STING-dependent gene expression program. We propose that STING acts as a signaling hub that coordinates a transcriptional response depending on its mode of activation.",
+    "doi": "10.1016/j.molcel.2018.07.034",
+    "publication_date": "2018-09-01T00:00:00",
+    "journal_name": "Molecular cell",
+    "journal_issn": "1097-2765",
+    "authors": [
+      {
+        "researcher_id": {
+          "given_name": "Gillian",
+          "family_name": "Dunphy",
+          "credit_name": "Dunphy G",
+          "orcid": "0000-0003-0991-4565",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Division of Biomedical and Life Sciences, Faculty of Health and Medicine, Lancaster University, Lancaster LA1 4YQ, UK.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Sin\u00e9ad M",
+          "family_name": "Flannery",
+          "credit_name": "Flannery SM",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "School of Biochemistry and Immunology, Trinity Biomedical Sciences Institute, Trinity College Dublin, Dublin 2, Ireland.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Jessica F",
+          "family_name": "Almine",
+          "credit_name": "Almine JF",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Division of Biomedical and Life Sciences, Faculty of Health and Medicine, Lancaster University, Lancaster LA1 4YQ, UK.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Dympna J",
+          "family_name": "Connolly",
+          "credit_name": "Connolly DJ",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "School of Biochemistry and Immunology, Trinity Biomedical Sciences Institute, Trinity College Dublin, Dublin 2, Ireland.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Christina",
+          "family_name": "Paulus",
+          "credit_name": "Paulus C",
+          "orcid": "0000-0002-4123-5629",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Biomedical Sciences Research Complex, University of St Andrews, St Andrews KY16 9ST, UK.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Kasper L",
+          "family_name": "J\u00f8nsson",
+          "credit_name": "J\u00f8nsson KL",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Department of Biomedicine, Aarhus University, Wilhelm Meyers All\u00e9 4, 8000 Aarhus C, Denmark.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Martin R",
+          "family_name": "Jakobsen",
+          "credit_name": "Jakobsen MR",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Department of Biomedicine, Aarhus University, Wilhelm Meyers All\u00e9 4, 8000 Aarhus C, Denmark.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Michael M",
+          "family_name": "Nevels",
+          "credit_name": "Nevels MM",
+          "orcid": "0000-0002-7115-407X",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Biomedical Sciences Research Complex, University of St Andrews, St Andrews KY16 9ST, UK.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Andrew G",
+          "family_name": "Bowie",
+          "credit_name": "Bowie AG",
+          "orcid": "0000-0001-5316-4373",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "School of Biochemistry and Immunology, Trinity Biomedical Sciences Institute, Trinity College Dublin, Dublin 2, Ireland.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Leonie",
+          "family_name": "Unterholzner",
+          "credit_name": "Unterholzner L",
+          "orcid": "0000-0001-9824-692X",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Division of Biomedical and Life Sciences, Faculty of Health and Medicine, Lancaster University, Lancaster LA1 4YQ, UK. Electronic address: l.unterholzner@lancaster.ac.uk.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      }
+    ],
+    "source": "Europe PMC",
+    "full_text_url": "http://www.cell.com/article/S1097276518306038/pdf",
+    "citation_count": 380,
+    "keywords": [
+      "DNA damage",
+      "p53",
+      "Interferon",
+      "Etoposide",
+      "Ubiquitin",
+      "innate immunity",
+      "Traf6",
+      "Ifi16",
+      "Sting"
+    ],
+    "subjects": [
+      "Cell Line",
+      "Cell Nucleus/genetics",
+      "Cytosol/metabolism",
+      "Keratinocytes/physiology",
+      "Humans",
+      "DNA Damage/genetics",
+      "Ubiquitin-Protein Ligases/genetics",
+      "NF-kappa B/genetics",
+      "Membrane Proteins/genetics",
+      "Nuclear Proteins/genetics",
+      "Phosphoproteins/genetics",
+      "Ubiquitin/genetics",
+      "DNA/genetics",
+      "Signal Transduction/genetics",
+      "Tumor Suppressor Protein p53/genetics",
+      "Immunity, Innate/genetics",
+      "HEK293 Cells",
+      "Ataxia Telangiectasia Mutated Proteins/genetics",
+      "Poly (ADP-Ribose) Polymerase-1/genetics"
+    ],
+    "grants": [
+      {
+        "id": "AI093752",
+        "title": null,
+        "funder": "NIH",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "MC-CIG 631718",
+        "title": null,
+        "funder": "European Commission",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "MR/K00655X/1",
+        "title": null,
+        "funder": "Medical Research Council",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "R238-2016-2708",
+        "title": null,
+        "funder": "Lundbeck Foundation",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "11/PI/1056",
+        "title": null,
+        "funder": "Science Foundation Ireland",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "CR1140",
+        "title": null,
+        "funder": "North West Cancer Research",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "MR/P022146/1",
+        "title": null,
+        "funder": "Medical Research Council",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "MR/K00655X/2",
+        "title": null,
+        "funder": "Medical Research Council",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "R01 AI093752",
+        "title": null,
+        "funder": "NIAID NIH HHS",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      }
+    ]
+  },
+  {
+    "title": "The proteome of human cytomegalovirus virions and dense bodies is conserved across different strains.",
+    "abstract": "The morphogenesis of human cytomegalovirus (HCMV) particles is incompletely understood. Analysis of the protein composition of HCMV virions and subviral dense bodies (DBs) by mass spectrometry provides valuable information to increase our knowledge about viral morphogenesis. Here we addressed the viral proteome of virions and DBs from two fibroblast-passaged isolates and the widely used endotheliotropic TB4-BAC40 strain of HCMV. The results show a striking concordance of the particle proteomes of different strains. One surprising finding was that only low levels of gpUL128-131A were found in TB40-BAC4 virions. These three proteins, together with gH and gL, form a protein complex that is critical for the endothelial cell tropism of that strain. This indicates that either few molecules of that complex per virion or a small fraction of pentamer-positive virions suffice to retain the tropism. Furthermore, using a pp65-deficient variant of TB40-BAC4, we confirm our previous finding that the major tegument protein serves as a scaffold to support the upload of a fraction of the outer tegument proteins into particles. The results demonstrate that HCMV particle morphogenesis is an orchestrated process that leads to the formation of particles with a largely strain-independent protein composition.",
+    "doi": "10.1007/s00430-015-0397-y",
+    "publication_date": "2015-03-03T00:00:00",
+    "journal_name": "Medical microbiology and immunology",
+    "journal_issn": "0300-8584",
+    "authors": [
+      {
+        "researcher_id": {
+          "given_name": "Nicole",
+          "family_name": "B\u00fcscher",
+          "credit_name": "B\u00fcscher N",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute for Virology, University Medical Center of the Johannes Gutenberg-University Mainz and Research Center for Immunotherapy (FZI), Obere Zahlbacher Strasse 67, Hochhaus am Augustusplatz, 55131, Mainz, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Christina",
+          "family_name": "Paulus",
+          "credit_name": "Paulus C",
+          "orcid": "0000-0002-4123-5629",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Michael",
+          "family_name": "Nevels",
+          "credit_name": "Nevels M",
+          "orcid": "0000-0002-7115-407X",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Stefan",
+          "family_name": "Tenzer",
+          "credit_name": "Tenzer S",
+          "orcid": "0000-0003-3034-0017",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Bodo",
+          "family_name": "Plachter",
+          "credit_name": "Plachter B",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      }
+    ],
+    "source": "Europe PMC",
+    "full_text_url": "https://doi.org/10.1007/s00430-015-0397-y",
+    "citation_count": 30,
+    "keywords": [],
+    "subjects": [
+      "Cells, Cultured",
+      "Cell Line",
+      "Endothelial Cells/virology",
+      "Humans",
+      "Cytomegalovirus/classification/isolation & purification/physiology",
+      "*Virion",
+      "Phosphoproteins/metabolism",
+      "*Proteome",
+      "Viral Proteins/metabolism",
+      "Viral Matrix Proteins/metabolism",
+      "*Proteomics/methods",
+      "Virus Assembly",
+      "Open Reading Frames",
+      "Mass Spectrometry",
+      "Viral Tropism"
+    ],
+    "grants": []
+  },
+  {
+    "title": "World Society for Virology first international conference: Tackling global virus epidemics.",
+    "abstract": "This communication summarizes the presentations given at the 1st international conference of the World Society for Virology (WSV) held virtually during 16-18 June 2021, under the theme of tackling global viral epidemics. The purpose of this biennial meeting is to foster international collaborations and address important viral epidemics in different hosts. The first day included two sessions exclusively on SARS-CoV-2 and COVID-19. The other two days included one plenary and three parallel sessions each. Last not least, 16 sessions covered 140 on-demand submitted talks. In total, 270 scientists from 49 countries attended the meeting, including 40 invited keynote speakers.",
+    "doi": "10.1016/j.virol.2021.11.009",
+    "publication_date": "2021-12-06T00:00:00",
+    "journal_name": "Virology",
+    "journal_issn": "2514-4138",
+    "authors": [
+      {
+        "researcher_id": {
+          "given_name": "Maria",
+          "family_name": "S\u00f6derlund-Venermo",
+          "credit_name": "S\u00f6derlund-Venermo M",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Department of Virology, University of Helsinki, Helsinki, Finland. Electronic address: maria.soderlund-venermo@helsinki.fi.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Anupam",
+          "family_name": "Varma",
+          "credit_name": "Varma A",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Advanced Centre for Plant Virology Indian Agricultural Research Institute, New Delhi, India.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Deyin",
+          "family_name": "Guo",
+          "credit_name": "Guo D",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Center for Infection and Immunity Study, School of Medicine, Sun Yat-sen University, Guangzhou, China.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Douglas P",
+          "family_name": "Gladue",
+          "credit_name": "Gladue DP",
+          "orcid": "0000-0002-7894-0233",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Plum Island Animal Disease Center, ARS, USDA, Greenport, USA.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Emma",
+          "family_name": "Poole",
+          "credit_name": "Poole E",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Department of Medicine, University of Cambridge, Level 5, Addenbrooke's Hospital, Hills Road, Cambridge, UK.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Flor H",
+          "family_name": "Pujol",
+          "credit_name": "Pujol FH",
+          "orcid": "0000-0001-6086-6883",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Laboratorio de Virolog\u00eda Molecular, Centro de Microbiolog\u00eda y Biolog\u00eda Celular Instituto Venezolano de Investigaciones Cient\u00edficas, Caracas, Venezuela.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Hanu",
+          "family_name": "Pappu",
+          "credit_name": "Pappu H",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Department of Plant Pathology, Washington State University, Pullman, WA, USA.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Jes\u00fas L",
+          "family_name": "Romalde",
+          "credit_name": "Romalde JL",
+          "orcid": "0000-0003-4786-4773",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Department of Microbiology and Parasitology, CRETUS & CIBUS-Faculty of Biology, Universidad de Santiago de Compostela, Santiago de Compostela, Spain.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Laura",
+          "family_name": "Kramer",
+          "credit_name": "Kramer L",
+          "orcid": "0000-0002-8707-0778",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Arbovirus Laboratory, Wadsworth Center, New York State Department of Health, Albany, NY, USA.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Mariana",
+          "family_name": "Baz",
+          "credit_name": "Baz M",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "WHO Collaborating Centre for Reference and Research on Influenza, Peter Doherty Institute, Australia and Research Center in Infectious Diseases of the CHU of Qu\u00e9bec and Universit\u00e9 Laval, Melbourne, Victoria, Qu\u00e9bec City, Quebec, Canada.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Marietjie",
+          "family_name": "Venter",
+          "credit_name": "Venter M",
+          "orcid": "0000-0003-2696-824X",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Zoonotic Arbo- and Respiratory Virus Research Program, Centre for Viral Zoonosis, Department of Medical Virology, University of Pretoria, Pretoria, South Africa.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Matthew D",
+          "family_name": "Moore",
+          "credit_name": "Moore MD",
+          "orcid": "0000-0002-5393-0733",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Department of Food Science, University of Massachusetts, Amherst, MA, USA.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Michael M",
+          "family_name": "Nevels",
+          "credit_name": "Nevels MM",
+          "orcid": "0000-0002-7115-407X",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Biomedical Sciences Research Complex, University of St Andrews, St Andrews, UK.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Sayeh",
+          "family_name": "Ezzikouri",
+          "credit_name": "Ezzikouri S",
+          "orcid": "0000-0002-3982-6163",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Virology Unit, Viral Hepatitis Laboratory, Institut Pasteur du Maroc, Casablanca, Morocco.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Vikram N",
+          "family_name": "Vakharia",
+          "credit_name": "Vakharia VN",
+          "orcid": "0000-0002-0955-3010",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute of Marine & Environmental Technology, University of Maryland, Baltimore County, Baltimore, MD, USA.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "William C",
+          "family_name": "Wilson",
+          "credit_name": "Wilson WC",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Foreign Arthropod Borne Animal Diseases Research Unit, Agricultural Research Service, United States Department of Agriculture, Manhattan, KS, USA.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Yashpal S",
+          "family_name": "Malik",
+          "credit_name": "Malik YS",
+          "orcid": "0000-0002-2832-4854",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "College of Animal Biotechnology, Guru Angad Dev Veterinary and Animal Sciences University, Ludhiana, Punjab, India.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Zhengli",
+          "family_name": "Shi",
+          "credit_name": "Shi Z",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "CAS Key Laboratory of Special Pathogens and Biosafety, Wuhan Institute of Virology, Chinese Academy of Sciences, Wuhan, Hubei, China.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Ahmed S",
+          "family_name": "Abdel-Moneim",
+          "credit_name": "Abdel-Moneim AS",
+          "orcid": "0000-0002-3148-6782",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Microbiology Department, Virology Division, College of Medicine, Taif University, Al-Taif, Saudi Arabia, Virology Department, Faculty of Veterinary Medicine, Beni-Suef University, Beni-Suef, Egypt. Electronic address: asa@tu.edu.sa.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      }
+    ],
+    "source": "Europe PMC",
+    "full_text_url": "https://doi.org/10.1016/j.virol.2021.11.009",
+    "citation_count": 2,
+    "keywords": [
+      "Meeting Report",
+      "Conference Report",
+      "Wsv",
+      "Tackling Global Viral Epidemics",
+      "World Society For Virology"
+    ],
+    "subjects": [
+      "Humans",
+      "Virology",
+      "Societies, Scientific",
+      "*Congresses as Topic",
+      "COVID-19/immunology/prevention & control/virology",
+      "*SARS-CoV-2"
+    ],
+    "grants": []
+  },
+  {
+    "title": "Histone H3 lysine 4 methylation marks postreplicative human cytomegalovirus chromatin.",
+    "abstract": "In the nuclei of permissive cells, human cytomegalovirus genomes form nucleosomal structures initially resembling heterochromatin but gradually switching to a euchromatin-like state. This switch is characterized by a decrease in histone H3 K9 methylation and a marked increase in H3 tail acetylation and H3 K4 methylation across the viral genome. We used ganciclovir and a mutant virus encoding a reversibly destabilized DNA polymerase to examine the impact of DNA replication on histone modification dynamics at the viral chromatin. The changes in H3 tail acetylation and H3 K9 methylation proceeded in a DNA replication-independent fashion. In contrast, the increase in H3 K4 methylation proved to depend widely on viral DNA synthesis. Consistently, labeling of nascent DNA using \"click chemistry\" revealed preferential incorporation of methylated H3 K4 into viral (but not cellular) chromatin during or following DNA replication. This study demonstrates largely selective epigenetic tagging of postreplicative human cytomegalovirus chromatin.",
+    "doi": "10.1128/jvi.00581-12",
+    "publication_date": "2012-07-03T00:00:00",
+    "journal_name": "Journal of virology",
+    "journal_issn": "0022-538X",
+    "authors": [
+      {
+        "researcher_id": {
+          "given_name": "Alexandra",
+          "family_name": "Nitzsche",
+          "credit_name": "Nitzsche A",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute for Medical Microbiology and Hygiene, University of Regensburg, Regensburg, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Charlotte",
+          "family_name": "Steinh\u00e4usser",
+          "credit_name": "Steinh\u00e4usser C",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Katrin",
+          "family_name": "M\u00fccke",
+          "credit_name": "M\u00fccke K",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Christina",
+          "family_name": "Paulus",
+          "credit_name": "Paulus C",
+          "orcid": "0000-0002-4123-5629",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Michael",
+          "family_name": "Nevels",
+          "credit_name": "Nevels M",
+          "orcid": "0000-0002-7115-407X",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      }
+    ],
+    "source": "Europe PMC",
+    "full_text_url": "https://jvi.asm.org/content/jvi/86/18/9817.full.pdf",
+    "citation_count": 23,
+    "keywords": [],
+    "subjects": [
+      "Cell Line",
+      "Chromatin/genetics/metabolism/chemistry",
+      "Euchromatin/genetics/metabolism/chemistry",
+      "Heterochromatin/genetics/metabolism/chemistry",
+      "Humans",
+      "Cytomegalovirus/genetics/pathogenicity/physiology",
+      "Lysine/chemistry",
+      "Histones/metabolism/chemistry",
+      "DNA, Viral/biosynthesis/genetics",
+      "Virus Replication/genetics/physiology",
+      "DNA Replication",
+      "Epigenesis, Genetic",
+      "Base Sequence",
+      "Methylation",
+      "Genome, Viral"
+    ],
+    "grants": []
+  },
+  {
+    "title": "How to control an infectious bead string: nucleosome-based regulation and targeting of herpesvirus chromatin.",
+    "abstract": "Herpesvirus infections of humans can cause a broad variety of symptoms ranging from mild afflictions to life-threatening disease. During infection, the large double-stranded DNA genomes of all herpesviruses are transcribed, replicated and encapsidated in the host cell nucleus, where DNA is typically structured and manoeuvred through nucleosomes. Nucleosomes individually assemble DNA around core histone octamers to form 'beads-on-a-string' chromatin fibres. Herpesviruses have responded to the advantages and challenges of chromatin formation in biologically unique ways. Although herpesvirus DNA is devoid of histones within nucleocapsids, nuclear viral genomes most likely form irregularly arranged or unstable nucleosomes during productive infection, and regular nucleosomal arrays resembling host cell chromatin in latently infected cells. Besides variations in nucleosome density, herpesvirus chromatin 'bead strings' undergo dynamic changes in histone composition and modification during the different stages of productive replication, latent infection and reactivation from latency, raising the likely possibility that epigenetic processes may dictate, at least in part, the outcome of infection and ensuing pathogenesis. Here, we summarise and discuss several new and important aspects regarding the nucleosome-based mechanisms that regulate herpesvirus chromatin structure and function in infected cells. Special emphasis is given to processes of histone deposition, histone variant exchange and covalent histone modification in relation to the transcription from the viral genome during productive and latent infections by human cytomegalovirus and herpes simplex virus type 1. We also present an overview on emerging histone-directed antiviral strategies that may be developed into 'epigenetic therapies' to improve current prevention and treatment options targeting herpesvirus infection and disease.",
+    "doi": "10.1002/rmv.690",
+    "publication_date": "2011-05-01T00:00:00",
+    "journal_name": "Reviews in medical virology",
+    "journal_issn": "1052-9276",
+    "authors": [
+      {
+        "researcher_id": {
+          "given_name": "Michael",
+          "family_name": "Nevels",
+          "credit_name": "Nevels M",
+          "orcid": "0000-0002-7115-407X",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute for Medical Microbiology and Hygiene, University of Regensburg, Germany. michael.nevels@klinik.uni-regensburg.de",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Alexandra",
+          "family_name": "Nitzsche",
+          "credit_name": "Nitzsche A",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Christina",
+          "family_name": "Paulus",
+          "credit_name": "Paulus C",
+          "orcid": "0000-0002-4123-5629",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      }
+    ],
+    "source": "Europe PMC",
+    "full_text_url": "https://doi.org/10.1002/rmv.690",
+    "citation_count": 37,
+    "keywords": [],
+    "subjects": [
+      "Chromatin/metabolism",
+      "Nucleosomes/metabolism",
+      "Humans",
+      "Herpesvirus 1, Human/growth & development/physiology",
+      "Cytomegalovirus/growth & development/physiology",
+      "Histones/metabolism",
+      "DNA, Viral/metabolism",
+      "Virus Latency",
+      "*Virus Replication",
+      "Virus Activation",
+      "Models, Biological"
+    ],
+    "grants": []
+  },
+  {
+    "title": "Modular cell-based platform for high throughput identification of compounds that inhibit a viral interferon antagonist of choice.",
+    "abstract": "Viral interferon (IFN) antagonists are a diverse class of viral proteins that counteract the host IFN response, which is important for controlling viral infections. Viral IFN antagonists are often multifunctional proteins that perform vital roles in virus replication beyond IFN antagonism. The critical importance of viral IFN antagonists is highlighted by the fact that almost all viruses encode one of these proteins. Inhibition of viral IFN antagonists has the potential to exert pleiotropic antiviral effects and thus this important protein class represents a diverse plethora of novel therapeutic targets. To exploit this, we have successfully developed and executed a novel modular cell-based platform that facilitates the safe and rapid screening for inhibitors of a viral IFN antagonist of choice. The platform is based on two reporter cell-lines that provide a simple method to detect activation of IFN induction or signaling via an eGFP gene placed under the control of the IFN\u03b2 or an ISRE-containing promoter, respectively. Expression of a target IFN antagonist in the appropriate reporter cell-line will block the IFN response and hence eGFP expression. We hypothesized that addition of a compound that inhibits IFN antagonist function will release the block imposed on the IFN response and hence restore eGFP expression, providing a measurable parameter for high throughput screening (HTS). We demonstrate assay proof-of-concept by (i) exploiting hepatitis C virus (HCV) protease inhibitors to inhibit NS3-4A's capacity to block IFN induction and (ii) successfully executing two HTS targeting viral IFN antagonists that block IFN signaling; NS2 and IE1 from human respiratory syncytial virus (RSV) and cytomegalovirus (CMV) respectively, two clinically important viruses for which vaccine development has thus far been unsuccessful and new antivirals are required. Both screens performed robustly and Z' Factor scores of >0.6 were achieved. We identified (i) four hit compounds that specifically inhibit RSV NS2's ability to block IFN signaling by mediating STAT2 degradation and exhibit modest antiviral activity and (ii) two hit compounds that interfere with IE1 transcription and significantly impair CMV replication. Overall, we demonstrate assay proof-of-concept as we target viral IFN antagonists from unrelated viruses and demonstrate its suitability for HTS.",
+    "doi": "10.1016/j.antiviral.2017.10.012",
+    "publication_date": "2017-10-14T00:00:00",
+    "journal_name": "Antiviral research",
+    "journal_issn": "0166-3542",
+    "authors": [
+      {
+        "researcher_id": {
+          "given_name": "Andri",
+          "family_name": "Vasou",
+          "credit_name": "Vasou A",
+          "orcid": "0000-0003-4051-4658",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "School of Biology, Biomedical Sciences Research Complex, University of St Andrews, St Andrews, KY16 9ST, United Kingdom.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Christina",
+          "family_name": "Paulus",
+          "credit_name": "Paulus C",
+          "orcid": "0000-0002-4123-5629",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "School of Biology, Biomedical Sciences Research Complex, University of St Andrews, St Andrews, KY16 9ST, United Kingdom.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Janina",
+          "family_name": "Narloch",
+          "credit_name": "Narloch J",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "School of Biology, Biomedical Sciences Research Complex, University of St Andrews, St Andrews, KY16 9ST, United Kingdom.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Zoe O",
+          "family_name": "Gage",
+          "credit_name": "Gage ZO",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "School of Biology, Biomedical Sciences Research Complex, University of St Andrews, St Andrews, KY16 9ST, United Kingdom.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Marie-Anne",
+          "family_name": "Rameix-Welti",
+          "credit_name": "Rameix-Welti MA",
+          "orcid": "0000-0002-5901-3856",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "UMR INSERM U1173 2I, UFR des Sciences de la Sant\u00e9 Simone Veil-UVSQ, 78180, Montigny-Le-Bretonneux, France; AP-HP, Laboratoire de Microbiologie, H\u00f4pital Ambroise Par\u00e9, 92104, Boulogne-Billancourt, France.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Jean-Fran\u00e7ois",
+          "family_name": "El\u00e9ou\u00ebt",
+          "credit_name": "El\u00e9ou\u00ebt JF",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Unit\u00e9 de Virologie et Immunologie Mol\u00e9culaires (UR892), INRA, Universit\u00e9 Paris-Saclay, 78352, Jouy-en-Josas, France.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Michael",
+          "family_name": "Nevels",
+          "credit_name": "Nevels M",
+          "orcid": "0000-0002-7115-407X",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "School of Biology, Biomedical Sciences Research Complex, University of St Andrews, St Andrews, KY16 9ST, United Kingdom.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Richard E",
+          "family_name": "Randall",
+          "credit_name": "Randall RE",
+          "orcid": "0000-0002-9304-6678",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "School of Biology, Biomedical Sciences Research Complex, University of St Andrews, St Andrews, KY16 9ST, United Kingdom.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Catherine S",
+          "family_name": "Adamson",
+          "credit_name": "Adamson CS",
+          "orcid": "0000-0001-7673-5212",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "School of Biology, Biomedical Sciences Research Complex, University of St Andrews, St Andrews, KY16 9ST, United Kingdom. Electronic address: csa21@st-andrews.ac.uk.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      }
+    ],
+    "source": "Europe PMC",
+    "full_text_url": "https://doi.org/10.1016/j.antiviral.2017.10.012",
+    "citation_count": 9,
+    "keywords": [
+      "Antivirals",
+      "High-throughput Screening (Hts)",
+      "Human Respiratory Syncytial Virus (Rsv)",
+      "Human Cytomegalovirus (Cmv)",
+      "Signal Transducer And Activator Of Transcription 2 (Stat2)",
+      "Viral Interferon (Ifn) Antagonists"
+    ],
+    "subjects": [
+      "Cell Line",
+      "Humans",
+      "Respiratory Syncytial Virus, Human/drug effects/physiology",
+      "Interferons/antagonists & inhibitors/pharmacology",
+      "Viral Proteins/metabolism",
+      "Antiviral Agents/pharmacology",
+      "*Drug Evaluation, Preclinical/methods",
+      "Virus Replication/drug effects",
+      "Signal Transduction",
+      "Cell Survival/drug effects",
+      "Gene Expression Regulation/drug effects",
+      "Gene Expression Regulation, Viral/drug effects",
+      "Protein Binding",
+      "Dose-Response Relationship, Drug",
+      "Genes, Reporter",
+      "*Drug Discovery/methods",
+      "*High-Throughput Screening Assays"
+    ],
+    "grants": [
+      {
+        "id": "MR/J500343/1",
+        "title": null,
+        "funder": "Medical Research Council",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "105621/Z/14/Z",
+        "title": null,
+        "funder": "Wellcome Trust",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "ISSF 105621/Z/14/Z",
+        "title": null,
+        "funder": "Wellcome Trust",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "T15/38",
+        "title": null,
+        "funder": "Tenovus Scotland",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "101788/Z/13/Z",
+        "title": null,
+        "funder": "Wellcome Trust",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "101788/Z/13/Z",
+        "title": null,
+        "funder": "RER",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "1102812",
+        "title": null,
+        "funder": "Medical Research Council",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      },
+      {
+        "id": "PA 815/2-1",
+        "title": null,
+        "funder": "Deutsche Forschungsgemeinschaft",
+        "year": null,
+        "amount": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigator": null,
+        "abstract": null,
+        "keywords": [],
+        "award_type": null
+      }
+    ]
+  }
+]

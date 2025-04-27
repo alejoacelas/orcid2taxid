@@ -2,11 +2,14 @@ import streamlit as st
 import asyncio
 import base64
 from pathlib import Path
-from orcid2taxid.organisms.integrations.ncbi import TaxIDLookup
-from orcid2taxid.researchers.services import get_researcher_by_orcid, find_publications
-from orcid2taxid.publications.services import get_classification, get_organisms, get_taxonomy_info, process_paper_async
-from orcid2taxid.grants.services import find_grants
-from orcid2taxid.core.models.customer import PublicationRecord, ResearcherProfile, GrantMetadata, PaperClassificationMetadata
+from orcid2taxid.organism.integrations.ncbi import TaxIDLookup
+from orcid2taxid.researcher.services import get_researcher_by_orcid, find_publications
+from orcid2taxid.publication.services import get_classification, get_organisms, get_taxonomy_info, process_paper_async
+from orcid2taxid.grant.services import find_grants
+from orcid2taxid.publication.schemas import PublicationRecord
+from orcid2taxid.researcher.schemas import ResearcherProfile
+from orcid2taxid.grant.schemas import GrantRecord
+from orcid2taxid.core.models.extraction_schemas import PaperClassificationMetadata
 
 # Custom hash functions for Pydantic models
 def hash_paper_metadata(paper: PublicationRecord) -> tuple:
@@ -21,7 +24,7 @@ def hash_paper_metadata(paper: PublicationRecord) -> tuple:
         tuple(author.full_name for author in paper.authors) if paper.authors else None
     )
 
-def hash_grant_metadata(grant: GrantMetadata) -> tuple:
+def hash_grant_metadata(grant: GrantRecord) -> tuple:
     """Create a hashable tuple from essential grant fields"""
     return (
         grant.project_title,

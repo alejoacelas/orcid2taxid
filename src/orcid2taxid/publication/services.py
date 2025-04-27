@@ -1,7 +1,7 @@
 import asyncio
-from orcid2taxid.publications.schemas import PublicationRecord
+from orcid2taxid.publication.schemas import PublicationRecord
 from orcid2taxid.analysis.extraction.paper import PaperExtractor
-from orcid2taxid.organisms.integrations.ncbi import TaxIDLookup
+from orcid2taxid.organism.integrations.ncbi import TaxIDLookup
 
 # Singleton instances
 _paper_extractor = PaperExtractor()

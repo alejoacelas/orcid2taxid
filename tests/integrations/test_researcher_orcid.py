@@ -3,13 +3,13 @@ from typing import Dict, Any
 from pathlib import Path
 import pytest
 
-from orcid2taxid.researchers.integrations.orcid import (
+from orcid2taxid.researcher.integrations.orcid import (
     OrcidConfig,
     fetch_orcid_data,
     get_profile,
     parse_affiliations
 )
-from orcid2taxid.researchers.schemas.base import CustomerProfile
+from orcid2taxid.researcher.schemas.base import CustomerProfile
 
 # Configure pytest-asyncio
 pytestmark = pytest.mark.asyncio

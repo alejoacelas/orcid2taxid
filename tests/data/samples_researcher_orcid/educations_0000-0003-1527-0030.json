@@ -1,0 +1,138 @@
+{
+  "last-modified-date": {
+    "value": 1424366945628
+  },
+  "affiliation-group": [
+    {
+      "last-modified-date": {
+        "value": 1424366945628
+      },
+      "external-ids": {
+        "external-id": []
+      },
+      "summaries": [
+        {
+          "education-summary": {
+            "created-date": {
+              "value": 1424366945628
+            },
+            "last-modified-date": {
+              "value": 1424366945628
+            },
+            "source": {
+              "source-orcid": {
+                "uri": "https://orcid.org/0000-0003-1527-0030",
+                "path": "0000-0003-1527-0030",
+                "host": "orcid.org"
+              },
+              "source-client-id": null,
+              "source-name": {
+                "value": "Justin Littman"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "put-code": 742812,
+            "department-name": null,
+            "role-title": "M.L.I.S.",
+            "start-date": null,
+            "end-date": {
+              "year": {
+                "value": "2002"
+              },
+              "month": null,
+              "day": null
+            },
+            "organization": {
+              "name": "University of Denver",
+              "address": {
+                "city": "Denver",
+                "region": "CO",
+                "country": "US"
+              },
+              "disambiguated-organization": {
+                "disambiguated-organization-identifier": "2927",
+                "disambiguation-source": "RINGGOLD"
+              }
+            },
+            "url": null,
+            "external-ids": null,
+            "display-index": "0",
+            "visibility": "public",
+            "path": "/0000-0003-1527-0030/education/742812"
+          }
+        }
+      ]
+    },
+    {
+      "last-modified-date": {
+        "value": 1424366833252
+      },
+      "external-ids": {
+        "external-id": []
+      },
+      "summaries": [
+        {
+          "education-summary": {
+            "created-date": {
+              "value": 1424366833252
+            },
+            "last-modified-date": {
+              "value": 1424366833252
+            },
+            "source": {
+              "source-orcid": {
+                "uri": "https://orcid.org/0000-0003-1527-0030",
+                "path": "0000-0003-1527-0030",
+                "host": "orcid.org"
+              },
+              "source-client-id": null,
+              "source-name": {
+                "value": "Justin Littman"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "put-code": 742807,
+            "department-name": null,
+            "role-title": "B.A.",
+            "start-date": {
+              "year": {
+                "value": "1991"
+              },
+              "month": null,
+              "day": null
+            },
+            "end-date": {
+              "year": {
+                "value": "1995"
+              },
+              "month": null,
+              "day": null
+            },
+            "organization": {
+              "name": "Amherst College",
+              "address": {
+                "city": "Amherst",
+                "region": "MA",
+                "country": "US"
+              },
+              "disambiguated-organization": {
+                "disambiguated-organization-identifier": "1180",
+                "disambiguation-source": "RINGGOLD"
+              }
+            },
+            "url": null,
+            "external-ids": null,
+            "display-index": "0",
+            "visibility": "public",
+            "path": "/0000-0003-1527-0030/education/742807"
+          }
+        }
+      ]
+    }
+  ],
+  "path": "/0000-0003-1527-0030/educations"
+}

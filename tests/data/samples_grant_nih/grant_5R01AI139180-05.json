@@ -1,0 +1,143 @@
+{
+  "meta": {
+    "search_id": "p5qoKlIsz06P3WeA_cCw3w",
+    "total": 1,
+    "offset": 0,
+    "limit": 1,
+    "sort_field": null,
+    "sort_order": "ASC",
+    "sorted_by_relevance": true,
+    "properties": {
+      "URL": "https:/reporter.nih.gov/search/p5qoKlIsz06P3WeA_cCw3w/projects"
+    }
+  },
+  "results": [
+    {
+      "appl_id": 10392335,
+      "subproject_id": null,
+      "fiscal_year": 2022,
+      "project_num": "5R01AI139180-05",
+      "project_serial_num": "AI139180",
+      "organization": {
+        "org_name": "UNIVERSITY OF WISCONSIN-MADISON",
+        "city": null,
+        "country": null,
+        "org_city": "MADISON",
+        "org_country": "UNITED STATES",
+        "org_state": "WI",
+        "org_state_name": null,
+        "dept_type": "INTERNAL MEDICINE/MEDICINE",
+        "fips_country_code": null,
+        "org_duns": [
+          "161202122"
+        ],
+        "org_ueis": [
+          "LCLSJAGTNZQ7"
+        ],
+        "primary_duns": "161202122",
+        "primary_uei": "LCLSJAGTNZQ7",
+        "org_fips": "US",
+        "org_ipf_code": "578503",
+        "org_zipcode": "537151218",
+        "external_org_id": 578503
+      },
+      "award_type": "5",
+      "activity_code": "R01",
+      "award_amount": 355828,
+      "is_active": false,
+      "project_num_split": {
+        "appl_type_code": "5",
+        "activity_code": "R01",
+        "ic_code": "AI",
+        "serial_num": "139180",
+        "support_year": "05",
+        "full_support_year": "05",
+        "suffix_code": ""
+      },
+      "principal_investigators": [
+        {
+          "profile_id": 1892691,
+          "first_name": "ROBERT",
+          "middle_name": "F",
+          "last_name": "KALEJTA",
+          "is_contact_pi": true,
+          "full_name": "ROBERT F KALEJTA",
+          "title": "PROFESSOR"
+        }
+      ],
+      "contact_pi_name": "KALEJTA, ROBERT F",
+      "program_officers": [
+        {
+          "first_name": "RAJEEV",
+          "middle_name": "",
+          "last_name": "GAUTAM",
+          "full_name": "RAJEEV  GAUTAM"
+        }
+      ],
+      "agency_ic_admin": {
+        "code": "AI",
+        "abbreviation": "NIAID",
+        "name": "National Institute of Allergy and Infectious Diseases"
+      },
+      "agency_ic_fundings": [
+        {
+          "fy": 2022,
+          "code": "AI",
+          "name": "National Institute of Allergy and Infectious Diseases",
+          "abbreviation": "NIAID",
+          "total_cost": 355828.0,
+          "direct_cost_ic": 236500.0,
+          "indirect_cost_ic": 119328.0
+        }
+      ],
+      "cong_dist": "WI-02",
+      "spending_categories": [
+        276,
+        338,
+        796,
+        803
+      ],
+      "project_start_date": "2018-05-02T00:00:00",
+      "project_end_date": "2024-04-30T00:00:00",
+      "organization_type": {
+        "name": "SCHOOLS OF MEDICINE",
+        "code": "10",
+        "is_other": false
+      },
+      "geo_lat_lon": {
+        "lon": -89.400858,
+        "lat": 43.068519
+      },
+      "opportunity_number": "PA-16-160",
+      "full_study_section": {
+        "srg_code": "VIRB",
+        "srg_flex": null,
+        "sra_designator_code": null,
+        "sra_flex_code": null,
+        "group_code": null,
+        "name": "Virology - B Study Section[VIRB]"
+      },
+      "award_notice_date": "2022-04-22T00:00:00",
+      "is_new": false,
+      "mechanism_code_dc": "RP",
+      "core_project_num": "R01AI139180",
+      "terms": "<Congenital Abnormality><Birth Defects><Congenital Anatomic Abnormality><Congenital Anatomical Abnormality><Congenital Defects><Congenital Deformity><Congenital Malformation><Acquired Immunodeficiency Syndrome><AIDS><Acquired Immune Deficiency><Acquired Immune Deficiency Syndrome><Acquired Immuno-Deficiency Syndrome><Acquired Immunologic Deficiency Syndrome><Affect><Elderly><advanced age><elders><geriatric><late life><later life><older adult><older person><senior citizen><Antiviral Agents><Antiviral Drugs><Antivirals><anti-viral agents><anti-viral compound><anti-viral drugs><anti-viral medication><anti-viral therapeutic><anti-virals><antiviral compound><antiviral medication><antiviral therapeutic><Brain Neoplasms><Brain Neoplasia><Brain Tumors><tumors in the brain><Malignant Neoplasms><Cancers><Malignant Tumor><malignancy><neoplasm/cancer><Cardiovascular Diseases><cardiovascular disorder><Cells><Cell Body><Communicable Diseases><Infectious Disease Pathway><Infectious Diseases><Infectious Disorder><Cytomegalovirus Infections><CMV infection><Cytomegalic Inclusion Disease><Inclusion Disease><Salivary Gland Virus Disease><Cytomegalovirus><CMV><HCMV><Salivary Gland Viruses><cytomegalovirus group><Disease><Disorder><Early Promoters><Genes><Genome><Herpesviridae><Herpesviruses><herpes virus><Heterochromatin><HIV><AIDS Virus><Acquired Immune Deficiency Syndrome Virus><Acquired Immunodeficiency Syndrome Virus><Human Immunodeficiency Viruses><LAV-HTLV-III><Lymphadenopathy-Associated Virus><Virus-HIV><Human><Modern Man><Natural Immunity><Innate Immunity><Native Immunity><Non-Specific Immunity><Nonspecific Immunity><Immunologic Surveillance><Immune Surveillance><Immunologic Surveillances><Immunological Surveillance><Immunological Surveillances><Immunosurveillance><Infection><Lead><Pb element><heavy metal Pb><heavy metal lead><Lysine><L-Lysine><Maintenance><Persons><Grafting Procedure><Organ Transplants><organ allograft><organ graft><organ xenograft><Organ Transplantation><Kinases><Phosphotransferase Gene><Transphosphorylases><Phosphotransferases><Proteins><Publishing><social role><Role><Cell-Mediated Lympholytic Cells><Cytolytic T-Cell><Cytotoxic T Cell><killer T cell><Cytotoxic T-Lymphocytes><Testing><Time><transcription factor><Basal Transcription Factor><Basal transcription factor genes><General Transcription Factor Gene><General Transcription Factors><Transcription Factor Proto-Oncogene><Transcription factor genes><Genetic Transcription><Gene Transcription><RNA Expression><Transcription><Viral Genome><virus genome><Virus><Work><cytokine><Mediating><promoter><promotor><Signal Transduction Pathway><Phase><Series><Virus Latency><Viral Latency><Link><Stimulus><CD8 Cell><CD8 T cells><CD8 lymphocyte><CD8+ T cell><CD8+ T-Lymphocyte><CD8-Positive Lymphocytes><T8 Cells><T8 Lymphocytes><CD8-Positive T-Lymphocytes><Double-Stranded DNA><dsDNA><ds-DNA><Inflammatory><Brain Glioblastoma Multiforme><Grade IV Brain Astrocytic Neoplasm><Grade IV Brain Astrocytic Tumor><Grade IV Brain Astrocytoma><Brain Glioblastoma><Life><fighting><Immunes><Immune><Lytic><Event><Viral><Gene Inactivation><transcriptional silencing><Gene Silencing><ATF><activating transcription factor><response><gene repression><Gene Down-Regulation><Transcription Repression><Transcriptional Repression><preventing><prevent><CREB><CREB1><cAMP Response Element-Binding Protein 1><CREB1 gene><Data><Detection><Epigenetic Process><Epigenetic><Epigenetic Change><Epigenetic Mechanism><Invaded><Lytic Phase><Lytic Cycle><Lytic Infection><Pattern recognition receptor><design><designing><reactivation from latency><pathogen><histone methylation><Innate Immune Response><Immune Evasion><recruit><pathogenic virus><viral pathogen><virus pathogen><innate immune pathways>",
+      "pref_terms": "Acquired Immunodeficiency Syndrome;Affect;Antiviral Agents;Brain Glioblastoma;Brain Neoplasms;CD8-Positive T-Lymphocytes;CREB1 gene;Cardiovascular Diseases;Cells;Communicable Diseases;Congenital Abnormality;Cytomegalovirus;Cytomegalovirus Infections;Cytotoxic T-Lymphocytes;Data;Detection;Disease;Early Promoters;Elderly;Epigenetic Process;Event;Gene Silencing;Genes;Genetic Transcription;Genome;HIV;Herpesviridae;Heterochromatin;Human;Immune;Immune Evasion;Immunologic Surveillance;Infection;Inflammatory;Innate Immune Response;Invaded;Lead;Life;Link;Lysine;Lytic;Lytic Phase;Maintenance;Malignant Neoplasms;Mediating;Natural Immunity;Organ Transplantation;Pattern recognition receptor;Persons;Phase;Phosphotransferases;Proteins;Publishing;Role;Series;Signal Transduction Pathway;Stimulus;Testing;Time;Viral;Viral Genome;Virus;Virus Latency;Work;activating transcription factor;cytokine;design;ds-DNA;fighting;gene repression;histone methylation;innate immune pathways;pathogen;pathogenic virus;prevent;promoter;reactivation from latency;recruit;response;transcription factor",
+      "abstract_text": "Innate immunity senses intracellular pathogens and induces the expression of cellular genes with\nantiviral functions. Most if not all viruses encode proteins that inhibit innate immunity during productive, lytic\ninfections, but the role of innate immunity during viral latency is underappreciated and understudied.\nLatency permits human cytomegalovirus (HCMV) to colonize its hosts for their lifetime by avoiding immune\ndetection and clearance. During latency, the levels of lytic (productive) phase HCMV proteins such as IE1\n(Immediate Early 1) are kept extremely low (or completely absent) because the promoter that drives its\nexpression, the Major Immediate Early Promoter (MIEP) is transcriptionally silenced by heterochromatin.\nIE1 is a transcription factor that promotes progression through the viral lytic phase and is a target of\ncytotoxic T cells. Therefore, keeping IE1 protein levels low or absent protects latently infected cells from\nimmune surveillance and restricts reactivation events until the proper stimulus is sensed. We published that\nthe viral UL138 protein silences IE1 transcription during latency by inhibiting the recruitment of lysine-\nspecific demethylases (KDMs) to the MIEP that otherwise remove repressive epigenetic histone\nmethylations to activate transcription. Our preliminary data indicates this occurs, in part, through a\nsuppression of cellular innate immune pathways. Here we propose to determine how UL138-mediated\nevasion of cellular innate immunity contributes to the establishment and maintenance of HCMV latency, with\na particular focus on viral epigenetics and the transcriptional silencing of IE1.",
+      "project_title": "Evading innate immunity during human cytomegalovirus latency",
+      "phr_text": "Narrative\nHuman cytomegalovirus infects almost everyone. It causes birth defects and disease in\npeople sick with cancer, AIDS, and those undergoing organ transplants. It also seems\nto exacerbate cardiovascular diseases, to adversely affect the ability of the elderly to\nfight off other infectious diseases, and may be directly related to human glioblastoma\nmultiforme brain tumors. HCMV can hide in the body in a latent state and reactivate at\nany time to cause disease and to spread from person to person. This work will study\nhow HCMV establishes this latent state, with the hopes of identifying ways to fight the\nvirus with antiviral drugs.",
+      "spending_categories_desc": "Genetics; Infectious Diseases; Stem Cell Research; Stem Cell Research - Nonembryonic - Non-Human",
+      "agency_code": "NIH",
+      "covid_response": null,
+      "arra_funded": "N",
+      "budget_start": "2022-05-01T00:00:00",
+      "budget_end": "2024-04-30T00:00:00",
+      "cfda_code": "855",
+      "funding_mechanism": "Non-SBIR/STTR",
+      "direct_cost_amt": 236500,
+      "indirect_cost_amt": 119328,
+      "project_detail_url": "https://reporter.nih.gov/project-details/10392335",
+      "date_added": "2022-05-07T13:15:29"
+    }
+  ]
+}

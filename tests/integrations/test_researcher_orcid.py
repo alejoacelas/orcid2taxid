@@ -8,7 +8,7 @@ from orcid2taxid.researcher.integrations.orcid import (
     parse_affiliations
 )
 from orcid2taxid.researcher.schemas.base import CustomerProfile
-from tests.integrations.api_test_cases import TEST_ORCID_ID
+from tests.api_test_cases import TEST_ORCID_ID
 from tests.utils.utils import (
     get_responses_dir,
     save_response,

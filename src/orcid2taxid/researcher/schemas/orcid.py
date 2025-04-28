@@ -74,12 +74,28 @@ class OrcidAffiliation(OrcidBaseModel):
         validation_alias=AliasPath('source', 'source-name', 'value')
     )
 
+class OrcidKeyword(OrcidBaseModel):
+    """Keyword from ORCID API"""
+    content: str
+    source: Optional[str] = Field(
+        None,
+        validation_alias=AliasPath('source', 'source-name', 'value')
+    )
+
+class OrcidOtherName(OrcidBaseModel):
+    """Other name from ORCID API"""
+    content: str
+    source: Optional[str] = Field(
+        None,
+        validation_alias=AliasPath('source', 'source-name', 'value')
+    )
+
 class OrcidProfile(OrcidBaseModel):
     """Raw person data from ORCID API"""
     name: OrcidName = Field(validation_alias=AliasPath('name'))
     biography: Optional[str] = Field(None, validation_alias=AliasPath('biography', 'content'))
-    keywords: List[str] = Field(default_factory=list, validation_alias=AliasPath('keywords', 'keyword'))
-    other_names: List[str] = Field(default_factory=list, validation_alias=AliasPath('other-names', 'other-name'))
+    keywords: List[OrcidKeyword] = Field(default_factory=list, validation_alias=AliasPath('keywords', 'keyword'))
+    other_names: List[OrcidOtherName] = Field(default_factory=list, validation_alias=AliasPath('other-names', 'other-name'))
     emails: List[OrcidEmail] = Field(default_factory=list, validation_alias=AliasPath('emails', 'email'))
     external_ids: List[OrcidExternalId] = Field(
         default_factory=list,

@@ -1,0 +1,81 @@
+{
+  "educations": [],
+  "employments": [
+    {
+      "organization": {
+        "name": "Wesleyan University",
+        "address": {
+          "city": "Middletown",
+          "region": "CT",
+          "country": "US"
+        },
+        "disambiguation_source": "RINGGOLD"
+      },
+      "department_name": "Psychoceramics",
+      "role_title": "Professor",
+      "start_date": {
+        "year": {
+          "value": "1930"
+        },
+        "month": {
+          "value": "02"
+        },
+        "day": {
+          "value": "29"
+        }
+      },
+      "end_date": null,
+      "source_name": "Josiah Carberry",
+      "created-date": {
+        "value": 1386356790112
+      },
+      "last-modified-date": {
+        "value": 1405895110316
+      },
+      "put-code": 4288,
+      "url": null,
+      "external-ids": null,
+      "display-index": "0",
+      "visibility": "public",
+      "path": "/0000-0002-1825-0097/employment/4288"
+    },
+    {
+      "organization": {
+        "name": "Brown University",
+        "address": {
+          "city": "Providence",
+          "region": "RI",
+          "country": "US"
+        },
+        "disambiguation_source": "RINGGOLD"
+      },
+      "department_name": "Psychoceramics",
+      "role_title": "Professor",
+      "start_date": {
+        "year": {
+          "value": "1929"
+        },
+        "month": {
+          "value": "02"
+        },
+        "day": {
+          "value": "29"
+        }
+      },
+      "end_date": null,
+      "source_name": "Josiah Carberry",
+      "created-date": {
+        "value": 1386356645400
+      },
+      "last-modified-date": {
+        "value": 1405895110316
+      },
+      "put-code": 4278,
+      "url": null,
+      "external-ids": null,
+      "display-index": "0",
+      "visibility": "public",
+      "path": "/0000-0002-1825-0097/employment/4278"
+    }
+  ]
+}

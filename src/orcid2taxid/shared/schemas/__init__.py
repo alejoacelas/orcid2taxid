@@ -13,7 +13,7 @@ from .base import (
 
 __all__ = [
     'EmailInfo',
-    'ResearcherID', 
+    'ResearcherID',
     'ExternalReference',
     'ResearcherDescription',
     'DatetimeSerializableBaseModel',

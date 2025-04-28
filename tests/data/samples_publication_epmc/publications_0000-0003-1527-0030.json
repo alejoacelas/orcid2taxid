@@ -1,0 +1,15 @@
+{
+  "version": "6.9",
+  "hitCount": 0,
+  "request": {
+    "queryString": "AUTHORID:\"0000-0003-1527-0030\"",
+    "resultType": "core",
+    "cursorMark": "*",
+    "pageSize": 10,
+    "sort": "",
+    "synonym": false
+  },
+  "resultList": {
+    "result": []
+  }
+}

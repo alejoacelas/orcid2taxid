@@ -1,0 +1,264 @@
+{
+  "last-modified-date": {
+    "value": 1724595558466
+  },
+  "name": {
+    "created-date": {
+      "value": 1460761076357
+    },
+    "last-modified-date": {
+      "value": 1481022427058
+    },
+    "given-names": {
+      "value": "Michael"
+    },
+    "family-name": {
+      "value": "Nevels"
+    },
+    "credit-name": {
+      "value": "Michael Martin Nevels"
+    },
+    "source": null,
+    "visibility": "public",
+    "path": "0000-0002-7115-407X"
+  },
+  "other-names": {
+    "last-modified-date": null,
+    "other-name": [],
+    "path": "/0000-0002-7115-407X/other-names"
+  },
+  "biography": null,
+  "researcher-urls": {
+    "last-modified-date": {
+      "value": 1724595558466
+    },
+    "researcher-url": [
+      {
+        "created-date": {
+          "value": 1724595558466
+        },
+        "last-modified-date": {
+          "value": 1724595558466
+        },
+        "source": {
+          "source-orcid": null,
+          "source-client-id": {
+            "uri": "https://orcid.org/client/APP-Q1JBREKLK73FSBP5",
+            "path": "APP-Q1JBREKLK73FSBP5",
+            "host": "orcid.org"
+          },
+          "source-name": {
+            "value": "University of St Andrews CRIS"
+          },
+          "assertion-origin-orcid": null,
+          "assertion-origin-client-id": null,
+          "assertion-origin-name": null
+        },
+        "url-name": "University of St Andrews profile page",
+        "url": {
+          "value": "https://research-portal.st-andrews.ac.uk/en/persons/99ae5a4d-9bf1-4e31-8cd1-5429377c2b4e"
+        },
+        "visibility": "public",
+        "path": "/0000-0002-7115-407X/researcher-urls/4830155",
+        "put-code": 4830155,
+        "display-index": 1
+      }
+    ],
+    "path": "/0000-0002-7115-407X/researcher-urls"
+  },
+  "emails": {
+    "last-modified-date": {
+      "value": 1536495016539
+    },
+    "email": [
+      {
+        "created-date": {
+          "value": 1536494978858
+        },
+        "last-modified-date": {
+          "value": 1536495016539
+        },
+        "source": {
+          "source-orcid": {
+            "uri": "https://orcid.org/0000-0002-7115-407X",
+            "path": "0000-0002-7115-407X",
+            "host": "orcid.org"
+          },
+          "source-client-id": null,
+          "source-name": {
+            "value": "Michael Martin Nevels"
+          },
+          "assertion-origin-orcid": null,
+          "assertion-origin-client-id": null,
+          "assertion-origin-name": null
+        },
+        "email": "mmn3@st-andrews.ac.uk",
+        "path": null,
+        "visibility": "public",
+        "verified": true,
+        "primary": true,
+        "put-code": null
+      }
+    ],
+    "path": "/0000-0002-7115-407X/email"
+  },
+  "addresses": {
+    "last-modified-date": {
+      "value": 1465226976952
+    },
+    "address": [
+      {
+        "created-date": {
+          "value": 1453660218113
+        },
+        "last-modified-date": {
+          "value": 1465226976952
+        },
+        "source": {
+          "source-orcid": {
+            "uri": "https://orcid.org/0000-0002-7115-407X",
+            "path": "0000-0002-7115-407X",
+            "host": "orcid.org"
+          },
+          "source-client-id": null,
+          "source-name": {
+            "value": "Michael Martin Nevels"
+          },
+          "assertion-origin-orcid": null,
+          "assertion-origin-client-id": null,
+          "assertion-origin-name": null
+        },
+        "country": {
+          "value": "DE"
+        },
+        "visibility": "public",
+        "path": "/0000-0002-7115-407X/address/306760",
+        "put-code": 306760,
+        "display-index": 0
+      }
+    ],
+    "path": "/0000-0002-7115-407X/address"
+  },
+  "keywords": {
+    "last-modified-date": null,
+    "keyword": [],
+    "path": "/0000-0002-7115-407X/keywords"
+  },
+  "external-identifiers": {
+    "last-modified-date": {
+      "value": 1518350597838
+    },
+    "external-identifier": [
+      {
+        "created-date": {
+          "value": 1362713528038
+        },
+        "last-modified-date": {
+          "value": 1517873256636
+        },
+        "source": {
+          "source-orcid": null,
+          "source-client-id": {
+            "uri": "https://orcid.org/client/0000-0002-5982-8983",
+            "path": "0000-0002-5982-8983",
+            "host": "orcid.org"
+          },
+          "source-name": {
+            "value": "Scopus - Elsevier"
+          },
+          "assertion-origin-orcid": {
+            "uri": "https://orcid.org/0000-0002-7115-407X",
+            "path": "0000-0002-7115-407X",
+            "host": "orcid.org"
+          },
+          "assertion-origin-client-id": null,
+          "assertion-origin-name": {
+            "value": "Michael Martin Nevels"
+          }
+        },
+        "external-id-type": "Scopus Author ID",
+        "external-id-value": "6603191184",
+        "external-id-url": {
+          "value": "http://www.scopus.com/inward/authorDetails.url?authorID=6603191184&partnerID=MN8TOARS"
+        },
+        "external-id-relationship": "self",
+        "visibility": "public",
+        "path": "/0000-0002-7115-407X/external-identifiers/143014",
+        "put-code": 143014,
+        "display-index": 1
+      },
+      {
+        "created-date": {
+          "value": 1408274422916
+        },
+        "last-modified-date": {
+          "value": 1517869567419
+        },
+        "source": {
+          "source-orcid": null,
+          "source-client-id": {
+            "uri": "https://orcid.org/client/0000-0003-1377-5676",
+            "path": "0000-0003-1377-5676",
+            "host": "orcid.org"
+          },
+          "source-name": {
+            "value": "ResearcherID"
+          },
+          "assertion-origin-orcid": {
+            "uri": "https://orcid.org/0000-0002-7115-407X",
+            "path": "0000-0002-7115-407X",
+            "host": "orcid.org"
+          },
+          "assertion-origin-client-id": null,
+          "assertion-origin-name": {
+            "value": "Michael Martin Nevels"
+          }
+        },
+        "external-id-type": "ResearcherID",
+        "external-id-value": "J-4783-2014",
+        "external-id-url": {
+          "value": "http://www.researcherid.com/rid/J-4783-2014"
+        },
+        "external-id-relationship": "self",
+        "visibility": "public",
+        "path": "/0000-0002-7115-407X/external-identifiers/105214",
+        "put-code": 105214,
+        "display-index": 1
+      },
+      {
+        "created-date": {
+          "value": 1481022427027
+        },
+        "last-modified-date": {
+          "value": 1518350597838
+        },
+        "source": {
+          "source-orcid": null,
+          "source-client-id": {
+            "uri": "https://orcid.org/client/APP-Q1JBREKLK73FSBP5",
+            "path": "APP-Q1JBREKLK73FSBP5",
+            "host": "orcid.org"
+          },
+          "source-name": {
+            "value": "University of St Andrews CRIS"
+          },
+          "assertion-origin-orcid": null,
+          "assertion-origin-client-id": null,
+          "assertion-origin-name": null
+        },
+        "external-id-type": "Scopus Author ID",
+        "external-id-value": "6603191184",
+        "external-id-url": {
+          "value": "http://www.scopus.com/authid/detail.url?authorId=6603191184"
+        },
+        "external-id-relationship": "self",
+        "visibility": "public",
+        "path": "/0000-0002-7115-407X/external-identifiers/600803",
+        "put-code": 600803,
+        "display-index": 0
+      }
+    ],
+    "path": "/0000-0002-7115-407X/external-identifiers"
+  },
+  "path": "/0000-0002-7115-407X/person"
+}

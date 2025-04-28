@@ -2,28 +2,15 @@
 
 import asyncio
 import random
-from typing import List, Dict, Any, TypeVar, Generic
-from pathlib import Path
+from typing import TypeVar
 
-from orcid2taxid.researcher.integrations.orcid import (
-    get_profile,
-    OrcidConfig
-)
-from orcid2taxid.publication.integrations.epmc import (
-    get_epmc_publications_by_orcid,
-    EpmcConfig
-)
-from orcid2taxid.grant.integrations.nih import (
-    get_nih_grants_by_pi_name,
-    get_nih_grants_by_organization,
-    get_nih_grant_by_number,
-    NIHConfig
-)
-from tests.integrations.api_test_cases import (
+from orcid2taxid.researcher.integrations.orcid import fetch_orcid_data
+from orcid2taxid.publication.integrations.epmc import fetch_epmc_data
+from orcid2taxid.grant.integrations.nih import fetch_nih_data
+from tests.api_test_cases import (
     SAMPLE_ORCID_IDS,
-    SAMPLE_RESEARCHER_NAMES,
-    SAMPLE_NIH_RECIPIENT_ORGANIZATIONS,
-    SAMPLE_NIH_GRANT_IDS
+    SAMPLE_NIH_GRANT_IDS,
+    SAMPLE_EPMC_ORCID_IDS,
 )
 from tests.utils.utils import save_response
 
@@ -31,117 +18,79 @@ T = TypeVar('T')
 
 async def save_orcid_samples(n: int = 2) -> None:
     """Save n sample ORCID profile responses."""
-    config = OrcidConfig()
     sample_ids = random.sample(SAMPLE_ORCID_IDS, min(n, len(SAMPLE_ORCID_IDS)))
     
-    results = []
     for orcid_id in sample_ids:
-        try:
-            profile = await get_profile(orcid_id, config)
-            results.append({
-                "orcid_id": orcid_id,
-                "data": profile.model_dump()
-            })
-        except Exception as e:
-            print(f"Error fetching ORCID profile for {orcid_id}: {e}")
-    
-    # Save up to n random samples
-    if results:
-        samples = results if len(results) <= n else random.sample(results, n)
-        for sample in samples:
-            save_response("orcid", f"profile_{sample['orcid_id']}.json", sample["data"])
+        # Fetch raw data for person, works, educations, and employments
+        person_data = await fetch_orcid_data(orcid_id, "person")
+        works_data = await fetch_orcid_data(orcid_id, "works")
+        education_data = await fetch_orcid_data(orcid_id, "educations")
+        employment_data = await fetch_orcid_data(orcid_id, "employments")
+        
+        # Save each raw response separately
+        save_response("samples_researcher_orcid", f"person_{orcid_id}.json", person_data)
+        save_response("samples_researcher_orcid", f"works_{orcid_id}.json", works_data)
+        save_response("samples_researcher_orcid", f"educations_{orcid_id}.json", education_data)
+        save_response("samples_researcher_orcid", f"employments_{orcid_id}.json", employment_data)
 
 async def save_epmc_samples(n: int = 2) -> None:
     """
     Save n sample EPMC publication responses.
     
-    This function fetches publications for multiple ORCID IDs but saves
-    only n publications total, randomly selected from all results.
+    This function fetches publications for multiple ORCID IDs and saves
+    the raw API responses.
     """
-    config = EpmcConfig()
-    all_publications = []
+    counter = 0
     
     # Collect publications from multiple ORCID IDs
-    for orcid_id in SAMPLE_ORCID_IDS:
-        try:
-            publications = await get_epmc_publications_by_orcid(orcid_id, max_results=10, config=config)
-            for pub in publications:
-                all_publications.append({
-                    "orcid_id": orcid_id,
-                    "publication_id": pub.id if hasattr(pub, 'id') else f"pub_{random.randint(1000, 9999)}",
-                    "data": pub.model_dump()
-                })
-        except Exception as e:
-            print(f"Error fetching EPMC publications for {orcid_id}: {e}")
-    
-    # Save up to n random samples
-    if all_publications:
-        samples = all_publications if len(all_publications) <= n else random.sample(all_publications, n)
-        for i, sample in enumerate(samples):
-            save_response(
-                "epmc", 
-                f"publication_{sample['orcid_id']}_{sample['publication_id']}.json", 
-                sample["data"]
-            )
+    for orcid_id in SAMPLE_EPMC_ORCID_IDS:
+        if counter >= n:
+            break
+            
+        # Construct query parameters for ORCID search
+        payload = {
+            'query': f'AUTHORID:"{orcid_id}"',
+            'resultType': 'core',
+            'pageSize': 10,
+            'format': 'json'
+        }
+        
+        # Fetch raw data from EPMC
+        raw_data = await fetch_epmc_data(payload=payload)
+        
+        # Save raw response
+        save_response("samples_publication_epmc", f"publications_{orcid_id}.json", raw_data)
+        counter += 1
 
 async def save_nih_samples(n: int = 2) -> None:
     """
     Save n sample NIH grant responses.
     
     This function fetches grants by PI name, organization, and grant number,
-    but saves only n grants total, randomly selected from all results.
+    and saves the raw API responses.
     """
-    config = NIHConfig()
-    all_grants = []
-    
-    # Collect grants from PI names
-    for name in SAMPLE_RESEARCHER_NAMES:
-        try:
-            grants = await get_nih_grants_by_pi_name(name, max_results=5, config=config)
-            for grant in grants:
-                all_grants.append({
-                    "source": f"pi_{name.replace(' ', '_')}",
-                    "grant_id": grant.id if hasattr(grant, 'id') else f"grant_{random.randint(1000, 9999)}",
-                    "data": grant.model_dump()
-                })
-        except Exception as e:
-            print(f"Error fetching NIH grants for PI {name}: {e}")
-    
-    # Collect grants from organizations
-    for org in SAMPLE_NIH_RECIPIENT_ORGANIZATIONS:
-        try:
-            grants = await get_nih_grants_by_organization(org, max_results=5, config=config)
-            for grant in grants:
-                all_grants.append({
-                    "source": f"org_{org.replace(' ', '_')}",
-                    "grant_id": grant.id if hasattr(grant, 'id') else f"grant_{random.randint(1000, 9999)}",
-                    "data": grant.model_dump()
-                })
-        except Exception as e:
-            print(f"Error fetching NIH grants for organization {org}: {e}")
-    
-    # Collect grants by grant number
+    counter = 0
+        
+    # Save grants by grant number
     for grant_num in SAMPLE_NIH_GRANT_IDS:
-        try:
-            grant = await get_nih_grant_by_number(grant_num, config=config)
-            if grant:
-                all_grants.append({
-                    "source": "direct",
-                    "grant_id": grant_num,
-                    "data": grant.model_dump()
-                })
-        except Exception as e:
-            print(f"Error fetching NIH grant {grant_num}: {e}")
-    
-    # Save up to n random samples
-    if all_grants:
-        samples = all_grants if len(all_grants) <= n else random.sample(all_grants, n)
-        for sample in samples:
-            save_response(
-                "nih", 
-                f"grant_{sample['source']}_{sample['grant_id']}.json", 
-                sample["data"]
-            )
+        if counter >= n:
+            break
+            
+        # Construct search payload
+        payload = {
+            "criteria": {
+                "project_nums": [grant_num]
+            },
+            "limit": 1,
+            "offset": 0
+        }
+        
+        # Fetch raw data
+        raw_data = await fetch_nih_data(payload=payload)
+        
+        # Save raw response
+        save_response("samples_grant_nih", f"grant_{grant_num}.json", raw_data)
+        counter += 1
 
 async def save_all_samples(n: int = 2) -> None:
     """
@@ -157,4 +106,4 @@ async def save_all_samples(n: int = 2) -> None:
     )
 
 if __name__ == "__main__":
-    asyncio.run(save_all_samples()) 
+    asyncio.run(save_all_samples())

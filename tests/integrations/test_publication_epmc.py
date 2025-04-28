@@ -7,7 +7,7 @@ from orcid2taxid.publication.integrations.epmc import (
     get_epmc_publications_by_orcid
 )
 from orcid2taxid.publication.schemas.base import PublicationRecord
-from tests.integrations.api_test_cases import TEST_ORCID_ID
+from tests.api_test_cases import TEST_ORCID_ID
 from tests.utils.utils import (
     get_responses_dir,
     save_response,

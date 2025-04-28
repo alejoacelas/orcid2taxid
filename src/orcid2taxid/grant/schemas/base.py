@@ -2,7 +2,7 @@ from typing import Optional, List
 from datetime import datetime
 from pydantic import Field
 from orcid2taxid.shared.schemas import (
-    DatetimeSerializableBaseModel, ResearcherProfile
+    DatetimeSerializableBaseModel, ResearcherID
 )
 from orcid2taxid.grant.schemas.nih import NIHProject
 
@@ -15,7 +15,8 @@ class GrantRecord(DatetimeSerializableBaseModel):
     
     # Financial information (mainly from NIH Reporter)
     year: Optional[int] = Field(None, description="Fiscal year of the grant")
-    amount: Optional[str] = Field(None, description="Total award amount, including currency denomination")
+    amount: Optional[float] = Field(None, description="Total award amount")
+    currency: Optional[str] = Field(None, description="Currency of the award")
     
     # Temporal information
     start_date: Optional[datetime] = Field(None, description="Project start date")
@@ -24,8 +25,11 @@ class GrantRecord(DatetimeSerializableBaseModel):
     # Organization information
     recipient: Optional[str] = Field(None, description="Recipient organization")
     
-    # Principal Investigator information
-    principal_investigator: Optional[ResearcherProfile] = Field(None, description="Principal Investigator information")
+    # Principal Investigators information
+    principal_investigators: List[ResearcherID] = Field(
+        default_factory=list,
+        description="List of Principal Investigators information"
+    )
     
     # Project details
     abstract: Optional[str] = Field(None, description="Project abstract")
@@ -33,6 +37,8 @@ class GrantRecord(DatetimeSerializableBaseModel):
         default_factory=list,
         description="Project terms/keywords"
     )
+    description: Optional[str] = Field(None, description="Project description")
+    is_active: Optional[bool] = Field(None, description="Whether the grant is active")
     award_type: Optional[str] = Field(None, description="Type of award")
 
     @classmethod
@@ -41,40 +47,67 @@ class GrantRecord(DatetimeSerializableBaseModel):
         # Extract organization information
         org_data = nih_project.organization or {}
         
-        # Extract PI information
-        pi_data = nih_project.contact_pi or {}
-        pi_name = f"{pi_data.last_name or ''}, {pi_data.first_name or ''}".strip(', ')
+        # Extract PI information - handle updated structure with principal_investigators list
+        principal_investigators = []
         
-        # Extract project terms
-        project_terms = [term.term for term in nih_project.project_terms if term.term]
+        if nih_project.principal_investigators:
+            for pi in nih_project.principal_investigators:
+                researcher_name = ResearcherID(
+                    given_name=pi.first_name,
+                    family_name=pi.last_name,
+                    credit_name=pi.full_name
+                )
+                principal_investigators.append(researcher_name)
+        elif nih_project.contact_pi_name:
+            # Handle legacy format with just a name string
+            name_parts = nih_project.contact_pi_name.split(',', 1)
+            if len(name_parts) == 2:
+                family_name, given_name = name_parts[0].strip(), name_parts[1].strip()
+            else:
+                family_name, given_name = name_parts[0].strip(), ""
+                
+            researcher_name = ResearcherID(
+                given_name=given_name,
+                family_name=family_name,
+                credit_name=nih_project.contact_pi_name
+            )
+            principal_investigators.append(researcher_name)
+        
+        # Construct recipient field with organization details
+        recipient_parts = []
+        if org_data:
+            if org_data.name:
+                recipient_parts.append(org_data.name)
+            if org_data.department:
+                recipient_parts.append(org_data.department)
+            if org_data.country:
+                recipient_parts.append(org_data.country)
+        recipient = ", ".join(recipient_parts) if recipient_parts else None
+        
+        # Extract terms/keywords from pref_terms (preferred terms)
+        terms = []
+        if nih_project.pref_terms:
+            terms = [term.strip() for term in nih_project.pref_terms.split(';') if term.strip()]
+        
+        # Get agency info
+        agency_info = nih_project.agency_ic_admin.name if nih_project.agency_ic_admin else 'NIH'
         
         # Create GrantRecord object
         return cls(
-            title=nih_project.title,
             id=nih_project.project_num,
-            funder='NIH',
+            title=nih_project.title,
+            funder=agency_info,
             year=nih_project.fiscal_year,
-            amount=nih_project.award_amount,
-            direct_costs=nih_project.direct_costs,
-            indirect_costs=nih_project.indirect_costs,
+            amount=nih_project.award_amount if nih_project.award_amount is not None else None,
+            currency="USD",
             start_date=nih_project.start_date,
             end_date=nih_project.end_date,
-            recipient=org_data.name if org_data else None,
-            principal_investigator=pi_name,
+            recipient=recipient,
+            principal_investigators=principal_investigators,
             abstract=nih_project.abstract,
-            project_terms=project_terms,
+            keywords=terms,
             award_type=nih_project.award_type,
-            study_section=nih_project.study_section.name if nih_project.study_section else None,
-            study_section_code=nih_project.study_section.code if nih_project.study_section else None,
-            last_updated=nih_project.last_updated,
+            description=f"### Public Health Relevance: \n{nih_project.phr_text}",
             is_active=nih_project.is_active,
-            is_array_funded=nih_project.is_array_funded,
-            covid_response=nih_project.covid_response,
-            # Add required fields with appropriate values
-            grant_type=nih_project.award_type or 'research',  # Default to research if not specified
-            grant_status='active' if nih_project.is_active else 'completed',
-            grant_currency='USD',  # NIH grants are always in USD
-            grant_country=org_data.country if org_data else 'United States',
-            grant_department=org_data.department if org_data else None,
-            grant_institution=org_data.name if org_data else None
+            grant_type=nih_project.award_type or 'research',
         )

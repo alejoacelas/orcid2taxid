@@ -1,7 +1,7 @@
 # %%
 from orcid2taxid.publication.integrations.epmc import get_epmc_publications_by_orcid
+from orcid2taxid.grant.integrations.nih import get_nih_grant_by_number
 
-# Test with a known ORCID ID
 orcid_id = "0000-0001-9248-9365"  # Example ORCID ID
 
 # Test get_publications_by_orcid
@@ -16,5 +16,13 @@ for paper in papers:
     print(f"Journal: {paper.journal_name}")
     print("-" * 80)
 
+# Test NIH grant lookup
+print("\nTesting NIH grant lookup...")
+grant_id = "5R01AI139180-05"  # First grant ID from test cases
+grant = await get_nih_grant_by_number(grant_id)
+print(f"\nGrant details for {grant_id}:")
+print(grant)
+
 
 # %%
+

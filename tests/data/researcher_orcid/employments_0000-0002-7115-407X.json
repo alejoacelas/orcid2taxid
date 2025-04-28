@@ -1,0 +1,269 @@
+{
+  "last-modified-date": {
+    "value": 1682422233537
+  },
+  "affiliation-group": [
+    {
+      "last-modified-date": {
+        "value": 1682422233537
+      },
+      "external-ids": {
+        "external-id": []
+      },
+      "summaries": [
+        {
+          "employment-summary": {
+            "created-date": {
+              "value": 1629027603462
+            },
+            "last-modified-date": {
+              "value": 1682422233537
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/APP-Q1JBREKLK73FSBP5",
+                "path": "APP-Q1JBREKLK73FSBP5",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "University of St Andrews CRIS"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "put-code": 15542484,
+            "department-name": null,
+            "role-title": null,
+            "start-date": null,
+            "end-date": null,
+            "organization": {
+              "name": "University of St Andrews",
+              "address": {
+                "city": "St Andrews",
+                "region": null,
+                "country": "GB"
+              },
+              "disambiguated-organization": {
+                "disambiguated-organization-identifier": "7486",
+                "disambiguation-source": "RINGGOLD"
+              }
+            },
+            "url": null,
+            "external-ids": null,
+            "display-index": "0",
+            "visibility": "public",
+            "path": "/0000-0002-7115-407X/employment/15542484"
+          }
+        }
+      ]
+    },
+    {
+      "last-modified-date": {
+        "value": 1431533368913
+      },
+      "external-ids": {
+        "external-id": []
+      },
+      "summaries": [
+        {
+          "employment-summary": {
+            "created-date": {
+              "value": 1431533333866
+            },
+            "last-modified-date": {
+              "value": 1431533368913
+            },
+            "source": {
+              "source-orcid": {
+                "uri": "https://orcid.org/0000-0002-7115-407X",
+                "path": "0000-0002-7115-407X",
+                "host": "orcid.org"
+              },
+              "source-client-id": null,
+              "source-name": {
+                "value": "Michael Martin Nevels"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "put-code": 910775,
+            "department-name": "Biomedical Sciences Research Complex",
+            "role-title": "Reader in Virology",
+            "start-date": {
+              "year": {
+                "value": "2015"
+              },
+              "month": {
+                "value": "03"
+              },
+              "day": {
+                "value": "01"
+              }
+            },
+            "end-date": null,
+            "organization": {
+              "name": "University of St. Andrews",
+              "address": {
+                "city": "St. Andrews",
+                "region": "Scotland",
+                "country": "GB"
+              },
+              "disambiguated-organization": null
+            },
+            "url": null,
+            "external-ids": null,
+            "display-index": "0",
+            "visibility": "public",
+            "path": "/0000-0002-7115-407X/employment/910775"
+          }
+        }
+      ]
+    },
+    {
+      "last-modified-date": {
+        "value": 1431533385282
+      },
+      "external-ids": {
+        "external-id": []
+      },
+      "summaries": [
+        {
+          "employment-summary": {
+            "created-date": {
+              "value": 1408275501237
+            },
+            "last-modified-date": {
+              "value": 1431533385282
+            },
+            "source": {
+              "source-orcid": {
+                "uri": "https://orcid.org/0000-0002-7115-407X",
+                "path": "0000-0002-7115-407X",
+                "host": "orcid.org"
+              },
+              "source-client-id": null,
+              "source-name": {
+                "value": "Michael Martin Nevels"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "put-code": 404310,
+            "department-name": "Institute of Medical Microbiology and Hygiene",
+            "role-title": null,
+            "start-date": {
+              "year": {
+                "value": "2003"
+              },
+              "month": {
+                "value": "09"
+              },
+              "day": {
+                "value": "01"
+              }
+            },
+            "end-date": null,
+            "organization": {
+              "name": "University of Regensburg",
+              "address": {
+                "city": "Regensburg",
+                "region": null,
+                "country": "DE"
+              },
+              "disambiguated-organization": {
+                "disambiguated-organization-identifier": "9147",
+                "disambiguation-source": "RINGGOLD"
+              }
+            },
+            "url": null,
+            "external-ids": null,
+            "display-index": "0",
+            "visibility": "public",
+            "path": "/0000-0002-7115-407X/employment/404310"
+          }
+        }
+      ]
+    },
+    {
+      "last-modified-date": {
+        "value": 1408275439904
+      },
+      "external-ids": {
+        "external-id": []
+      },
+      "summaries": [
+        {
+          "employment-summary": {
+            "created-date": {
+              "value": 1408275439904
+            },
+            "last-modified-date": {
+              "value": 1408275439904
+            },
+            "source": {
+              "source-orcid": {
+                "uri": "https://orcid.org/0000-0002-7115-407X",
+                "path": "0000-0002-7115-407X",
+                "host": "orcid.org"
+              },
+              "source-client-id": null,
+              "source-name": {
+                "value": "Michael Martin Nevels"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "put-code": 404309,
+            "department-name": "Molecular Biology",
+            "role-title": null,
+            "start-date": {
+              "year": {
+                "value": "2000"
+              },
+              "month": {
+                "value": "01"
+              },
+              "day": {
+                "value": "01"
+              }
+            },
+            "end-date": {
+              "year": {
+                "value": "2003"
+              },
+              "month": {
+                "value": "08"
+              },
+              "day": {
+                "value": "31"
+              }
+            },
+            "organization": {
+              "name": "Princeton University",
+              "address": {
+                "city": "Princeton",
+                "region": "NJ",
+                "country": "US"
+              },
+              "disambiguated-organization": {
+                "disambiguated-organization-identifier": "6740",
+                "disambiguation-source": "RINGGOLD"
+              }
+            },
+            "url": null,
+            "external-ids": null,
+            "display-index": "0",
+            "visibility": "public",
+            "path": "/0000-0002-7115-407X/employment/404309"
+          }
+        }
+      ]
+    }
+  ],
+  "path": "/0000-0002-7115-407X/employments"
+}

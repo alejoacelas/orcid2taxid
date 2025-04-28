@@ -1,0 +1,139 @@
+{
+  "researcher_id": {
+    "given_name": "Josiah",
+    "family_name": "Carberry",
+    "credit_name": null,
+    "orcid": "0000-0002-1825-0097",
+    "emails": []
+  },
+  "educations": [],
+  "employments": [
+    {
+      "institution": "Wesleyan University",
+      "department": "Psychoceramics",
+      "role": "Professor",
+      "start_date": null,
+      "end_date": null
+    },
+    {
+      "institution": "Brown University",
+      "department": "Psychoceramics",
+      "role": "Professor",
+      "start_date": null,
+      "end_date": null
+    }
+  ],
+  "description": {
+    "text": "## ORCID Profile Biography\nJosiah Carberry is a fictitious person. This account is used as a demonstration account by ORCID, CrossRef and others who wish to demonstrate the interaction of ORCID with other scholarly communication systems without having to use a real-person's account.\r\n\r\nJosiah Stinkney Carberry is a fictional professor, created as a joke in 1929. He is said to still teach at Brown University, and to be known for his work in \"psychoceramics\", the supposed study of \"cracked pots\". See his Wikipedia entry for more details.\n\n## ORCID Profile Keywords\npsychoceramics, ionian philology\n\n"
+  },
+  "external_references": [
+    {
+      "url": "http://www.scopus.com/inward/authorDetails.url?authorID=7007156898&partnerID=MN8TOARS",
+      "name": "Scopus Author ID",
+      "source": "Scopus - Elsevier"
+    },
+    {
+      "url": "http://library.brown.edu/about/hay/carberry.php",
+      "name": "Brown University Page",
+      "source": "ORCID Profile"
+    },
+    {
+      "url": "http://en.wikipedia.org/wiki/Josiah_Carberry",
+      "name": "Wikipedia Entry",
+      "source": "ORCID Profile"
+    }
+  ],
+  "publications": [
+    {
+      "title": "A Methodology for the Emulation of Architecture",
+      "abstract": null,
+      "doi": "10.5555/12345680",
+      "publication_date": "2012-01-01T00:00:00",
+      "journal_name": null,
+      "journal_issn": null,
+      "authors": [],
+      "source": "Crossref Metadata Search, Josiah Carberry",
+      "full_text_url": null,
+      "citation_count": null,
+      "keywords": [],
+      "subjects": [],
+      "grants": []
+    },
+    {
+      "title": "The Memory Bus Considered Harmful",
+      "abstract": null,
+      "doi": "10.5555/666655554444",
+      "publication_date": "2012-01-01T00:00:00",
+      "journal_name": null,
+      "journal_issn": null,
+      "authors": [],
+      "source": "Josiah Carberry",
+      "full_text_url": null,
+      "citation_count": null,
+      "keywords": [],
+      "subjects": [],
+      "grants": []
+    },
+    {
+      "title": "The Impact of Interactive Epistemologies on Cryptography",
+      "abstract": null,
+      "doi": "10.5555/987654321",
+      "publication_date": "2011-01-01T00:00:00",
+      "journal_name": null,
+      "journal_issn": null,
+      "authors": [],
+      "source": "Josiah Carberry",
+      "full_text_url": null,
+      "citation_count": null,
+      "keywords": [],
+      "subjects": [],
+      "grants": []
+    },
+    {
+      "title": "Developing Thin Clients Using Amphibious Epistemologies",
+      "abstract": null,
+      "doi": "10.5555/12345679",
+      "publication_date": "2008-01-01T00:00:00",
+      "journal_name": null,
+      "journal_issn": null,
+      "authors": [],
+      "source": "Josiah Carberry",
+      "full_text_url": null,
+      "citation_count": null,
+      "keywords": [],
+      "subjects": [],
+      "grants": []
+    },
+    {
+      "title": "Toward a Unified Theory of High-Energy Metaphysics: Silly String Theory",
+      "abstract": null,
+      "doi": "10.5555/12345678",
+      "publication_date": "2008-01-01T00:00:00",
+      "journal_name": null,
+      "journal_issn": null,
+      "authors": [],
+      "source": "Josiah Carberry",
+      "full_text_url": null,
+      "citation_count": null,
+      "keywords": [],
+      "subjects": [],
+      "grants": []
+    },
+    {
+      "title": "Bulk and surface plasmons in artificially structured materials",
+      "abstract": null,
+      "doi": "10.1109/TPS.1987.4316723",
+      "publication_date": "1987-01-01T00:00:00",
+      "journal_name": "IEEE Transactions on Plasma Science",
+      "journal_issn": null,
+      "authors": [],
+      "source": "Scopus - Elsevier",
+      "full_text_url": null,
+      "citation_count": null,
+      "keywords": [],
+      "subjects": [],
+      "grants": []
+    }
+  ],
+  "grants": []
+}

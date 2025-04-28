@@ -292,12 +292,15 @@
         "funder": "Wellcome Trust",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       }
     ]
@@ -542,12 +545,15 @@
         "funder": "Federal University of ABC (UFABC), S\u00e3o Bernardo do Campo, S\u00e3o Paulo, Brazil",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -556,12 +562,15 @@
         "funder": "FAPESP",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       }
     ]
@@ -716,6 +725,386 @@
     "keywords": [],
     "subjects": [],
     "grants": []
+  },
+  {
+    "title": "Expression Profile of Human Cytomegalovirus <i>UL111A</i> cmvIL-10 and LAcmvIL-10 Transcripts in Primary Cells and Cells from Renal Transplant Recipients. ",
+    "abstract": "Human cytomegalovirus (HCMV) is a high-risk pathogen in immunocompromised individuals, especially in transplant recipients. HCMV viremia must be monitored, and frequently, patients are treated with antiviral agents. HCMV has a variety of strategies to modulate host antiviral responses, and one important player is a viral homolog of the cellular interleukin-10 (cIL-10). The viral UL111A gene produces several HCMV IL-10 transcripts and protein isoforms through alternative splicing. The cmvIL-10 (isoform A) has similar properties to cIL-10, while LAcmvIL-10 (isoform B) has more restricted biological properties. Other isoforms are produced (C to H) but have unknown functions. Here, we investigated the expression of the most abundant transcripts, cmvIL-10 and LAcmvIL-10, in productively and latently infected cells and in peripheral blood mononuclear cells from renal transplant recipients up to 60 days post-transplantation. This study investigated HCMV cmvIL-10 and LAcmvIL-10 transcription profiles in vitro, in productive and latent infection, and in vivo, in peripheral blood mononuclear cells (PBMCs) of renal transplant patients. In vitro, both cmvIL-10 and LAcmvIL-10 transcripts were detected in both types at high levels and low levels in MRC-5 and latent infected (CD14+). When PBMCs from transplant patients were analyzed, LAcmvIL-10 was detected mostly sporadically and in only a few patients, while cmvIL-10 was found in all patients at all time points. Furthermore, it was observed in PBMCs that expression of cmvIL-10 was positively associated with an increase in viral DNA detection in the subsequently collected sample, indicating that expression of cmvIL-10 might precede viral DNA replication. These results contribute to the understanding of HCMV biology in different phases of infection. In addition, our initial analysis suggests that monitoring cmvIL-10, along with viral DNA, could improve early detection of HCMV reactivation in transplant recipients.",
+    "doi": "10.3390/v17040501",
+    "publication_date": "2025-03-31T00:00:00",
+    "journal_name": "Viruses",
+    "journal_issn": "1999-4915",
+    "authors": [
+      {
+        "researcher_id": {
+          "given_name": "Giovana W C",
+          "family_name": "Almeida",
+          "credit_name": "Almeida GWC",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Centro de Ci\u00eancias Naturais e Humanas (CCNH), Universidade Federal do ABC (UFABC), S\u00e3o Bernardo do Campo 09606-070, SP, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Martha T",
+          "family_name": "Oliveira",
+          "credit_name": "Oliveira MT",
+          "orcid": "0000-0002-4778-459X",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Centro de Ci\u00eancias Naturais e Humanas (CCNH), Universidade Federal do ABC (UFABC), S\u00e3o Bernardo do Campo 09606-070, SP, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Isabella G L",
+          "family_name": "Martines",
+          "credit_name": "Martines IGL",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Centro de Ci\u00eancias Naturais e Humanas (CCNH), Universidade Federal do ABC (UFABC), S\u00e3o Bernardo do Campo 09606-070, SP, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Giuliano C",
+          "family_name": "Fiori",
+          "credit_name": "Fiori GC",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Centro de Ci\u00eancias Naturais e Humanas (CCNH), Universidade Federal do ABC (UFABC), S\u00e3o Bernardo do Campo 09606-070, SP, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Michael M",
+          "family_name": "Nevels",
+          "credit_name": "Nevels MM",
+          "orcid": "0000-0002-7115-407X",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "School of Biology, University of St. Andrews, St. Andrews KY16 9ST, UK.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Ian J",
+          "family_name": "Groves",
+          "credit_name": "Groves IJ",
+          "orcid": "0000-0001-8882-6701",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Molecular Medicine, Cleveland Clinic, Cleveland, OH 44106, USA.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "John",
+          "family_name": "Sinclair",
+          "credit_name": "Sinclair J",
+          "orcid": "0000-0002-2616-9571",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Department of Medicine, University of Cambridge, Cambridge CB2 1TN, UK.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Jos\u00e9",
+          "family_name": "Medina-Pestana",
+          "credit_name": "Medina-Pestana J",
+          "orcid": "0000-0002-0750-7360",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Hospital do Rim, Funda\u00e7\u00e3o Oswaldo Ramos, Vila Clementino 04038-002, SP, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          },
+          {
+            "institution": "Nephrology Division, Universidade Federal de S\u00e3o Paulo, Vila Clementino 04021-001, SP, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Rayra Sampaio",
+          "family_name": "da Silva",
+          "credit_name": "da Silva RS",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Hospital do Rim, Funda\u00e7\u00e3o Oswaldo Ramos, Vila Clementino 04038-002, SP, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Monica",
+          "family_name": "Nakamura",
+          "credit_name": "Nakamura M",
+          "orcid": "0000-0003-4814-4452",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Hospital do Rim, Funda\u00e7\u00e3o Oswaldo Ramos, Vila Clementino 04038-002, SP, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Lucio",
+          "family_name": "Requi\u00e3o-Moura",
+          "credit_name": "Requi\u00e3o-Moura L",
+          "orcid": "0000-0001-8751-9048",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Hospital do Rim, Funda\u00e7\u00e3o Oswaldo Ramos, Vila Clementino 04038-002, SP, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          },
+          {
+            "institution": "Nephrology Division, Universidade Federal de S\u00e3o Paulo, Vila Clementino 04021-001, SP, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Emma",
+          "family_name": "Poole",
+          "credit_name": "Poole E",
+          "orcid": "0000-0003-3904-6121",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Department of Pathology, University of Cambridge, Cambridge CB2 0QQ, UK.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Maria C Carlan da",
+          "family_name": "Silva",
+          "credit_name": "Silva MCCD",
+          "orcid": "0000-0003-4081-8272",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Centro de Ci\u00eancias Naturais e Humanas (CCNH), Universidade Federal do ABC (UFABC), S\u00e3o Bernardo do Campo 09606-070, SP, Brazil.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      }
+    ],
+    "source": "Europe PMC",
+    "full_text_url": "https://doi.org/10.3390/v17040501",
+    "citation_count": 0,
+    "keywords": [],
+    "subjects": [
+      "Leukocytes, Mononuclear/virology",
+      "Cells, Cultured",
+      "Humans",
+      "*Cytomegalovirus/genetics",
+      "*Cytomegalovirus Infections/virology",
+      "*Viral Proteins/genetics",
+      "*Interleukin-10/genetics",
+      "*Kidney Transplantation/adverse effects",
+      "Gene Expression Profiling",
+      "Virus Latency",
+      "Virus Replication",
+      "Middle Aged",
+      "Female",
+      "Male",
+      "Transplant Recipients"
+    ],
+    "grants": [
+      {
+        "id": "MR/S00081X/1",
+        "title": null,
+        "funder": "British Medical Research Program Grant",
+        "year": null,
+        "amount": null,
+        "currency": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigators": [],
+        "abstract": null,
+        "keywords": [],
+        "description": null,
+        "is_active": null,
+        "award_type": null
+      },
+      {
+        "id": "2020/08527-1",
+        "title": null,
+        "funder": "Funda\u00e7\u00e3o de Amparo \u00e0 Pesquisa do Estado de S\u00e3o Paulo",
+        "year": null,
+        "amount": null,
+        "currency": null,
+        "start_date": null,
+        "end_date": null,
+        "recipient": null,
+        "principal_investigators": [],
+        "abstract": null,
+        "keywords": [],
+        "description": null,
+        "is_active": null,
+        "award_type": null
+      }
+    ]
   },
   {
     "title": "Evidence for Tethering of Human Cytomegalovirus Genomes to Host Chromosomes.",
@@ -1122,12 +1511,15 @@
         "funder": "Funda\u00e7\u00e3o de Amparo \u00e0 Pesquisa do Estado de S\u00e3o Paulo",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -1136,12 +1528,15 @@
         "funder": "Funda\u00e7\u00e3o de Amparo \u00e0 Pesquisa do Estado de S\u00e3o Paulo",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -1150,12 +1545,15 @@
         "funder": "Conselho Nacional de Desenvolvimento Cient\u00edfico e Tecnol\u00f3gico",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       }
     ]
@@ -1251,12 +1649,15 @@
         "funder": "Medical Research Council",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       }
     ]
@@ -1437,12 +1838,15 @@
         "funder": "HHS | National Institutes of Health",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -1451,12 +1855,15 @@
         "funder": "NIAID NIH HHS",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -1465,12 +1872,15 @@
         "funder": "NCI NIH HHS",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -1479,12 +1889,15 @@
         "funder": "HHS | NIH | NIH Office of the Director",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -1493,12 +1906,15 @@
         "funder": "HHS | NIH | NIH Office of the Director",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -1507,12 +1923,15 @@
         "funder": "NIAID NIH HHS",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       }
     ]
@@ -1711,12 +2130,15 @@
         "funder": "Medical Research Council",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -1725,12 +2147,15 @@
         "funder": "Tenovus Cancer Care",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       }
     ]
@@ -1995,12 +2420,15 @@
         "funder": "Wellcome Trust",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -2009,12 +2437,15 @@
         "funder": "Deutsche Forschungsgemeinschaft",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       }
     ]
@@ -2517,12 +2948,15 @@
         "funder": "National Natural Science Foundation of China",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -2531,12 +2965,15 @@
         "funder": "Ministry of Science and Technology of the People&apos;s Republic of China",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -2545,12 +2982,15 @@
         "funder": "National Natural Science Foundation of China",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -2559,12 +2999,15 @@
         "funder": "Tenovus Scotland",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -2573,12 +3016,15 @@
         "funder": "National Natural Science Foundation of China",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -2587,12 +3033,15 @@
         "funder": "University of Idaho",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -2601,12 +3050,15 @@
         "funder": "Medical Research Council",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -2615,12 +3067,15 @@
         "funder": "Wellcome Trust Institutional Strategic Support Fund",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -2629,12 +3084,15 @@
         "funder": "Sino-Africa Joint Research Centre",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -2643,12 +3101,15 @@
         "funder": "Deutsche Forschungsgemeinschaft",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       }
     ]
@@ -3243,15 +3704,133 @@
         "funder": "Deutsche Forschungsgemeinschaft",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       }
     ]
+  },
+  {
+    "title": "The proteome of human cytomegalovirus virions and dense bodies is conserved across different strains.",
+    "abstract": "The morphogenesis of human cytomegalovirus (HCMV) particles is incompletely understood. Analysis of the protein composition of HCMV virions and subviral dense bodies (DBs) by mass spectrometry provides valuable information to increase our knowledge about viral morphogenesis. Here we addressed the viral proteome of virions and DBs from two fibroblast-passaged isolates and the widely used endotheliotropic TB4-BAC40 strain of HCMV. The results show a striking concordance of the particle proteomes of different strains. One surprising finding was that only low levels of gpUL128-131A were found in TB40-BAC4 virions. These three proteins, together with gH and gL, form a protein complex that is critical for the endothelial cell tropism of that strain. This indicates that either few molecules of that complex per virion or a small fraction of pentamer-positive virions suffice to retain the tropism. Furthermore, using a pp65-deficient variant of TB40-BAC4, we confirm our previous finding that the major tegument protein serves as a scaffold to support the upload of a fraction of the outer tegument proteins into particles. The results demonstrate that HCMV particle morphogenesis is an orchestrated process that leads to the formation of particles with a largely strain-independent protein composition.",
+    "doi": "10.1007/s00430-015-0397-y",
+    "publication_date": "2015-03-03T00:00:00",
+    "journal_name": "Medical microbiology and immunology",
+    "journal_issn": "0300-8584",
+    "authors": [
+      {
+        "researcher_id": {
+          "given_name": "Nicole",
+          "family_name": "B\u00fcscher",
+          "credit_name": "B\u00fcscher N",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [
+          {
+            "institution": "Institute for Virology, University Medical Center of the Johannes Gutenberg-University Mainz and Research Center for Immunotherapy (FZI), Obere Zahlbacher Strasse 67, Hochhaus am Augustusplatz, 55131, Mainz, Germany.",
+            "department": null,
+            "role": null,
+            "start_date": null,
+            "end_date": null
+          }
+        ],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Christina",
+          "family_name": "Paulus",
+          "credit_name": "Paulus C",
+          "orcid": "0000-0002-4123-5629",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Michael",
+          "family_name": "Nevels",
+          "credit_name": "Nevels M",
+          "orcid": "0000-0002-7115-407X",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Stefan",
+          "family_name": "Tenzer",
+          "credit_name": "Tenzer S",
+          "orcid": "0000-0003-3034-0017",
+          "emails": []
+        },
+        "educations": [],
+        "employments": [],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      },
+      {
+        "researcher_id": {
+          "given_name": "Bodo",
+          "family_name": "Plachter",
+          "credit_name": "Plachter B",
+          "orcid": null,
+          "emails": []
+        },
+        "educations": [],
+        "employments": [],
+        "description": {
+          "text": ""
+        },
+        "external_references": []
+      }
+    ],
+    "source": "Europe PMC",
+    "full_text_url": "https://doi.org/10.1007/s00430-015-0397-y",
+    "citation_count": 30,
+    "keywords": [],
+    "subjects": [
+      "Cells, Cultured",
+      "Cell Line",
+      "Endothelial Cells/virology",
+      "Humans",
+      "Cytomegalovirus/classification/isolation & purification/physiology",
+      "*Virion",
+      "Phosphoproteins/metabolism",
+      "*Proteome",
+      "Viral Proteins/metabolism",
+      "Viral Matrix Proteins/metabolism",
+      "*Proteomics/methods",
+      "Virus Assembly",
+      "Open Reading Frames",
+      "Mass Spectrometry",
+      "Viral Tropism"
+    ],
+    "grants": []
   },
   {
     "title": "Non-canonical Activation of the DNA Sensing Adaptor STING by ATM and IFI16 Mediates NF-\u03baB Signaling after Nuclear DNA Damage.",
@@ -3534,12 +4113,15 @@
         "funder": "NIH",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -3548,12 +4130,15 @@
         "funder": "European Commission",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -3562,12 +4147,15 @@
         "funder": "Medical Research Council",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -3576,12 +4164,15 @@
         "funder": "Lundbeck Foundation",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -3590,12 +4181,15 @@
         "funder": "Science Foundation Ireland",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -3604,12 +4198,15 @@
         "funder": "North West Cancer Research",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -3618,12 +4215,15 @@
         "funder": "Medical Research Council",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -3632,12 +4232,15 @@
         "funder": "Medical Research Council",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       },
       {
@@ -3646,130 +4249,18 @@
         "funder": "NIAID NIH HHS",
         "year": null,
         "amount": null,
+        "currency": null,
         "start_date": null,
         "end_date": null,
         "recipient": null,
-        "principal_investigator": null,
+        "principal_investigators": [],
         "abstract": null,
         "keywords": [],
+        "description": null,
+        "is_active": null,
         "award_type": null
       }
     ]
-  },
-  {
-    "title": "The proteome of human cytomegalovirus virions and dense bodies is conserved across different strains.",
-    "abstract": "The morphogenesis of human cytomegalovirus (HCMV) particles is incompletely understood. Analysis of the protein composition of HCMV virions and subviral dense bodies (DBs) by mass spectrometry provides valuable information to increase our knowledge about viral morphogenesis. Here we addressed the viral proteome of virions and DBs from two fibroblast-passaged isolates and the widely used endotheliotropic TB4-BAC40 strain of HCMV. The results show a striking concordance of the particle proteomes of different strains. One surprising finding was that only low levels of gpUL128-131A were found in TB40-BAC4 virions. These three proteins, together with gH and gL, form a protein complex that is critical for the endothelial cell tropism of that strain. This indicates that either few molecules of that complex per virion or a small fraction of pentamer-positive virions suffice to retain the tropism. Furthermore, using a pp65-deficient variant of TB40-BAC4, we confirm our previous finding that the major tegument protein serves as a scaffold to support the upload of a fraction of the outer tegument proteins into particles. The results demonstrate that HCMV particle morphogenesis is an orchestrated process that leads to the formation of particles with a largely strain-independent protein composition.",
-    "doi": "10.1007/s00430-015-0397-y",
-    "publication_date": "2015-03-03T00:00:00",
-    "journal_name": "Medical microbiology and immunology",
-    "journal_issn": "0300-8584",
-    "authors": [
-      {
-        "researcher_id": {
-          "given_name": "Nicole",
-          "family_name": "B\u00fcscher",
-          "credit_name": "B\u00fcscher N",
-          "orcid": null,
-          "emails": []
-        },
-        "educations": [],
-        "employments": [
-          {
-            "institution": "Institute for Virology, University Medical Center of the Johannes Gutenberg-University Mainz and Research Center for Immunotherapy (FZI), Obere Zahlbacher Strasse 67, Hochhaus am Augustusplatz, 55131, Mainz, Germany.",
-            "department": null,
-            "role": null,
-            "start_date": null,
-            "end_date": null
-          }
-        ],
-        "description": {
-          "text": ""
-        },
-        "external_references": []
-      },
-      {
-        "researcher_id": {
-          "given_name": "Christina",
-          "family_name": "Paulus",
-          "credit_name": "Paulus C",
-          "orcid": "0000-0002-4123-5629",
-          "emails": []
-        },
-        "educations": [],
-        "employments": [],
-        "description": {
-          "text": ""
-        },
-        "external_references": []
-      },
-      {
-        "researcher_id": {
-          "given_name": "Michael",
-          "family_name": "Nevels",
-          "credit_name": "Nevels M",
-          "orcid": "0000-0002-7115-407X",
-          "emails": []
-        },
-        "educations": [],
-        "employments": [],
-        "description": {
-          "text": ""
-        },
-        "external_references": []
-      },
-      {
-        "researcher_id": {
-          "given_name": "Stefan",
-          "family_name": "Tenzer",
-          "credit_name": "Tenzer S",
-          "orcid": "0000-0003-3034-0017",
-          "emails": []
-        },
-        "educations": [],
-        "employments": [],
-        "description": {
-          "text": ""
-        },
-        "external_references": []
-      },
-      {
-        "researcher_id": {
-          "given_name": "Bodo",
-          "family_name": "Plachter",
-          "credit_name": "Plachter B",
-          "orcid": null,
-          "emails": []
-        },
-        "educations": [],
-        "employments": [],
-        "description": {
-          "text": ""
-        },
-        "external_references": []
-      }
-    ],
-    "source": "Europe PMC",
-    "full_text_url": "https://doi.org/10.1007/s00430-015-0397-y",
-    "citation_count": 30,
-    "keywords": [],
-    "subjects": [
-      "Cells, Cultured",
-      "Cell Line",
-      "Endothelial Cells/virology",
-      "Humans",
-      "Cytomegalovirus/classification/isolation & purification/physiology",
-      "*Virion",
-      "Phosphoproteins/metabolism",
-      "*Proteome",
-      "Viral Proteins/metabolism",
-      "Viral Matrix Proteins/metabolism",
-      "*Proteomics/methods",
-      "Virus Assembly",
-      "Open Reading Frames",
-      "Mass Spectrometry",
-      "Viral Tropism"
-    ],
-    "grants": []
   },
   {
     "title": "World Society for Virology first international conference: Tackling global virus epidemics.",
@@ -4432,366 +4923,5 @@
       "Models, Biological"
     ],
     "grants": []
-  },
-  {
-    "title": "Modular cell-based platform for high throughput identification of compounds that inhibit a viral interferon antagonist of choice.",
-    "abstract": "Viral interferon (IFN) antagonists are a diverse class of viral proteins that counteract the host IFN response, which is important for controlling viral infections. Viral IFN antagonists are often multifunctional proteins that perform vital roles in virus replication beyond IFN antagonism. The critical importance of viral IFN antagonists is highlighted by the fact that almost all viruses encode one of these proteins. Inhibition of viral IFN antagonists has the potential to exert pleiotropic antiviral effects and thus this important protein class represents a diverse plethora of novel therapeutic targets. To exploit this, we have successfully developed and executed a novel modular cell-based platform that facilitates the safe and rapid screening for inhibitors of a viral IFN antagonist of choice. The platform is based on two reporter cell-lines that provide a simple method to detect activation of IFN induction or signaling via an eGFP gene placed under the control of the IFN\u03b2 or an ISRE-containing promoter, respectively. Expression of a target IFN antagonist in the appropriate reporter cell-line will block the IFN response and hence eGFP expression. We hypothesized that addition of a compound that inhibits IFN antagonist function will release the block imposed on the IFN response and hence restore eGFP expression, providing a measurable parameter for high throughput screening (HTS). We demonstrate assay proof-of-concept by (i) exploiting hepatitis C virus (HCV) protease inhibitors to inhibit NS3-4A's capacity to block IFN induction and (ii) successfully executing two HTS targeting viral IFN antagonists that block IFN signaling; NS2 and IE1 from human respiratory syncytial virus (RSV) and cytomegalovirus (CMV) respectively, two clinically important viruses for which vaccine development has thus far been unsuccessful and new antivirals are required. Both screens performed robustly and Z' Factor scores of >0.6 were achieved. We identified (i) four hit compounds that specifically inhibit RSV NS2's ability to block IFN signaling by mediating STAT2 degradation and exhibit modest antiviral activity and (ii) two hit compounds that interfere with IE1 transcription and significantly impair CMV replication. Overall, we demonstrate assay proof-of-concept as we target viral IFN antagonists from unrelated viruses and demonstrate its suitability for HTS.",
-    "doi": "10.1016/j.antiviral.2017.10.012",
-    "publication_date": "2017-10-14T00:00:00",
-    "journal_name": "Antiviral research",
-    "journal_issn": "0166-3542",
-    "authors": [
-      {
-        "researcher_id": {
-          "given_name": "Andri",
-          "family_name": "Vasou",
-          "credit_name": "Vasou A",
-          "orcid": "0000-0003-4051-4658",
-          "emails": []
-        },
-        "educations": [],
-        "employments": [
-          {
-            "institution": "School of Biology, Biomedical Sciences Research Complex, University of St Andrews, St Andrews, KY16 9ST, United Kingdom.",
-            "department": null,
-            "role": null,
-            "start_date": null,
-            "end_date": null
-          }
-        ],
-        "description": {
-          "text": ""
-        },
-        "external_references": []
-      },
-      {
-        "researcher_id": {
-          "given_name": "Christina",
-          "family_name": "Paulus",
-          "credit_name": "Paulus C",
-          "orcid": "0000-0002-4123-5629",
-          "emails": []
-        },
-        "educations": [],
-        "employments": [
-          {
-            "institution": "School of Biology, Biomedical Sciences Research Complex, University of St Andrews, St Andrews, KY16 9ST, United Kingdom.",
-            "department": null,
-            "role": null,
-            "start_date": null,
-            "end_date": null
-          }
-        ],
-        "description": {
-          "text": ""
-        },
-        "external_references": []
-      },
-      {
-        "researcher_id": {
-          "given_name": "Janina",
-          "family_name": "Narloch",
-          "credit_name": "Narloch J",
-          "orcid": null,
-          "emails": []
-        },
-        "educations": [],
-        "employments": [
-          {
-            "institution": "School of Biology, Biomedical Sciences Research Complex, University of St Andrews, St Andrews, KY16 9ST, United Kingdom.",
-            "department": null,
-            "role": null,
-            "start_date": null,
-            "end_date": null
-          }
-        ],
-        "description": {
-          "text": ""
-        },
-        "external_references": []
-      },
-      {
-        "researcher_id": {
-          "given_name": "Zoe O",
-          "family_name": "Gage",
-          "credit_name": "Gage ZO",
-          "orcid": null,
-          "emails": []
-        },
-        "educations": [],
-        "employments": [
-          {
-            "institution": "School of Biology, Biomedical Sciences Research Complex, University of St Andrews, St Andrews, KY16 9ST, United Kingdom.",
-            "department": null,
-            "role": null,
-            "start_date": null,
-            "end_date": null
-          }
-        ],
-        "description": {
-          "text": ""
-        },
-        "external_references": []
-      },
-      {
-        "researcher_id": {
-          "given_name": "Marie-Anne",
-          "family_name": "Rameix-Welti",
-          "credit_name": "Rameix-Welti MA",
-          "orcid": "0000-0002-5901-3856",
-          "emails": []
-        },
-        "educations": [],
-        "employments": [
-          {
-            "institution": "UMR INSERM U1173 2I, UFR des Sciences de la Sant\u00e9 Simone Veil-UVSQ, 78180, Montigny-Le-Bretonneux, France; AP-HP, Laboratoire de Microbiologie, H\u00f4pital Ambroise Par\u00e9, 92104, Boulogne-Billancourt, France.",
-            "department": null,
-            "role": null,
-            "start_date": null,
-            "end_date": null
-          }
-        ],
-        "description": {
-          "text": ""
-        },
-        "external_references": []
-      },
-      {
-        "researcher_id": {
-          "given_name": "Jean-Fran\u00e7ois",
-          "family_name": "El\u00e9ou\u00ebt",
-          "credit_name": "El\u00e9ou\u00ebt JF",
-          "orcid": null,
-          "emails": []
-        },
-        "educations": [],
-        "employments": [
-          {
-            "institution": "Unit\u00e9 de Virologie et Immunologie Mol\u00e9culaires (UR892), INRA, Universit\u00e9 Paris-Saclay, 78352, Jouy-en-Josas, France.",
-            "department": null,
-            "role": null,
-            "start_date": null,
-            "end_date": null
-          }
-        ],
-        "description": {
-          "text": ""
-        },
-        "external_references": []
-      },
-      {
-        "researcher_id": {
-          "given_name": "Michael",
-          "family_name": "Nevels",
-          "credit_name": "Nevels M",
-          "orcid": "0000-0002-7115-407X",
-          "emails": []
-        },
-        "educations": [],
-        "employments": [
-          {
-            "institution": "School of Biology, Biomedical Sciences Research Complex, University of St Andrews, St Andrews, KY16 9ST, United Kingdom.",
-            "department": null,
-            "role": null,
-            "start_date": null,
-            "end_date": null
-          }
-        ],
-        "description": {
-          "text": ""
-        },
-        "external_references": []
-      },
-      {
-        "researcher_id": {
-          "given_name": "Richard E",
-          "family_name": "Randall",
-          "credit_name": "Randall RE",
-          "orcid": "0000-0002-9304-6678",
-          "emails": []
-        },
-        "educations": [],
-        "employments": [
-          {
-            "institution": "School of Biology, Biomedical Sciences Research Complex, University of St Andrews, St Andrews, KY16 9ST, United Kingdom.",
-            "department": null,
-            "role": null,
-            "start_date": null,
-            "end_date": null
-          }
-        ],
-        "description": {
-          "text": ""
-        },
-        "external_references": []
-      },
-      {
-        "researcher_id": {
-          "given_name": "Catherine S",
-          "family_name": "Adamson",
-          "credit_name": "Adamson CS",
-          "orcid": "0000-0001-7673-5212",
-          "emails": []
-        },
-        "educations": [],
-        "employments": [
-          {
-            "institution": "School of Biology, Biomedical Sciences Research Complex, University of St Andrews, St Andrews, KY16 9ST, United Kingdom. Electronic address: csa21@st-andrews.ac.uk.",
-            "department": null,
-            "role": null,
-            "start_date": null,
-            "end_date": null
-          }
-        ],
-        "description": {
-          "text": ""
-        },
-        "external_references": []
-      }
-    ],
-    "source": "Europe PMC",
-    "full_text_url": "https://doi.org/10.1016/j.antiviral.2017.10.012",
-    "citation_count": 9,
-    "keywords": [
-      "Antivirals",
-      "High-throughput Screening (Hts)",
-      "Human Respiratory Syncytial Virus (Rsv)",
-      "Human Cytomegalovirus (Cmv)",
-      "Signal Transducer And Activator Of Transcription 2 (Stat2)",
-      "Viral Interferon (Ifn) Antagonists"
-    ],
-    "subjects": [
-      "Cell Line",
-      "Humans",
-      "Respiratory Syncytial Virus, Human/drug effects/physiology",
-      "Interferons/antagonists & inhibitors/pharmacology",
-      "Viral Proteins/metabolism",
-      "Antiviral Agents/pharmacology",
-      "*Drug Evaluation, Preclinical/methods",
-      "Virus Replication/drug effects",
-      "Signal Transduction",
-      "Cell Survival/drug effects",
-      "Gene Expression Regulation/drug effects",
-      "Gene Expression Regulation, Viral/drug effects",
-      "Protein Binding",
-      "Dose-Response Relationship, Drug",
-      "Genes, Reporter",
-      "*Drug Discovery/methods",
-      "*High-Throughput Screening Assays"
-    ],
-    "grants": [
-      {
-        "id": "MR/J500343/1",
-        "title": null,
-        "funder": "Medical Research Council",
-        "year": null,
-        "amount": null,
-        "start_date": null,
-        "end_date": null,
-        "recipient": null,
-        "principal_investigator": null,
-        "abstract": null,
-        "keywords": [],
-        "award_type": null
-      },
-      {
-        "id": "105621/Z/14/Z",
-        "title": null,
-        "funder": "Wellcome Trust",
-        "year": null,
-        "amount": null,
-        "start_date": null,
-        "end_date": null,
-        "recipient": null,
-        "principal_investigator": null,
-        "abstract": null,
-        "keywords": [],
-        "award_type": null
-      },
-      {
-        "id": "ISSF 105621/Z/14/Z",
-        "title": null,
-        "funder": "Wellcome Trust",
-        "year": null,
-        "amount": null,
-        "start_date": null,
-        "end_date": null,
-        "recipient": null,
-        "principal_investigator": null,
-        "abstract": null,
-        "keywords": [],
-        "award_type": null
-      },
-      {
-        "id": "T15/38",
-        "title": null,
-        "funder": "Tenovus Scotland",
-        "year": null,
-        "amount": null,
-        "start_date": null,
-        "end_date": null,
-        "recipient": null,
-        "principal_investigator": null,
-        "abstract": null,
-        "keywords": [],
-        "award_type": null
-      },
-      {
-        "id": "101788/Z/13/Z",
-        "title": null,
-        "funder": "Wellcome Trust",
-        "year": null,
-        "amount": null,
-        "start_date": null,
-        "end_date": null,
-        "recipient": null,
-        "principal_investigator": null,
-        "abstract": null,
-        "keywords": [],
-        "award_type": null
-      },
-      {
-        "id": "101788/Z/13/Z",
-        "title": null,
-        "funder": "RER",
-        "year": null,
-        "amount": null,
-        "start_date": null,
-        "end_date": null,
-        "recipient": null,
-        "principal_investigator": null,
-        "abstract": null,
-        "keywords": [],
-        "award_type": null
-      },
-      {
-        "id": "1102812",
-        "title": null,
-        "funder": "Medical Research Council",
-        "year": null,
-        "amount": null,
-        "start_date": null,
-        "end_date": null,
-        "recipient": null,
-        "principal_investigator": null,
-        "abstract": null,
-        "keywords": [],
-        "award_type": null
-      },
-      {
-        "id": "PA 815/2-1",
-        "title": null,
-        "funder": "Deutsche Forschungsgemeinschaft",
-        "year": null,
-        "amount": null,
-        "start_date": null,
-        "end_date": null,
-        "recipient": null,
-        "principal_investigator": null,
-        "abstract": null,
-        "keywords": [],
-        "award_type": null
-      }
-    ]
   }
 ]

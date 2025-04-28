@@ -1,0 +1,189 @@
+{
+  "last-modified-date": {
+    "value": 1687518058946
+  },
+  "name": {
+    "created-date": {
+      "value": 1460763728406
+    },
+    "last-modified-date": {
+      "value": 1460763728406
+    },
+    "given-names": {
+      "value": "Justin"
+    },
+    "family-name": {
+      "value": "Littman"
+    },
+    "credit-name": null,
+    "source": null,
+    "visibility": "public",
+    "path": "0000-0003-1527-0030"
+  },
+  "other-names": {
+    "last-modified-date": null,
+    "other-name": [],
+    "path": "/0000-0003-1527-0030/other-names"
+  },
+  "biography": null,
+  "researcher-urls": {
+    "last-modified-date": {
+      "value": 1687518058946
+    },
+    "researcher-url": [
+      {
+        "created-date": {
+          "value": 1424367410393
+        },
+        "last-modified-date": {
+          "value": 1687518058946
+        },
+        "source": {
+          "source-orcid": {
+            "uri": "https://orcid.org/0000-0003-1527-0030",
+            "path": "0000-0003-1527-0030",
+            "host": "orcid.org"
+          },
+          "source-client-id": null,
+          "source-name": {
+            "value": "Justin Littman"
+          },
+          "assertion-origin-orcid": null,
+          "assertion-origin-client-id": null,
+          "assertion-origin-name": null
+        },
+        "url-name": "Github",
+        "url": {
+          "value": "https://github.com/justinlittman"
+        },
+        "visibility": "public",
+        "path": "/0000-0003-1527-0030/researcher-urls/417805",
+        "put-code": 417805,
+        "display-index": 2
+      },
+      {
+        "created-date": {
+          "value": 1424367410394
+        },
+        "last-modified-date": {
+          "value": 1687518058946
+        },
+        "source": {
+          "source-orcid": {
+            "uri": "https://orcid.org/0000-0003-1527-0030",
+            "path": "0000-0003-1527-0030",
+            "host": "orcid.org"
+          },
+          "source-client-id": null,
+          "source-name": {
+            "value": "Justin Littman"
+          },
+          "assertion-origin-orcid": null,
+          "assertion-origin-client-id": null,
+          "assertion-origin-name": null
+        },
+        "url-name": "LinkedIn",
+        "url": {
+          "value": "https://www.linkedin.com/pub/justin-littman/a7/aa3/11a"
+        },
+        "visibility": "public",
+        "path": "/0000-0003-1527-0030/researcher-urls/417807",
+        "put-code": 417807,
+        "display-index": 1
+      }
+    ],
+    "path": "/0000-0003-1527-0030/researcher-urls"
+  },
+  "emails": {
+    "last-modified-date": null,
+    "email": [],
+    "path": "/0000-0003-1527-0030/email"
+  },
+  "addresses": {
+    "last-modified-date": null,
+    "address": [],
+    "path": "/0000-0003-1527-0030/address"
+  },
+  "keywords": {
+    "last-modified-date": {
+      "value": 1432227310722
+    },
+    "keyword": [
+      {
+        "created-date": {
+          "value": 1432227310722
+        },
+        "last-modified-date": {
+          "value": 1432227310722
+        },
+        "source": {
+          "source-orcid": {
+            "uri": "https://orcid.org/0000-0003-1527-0030",
+            "path": "0000-0003-1527-0030",
+            "host": "orcid.org"
+          },
+          "source-client-id": null,
+          "source-name": {
+            "value": "Justin Littman"
+          },
+          "assertion-origin-orcid": null,
+          "assertion-origin-client-id": null,
+          "assertion-origin-name": null
+        },
+        "content": "",
+        "visibility": "public",
+        "path": "/0000-0003-1527-0030/keywords/79329",
+        "put-code": 79329,
+        "display-index": 0
+      }
+    ],
+    "path": "/0000-0003-1527-0030/keywords"
+  },
+  "external-identifiers": {
+    "last-modified-date": {
+      "value": 1517873256636
+    },
+    "external-identifier": [
+      {
+        "created-date": {
+          "value": 1424367292789
+        },
+        "last-modified-date": {
+          "value": 1517873256636
+        },
+        "source": {
+          "source-orcid": null,
+          "source-client-id": {
+            "uri": "https://orcid.org/client/0000-0002-5982-8983",
+            "path": "0000-0002-5982-8983",
+            "host": "orcid.org"
+          },
+          "source-name": {
+            "value": "Scopus - Elsevier"
+          },
+          "assertion-origin-orcid": {
+            "uri": "https://orcid.org/0000-0003-1527-0030",
+            "path": "0000-0003-1527-0030",
+            "host": "orcid.org"
+          },
+          "assertion-origin-client-id": null,
+          "assertion-origin-name": {
+            "value": "Justin Littman"
+          }
+        },
+        "external-id-type": "Scopus Author ID",
+        "external-id-value": "55926744500",
+        "external-id-url": {
+          "value": "http://www.scopus.com/inward/authorDetails.url?authorID=55926744500&partnerID=MN8TOARS"
+        },
+        "external-id-relationship": "self",
+        "visibility": "public",
+        "path": "/0000-0003-1527-0030/external-identifiers/237847",
+        "put-code": 237847,
+        "display-index": 0
+      }
+    ],
+    "path": "/0000-0003-1527-0030/external-identifiers"
+  },
+  "path": "/0000-0003-1527-0030/person"
+}

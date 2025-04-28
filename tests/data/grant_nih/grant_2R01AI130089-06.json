@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "search_id": "Zr54AkTdRUWEiMX4_1nECA",
+    "total": 1,
+    "offset": 0,
+    "limit": 1,
+    "sort_field": null,
+    "sort_order": "ASC",
+    "sorted_by_relevance": true,
+    "properties": {
+      "URL": "https:/reporter.nih.gov/search/Zr54AkTdRUWEiMX4_1nECA/projects"
+    }
+  },
+  "results": [
+    {
+      "appl_id": 10979013,
+      "subproject_id": null,
+      "fiscal_year": 2024,
+      "project_num": "2R01AI130089-06",
+      "project_serial_num": "AI130089",
+      "organization": {
+        "org_name": "UNIVERSITY OF WISCONSIN-MADISON",
+        "city": null,
+        "country": null,
+        "org_city": "MADISON",
+        "org_country": "UNITED STATES",
+        "org_state": "WI",
+        "org_state_name": null,
+        "dept_type": "MICROBIOLOGY/IMMUN/VIROLOGY",
+        "fips_country_code": null,
+        "org_duns": [
+          "161202122"
+        ],
+        "org_ueis": [
+          "LCLSJAGTNZQ7"
+        ],
+        "primary_duns": "161202122",
+        "primary_uei": "LCLSJAGTNZQ7",
+        "org_fips": "US",
+        "org_ipf_code": "578503",
+        "org_zipcode": "537151218",
+        "external_org_id": 578503
+      },
+      "award_type": "2",
+      "activity_code": "R01",
+      "award_amount": 453180,
+      "is_active": true,
+      "project_num_split": {
+        "appl_type_code": "2",
+        "activity_code": "R01",
+        "ic_code": "AI",
+        "serial_num": "130089",
+        "support_year": "06",
+        "full_support_year": "06",
+        "suffix_code": ""
+      },
+      "principal_investigators": [
+        {
+          "profile_id": 1892691,
+          "first_name": "ROBERT",
+          "middle_name": "F",
+          "last_name": "KALEJTA",
+          "is_contact_pi": true,
+          "full_name": "ROBERT F KALEJTA",
+          "title": "PROFESSOR"
+        }
+      ],
+      "contact_pi_name": "KALEJTA, ROBERT F",
+      "program_officers": [
+        {
+          "first_name": "RAJEEV",
+          "middle_name": "",
+          "last_name": "GAUTAM",
+          "full_name": "RAJEEV  GAUTAM"
+        }
+      ],
+      "agency_ic_admin": {
+        "code": "AI",
+        "abbreviation": "NIAID",
+        "name": "National Institute of Allergy and Infectious Diseases"
+      },
+      "agency_ic_fundings": [
+        {
+          "fy": 2024,
+          "code": "AI",
+          "name": "National Institute of Allergy and Infectious Diseases",
+          "abbreviation": "NIAID",
+          "total_cost": 453180.0,
+          "direct_cost_ic": 300000.0,
+          "indirect_cost_ic": 153180.0
+        }
+      ],
+      "cong_dist": "WI-02",
+      "spending_categories": null,
+      "project_start_date": "2018-04-11T00:00:00",
+      "project_end_date": "2029-04-30T00:00:00",
+      "organization_type": {
+        "name": "GRADUATE SCHOOLS",
+        "code": "10",
+        "is_other": true
+      },
+      "geo_lat_lon": {
+        "lon": -89.400858,
+        "lat": 43.068519
+      },
+      "opportunity_number": "PA-20-185",
+      "full_study_section": {
+        "srg_code": "VDT",
+        "srg_flex": null,
+        "sra_designator_code": null,
+        "sra_flex_code": null,
+        "group_code": null,
+        "name": "Viral Dynamics and Transmission Study Section [VDT]"
+      },
+      "award_notice_date": "2024-05-29T00:00:00",
+      "is_new": false,
+      "mechanism_code_dc": "RP",
+      "core_project_num": "R01AI130089",
+      "terms": "<Birth Defects><Congenital Anatomical Abnormality><Congenital Defects><Congenital Deformity><Congenital Malformation><Congenital Abnormality><AIDS><Acquired Immune Deficiency><Acquired Immune Deficiency Syndrome><Acquired Immunodeficiency Syndrome><Allelomorphs><Alleles><Award><Brain Neoplasia><Brain Tumors><tumors in the brain><Brain Neoplasms><Cancers><Malignant Tumor><malignancy><neoplasm/cancer><Malignant Neoplasms><cardiovascular disorder><Cardiovascular Diseases><Cell Body><Cells><CMV><HCMV><Salivary Gland Viruses><cytomegalovirus group><Cytomegalovirus><Disorder><Disease><Epithelial Cells><Fibroblasts><Glycoproteins><Modern Man><Human><Infection><Laboratories><Persons><Organ Transplantation><Grafting Procedure><Organ Transplants><organ allograft><organ graft><organ xenograft><Phosphorylation><Protein Phosphorylation><Proteins><Repression><Role><social role><Testing><Genetic Transcription><Gene Transcription><RNA Expression><Transcription><Virion><Virus Particle><Virus><Work><Immunoglobulin Enhancer-Binding Protein><NF-kB><NF-kappaB><NFKB><Nuclear Factor kappa B><Nuclear Transcription Factor NF-kB><Transcription Factor NF-kB><kappa B Enhancer Binding Protein><nuclear factor kappa beta><NF-kappa B><Mediating><Neisseria class 2 outer membrane protein><MIEP><Clinical><Endothelial Cells><Tropism><Funding><Brain Glioblastoma Multiforme><Grade IV Brain Astrocytic Neoplasm><Grade IV Brain Astrocytic Tumor><Grade IV Brain Astrocytoma><Brain Glioblastoma><Lytic><Complex><Viral><member><latent infection><Transcriptional Regulation><Transcription Regulation><Transcriptional Control><prevent><preventing><CD34 gene><CD34><HPCA1><TBK1 gene><FLJ11330><NF-Kb-Activating Kinase Gene><T2K><TBK1><STAT3 gene><STAT3><CREB1 gene><CREB><CREB1><cAMP Response Element-Binding Protein 1><Receptor Signaling><Lytic Phase><Lytic Cycle><Lytic Infection><Pathway interactions><pathway><Outcome><experimental study><experiment><experimental research><experiments><Stimulator of Interferon Genes><cGAMP STING><cGAMP-STING><cGAMP/STING><cGAS/STING><cyclic GMP-AMP synthase/STING>",
+      "pref_terms": "Acquired Immunodeficiency Syndrome;Alleles;Award;Brain Glioblastoma;Brain Neoplasms;CD34 gene;CREB1 gene;Cardiovascular Diseases;Cells;Clinical;Complex;Congenital Abnormality;Cytomegalovirus;Disease;Endothelial Cells;Epithelial Cells;Fibroblasts;Funding;Genetic Transcription;Glycoproteins;Human;Infection;Laboratories;Lytic;Lytic Phase;MIEP;Malignant Neoplasms;Mediating;NF-kappa B;Organ Transplantation;Outcome;Pathway interactions;Persons;Phosphorylation;Proteins;Receptor Signaling;Repression;Role;STAT3 gene;Stimulator of Interferon Genes;TBK1 gene;Testing;Transcriptional Regulation;Tropism;Viral;Virion;Virus;Work;experimental study;latent infection;member;prevent",
+      "abstract_text": "Abstract\nHCMV encodes multiple proteins that suppress lytic phase immediate early (IE) transcription during latency.\nThese include Us28 and UL138. We identified a new repressor of the MIEP during latency: the Pentamer.\nThe Pentamer is a five-member glycoprotein complex consisting of gH, gL, UL128, UL130, and UL131 that\nis required for entry into epithelial and endothelial cells. We determined the Pentamer represses the MIEP\nduring both lytic and latent infections. Provocatively, we determined at least two different Pentamer alleles\nexist, one that strongly represses the MIEP, and one that weakly represses the MIEP. We hypothesize that\nHCMV uses unique Pentamer alleles to create different sub-sets of virions pre-programmed to either\ninitiate a lytic infection or to establish latency. To test this hypothesis, in Aim 1 we will create genetically\nmatched virus strains (laboratory and clinical) with pro-lytic or pro-latency Pentamer alleles and test them for\ntheir propensity to initiate lytic infection in fibroblasts, epithelial and endothelial cells, to select against\nPentamer function during fibroblast propagation, and to establish latency in primary CD34+ cells. In Aim 2\nwe will determine the mechanism through which the Pentamer represses the MIEP.",
+      "project_title": "Transcriptional Control of Human Cytomegalovirus Latency",
+      "phr_text": "Narrative\n Human cytomegalovirus infects almost everyone, causes birth defects and\ndisease in people sick with cancer, AIDS, and those undergoing organ transplants,\nexacerbates cardiovascular diseases, and modulates human glioblastoma multiforme\nbrain tumors. This work will study how HCMV establishes lifelong infection of humans.",
+      "spending_categories_desc": null,
+      "agency_code": "NIH",
+      "covid_response": null,
+      "arra_funded": "N",
+      "budget_start": "2024-06-01T00:00:00",
+      "budget_end": "2025-04-30T00:00:00",
+      "cfda_code": "855",
+      "funding_mechanism": "Non-SBIR/STTR",
+      "direct_cost_amt": 300000,
+      "indirect_cost_amt": 153180,
+      "project_detail_url": "https://reporter.nih.gov/project-details/10979013",
+      "date_added": "2024-06-01T16:16:40"
+    }
+  ]
+}

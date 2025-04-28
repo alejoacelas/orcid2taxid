@@ -16,6 +16,11 @@ class CustomerProfile(ResearcherProfile):
     publications: List[PublicationRecord] = Field(default_factory=list)
     grants: List[GrantRecord] = Field(default_factory=list)
     
+    def __post_init__(self):
+        if not self.researcher_id.orcid:  # pylint: disable=no-member
+            if not self.researcher_id.emails:
+                raise ValueError("Either ORCID or email must be provided to uniquely identify a customer")
+    
     @classmethod
     def from_orcid_profile(cls, orcid_profile: OrcidProfile, orcid_id: str) -> "CustomerProfile":
         """Create a customer profile from an ORCID profile"""
@@ -32,7 +37,8 @@ class CustomerProfile(ResearcherProfile):
         if orcid_profile.biography:
             description.add_section("ORCID Profile Biography", orcid_profile.biography)
         if orcid_profile.keywords:
-            description.add_section("ORCID Profile Keywords", ", ".join(orcid_profile.keywords))
+            keywords_content = [keyword.content for keyword in orcid_profile.keywords]
+            description.add_section("ORCID Profile Keywords", ", ".join(keywords_content))
         
         external_references = []
         for ext_id in orcid_profile.external_ids:

@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "search_id": "4RYeS-pFzUiqyRG1cQuVVA",
+    "total": 1,
+    "offset": 0,
+    "limit": 1,
+    "sort_field": null,
+    "sort_order": "ASC",
+    "sorted_by_relevance": true,
+    "properties": {
+      "URL": "https:/reporter.nih.gov/search/4RYeS-pFzUiqyRG1cQuVVA/projects"
+    }
+  },
+  "results": [
+    {
+      "appl_id": 10804640,
+      "subproject_id": null,
+      "fiscal_year": 2024,
+      "project_num": "5T32CA009135-45",
+      "project_serial_num": "CA009135",
+      "organization": {
+        "org_name": "UNIVERSITY OF WISCONSIN-MADISON",
+        "city": null,
+        "country": null,
+        "org_city": "MADISON",
+        "org_country": "UNITED STATES",
+        "org_state": "WI",
+        "org_state_name": null,
+        "dept_type": "INTERNAL MEDICINE/MEDICINE",
+        "fips_country_code": null,
+        "org_duns": [
+          "161202122"
+        ],
+        "org_ueis": [
+          "LCLSJAGTNZQ7"
+        ],
+        "primary_duns": "161202122",
+        "primary_uei": "LCLSJAGTNZQ7",
+        "org_fips": "US",
+        "org_ipf_code": "578503",
+        "org_zipcode": "537151218",
+        "external_org_id": 578503
+      },
+      "award_type": "5",
+      "activity_code": "T32",
+      "award_amount": 385484,
+      "is_active": true,
+      "project_num_split": {
+        "appl_type_code": "5",
+        "activity_code": "T32",
+        "ic_code": "CA",
+        "serial_num": "009135",
+        "support_year": "45",
+        "full_support_year": "45",
+        "suffix_code": ""
+      },
+      "principal_investigators": [
+        {
+          "profile_id": 1884478,
+          "first_name": "WILLIAM",
+          "middle_name": "M.",
+          "last_name": "SUGDEN",
+          "is_contact_pi": true,
+          "full_name": "WILLIAM M. SUGDEN",
+          "title": "JAMES A. MILLER PROFESSOR OF CANCER RES"
+        }
+      ],
+      "contact_pi_name": "SUGDEN, WILLIAM M.",
+      "program_officers": [
+        {
+          "first_name": "CORINNE",
+          "middle_name": "A",
+          "last_name": "BOULANGER-ESPEUT",
+          "full_name": "CORINNE A BOULANGER-ESPEUT"
+        }
+      ],
+      "agency_ic_admin": {
+        "code": "CA",
+        "abbreviation": "NCI",
+        "name": "National Cancer Institute"
+      },
+      "agency_ic_fundings": [
+        {
+          "fy": 2024,
+          "code": "CA",
+          "name": "National Cancer Institute",
+          "abbreviation": "NCI",
+          "total_cost": 385484.0,
+          "direct_cost_ic": 421066.0,
+          "indirect_cost_ic": 26893.0
+        }
+      ],
+      "cong_dist": "WI-02",
+      "spending_categories": null,
+      "project_start_date": "1975-07-01T00:00:00",
+      "project_end_date": "2025-08-31T00:00:00",
+      "organization_type": {
+        "name": "SCHOOLS OF MEDICINE",
+        "code": "10",
+        "is_other": false
+      },
+      "geo_lat_lon": {
+        "lon": -89.400858,
+        "lat": 43.068519
+      },
+      "opportunity_number": "PA-18-403",
+      "full_study_section": {
+        "srg_code": "NCI",
+        "srg_flex": null,
+        "sra_designator_code": null,
+        "sra_flex_code": null,
+        "group_code": null,
+        "name": "Institutional Training and Education Study Section (F)[NCI-F]"
+      },
+      "award_notice_date": "2024-05-31T00:00:00",
+      "is_new": false,
+      "mechanism_code_dc": "TI",
+      "core_project_num": "T32CA009135",
+      "terms": "<Grant><Training><Cancer Biology>",
+      "pref_terms": "Cancer Biology;Grant;Training",
+      "abstract_text": "PROJECT SUMMARY/ABSTRACT\nThe University of Wisconsin-Madison\u2019s NCI-funded Training Grant in Cancer Biology (T32 CA009135) has\nsupported cancer biology researchers to become successful, independent scientists in academic laboratories\nor in research-related careers for over 41 years. It is the only NIH/NCI-funded training grant dedicated solely to\ntraining in cancer biology research at UW-Madison. We have taken the opportunity to modernize our training\nprogram by adding two postdoctoral Oncology Fellows to it. We are requesting 5 predoctoral trainees and 2\npostdoctoral Oncology Fellow trainee slots to address current deficiencies in training the next generation of\ncancer researchers: 1) the growing need for predoctoral trainees to work in translational research; and 2) the\ndemand for the physician-scientists who understand quantitative research. We have reorganized our program\nadministration to be a multi-generational team, added cutting-edge courses to our core curriculum\n(Bioinformatics, Advanced Grant Writing, and Translational Oncology-Concepts and Study Design), added an\nannual program retreat, and enhanced the overall training with new seminars, career development workshops,\nand trainee program evaluations. This training program has four pillars of strength: 1) Trainers/Mentors: Our\nprogram includes 31 well-funded faculty mentors and 7 affiliate trainers whose research spans the entire\nbreadth of cancer research from haploid or diploid genetics, viral and chemical carcinogenesis, eukaryotic cell\nand molecular biology, virology, molecular toxicology, whole-animal carcinogenesis, and translational science.\nThis includes 25 PhDs, 8 MDs, 3 MD/PhDs, and 2 DVM/PhDs from 9 different departments. 2) Trainees: UW-\nMadison\u2019s nationally competitive biomedical PhD programs allow our trainers to recruit trainees with strong\nresearch backgrounds. Our trainers also make it a priority to recruit trainees from under-represented groups.\n3) Comprehensive Training Plan: Set in a highly collaborative environment, our training includes intensive one-\non-one research mentoring, thorough didactic training in cancer biology, and the commitment to build our\ntrainees\u2019 skills in critical-reading, writing, and public speaking. 4) Strong Institutional Support: UW-Madison\u2019s\nrobust predoctoral and postdoctoral training environment adds to our training program by providing newly\ndesigned training and administrative support to foster professional development (for example, T32 Cancer\nBiology Retreat with the University of Minnesota) and bring outstanding speakers to campus (for example,\nthrough our Cancer Biology Seminar Series and the UWCCC\u2019s Annual Retreat).",
+      "project_title": "Training in Cancer Biology Training Grant",
+      "phr_text": "PROJECT NARRATIVE\nOur goal is to train graduate students and postdoctoral Oncology Fellows to become committed cancer\nresearchers who work to together as scholars, experimentalists, and physician-scientists to advance cancer\nresearch and treatment. We have therefore evolved this program to bring graduate students and postdoctoral\nOncology Fellows to work side-by-side to grow intellectually and technically. We are particularly proud of this\ngrant because it has allowed us to innovate in our training by developing cutting-edge courses, addressing\nnewly recognized needs of our trainees for their career development, training a more diverse group of\nstudents, and simultaneously doing substantive, compelling cancer research.",
+      "spending_categories_desc": null,
+      "agency_code": "NIH",
+      "covid_response": null,
+      "arra_funded": "N",
+      "budget_start": "2024-04-01T00:00:00",
+      "budget_end": "2025-08-31T00:00:00",
+      "cfda_code": "398",
+      "funding_mechanism": "Training, Institutional",
+      "direct_cost_amt": 421066,
+      "indirect_cost_amt": 26893,
+      "project_detail_url": "https://reporter.nih.gov/project-details/10804640",
+      "date_added": "2024-06-01T16:16:40"
+    }
+  ]
+}

@@ -2,8 +2,10 @@
 
 ## TODO
 
-* Check which fields should be required from integration API responses
-* Create comprehensive repo planning to guide the AI
+[] Check which fields should be required from integration API responses
+[] Create comprehensive repo planning to guide the AI
+[] Do tests well
+[] Figure out how to search by name in EPMC and NIH
 
 ## Overview
 

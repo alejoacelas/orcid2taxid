@@ -1,0 +1,3495 @@
+{
+  "version": "6.9",
+  "hitCount": 44,
+  "nextCursorMark": "AoIIPyUWMCg0MTUwOTk4OA==",
+  "nextPageUrl": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=AUTHORID:\"0000-0002-7115-407X\"&cursorMark=AoIIPyUWMCg0MTUwOTk4OA==&resultType=core&pageSize=10&format=json",
+  "request": {
+    "queryString": "AUTHORID:\"0000-0002-7115-407X\"",
+    "resultType": "core",
+    "cursorMark": "*",
+    "pageSize": 10,
+    "sort": "",
+    "synonym": false
+  },
+  "resultList": {
+    "result": [
+      {
+        "id": "39505948",
+        "source": "MED",
+        "pmid": "39505948",
+        "pmcid": "PMC11541504",
+        "fullTextIdList": {
+          "fullTextId": [
+            "PMC11541504"
+          ]
+        },
+        "doi": "10.1038/s41598-024-77164-5",
+        "title": "Specific human gene expression in response to infection is an effective marker for diagnosis of latent and active tuberculosis.",
+        "authorString": "Nakiboneka R, Walbaum N, Musisi E, Nevels M, Nyirenda T, Nliwasa M, Msefula CL, Sloan D, Sabiiti W.",
+        "authorList": {
+          "author": [
+            {
+              "fullName": "Nakiboneka R",
+              "firstName": "Ritah",
+              "lastName": "Nakiboneka",
+              "initials": "R",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Division of Infection and Global Health, School of Medicine, University of St Andrews, St Andrews, KY16 9TF, UK."
+                  },
+                  {
+                    "affiliation": "Department of Pathology, Kamuzu University of Health Sciences, Blantyre, Malawi."
+                  },
+                  {
+                    "affiliation": "Helse Nord Tuberculosis Initiative (HNTI), Pathology Department, Kamuzu University of Health Sciences, Blantyre, Malawi."
+                  },
+                  {
+                    "affiliation": "Africa Centre for Public Health and Herbal Medicines (ACEPHEM), Kamuzu University of Health Sciences, Blantyre, Malawi."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Walbaum N",
+              "firstName": "Natasha",
+              "lastName": "Walbaum",
+              "initials": "N",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Division of Infection and Global Health, School of Medicine, University of St Andrews, St Andrews, KY16 9TF, UK."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Musisi E",
+              "firstName": "Emmanuel",
+              "lastName": "Musisi",
+              "initials": "E",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Division of Infection and Global Health, School of Medicine, University of St Andrews, St Andrews, KY16 9TF, UK."
+                  },
+                  {
+                    "affiliation": "Adroit Biomedical and Bio-entrepreneurship Research Services (ABBRS), Kampala, Uganda."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Nevels M",
+              "firstName": "Michael",
+              "lastName": "Nevels",
+              "initials": "M",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0002-7115-407X"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Biomedical Sciences Research Complex (BSRC), School of Biology, University of St Andrews, St Andrews, UK."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Nyirenda T",
+              "firstName": "Tonney",
+              "lastName": "Nyirenda",
+              "initials": "T",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Department of Pathology, Kamuzu University of Health Sciences, Blantyre, Malawi."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Nliwasa M",
+              "firstName": "Marriott",
+              "lastName": "Nliwasa",
+              "initials": "M",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Department of Pathology, Kamuzu University of Health Sciences, Blantyre, Malawi."
+                  },
+                  {
+                    "affiliation": "Helse Nord Tuberculosis Initiative (HNTI), Pathology Department, Kamuzu University of Health Sciences, Blantyre, Malawi."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Msefula CL",
+              "firstName": "Chisomo L",
+              "lastName": "Msefula",
+              "initials": "CL",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Department of Pathology, Kamuzu University of Health Sciences, Blantyre, Malawi."
+                  },
+                  {
+                    "affiliation": "Helse Nord Tuberculosis Initiative (HNTI), Pathology Department, Kamuzu University of Health Sciences, Blantyre, Malawi."
+                  },
+                  {
+                    "affiliation": "Africa Centre for Public Health and Herbal Medicines (ACEPHEM), Kamuzu University of Health Sciences, Blantyre, Malawi."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Sloan D",
+              "firstName": "Derek",
+              "lastName": "Sloan",
+              "initials": "D",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0002-7888-5449"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Division of Infection and Global Health, School of Medicine, University of St Andrews, St Andrews, KY16 9TF, UK."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Sabiiti W",
+              "firstName": "Wilber",
+              "lastName": "Sabiiti",
+              "initials": "W",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Division of Infection and Global Health, School of Medicine, University of St Andrews, St Andrews, KY16 9TF, UK. ws31@st-andrews.ac.uk."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "authorIdList": {
+          "authorId": [
+            {
+              "type": "ORCID",
+              "value": "0000-0002-7115-407X"
+            },
+            {
+              "type": "ORCID",
+              "value": "0000-0002-7888-5449"
+            }
+          ]
+        },
+        "journalInfo": {
+          "issue": "1",
+          "volume": "14",
+          "journalIssueId": 3844460,
+          "dateOfPublication": "2024 Nov",
+          "monthOfPublication": 11,
+          "yearOfPublication": 2024,
+          "printPublicationDate": "2024-11-01",
+          "journal": {
+            "title": "Scientific reports",
+            "medlineAbbreviation": "Sci Rep",
+            "issn": "2045-2322",
+            "essn": "2045-2322",
+            "isoabbreviation": "Sci Rep",
+            "nlmid": "101563288"
+          }
+        },
+        "pubYear": "2024",
+        "pageInfo": "26884",
+        "abstractText": "RNA sequencing and microarray analysis revealed transcriptional markers expressed in whole blood can differentiate active pulmonary TB (ATB) from other respiratory diseases (ORDs), and latent TB infection (LTBI) from healthy controls (HC). Here we describe a streamlined reverse transcriptase quantitative polymerase chain reaction (RT-qPCR) assay that could be applied at near point-of-care for diagnosing\u00a0and distinguishing ATB from ORDs and LTBI from HC. A literature review was undertaken to identify the most plausible host-gene markers (HGM) of TB infection. Primers, and dual labelled hydrolysis probes were designed and analytically evaluated for accuracy in an in-vitro model of infection using a lung fibroblast cell-line. Best performing genes were multiplexed into panels of 2-4 targets and taken forward for clinical evaluation. Mycobacteria Growth Indicator Tube and QuantiFERON-TB Gold Plus were used as reference tests for ATB and LTBI respectively. A total of 16 HGM were selected and incorporated into five multiplex RT-qPCR panels. PCR assay efficiency of all evaluated targets was \u2265\u200990% with a median analytical sensitivity of 292 copies/\u00b5l [IQR: 215.0-358.3 copies/\u00b5l], and a median limit of quantification of 61.7 copies/\u00b5l [IQR: 29.4-176.3 copies/\u00b5l]. Clinically, ATB was characterised by higher gene expression than ORDs, while LTBI was associated with lower gene expression than HC, Kruskal-Wallis p\u2009<\u20090.0001. Crucially, BATF2, CD64, GBP5, C1QB, GBP6, DUSP3, and GAS6 exhibited high differentiative ability for ATB from ORDs, LTBI or HC while KLF2, PTPRC, NEMF, ASUN, and ZNF296 independently discriminated LTBI from HC. Our results show that different HGM maybe required for ATB and LTBI differentiation from ORDs or HC respectively and demonstrate the feasibility of host gene-based RT-qPCR to diagnose ATB and LTBI at near point-of-care.",
+        "affiliation": "Division of Infection and Global Health, School of Medicine, University of St Andrews, St Andrews, KY16 9TF, UK.",
+        "publicationStatus": "epublish",
+        "language": "eng",
+        "pubModel": "Electronic",
+        "pubTypeList": {
+          "pubType": [
+            "research-article",
+            "Journal Article"
+          ]
+        },
+        "grantsList": {
+          "grant": [
+            {
+              "agency": "Wellcome Trust",
+              "acronym": "WT_",
+              "orderIn": 0
+            },
+            {
+              "grantId": "204821/Z/16/Z",
+              "agency": "Wellcome Trust",
+              "acronym": "WT_",
+              "orderIn": 0
+            }
+          ]
+        },
+        "meshHeadingList": {
+          "meshHeading": [
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Humans"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Mycobacterium tuberculosis",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Tuberculosis",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "DI",
+                    "qualifierName": "diagnosis",
+                    "majorTopic_YN": "N"
+                  },
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "N"
+                  },
+                  {
+                    "abbreviation": "MI",
+                    "qualifierName": "microbiology",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Tuberculosis, Pulmonary",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "DI",
+                    "qualifierName": "diagnosis",
+                    "majorTopic_YN": "N"
+                  },
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "N"
+                  },
+                  {
+                    "abbreviation": "MI",
+                    "qualifierName": "microbiology",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Adult"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Female"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Male"
+            },
+            {
+              "majorTopic_YN": "Y",
+              "descriptorName": "Latent Tuberculosis",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "DI",
+                    "qualifierName": "diagnosis",
+                    "majorTopic_YN": "N"
+                  },
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "N"
+                  },
+                  {
+                    "abbreviation": "MI",
+                    "qualifierName": "microbiology",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "Y",
+              "descriptorName": "Biomarkers"
+            }
+          ]
+        },
+        "keywordList": {
+          "keyword": [
+            "Diagnosis",
+            "Latent Tuberculosis",
+            "Active Tuberculosis",
+            "Reverse Transcriptase-quantitative Pcr",
+            "Host Gene Expression"
+          ]
+        },
+        "chemicalList": {
+          "chemical": [
+            {
+              "name": "Biomarkers",
+              "registryNumber": "0"
+            }
+          ]
+        },
+        "subsetList": {
+          "subset": [
+            {
+              "code": "IM",
+              "name": "Index Medicus"
+            }
+          ]
+        },
+        "fullTextUrlList": {
+          "fullTextUrl": [
+            {
+              "availability": "Subscription required",
+              "availabilityCode": "S",
+              "documentStyle": "doi",
+              "site": "DOI",
+              "url": "https://doi.org/10.1038/s41598-024-77164-5"
+            },
+            {
+              "availability": "Open access",
+              "availabilityCode": "OA",
+              "documentStyle": "html",
+              "site": "Europe_PMC",
+              "url": "https://europepmc.org/articles/PMC11541504"
+            },
+            {
+              "availability": "Open access",
+              "availabilityCode": "OA",
+              "documentStyle": "pdf",
+              "site": "Europe_PMC",
+              "url": "https://europepmc.org/articles/PMC11541504?pdf=render"
+            }
+          ]
+        },
+        "isOpenAccess": "Y",
+        "inEPMC": "Y",
+        "inPMC": "Y",
+        "hasPDF": "Y",
+        "hasBook": "N",
+        "hasSuppl": "Y",
+        "citedByCount": 3,
+        "hasData": "Y",
+        "hasReferences": "Y",
+        "hasTextMinedTerms": "Y",
+        "hasDbCrossReferences": "N",
+        "hasLabsLinks": "N",
+        "license": "cc by",
+        "hasEvaluations": "N",
+        "authMan": "N",
+        "epmcAuthMan": "N",
+        "nihAuthMan": "N",
+        "hasTMAccessionNumbers": "N",
+        "dateOfCompletion": "2024-11-06",
+        "dateOfCreation": "2024-11-06",
+        "firstIndexDate": "2024-11-07",
+        "fullTextReceivedDate": "2024-11-11",
+        "dateOfRevision": "2024-11-09",
+        "electronicPublicationDate": "2024-11-06",
+        "firstPublicationDate": "2024-11-06"
+      },
+      {
+        "id": "38275971",
+        "source": "MED",
+        "pmid": "38275971",
+        "pmcid": "PMC10819295",
+        "fullTextIdList": {
+          "fullTextId": [
+            "PMC10819295"
+          ]
+        },
+        "doi": "10.3390/v16010161",
+        "title": "SARS-CoV-2 ORF8 as a Modulator of Cytokine Induction: Evidence and Search for Molecular Mechanisms.",
+        "authorString": "M\u00f3vio MI, Almeida GWC, Martines IDGL, Barros de Lima G, Sasaki SD, Kihara AH, Poole E, Nevels M, Carlan da Silva MC.",
+        "authorList": {
+          "author": [
+            {
+              "fullName": "M\u00f3vio MI",
+              "firstName": "Mar\u00edlia In\u00eas",
+              "lastName": "M\u00f3vio",
+              "initials": "MI",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Laborat\u00f3rio de Neurogen\u00e9tica, Universidade Federal do ABC (UFABC), S\u00e3o Bernardo do Campo, S\u00e3o Paulo 09606-070, Brazil."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Almeida GWC",
+              "firstName": "Giovana Waner Carneiro de",
+              "lastName": "Almeida",
+              "initials": "GWC",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Centro de Ci\u00eancias Naturais e Humanas (CCNH), Universidade Federal do UFABC (UFABC), S\u00e3o Bernardo do Campo, S\u00e3o Paulo 09606-070, Brazil."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Martines IDGL",
+              "firstName": "Isabella das Gra\u00e7as Lopes",
+              "lastName": "Martines",
+              "initials": "IDGL",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Centro de Ci\u00eancias Naturais e Humanas (CCNH), Universidade Federal do UFABC (UFABC), S\u00e3o Bernardo do Campo, S\u00e3o Paulo 09606-070, Brazil."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Barros de Lima G",
+              "firstName": "Gilmara",
+              "lastName": "Barros de Lima",
+              "initials": "G",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Centro de Ci\u00eancias Naturais e Humanas (CCNH), Universidade Federal do UFABC (UFABC), S\u00e3o Bernardo do Campo, S\u00e3o Paulo 09606-070, Brazil."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Sasaki SD",
+              "firstName": "Sergio Daishi",
+              "lastName": "Sasaki",
+              "initials": "SD",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0002-6233-3316"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Centro de Ci\u00eancias Naturais e Humanas (CCNH), Universidade Federal do UFABC (UFABC), S\u00e3o Bernardo do Campo, S\u00e3o Paulo 09606-070, Brazil."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Kihara AH",
+              "firstName": "Alexandre Hiroaki",
+              "lastName": "Kihara",
+              "initials": "AH",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Laborat\u00f3rio de Neurogen\u00e9tica, Universidade Federal do ABC (UFABC), S\u00e3o Bernardo do Campo, S\u00e3o Paulo 09606-070, Brazil."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Poole E",
+              "firstName": "Emma",
+              "lastName": "Poole",
+              "initials": "E",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Division of Virology, Department of Pathology, Cambridge University, Level 5, Addenbrooke's Hospital, Hills Road, Cambridge CB2 0QQ, UK."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Nevels M",
+              "firstName": "Michael",
+              "lastName": "Nevels",
+              "initials": "M",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0002-7115-407X"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "School of Biology, University of St Andrews, St Andrews KY16 9ST, UK."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Carlan da Silva MC",
+              "firstName": "Maria Cristina",
+              "lastName": "Carlan da Silva",
+              "initials": "MC",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Centro de Ci\u00eancias Naturais e Humanas (CCNH), Universidade Federal do UFABC (UFABC), S\u00e3o Bernardo do Campo, S\u00e3o Paulo 09606-070, Brazil."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "authorIdList": {
+          "authorId": [
+            {
+              "type": "ORCID",
+              "value": "0000-0002-6233-3316"
+            },
+            {
+              "type": "ORCID",
+              "value": "0000-0002-7115-407X"
+            },
+            {
+              "type": "ORCID",
+              "value": "0000-0003-4081-8272"
+            }
+          ]
+        },
+        "journalInfo": {
+          "issue": "1",
+          "volume": "16",
+          "journalIssueId": 3701108,
+          "dateOfPublication": "2024 Jan",
+          "monthOfPublication": 1,
+          "yearOfPublication": 2024,
+          "printPublicationDate": "2024-01-01",
+          "journal": {
+            "title": "Viruses",
+            "medlineAbbreviation": "Viruses",
+            "issn": "1999-4915",
+            "essn": "1999-4915",
+            "isoabbreviation": "Viruses",
+            "nlmid": "101509722"
+          }
+        },
+        "pubYear": "2024",
+        "pageInfo": "161",
+        "abstractText": "Severe cases of SARS-CoV-2 infection are characterized by an immune response that leads to the overproduction of pro-inflammatory cytokines, resulting in lung damage, cardiovascular symptoms, hematologic symptoms, acute kidney injury and multiple organ failure that can lead to death. This remarkable increase in cytokines and other inflammatory molecules is primarily caused by viral proteins, and particular interest has been given to ORF8, a unique accessory protein specific to SARS-CoV-2. Despite plenty of research, the precise mechanisms by which ORF8 induces proinflammatory cytokines are not clear. Our investigations demonstrated that ORF8 augments production of IL-6 induced by Poly(I:C) in human embryonic kidney (HEK)-293 and monocyte-derived dendritic cells (mono-DCs). We discuss our findings and the multifaceted roles of ORF8 as a modulator of cytokine response, focusing on type I interferon and IL-6, a key component of the immune response to SARS-CoV-2. In addition, we explore the hypothesis that ORF8 may act through pattern recognition receptors of dsRNA such as TLRs.",
+        "affiliation": "Laborat\u00f3rio de Neurogen\u00e9tica, Universidade Federal do ABC (UFABC), S\u00e3o Bernardo do Campo, S\u00e3o Paulo 09606-070, Brazil.",
+        "publicationStatus": "epublish",
+        "language": "eng",
+        "pubModel": "Electronic",
+        "pubTypeList": {
+          "pubType": [
+            "review-article",
+            "Review",
+            "Journal Article"
+          ]
+        },
+        "grantsList": {
+          "grant": [
+            {
+              "grantId": "204821/Z/16/Z",
+              "agency": "Federal University of ABC (UFABC), S\u00e3o Bernardo do Campo, S\u00e3o Paulo, Brazil",
+              "orderIn": 0
+            },
+            {
+              "agency": "Wellcome Trust",
+              "acronym": "WT_",
+              "orderIn": 0
+            },
+            {
+              "grantId": "#2020/11667-",
+              "agency": "FAPESP",
+              "orderIn": 0
+            }
+          ]
+        },
+        "meshHeadingList": {
+          "meshHeading": [
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Humans"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Interleukin-6"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Cytokines"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "HEK293 Cells"
+            },
+            {
+              "majorTopic_YN": "Y",
+              "descriptorName": "COVID-19"
+            },
+            {
+              "majorTopic_YN": "Y",
+              "descriptorName": "SARS-CoV-2",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "keywordList": {
+          "keyword": [
+            "Cytokine Storm",
+            "Orf8",
+            "Covid-19",
+            "Sars-cov-2"
+          ]
+        },
+        "chemicalList": {
+          "chemical": [
+            {
+              "name": "Cytokines",
+              "registryNumber": "0"
+            },
+            {
+              "name": "Interleukin-6",
+              "registryNumber": "0"
+            }
+          ]
+        },
+        "subsetList": {
+          "subset": [
+            {
+              "code": "IM",
+              "name": "Index Medicus"
+            }
+          ]
+        },
+        "fullTextUrlList": {
+          "fullTextUrl": [
+            {
+              "availability": "Open access",
+              "availabilityCode": "OA",
+              "documentStyle": "pdf",
+              "site": "Unpaywall",
+              "url": "https://www.mdpi.com/1999-4915/16/1/161/pdf?version=1705913639"
+            },
+            {
+              "availability": "Subscription required",
+              "availabilityCode": "S",
+              "documentStyle": "doi",
+              "site": "DOI",
+              "url": "https://doi.org/10.3390/v16010161"
+            },
+            {
+              "availability": "Open access",
+              "availabilityCode": "OA",
+              "documentStyle": "html",
+              "site": "Europe_PMC",
+              "url": "https://europepmc.org/articles/PMC10819295"
+            },
+            {
+              "availability": "Open access",
+              "availabilityCode": "OA",
+              "documentStyle": "pdf",
+              "site": "Europe_PMC",
+              "url": "https://europepmc.org/articles/PMC10819295?pdf=render"
+            }
+          ]
+        },
+        "commentCorrectionList": {
+          "commentCorrection": [
+            {
+              "id": "PPR768323",
+              "source": "PPR",
+              "type": "Preprint in",
+              "note": "CrossRef Pre-print loader",
+              "orderIn": 10002
+            }
+          ]
+        },
+        "isOpenAccess": "Y",
+        "inEPMC": "Y",
+        "inPMC": "Y",
+        "hasPDF": "Y",
+        "hasBook": "N",
+        "hasSuppl": "N",
+        "citedByCount": 4,
+        "hasData": "N",
+        "hasReferences": "Y",
+        "hasTextMinedTerms": "Y",
+        "hasDbCrossReferences": "N",
+        "hasLabsLinks": "N",
+        "license": "cc by",
+        "hasEvaluations": "N",
+        "authMan": "N",
+        "epmcAuthMan": "N",
+        "nihAuthMan": "N",
+        "hasTMAccessionNumbers": "N",
+        "dateOfCompletion": "2024-01-29",
+        "dateOfCreation": "2024-01-26",
+        "firstIndexDate": "2024-01-27",
+        "fullTextReceivedDate": "2024-01-29",
+        "dateOfRevision": "2024-10-23",
+        "electronicPublicationDate": "2024-01-22",
+        "firstPublicationDate": "2024-01-22"
+      },
+      {
+        "id": "PPR768323",
+        "source": "PPR",
+        "doi": "10.20944/preprints202311.1976.v1",
+        "title": "SARS\u2010COV\u20102 ORF8 as a Modulator of Cytokine Induction: Evidence and Search for Molecular Mechanisms",
+        "authorString": "M\u00f3vio MI, Carneiro G, Lopes Martines I, Barros de Lima G, Sasaki SD, KIhara AH, Poole E, Nevels M, Carlan da Silva MC.",
+        "authorList": {
+          "author": [
+            {
+              "fullName": "M\u00f3vio MI",
+              "firstName": "Marilia In\u00eas",
+              "lastName": "M\u00f3vio",
+              "initials": "MI"
+            },
+            {
+              "fullName": "Carneiro G",
+              "firstName": "Giovana",
+              "lastName": "Carneiro",
+              "initials": "G"
+            },
+            {
+              "fullName": "Lopes Martines I",
+              "firstName": "Isabella",
+              "lastName": "Lopes Martines",
+              "initials": "I"
+            },
+            {
+              "fullName": "Barros de Lima G",
+              "firstName": "Gilmara",
+              "lastName": "Barros de Lima",
+              "initials": "G"
+            },
+            {
+              "fullName": "Sasaki SD",
+              "firstName": "Sergio Daishi",
+              "lastName": "Sasaki",
+              "initials": "SD",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0002-6233-3316"
+              }
+            },
+            {
+              "fullName": "KIhara AH",
+              "firstName": "Alexandre Hiroaki",
+              "lastName": "KIhara",
+              "initials": "AH"
+            },
+            {
+              "fullName": "Poole E",
+              "firstName": "Emma",
+              "lastName": "Poole",
+              "initials": "E"
+            },
+            {
+              "fullName": "Nevels M",
+              "firstName": "Michael",
+              "lastName": "Nevels",
+              "initials": "M",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0002-7115-407X"
+              }
+            },
+            {
+              "fullName": "Carlan da Silva MC",
+              "firstName": "Maria Cristina",
+              "lastName": "Carlan da Silva",
+              "initials": "MC"
+            }
+          ]
+        },
+        "authorIdList": {
+          "authorId": [
+            {
+              "type": "ORCID",
+              "value": "0000-0002-6233-3316"
+            },
+            {
+              "type": "ORCID",
+              "value": "0000-0002-7115-407X"
+            },
+            {
+              "type": "ORCID",
+              "value": "0000-0003-4710-1901"
+            }
+          ]
+        },
+        "pubYear": "2023",
+        "abstractText": "Severe cases of SARS-CoV-2 infection are characterized by an immune response that leads to the overproduction of pro-inflammatory cytokines, resulting in damage to the lungs and other organs. This remarkable increase in cytokines and other inflammatory molecules is primary caused by viral proteins, in particular ORF8, a unique accessory protein specific to SARS-CoV-2. In addition to its role in cytokine induction, ORF8 is attributed with various other functions, including its ability to evade type I interferon responses. Despite the evidence, the mechanisms through which ORF8 exerts these functions remains a subject of controversy. In this mini review, we discuss the multifaceted roles of ORF8 as a modulator of cytokine response, focusing on type I interferon and IL-6. We also discuss data from our studies indicating that ORF8 augments production of IL-6 induced by Poly(I:C) in human embryonic kidney (HEK)-293 and monocyte-derived dendritic cells (mono-DCs).",
+        "pubTypeList": {
+          "pubType": [
+            "Preprint"
+          ]
+        },
+        "bookOrReportDetails": {
+          "publisher": "Preprints.org",
+          "yearOfPublication": 2023
+        },
+        "fullTextUrlList": {
+          "fullTextUrl": [
+            {
+              "availability": "Open access",
+              "availabilityCode": "OA",
+              "documentStyle": "pdf",
+              "site": "Unpaywall",
+              "url": "https://www.mdpi.com/1999-4915/16/1/161/pdf?version=1705913639"
+            },
+            {
+              "availability": "Free",
+              "availabilityCode": "F",
+              "documentStyle": "doi",
+              "site": "DOI",
+              "url": "https://doi.org/10.20944/preprints202311.1976.v1"
+            }
+          ]
+        },
+        "commentCorrectionList": {
+          "commentCorrection": [
+            {
+              "id": "38275971",
+              "source": "MED",
+              "reference": "Viruses. 2024 Jan;16(1):161",
+              "type": "Preprint of",
+              "note": "CrossRef Pre-print loader",
+              "orderIn": 10001
+            }
+          ]
+        },
+        "isOpenAccess": "N",
+        "inEPMC": "N",
+        "inPMC": "N",
+        "hasPDF": "N",
+        "hasBook": "N",
+        "hasSuppl": "N",
+        "citedByCount": 0,
+        "hasData": "N",
+        "hasReferences": "N",
+        "hasTextMinedTerms": "Y",
+        "hasDbCrossReferences": "N",
+        "hasLabsLinks": "N",
+        "license": "cc by",
+        "versionList": {
+          "version": [
+            {
+              "id": "PPR768323",
+              "source": "PPR",
+              "firstPublishDate": "2023-11-30",
+              "versionNumber": 1,
+              "pubTypeList": {
+                "pubType": [
+                  "preprint"
+                ]
+              },
+              "hasEvaluations": "N"
+            }
+          ]
+        },
+        "versionNumber": 1,
+        "hasEvaluations": "N",
+        "authMan": "N",
+        "epmcAuthMan": "N",
+        "nihAuthMan": "N",
+        "hasTMAccessionNumbers": "N",
+        "dateOfCreation": "2023-12-05",
+        "firstIndexDate": "2023-12-05",
+        "firstPublicationDate": "2023-11-30"
+      },
+      {
+        "id": "40284944",
+        "source": "MED",
+        "pmid": "40284944",
+        "doi": "10.3390/v17040501",
+        "title": "Expression Profile of Human Cytomegalovirus <i>UL111A</i> cmvIL-10 and LAcmvIL-10 Transcripts in Primary Cells and Cells from Renal Transplant Recipients. ",
+        "authorString": "Almeida GWC, Oliveira MT, Martines IGL, Fiori GC, Nevels MM, Groves IJ, Sinclair J, Medina-Pestana J, da Silva RS, Nakamura M, Requi\u00e3o-Moura L, Poole E, Silva MCCD.",
+        "authorList": {
+          "author": [
+            {
+              "fullName": "Almeida GWC",
+              "firstName": "Giovana W C",
+              "lastName": "Almeida",
+              "initials": "GWC",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Centro de Ci\u00eancias Naturais e Humanas (CCNH), Universidade Federal do ABC (UFABC), S\u00e3o Bernardo do Campo 09606-070, SP, Brazil."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Oliveira MT",
+              "firstName": "Martha T",
+              "lastName": "Oliveira",
+              "initials": "MT",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0002-4778-459X"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Centro de Ci\u00eancias Naturais e Humanas (CCNH), Universidade Federal do ABC (UFABC), S\u00e3o Bernardo do Campo 09606-070, SP, Brazil."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Martines IGL",
+              "firstName": "Isabella G L",
+              "lastName": "Martines",
+              "initials": "IGL",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Centro de Ci\u00eancias Naturais e Humanas (CCNH), Universidade Federal do ABC (UFABC), S\u00e3o Bernardo do Campo 09606-070, SP, Brazil."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Fiori GC",
+              "firstName": "Giuliano C",
+              "lastName": "Fiori",
+              "initials": "GC",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Centro de Ci\u00eancias Naturais e Humanas (CCNH), Universidade Federal do ABC (UFABC), S\u00e3o Bernardo do Campo 09606-070, SP, Brazil."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Nevels MM",
+              "firstName": "Michael M",
+              "lastName": "Nevels",
+              "initials": "MM",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0002-7115-407X"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "School of Biology, University of St. Andrews, St. Andrews KY16 9ST, UK."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Groves IJ",
+              "firstName": "Ian J",
+              "lastName": "Groves",
+              "initials": "IJ",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0001-8882-6701"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Molecular Medicine, Cleveland Clinic, Cleveland, OH 44106, USA."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Sinclair J",
+              "firstName": "John",
+              "lastName": "Sinclair",
+              "initials": "J",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0002-2616-9571"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Department of Medicine, University of Cambridge, Cambridge CB2 1TN, UK."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Medina-Pestana J",
+              "firstName": "Jos\u00e9",
+              "lastName": "Medina-Pestana",
+              "initials": "J",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0002-0750-7360"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Hospital do Rim, Funda\u00e7\u00e3o Oswaldo Ramos, Vila Clementino 04038-002, SP, Brazil."
+                  },
+                  {
+                    "affiliation": "Nephrology Division, Universidade Federal de S\u00e3o Paulo, Vila Clementino 04021-001, SP, Brazil."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "da Silva RS",
+              "firstName": "Rayra Sampaio",
+              "lastName": "da Silva",
+              "initials": "RS",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Hospital do Rim, Funda\u00e7\u00e3o Oswaldo Ramos, Vila Clementino 04038-002, SP, Brazil."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Nakamura M",
+              "firstName": "Monica",
+              "lastName": "Nakamura",
+              "initials": "M",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0003-4814-4452"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Hospital do Rim, Funda\u00e7\u00e3o Oswaldo Ramos, Vila Clementino 04038-002, SP, Brazil."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Requi\u00e3o-Moura L",
+              "firstName": "Lucio",
+              "lastName": "Requi\u00e3o-Moura",
+              "initials": "L",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0001-8751-9048"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Hospital do Rim, Funda\u00e7\u00e3o Oswaldo Ramos, Vila Clementino 04038-002, SP, Brazil."
+                  },
+                  {
+                    "affiliation": "Nephrology Division, Universidade Federal de S\u00e3o Paulo, Vila Clementino 04021-001, SP, Brazil."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Poole E",
+              "firstName": "Emma",
+              "lastName": "Poole",
+              "initials": "E",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0003-3904-6121"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Department of Pathology, University of Cambridge, Cambridge CB2 0QQ, UK."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Silva MCCD",
+              "firstName": "Maria C Carlan da",
+              "lastName": "Silva",
+              "initials": "MCCD",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0003-4081-8272"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Centro de Ci\u00eancias Naturais e Humanas (CCNH), Universidade Federal do ABC (UFABC), S\u00e3o Bernardo do Campo 09606-070, SP, Brazil."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "authorIdList": {
+          "authorId": [
+            {
+              "type": "ORCID",
+              "value": "0000-0001-8751-9048"
+            },
+            {
+              "type": "ORCID",
+              "value": "0000-0001-8882-6701"
+            },
+            {
+              "type": "ORCID",
+              "value": "0000-0002-0750-7360"
+            },
+            {
+              "type": "ORCID",
+              "value": "0000-0002-2616-9571"
+            },
+            {
+              "type": "ORCID",
+              "value": "0000-0002-4778-459X"
+            },
+            {
+              "type": "ORCID",
+              "value": "0000-0002-7115-407X"
+            },
+            {
+              "type": "ORCID",
+              "value": "0000-0003-3904-6121"
+            },
+            {
+              "type": "ORCID",
+              "value": "0000-0003-4081-8272"
+            },
+            {
+              "type": "ORCID",
+              "value": "0000-0003-4814-4452"
+            }
+          ]
+        },
+        "journalInfo": {
+          "issue": "4",
+          "volume": "17",
+          "journalIssueId": 3933113,
+          "dateOfPublication": "2025 Mar",
+          "monthOfPublication": 3,
+          "yearOfPublication": 2025,
+          "printPublicationDate": "2025-03-01",
+          "journal": {
+            "title": "Viruses",
+            "medlineAbbreviation": "Viruses",
+            "issn": "1999-4915",
+            "essn": "1999-4915",
+            "isoabbreviation": "Viruses",
+            "nlmid": "101509722"
+          }
+        },
+        "pubYear": "2025",
+        "pageInfo": "501",
+        "abstractText": "Human cytomegalovirus (HCMV) is a high-risk pathogen in immunocompromised individuals, especially in transplant recipients. HCMV viremia must be monitored, and frequently, patients are treated with antiviral agents. HCMV has a variety of strategies to modulate host antiviral responses, and one important player is a viral homolog of the cellular interleukin-10 (cIL-10). The viral UL111A gene produces several HCMV IL-10 transcripts and protein isoforms through alternative splicing. The cmvIL-10 (isoform A) has similar properties to cIL-10, while LAcmvIL-10 (isoform B) has more restricted biological properties. Other isoforms are produced (C to H) but have unknown functions. Here, we investigated the expression of the most abundant transcripts, cmvIL-10 and LAcmvIL-10, in productively and latently infected cells and in peripheral blood mononuclear cells from renal transplant recipients up to 60 days post-transplantation. This study investigated HCMV cmvIL-10 and LAcmvIL-10 transcription profiles in vitro, in productive and latent infection, and in vivo, in peripheral blood mononuclear cells (PBMCs) of renal transplant patients. In vitro, both cmvIL-10 and LAcmvIL-10 transcripts were detected in both types at high levels and low levels in MRC-5 and latent infected (CD14+). When PBMCs from transplant patients were analyzed, LAcmvIL-10 was detected mostly sporadically and in only a few patients, while cmvIL-10 was found in all patients at all time points. Furthermore, it was observed in PBMCs that expression of cmvIL-10 was positively associated with an increase in viral DNA detection in the subsequently collected sample, indicating that expression of cmvIL-10 might precede viral DNA replication. These results contribute to the understanding of HCMV biology in different phases of infection. In addition, our initial analysis suggests that monitoring cmvIL-10, along with viral DNA, could improve early detection of HCMV reactivation in transplant recipients.",
+        "affiliation": "Centro de Ci\u00eancias Naturais e Humanas (CCNH), Universidade Federal do ABC (UFABC), S\u00e3o Bernardo do Campo 09606-070, SP, Brazil.",
+        "publicationStatus": "epublish",
+        "language": "eng",
+        "pubModel": "Electronic",
+        "pubTypeList": {
+          "pubType": [
+            "IM",
+            "Journal Article"
+          ]
+        },
+        "grantsList": {
+          "grant": [
+            {
+              "grantId": "MR/S00081X/1",
+              "agency": "British Medical Research Program Grant",
+              "orderIn": 0
+            },
+            {
+              "grantId": "2020/08527-1",
+              "agency": "Funda\u00e7\u00e3o de Amparo \u00e0 Pesquisa do Estado de S\u00e3o Paulo",
+              "orderIn": 0
+            }
+          ]
+        },
+        "meshHeadingList": {
+          "meshHeading": [
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Leukocytes, Mononuclear",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "VI",
+                    "qualifierName": "virology",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Cells, Cultured"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Humans"
+            },
+            {
+              "majorTopic_YN": "Y",
+              "descriptorName": "Cytomegalovirus",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "Y",
+              "descriptorName": "Cytomegalovirus Infections",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "VI",
+                    "qualifierName": "virology",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "Y",
+              "descriptorName": "Viral Proteins",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "Y",
+              "descriptorName": "Interleukin-10",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "Y",
+              "descriptorName": "Kidney Transplantation",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "AE",
+                    "qualifierName": "adverse effects",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Gene Expression Profiling"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Virus Latency"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Virus Replication"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Middle Aged"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Female"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Male"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Transplant Recipients"
+            }
+          ]
+        },
+        "chemicalList": {
+          "chemical": [
+            {
+              "name": "Viral Proteins",
+              "registryNumber": "0"
+            },
+            {
+              "name": "Interleukin-10",
+              "registryNumber": "130068-27-8"
+            },
+            {
+              "name": "IL10 protein, human",
+              "registryNumber": "0"
+            }
+          ]
+        },
+        "fullTextUrlList": {
+          "fullTextUrl": [
+            {
+              "availability": "Subscription required",
+              "availabilityCode": "S",
+              "documentStyle": "doi",
+              "site": "DOI",
+              "url": "https://doi.org/10.3390/v17040501"
+            }
+          ]
+        },
+        "isOpenAccess": "N",
+        "inEPMC": "N",
+        "inPMC": "N",
+        "hasPDF": "N",
+        "hasBook": "N",
+        "hasSuppl": "N",
+        "citedByCount": 0,
+        "hasData": "N",
+        "hasReferences": "Y",
+        "hasTextMinedTerms": "N",
+        "hasDbCrossReferences": "N",
+        "hasLabsLinks": "N",
+        "hasEvaluations": "N",
+        "authMan": "N",
+        "epmcAuthMan": "N",
+        "nihAuthMan": "N",
+        "hasTMAccessionNumbers": "N",
+        "dateOfCompletion": "2025-04-26",
+        "dateOfCreation": "2025-04-26",
+        "firstIndexDate": "2025-04-27",
+        "dateOfRevision": "2025-04-26",
+        "electronicPublicationDate": "2025-03-31",
+        "firstPublicationDate": "2025-03-31"
+      },
+      {
+        "id": "34307201",
+        "source": "MED",
+        "pmid": "34307201",
+        "pmcid": "PMC8293988",
+        "fullTextIdList": {
+          "fullTextId": [
+            "PMC8293988"
+          ]
+        },
+        "doi": "10.3389/fcimb.2021.711551",
+        "title": "Editorial: Cytomegalovirus Pathogenesis and Host Interactions.",
+        "authorString": "Poole EL, Nevels MM.",
+        "authorList": {
+          "author": [
+            {
+              "fullName": "Poole EL",
+              "firstName": "Emma L",
+              "lastName": "Poole",
+              "initials": "EL",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Division of Infectious Diseases, Department of Medicine, University of Cambridge, Cambridge, United Kingdom."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Nevels MM",
+              "firstName": "Michael M",
+              "lastName": "Nevels",
+              "initials": "MM",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0002-7115-407X"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Biomedical Sciences Research Complex, School of Biology, University of St Andrews, St Andrews, United Kingdom."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "authorIdList": {
+          "authorId": [
+            {
+              "type": "ORCID",
+              "value": "0000-0002-7115-407X"
+            }
+          ]
+        },
+        "dataLinksTagsList": {
+          "dataLinkstag": [
+            "altmetrics"
+          ]
+        },
+        "journalInfo": {
+          "volume": "11",
+          "journalIssueId": 3115205,
+          "dateOfPublication": "2021 ",
+          "monthOfPublication": 0,
+          "yearOfPublication": 2021,
+          "printPublicationDate": "2021-01-01",
+          "journal": {
+            "title": "Frontiers in cellular and infection microbiology",
+            "medlineAbbreviation": "Front Cell Infect Microbiol",
+            "issn": "2235-2988",
+            "essn": "2235-2988",
+            "isoabbreviation": "Front Cell Infect Microbiol",
+            "nlmid": "101585359"
+          }
+        },
+        "pubYear": "2021",
+        "pageInfo": "711551",
+        "affiliation": "Division of Infectious Diseases, Department of Medicine, University of Cambridge, Cambridge, United Kingdom.",
+        "publicationStatus": "epublish",
+        "language": "eng",
+        "pubModel": "Electronic-eCollection",
+        "pubTypeList": {
+          "pubType": [
+            "Research Support, Non-U.S. Gov't",
+            "Editorial"
+          ]
+        },
+        "grantsList": {
+          "grant": [
+            {
+              "grantId": "MR/P022146/1",
+              "agency": "Medical Research Council",
+              "acronym": "MRC_",
+              "orderIn": 0
+            },
+            {
+              "grantId": "MR/S00081X/1",
+              "agency": "Medical Research Council",
+              "acronym": "MRC_",
+              "orderIn": 0
+            }
+          ]
+        },
+        "meshHeadingList": {
+          "meshHeading": [
+            {
+              "majorTopic_YN": "Y",
+              "descriptorName": "Cytomegalovirus"
+            },
+            {
+              "majorTopic_YN": "Y",
+              "descriptorName": "Virus Latency"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Virus Activation"
+            }
+          ]
+        },
+        "keywordList": {
+          "keyword": [
+            "Human cytomegalovirus",
+            "Latent infection",
+            "Murine cytomegalovirus",
+            "innate immune response",
+            "Adaptive Immune Response",
+            "Anti-viral Therapy",
+            "Productive Infection",
+            "Reactivation From Latency"
+          ]
+        },
+        "subsetList": {
+          "subset": [
+            {
+              "code": "IM",
+              "name": "Index Medicus"
+            }
+          ]
+        },
+        "fullTextUrlList": {
+          "fullTextUrl": [
+            {
+              "availability": "Open access",
+              "availabilityCode": "OA",
+              "documentStyle": "pdf",
+              "site": "Unpaywall",
+              "url": "https://www.frontiersin.org/articles/10.3389/fcimb.2021.711551/pdf"
+            },
+            {
+              "availability": "Subscription required",
+              "availabilityCode": "S",
+              "documentStyle": "doi",
+              "site": "DOI",
+              "url": "https://doi.org/10.3389/fcimb.2021.711551"
+            },
+            {
+              "availability": "Open access",
+              "availabilityCode": "OA",
+              "documentStyle": "html",
+              "site": "Europe_PMC",
+              "url": "https://europepmc.org/articles/PMC8293988"
+            },
+            {
+              "availability": "Open access",
+              "availabilityCode": "OA",
+              "documentStyle": "pdf",
+              "site": "Europe_PMC",
+              "url": "https://europepmc.org/articles/PMC8293988?pdf=render"
+            }
+          ]
+        },
+        "isOpenAccess": "Y",
+        "inEPMC": "Y",
+        "inPMC": "Y",
+        "hasPDF": "Y",
+        "hasBook": "N",
+        "hasSuppl": "N",
+        "citedByCount": 0,
+        "hasData": "N",
+        "hasReferences": "Y",
+        "hasTextMinedTerms": "Y",
+        "hasDbCrossReferences": "N",
+        "hasLabsLinks": "Y",
+        "license": "cc by",
+        "hasEvaluations": "N",
+        "authMan": "N",
+        "epmcAuthMan": "N",
+        "nihAuthMan": "N",
+        "hasTMAccessionNumbers": "N",
+        "dateOfCompletion": "2021-07-30",
+        "dateOfCreation": "2021-07-26",
+        "firstIndexDate": "2021-07-27",
+        "fullTextReceivedDate": "2021-07-23",
+        "dateOfRevision": "2024-04-02",
+        "electronicPublicationDate": "2021-07-07",
+        "firstPublicationDate": "2021-07-07"
+      },
+      {
+        "id": "33117732",
+        "source": "MED",
+        "pmid": "33117732",
+        "pmcid": "PMC7561393",
+        "fullTextIdList": {
+          "fullTextId": [
+            "PMC7561393"
+          ]
+        },
+        "doi": "10.3389/fcimb.2020.577428",
+        "title": "Evidence for Tethering of Human Cytomegalovirus Genomes to Host Chromosomes.",
+        "authorString": "Mauch-M\u00fccke K, Sch\u00f6n K, Paulus C, Nevels MM.",
+        "authorList": {
+          "author": [
+            {
+              "fullName": "Mauch-M\u00fccke K",
+              "firstName": "Katrin",
+              "lastName": "Mauch-M\u00fccke",
+              "initials": "K",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Institute for Medical Microbiology and Hygiene, University of Regensburg, Regensburg, Germany."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Sch\u00f6n K",
+              "firstName": "Kathrin",
+              "lastName": "Sch\u00f6n",
+              "initials": "K",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Institute for Medical Microbiology and Hygiene, University of Regensburg, Regensburg, Germany."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Paulus C",
+              "firstName": "Christina",
+              "lastName": "Paulus",
+              "initials": "C",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0002-4123-5629"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Biomedical Sciences Research Complex, University of St Andrews, St Andrews, United Kingdom."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Nevels MM",
+              "firstName": "Michael M",
+              "lastName": "Nevels",
+              "initials": "MM",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0002-7115-407X"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Biomedical Sciences Research Complex, University of St Andrews, St Andrews, United Kingdom."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "authorIdList": {
+          "authorId": [
+            {
+              "type": "ORCID",
+              "value": "0000-0002-4123-5629"
+            },
+            {
+              "type": "ORCID",
+              "value": "0000-0002-7115-407X"
+            }
+          ]
+        },
+        "dataLinksTagsList": {
+          "dataLinkstag": [
+            "supporting_data"
+          ]
+        },
+        "journalInfo": {
+          "volume": "10",
+          "journalIssueId": 2911882,
+          "dateOfPublication": "2020 ",
+          "monthOfPublication": 0,
+          "yearOfPublication": 2020,
+          "printPublicationDate": "2020-01-01",
+          "journal": {
+            "title": "Frontiers in cellular and infection microbiology",
+            "medlineAbbreviation": "Front Cell Infect Microbiol",
+            "issn": "2235-2988",
+            "essn": "2235-2988",
+            "isoabbreviation": "Front Cell Infect Microbiol",
+            "nlmid": "101585359"
+          }
+        },
+        "pubYear": "2020",
+        "pageInfo": "577428",
+        "abstractText": "Tethering of viral genomes to host chromosomes has been recognized in a variety of DNA and RNA viruses. It can occur during both the productive cycle and latent infection and may impact viral genomes in manifold ways including their protection, localization, transcription, replication, integration, and segregation. Tethering is typically accomplished by dedicated viral proteins that simultaneously associate with both the viral genome and cellular chromatin via nucleic acid, histone and/or non-histone protein interactions. Some of the most prominent tethering proteins have been identified in DNA viruses establishing sustained latent infections, including members of the papillomaviruses and herpesviruses. Herpesvirus particles have linear genomes that circularize in infected cell nuclei and usually persist as extrachromosomal episomes. In several \u03b3-herpesviruses, tethering facilitates the nuclear retention and faithful segregation of viral episomes during cell division, thus contributing to persistence of these viruses in the absence of infectious particle production. However, it has not been studied whether the genomes of human Cytomegalovirus (hCMV), the prototypical \u03b2-herpesvirus, are tethered to host chromosomes. Here we provide evidence by fluorescence <i>in situ</i> hybridization that hCMV genomes associate with the surface of human mitotic chromosomes following infection of both non-permissive myeloid and permissive fibroblast cells. This chromosome association occurs at lower frequency in the absence of the immediate-early 1 (IE1) proteins, which bind to histones and have been implicated in the maintenance of hCMV episomes. Our findings point to a mechanism of hCMV genome maintenance through mitosis and suggest a supporting but non-essential role of IE1 in this process.",
+        "affiliation": "Institute for Medical Microbiology and Hygiene, University of Regensburg, Regensburg, Germany.",
+        "publicationStatus": "epublish",
+        "language": "eng",
+        "pubModel": "Electronic-eCollection",
+        "pubTypeList": {
+          "pubType": [
+            "brief-report",
+            "Research Support, Non-U.S. Gov't",
+            "Journal Article"
+          ]
+        },
+        "grantsList": {
+          "grant": [
+            {
+              "agency": "Wellcome Trust",
+              "acronym": "WT",
+              "orderIn": 0
+            },
+            {
+              "agency": "Deutsche Forschungsgemeinschaft",
+              "orderIn": 0
+            }
+          ]
+        },
+        "meshHeadingList": {
+          "meshHeading": [
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Chromosomes"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Humans"
+            },
+            {
+              "majorTopic_YN": "Y",
+              "descriptorName": "Cytomegalovirus",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "Y",
+              "descriptorName": "Immediate-Early Proteins",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Viral Proteins"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "In Situ Hybridization, Fluorescence"
+            }
+          ]
+        },
+        "keywordList": {
+          "keyword": [
+            "Fluorescence in situ hybridization",
+            "Human cytomegalovirus",
+            "Human herpesvirus",
+            "Genome Maintenance",
+            "Mitotic Chromosome",
+            "Chromatin Tethering",
+            "Immediate-early 1",
+            "Viral Episome"
+          ]
+        },
+        "chemicalList": {
+          "chemical": [
+            {
+              "name": "Viral Proteins",
+              "registryNumber": "0"
+            },
+            {
+              "name": "Immediate-Early Proteins",
+              "registryNumber": "0"
+            }
+          ]
+        },
+        "subsetList": {
+          "subset": [
+            {
+              "code": "IM",
+              "name": "Index Medicus"
+            }
+          ]
+        },
+        "fullTextUrlList": {
+          "fullTextUrl": [
+            {
+              "availability": "Open access",
+              "availabilityCode": "OA",
+              "documentStyle": "pdf",
+              "site": "Unpaywall",
+              "url": "https://www.frontiersin.org/articles/10.3389/fcimb.2020.577428/pdf"
+            },
+            {
+              "availability": "Subscription required",
+              "availabilityCode": "S",
+              "documentStyle": "doi",
+              "site": "DOI",
+              "url": "https://doi.org/10.3389/fcimb.2020.577428"
+            },
+            {
+              "availability": "Open access",
+              "availabilityCode": "OA",
+              "documentStyle": "html",
+              "site": "Europe_PMC",
+              "url": "https://europepmc.org/articles/PMC7561393"
+            },
+            {
+              "availability": "Open access",
+              "availabilityCode": "OA",
+              "documentStyle": "pdf",
+              "site": "Europe_PMC",
+              "url": "https://europepmc.org/articles/PMC7561393?pdf=render"
+            }
+          ]
+        },
+        "isOpenAccess": "Y",
+        "inEPMC": "Y",
+        "inPMC": "Y",
+        "hasPDF": "Y",
+        "hasBook": "N",
+        "hasSuppl": "Y",
+        "citedByCount": 7,
+        "hasData": "Y",
+        "hasReferences": "Y",
+        "hasTextMinedTerms": "Y",
+        "hasDbCrossReferences": "N",
+        "hasLabsLinks": "Y",
+        "license": "cc by",
+        "hasEvaluations": "N",
+        "authMan": "N",
+        "epmcAuthMan": "N",
+        "nihAuthMan": "N",
+        "hasTMAccessionNumbers": "N",
+        "dateOfCompletion": "2021-06-17",
+        "dateOfCreation": "2020-10-29",
+        "firstIndexDate": "2020-10-30",
+        "fullTextReceivedDate": "2020-10-29",
+        "dateOfRevision": "2021-06-17",
+        "electronicPublicationDate": "2020-09-30",
+        "firstPublicationDate": "2020-09-30"
+      },
+      {
+        "id": "36441804",
+        "source": "MED",
+        "pmid": "36441804",
+        "pmcid": "PMC9704672",
+        "fullTextIdList": {
+          "fullTextId": [
+            "PMC9704672"
+          ]
+        },
+        "doi": "10.1371/journal.pone.0277953",
+        "title": "Molecular modelling of the HCMV IL-10 protein isoforms and analysis of their interaction with the human IL-10 receptor.",
+        "authorString": "Pantale\u00e3o SQ, Camillo LMB, Neves TC, Menezes IG, Stangherlin LM, Batista HBCR, Poole E, Nevels M, Philot EA, Scott AL, Carlan da Silva MC.",
+        "authorList": {
+          "author": [
+            {
+              "fullName": "Pantale\u00e3o SQ",
+              "firstName": "Simone Queiroz",
+              "lastName": "Pantale\u00e3o",
+              "initials": "SQ",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0002-5183-7906"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Center for Mathematics, Computing and Cognition, Federal University of ABC, Santo Andr\u00e9, Brazil."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Camillo LMB",
+              "firstName": "L\u00edvia de Moraes Bomediano",
+              "lastName": "Camillo",
+              "initials": "LMB",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Center for Natural and Humanities Sciences, Federal University of ABC, S\u00e3o Bernardo do Campo, Brazil."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Neves TC",
+              "firstName": "Tainan Cerqueira",
+              "lastName": "Neves",
+              "initials": "TC",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Center for Natural and Humanities Sciences, Federal University of ABC, S\u00e3o Bernardo do Campo, Brazil."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Menezes IG",
+              "firstName": "Isabela de Godoy",
+              "lastName": "Menezes",
+              "initials": "IG",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Center for Natural and Humanities Sciences, Federal University of ABC, S\u00e3o Bernardo do Campo, Brazil."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Stangherlin LM",
+              "firstName": "Lucas Matheus",
+              "lastName": "Stangherlin",
+              "initials": "LM",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Center for Natural and Humanities Sciences, Federal University of ABC, S\u00e3o Bernardo do Campo, Brazil."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Batista HBCR",
+              "firstName": "Helena Beatriz de Carvalho Ruthner",
+              "lastName": "Batista",
+              "initials": "HBCR",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Pasteur Institute, S\u00e3o Paulo, Brazil."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Poole E",
+              "firstName": "Emma",
+              "lastName": "Poole",
+              "initials": "E",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Department of Medicine, University of Cambridge, Cambridge, United Kingdom."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Nevels M",
+              "firstName": "Michael",
+              "lastName": "Nevels",
+              "initials": "M",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0002-7115-407X"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "School of Biology, University of St Andrews, St Andrews, United Kingdom."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Philot EA",
+              "firstName": "Eric Alisson",
+              "lastName": "Philot",
+              "initials": "EA",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0002-0642-4467"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Center for Mathematics, Computing and Cognition, Federal University of ABC, Santo Andr\u00e9, Brazil."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Scott AL",
+              "firstName": "Ana Ligia",
+              "lastName": "Scott",
+              "initials": "AL",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Center for Mathematics, Computing and Cognition, Federal University of ABC, Santo Andr\u00e9, Brazil."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Carlan da Silva MC",
+              "firstName": "Maria Cristina",
+              "lastName": "Carlan da Silva",
+              "initials": "MC",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0003-4081-8272"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Center for Natural and Humanities Sciences, Federal University of ABC, S\u00e3o Bernardo do Campo, Brazil."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "authorIdList": {
+          "authorId": [
+            {
+              "type": "ORCID",
+              "value": "0000-0002-0642-4467"
+            },
+            {
+              "type": "ORCID",
+              "value": "0000-0002-5183-7906"
+            },
+            {
+              "type": "ORCID",
+              "value": "0000-0002-7115-407X"
+            },
+            {
+              "type": "ORCID",
+              "value": "0000-0002-9331-6690"
+            },
+            {
+              "type": "ORCID",
+              "value": "0000-0003-4081-8272"
+            }
+          ]
+        },
+        "dataLinksTagsList": {
+          "dataLinkstag": [
+            "supporting_data",
+            "plain_english",
+            "related_data"
+          ]
+        },
+        "journalInfo": {
+          "issue": "11",
+          "volume": "17",
+          "journalIssueId": 3447918,
+          "dateOfPublication": "2022 ",
+          "monthOfPublication": 0,
+          "yearOfPublication": 2022,
+          "printPublicationDate": "2022-01-01",
+          "journal": {
+            "title": "PloS one",
+            "medlineAbbreviation": "PLoS One",
+            "issn": "1932-6203",
+            "essn": "1932-6203",
+            "isoabbreviation": "PLoS One",
+            "nlmid": "101285081"
+          }
+        },
+        "pubYear": "2022",
+        "pageInfo": "e0277953",
+        "abstractText": "The human cytomegalovirus (HCMV) UL111A gene encodes several homologs of the cellular interleukin 10 (cIL-10). Alternative splicing in the UL111A region produces two relatively well-characterized transcripts designated cmvIL-10 (isoform A) and LAcmvIL-10 (isoform B). The cmvIL-10 protein is the best characterized, both structurally and functionally, and has many immunosuppressive activities similar to cIL-10, while LAcmvIL-10 has more restricted biological activities. Alternative splicing also results in five less studied UL111A transcripts encoding additional proteins homologous to cIL-10 (isoforms C to G). These transcripts were identified during productive HCMV infection of MRC-5 cells with the high passage laboratory adapted AD169 strain, and the structure and properties of the corresponding proteins are largely unknown. Moreover, it is unclear whether these protein isoforms are able to bind the cellular IL-10 receptor and induce signalling. In the present study, we investigated the expression spectrum of UL111A transcripts in fully permissive MRC-5 cells and semi permissive U251 cells infected with the low passage HCMV strain TB40E. We identified a new spliced transcript (H) expressed during productive infection. Using computational methods, we carried out molecular modelling studies on the three-dimensional structures of the HCMV IL-10 proteins encoded by the transcripts detected in our work (cmvIL-10 (A), LAcmvIL-10 (B), E, F and H) and on their interaction with the human IL-10 receptor (IL-10R1). The modelling predicts clear differences between the isoform structures. Furthermore, the in silico simulations (molecular dynamics simulation and normal-mode analyses) allowed us to evaluate regions that contain potential receptor binding sites in each isoform. The analyses demonstrate that the complexes between the isoforms and IL-10R1 present different types of molecular interactions and consequently different affinities and stabilities. The knowledge about structure and expression of specific viral IL-10 isoforms has implications for understanding of their properties and role in HCMV immune evasion and pathogenesis.",
+        "affiliation": "Center for Mathematics, Computing and Cognition, Federal University of ABC, Santo Andr\u00e9, Brazil.",
+        "publicationStatus": "epublish",
+        "language": "eng",
+        "pubModel": "Electronic-eCollection",
+        "pubTypeList": {
+          "pubType": [
+            "Research Support, Non-U.S. Gov't",
+            "research-article",
+            "Journal Article"
+          ]
+        },
+        "grantsList": {
+          "grant": [
+            {
+              "grantId": "2020/07767-9",
+              "agency": "Funda\u00e7\u00e3o de Amparo \u00e0 Pesquisa do Estado de S\u00e3o Paulo",
+              "orderIn": 0
+            },
+            {
+              "grantId": "2020/08527-1",
+              "agency": "Funda\u00e7\u00e3o de Amparo \u00e0 Pesquisa do Estado de S\u00e3o Paulo",
+              "orderIn": 0
+            },
+            {
+              "grantId": "164052/2020-8",
+              "agency": "Conselho Nacional de Desenvolvimento Cient\u00edfico e Tecnol\u00f3gico",
+              "orderIn": 0
+            }
+          ]
+        },
+        "meshHeadingList": {
+          "meshHeading": [
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Humans"
+            },
+            {
+              "majorTopic_YN": "Y",
+              "descriptorName": "Cytomegalovirus",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Protein Isoforms",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Interleukin-10",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Receptors, Interleukin-10",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Molecular Dynamics Simulation"
+            }
+          ]
+        },
+        "chemicalList": {
+          "chemical": [
+            {
+              "name": "Protein Isoforms",
+              "registryNumber": "0"
+            },
+            {
+              "name": "Interleukin-10",
+              "registryNumber": "130068-27-8"
+            },
+            {
+              "name": "Receptors, Interleukin-10",
+              "registryNumber": "0"
+            }
+          ]
+        },
+        "subsetList": {
+          "subset": [
+            {
+              "code": "IM",
+              "name": "Index Medicus"
+            }
+          ]
+        },
+        "fullTextUrlList": {
+          "fullTextUrl": [
+            {
+              "availability": "Open access",
+              "availabilityCode": "OA",
+              "documentStyle": "pdf",
+              "site": "Unpaywall",
+              "url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0277953&type=printable"
+            },
+            {
+              "availability": "Subscription required",
+              "availabilityCode": "S",
+              "documentStyle": "doi",
+              "site": "DOI",
+              "url": "https://doi.org/10.1371/journal.pone.0277953"
+            },
+            {
+              "availability": "Open access",
+              "availabilityCode": "OA",
+              "documentStyle": "html",
+              "site": "Europe_PMC",
+              "url": "https://europepmc.org/articles/PMC9704672"
+            },
+            {
+              "availability": "Open access",
+              "availabilityCode": "OA",
+              "documentStyle": "pdf",
+              "site": "Europe_PMC",
+              "url": "https://europepmc.org/articles/PMC9704672?pdf=render"
+            }
+          ]
+        },
+        "commentCorrectionList": {
+          "commentCorrection": [
+            {
+              "id": "38033121",
+              "source": "MED",
+              "reference": "PLoS One. 2023 Nov 30;18(11):e0295457. doi: 10.1371/journal.pone.0295457",
+              "type": "Erratum in",
+              "orderIn": 1
+            }
+          ]
+        },
+        "isOpenAccess": "Y",
+        "inEPMC": "Y",
+        "inPMC": "Y",
+        "hasPDF": "Y",
+        "hasBook": "N",
+        "hasSuppl": "Y",
+        "citedByCount": 3,
+        "hasData": "Y",
+        "hasReferences": "Y",
+        "hasTextMinedTerms": "Y",
+        "hasDbCrossReferences": "Y",
+        "dbCrossReferenceList": {
+          "dbName": [
+            "EMBL"
+          ]
+        },
+        "hasLabsLinks": "Y",
+        "license": "cc by",
+        "hasEvaluations": "N",
+        "authMan": "N",
+        "epmcAuthMan": "N",
+        "nihAuthMan": "N",
+        "hasTMAccessionNumbers": "Y",
+        "tmAccessionTypeList": {
+          "accessionType": [
+            "gen",
+            "pdb"
+          ]
+        },
+        "dateOfCompletion": "2022-12-29",
+        "dateOfCreation": "2022-11-28",
+        "firstIndexDate": "2022-11-29",
+        "fullTextReceivedDate": "2022-11-30",
+        "dateOfRevision": "2023-11-30",
+        "electronicPublicationDate": "2022-11-28",
+        "firstPublicationDate": "2022-11-28"
+      },
+      {
+        "id": "31963209",
+        "source": "MED",
+        "pmid": "31963209",
+        "pmcid": "PMC7019229",
+        "fullTextIdList": {
+          "fullTextId": [
+            "PMC7019229"
+          ]
+        },
+        "doi": "10.3390/v12010110",
+        "title": "Bright and Early: Inhibiting Human Cytomegalovirus by Targeting Major Immediate-Early Gene Expression or Protein Function.",
+        "authorString": "Adamson CS, Nevels MM.",
+        "authorList": {
+          "author": [
+            {
+              "fullName": "Adamson CS",
+              "firstName": "Catherine S",
+              "lastName": "Adamson",
+              "initials": "CS",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0001-7673-5212"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "School of Biology, Biomedical Sciences Research Complex, University of St Andrews, St Andrews KY16 9ST, Scotland, UK."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Nevels MM",
+              "firstName": "Michael M",
+              "lastName": "Nevels",
+              "initials": "MM",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0002-7115-407X"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "School of Biology, Biomedical Sciences Research Complex, University of St Andrews, St Andrews KY16 9ST, Scotland, UK."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "authorIdList": {
+          "authorId": [
+            {
+              "type": "ORCID",
+              "value": "0000-0001-7673-5212"
+            },
+            {
+              "type": "ORCID",
+              "value": "0000-0002-7115-407X"
+            }
+          ]
+        },
+        "dataLinksTagsList": {
+          "dataLinkstag": [
+            "altmetrics"
+          ]
+        },
+        "journalInfo": {
+          "issue": "1",
+          "volume": "12",
+          "journalIssueId": 2898730,
+          "dateOfPublication": "2020 Jan",
+          "monthOfPublication": 1,
+          "yearOfPublication": 2020,
+          "printPublicationDate": "2020-01-01",
+          "journal": {
+            "title": "Viruses",
+            "medlineAbbreviation": "Viruses",
+            "issn": "1999-4915",
+            "essn": "1999-4915",
+            "isoabbreviation": "Viruses",
+            "nlmid": "101509722"
+          }
+        },
+        "pubYear": "2020",
+        "pageInfo": "E110",
+        "abstractText": "The human cytomegalovirus (HCMV), one of eight human herpesviruses, establishes lifelong latent infections in most people worldwide. Primary or reactivated HCMV infections cause severe disease in immunosuppressed patients and congenital defects in children. There is no vaccine for HCMV, and the currently approved antivirals come with major limitations. Most approved HCMV antivirals target late molecular processes in the viral replication cycle including DNA replication and packaging. \"Bright and early\" events in HCMV infection have not been exploited for systemic prevention or treatment of disease. Initiation of HCMV replication depends on transcription from the viral major immediate-early (IE) gene. Alternative transcripts produced from this gene give rise to the IE1 and IE2 families of viral proteins, which localize to the host cell nucleus. The IE1 and IE2 proteins are believed to control all subsequent early and late events in HCMV replication, including reactivation from latency, in part by antagonizing intrinsic and innate immune responses. Here we provide an update on the regulation of major IE gene expression and the functions of IE1 and IE2 proteins. We will relate this insight to experimental approaches that target IE gene expression or protein function via molecular gene silencing and editing or small chemical inhibitors.",
+        "affiliation": "School of Biology, Biomedical Sciences Research Complex, University of St Andrews, St Andrews KY16 9ST, Scotland, UK.",
+        "publicationStatus": "epublish",
+        "language": "eng",
+        "pubModel": "Electronic",
+        "pubTypeList": {
+          "pubType": [
+            "Research Support, Non-U.S. Gov't",
+            "review-article",
+            "Review",
+            "Journal Article"
+          ]
+        },
+        "grantsList": {
+          "grant": [
+            {
+              "grantId": "MR/P022146/1",
+              "agency": "Medical Research Council",
+              "acronym": "MRC_",
+              "orderIn": 0
+            }
+          ]
+        },
+        "meshHeadingList": {
+          "meshHeading": [
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Humans"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Cytomegalovirus",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "DE",
+                    "qualifierName": "drug effects",
+                    "majorTopic_YN": "N"
+                  },
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "Y"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Cytomegalovirus Infections",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "TH",
+                    "qualifierName": "therapy",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "RNA, Catalytic",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "DE",
+                    "qualifierName": "drug effects",
+                    "majorTopic_YN": "N"
+                  },
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Immediate-Early Proteins",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "DE",
+                    "qualifierName": "drug effects",
+                    "majorTopic_YN": "N"
+                  },
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "N"
+                  },
+                  {
+                    "abbreviation": "ME",
+                    "qualifierName": "metabolism",
+                    "majorTopic_YN": "Y"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Viral Proteins",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "DE",
+                    "qualifierName": "drug effects",
+                    "majorTopic_YN": "N"
+                  },
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "N"
+                  },
+                  {
+                    "abbreviation": "ME",
+                    "qualifierName": "metabolism",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Antiviral Agents",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "TU",
+                    "qualifierName": "therapeutic use",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Virus Replication",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "DE",
+                    "qualifierName": "drug effects",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "Y",
+              "descriptorName": "Gene Expression Regulation, Viral"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "RNA Interference"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Genes, Immediate-Early",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "Y"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "CRISPR-Cas Systems"
+            }
+          ]
+        },
+        "keywordList": {
+          "keyword": [
+            "Ribozyme",
+            "Herpesvirus",
+            "RNA interference",
+            "Cytomegalovirus",
+            "Antiviral",
+            "Small Molecule",
+            "Ie1",
+            "Ie2",
+            "Crispr/cas",
+            "Immediate-early"
+          ]
+        },
+        "chemicalList": {
+          "chemical": [
+            {
+              "name": "Antiviral Agents",
+              "registryNumber": "0"
+            },
+            {
+              "name": "Viral Proteins",
+              "registryNumber": "0"
+            },
+            {
+              "name": "RNA, Catalytic",
+              "registryNumber": "0"
+            },
+            {
+              "name": "Immediate-Early Proteins",
+              "registryNumber": "0"
+            }
+          ]
+        },
+        "subsetList": {
+          "subset": [
+            {
+              "code": "IM",
+              "name": "Index Medicus"
+            }
+          ]
+        },
+        "fullTextUrlList": {
+          "fullTextUrl": [
+            {
+              "availability": "Open access",
+              "availabilityCode": "OA",
+              "documentStyle": "pdf",
+              "site": "Unpaywall",
+              "url": "https://www.mdpi.com/1999-4915/12/1/110/pdf"
+            },
+            {
+              "availability": "Subscription required",
+              "availabilityCode": "S",
+              "documentStyle": "doi",
+              "site": "DOI",
+              "url": "https://doi.org/10.3390/v12010110"
+            },
+            {
+              "availability": "Open access",
+              "availabilityCode": "OA",
+              "documentStyle": "html",
+              "site": "Europe_PMC",
+              "url": "https://europepmc.org/articles/PMC7019229"
+            },
+            {
+              "availability": "Open access",
+              "availabilityCode": "OA",
+              "documentStyle": "pdf",
+              "site": "Europe_PMC",
+              "url": "https://europepmc.org/articles/PMC7019229?pdf=render"
+            }
+          ]
+        },
+        "isOpenAccess": "Y",
+        "inEPMC": "Y",
+        "inPMC": "Y",
+        "hasPDF": "Y",
+        "hasBook": "N",
+        "hasSuppl": "N",
+        "citedByCount": 37,
+        "hasData": "N",
+        "hasReferences": "Y",
+        "hasTextMinedTerms": "Y",
+        "hasDbCrossReferences": "N",
+        "hasLabsLinks": "Y",
+        "license": "cc by",
+        "hasEvaluations": "N",
+        "authMan": "N",
+        "epmcAuthMan": "N",
+        "nihAuthMan": "N",
+        "hasTMAccessionNumbers": "N",
+        "dateOfCompletion": "2021-02-08",
+        "dateOfCreation": "2020-01-23",
+        "firstIndexDate": "2020-01-28",
+        "fullTextReceivedDate": "2020-07-09",
+        "dateOfRevision": "2022-05-17",
+        "electronicPublicationDate": "2020-01-16",
+        "firstPublicationDate": "2020-01-16"
+      },
+      {
+        "id": "32994332",
+        "source": "MED",
+        "pmid": "32994332",
+        "pmcid": "PMC7527735",
+        "fullTextIdList": {
+          "fullTextId": [
+            "PMC7527735"
+          ]
+        },
+        "doi": "10.1128/mbio.02410-20",
+        "title": "Human Cytomegalovirus Genomes Survive Mitosis via the IE19 Chromatin-Tethering Domain.",
+        "authorString": "Lyon SM, Yetming KD, Paulus C, Nevels M, Kalejta RF.",
+        "authorList": {
+          "author": [
+            {
+              "fullName": "Lyon SM",
+              "firstName": "Shelby M",
+              "lastName": "Lyon",
+              "initials": "SM",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Institute for Molecular Virology, University of Wisconsin-Madison, Madison, Wisconsin, USA."
+                  },
+                  {
+                    "affiliation": "McArdle Laboratory for Cancer Research, University of Wisconsin-Madison, Madison, Wisconsin, USA."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Yetming KD",
+              "firstName": "Kristen D",
+              "lastName": "Yetming",
+              "initials": "KD",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Institute for Molecular Virology, University of Wisconsin-Madison, Madison, Wisconsin, USA."
+                  },
+                  {
+                    "affiliation": "McArdle Laboratory for Cancer Research, University of Wisconsin-Madison, Madison, Wisconsin, USA."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Paulus C",
+              "firstName": "Christina",
+              "lastName": "Paulus",
+              "initials": "C",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0002-4123-5629"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Biomedical Sciences Research Complex, University of St. Andrews, St. Andrews, United Kingdom."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Nevels M",
+              "firstName": "Michael",
+              "lastName": "Nevels",
+              "initials": "M",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0002-7115-407X"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Biomedical Sciences Research Complex, University of St. Andrews, St. Andrews, United Kingdom."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Kalejta RF",
+              "firstName": "Robert F",
+              "lastName": "Kalejta",
+              "initials": "RF",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0002-7116-3355"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Institute for Molecular Virology, University of Wisconsin-Madison, Madison, Wisconsin, USA rfkalejta@wisc.edu."
+                  },
+                  {
+                    "affiliation": "McArdle Laboratory for Cancer Research, University of Wisconsin-Madison, Madison, Wisconsin, USA."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "authorIdList": {
+          "authorId": [
+            {
+              "type": "ORCID",
+              "value": "0000-0002-4123-5629"
+            },
+            {
+              "type": "ORCID",
+              "value": "0000-0002-7115-407X"
+            },
+            {
+              "type": "ORCID",
+              "value": "0000-0002-7116-3355"
+            }
+          ]
+        },
+        "dataLinksTagsList": {
+          "dataLinkstag": [
+            "altmetrics"
+          ]
+        },
+        "journalInfo": {
+          "issue": "5",
+          "volume": "11",
+          "journalIssueId": 3004594,
+          "dateOfPublication": "2020 Sep",
+          "monthOfPublication": 9,
+          "yearOfPublication": 2020,
+          "printPublicationDate": "2020-09-01",
+          "journal": {
+            "title": "mBio",
+            "medlineAbbreviation": "mBio",
+            "issn": "2150-7511",
+            "essn": "2150-7511",
+            "isoabbreviation": "mBio",
+            "nlmid": "101519231"
+          }
+        },
+        "pubYear": "2020",
+        "pageInfo": "e02410-20",
+        "abstractText": "The genomes of DNA tumor viruses regain nuclear localization after nuclear envelope breakdown during mitosis through the action of a viral protein with a chromatin-tethering domain (CTD). Here, we report that the human cytomegalovirus (HCMV) genome is maintained during mitosis by the CTD of the viral IE19 protein. Deletion of the IE19 CTD or disruption of the IE19 splice acceptor site reduced viral genome maintenance and progeny virion formation during infection of dividing fibroblasts, both of which were rescued by IE19 ectopic expression. The discovery of a viral genome maintenance factor during productive infection provides new insight into the mode of HCMV infection implicated in birth defects, organ transplant failure, and cancer.<b>IMPORTANCE</b> Human cytomegalovirus (HCMV) is the leading infectious cause of birth defects, represents a serious complication for immunocompromised HIV/AIDS and organ transplant patients, and contributes to both immunosenescence and cardiovascular diseases. HCMV is also implicated in cancers such as glioblastoma multiforme (GBM) and infects <i>ex vivo</i>-cultured GBM tumor cells. In dividing tumor cells, the genomes of DNA tumor viruses regain nuclear localization after nuclear envelope breakdown during mitosis. This mitotic survival is mediated by a viral protein with a chromatin-tethering domain (CTD). Here, we report that the HCMV genome is maintained in dividing fibroblasts by the CTD of the viral IE19 protein. The discovery of a viral genome maintenance factor during productive infection could help explain viral genome dynamics within HCMV-positive tumors as well as during latency.",
+        "affiliation": "Institute for Molecular Virology, University of Wisconsin-Madison, Madison, Wisconsin, USA.",
+        "publicationStatus": "epublish",
+        "language": "eng",
+        "pubModel": "Electronic",
+        "pubTypeList": {
+          "pubType": [
+            "research-article",
+            "Journal Article",
+            "Research Support, N.I.H., Extramural"
+          ]
+        },
+        "grantsList": {
+          "grant": [
+            {
+              "grantId": "AI139180",
+              "agency": "HHS | National Institutes of Health",
+              "orderIn": 0
+            },
+            {
+              "grantId": "R01 AI139180",
+              "agency": "NIAID NIH HHS",
+              "acronym": "AI",
+              "orderIn": 0
+            },
+            {
+              "grantId": "T32 CA009135",
+              "agency": "NCI NIH HHS",
+              "acronym": "CA",
+              "orderIn": 0
+            },
+            {
+              "grantId": "AI130089",
+              "agency": "HHS | NIH | NIH Office of the Director",
+              "orderIn": 0
+            },
+            {
+              "grantId": "CA009135",
+              "agency": "HHS | NIH | NIH Office of the Director",
+              "orderIn": 0
+            },
+            {
+              "grantId": "R01 AI130089",
+              "agency": "NIAID NIH HHS",
+              "acronym": "AI",
+              "orderIn": 0
+            }
+          ]
+        },
+        "meshHeadingList": {
+          "meshHeading": [
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Cells, Cultured"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Cell Line"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Chromatin",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "N"
+                  },
+                  {
+                    "abbreviation": "ME",
+                    "qualifierName": "metabolism",
+                    "majorTopic_YN": "Y"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Fibroblasts",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "VI",
+                    "qualifierName": "virology",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Humans"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Cytomegalovirus",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "Y"
+                  },
+                  {
+                    "abbreviation": "PH",
+                    "qualifierName": "physiology",
+                    "majorTopic_YN": "Y"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Immediate-Early Proteins",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "Y"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Mitosis",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "Y"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "Y",
+              "descriptorName": "Genome, Viral"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Host-Pathogen Interactions"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "HEK293 Cells"
+            }
+          ]
+        },
+        "keywordList": {
+          "keyword": [
+            "Transcription",
+            "Cancer",
+            "Mitosis",
+            "Latency",
+            "chromatin",
+            "Herpes"
+          ]
+        },
+        "chemicalList": {
+          "chemical": [
+            {
+              "name": "IE1 protein, cytomegalovirus",
+              "registryNumber": "0"
+            },
+            {
+              "name": "IE19 protein, human cytomegalovirus",
+              "registryNumber": "0"
+            },
+            {
+              "name": "Chromatin",
+              "registryNumber": "0"
+            },
+            {
+              "name": "Immediate-Early Proteins",
+              "registryNumber": "0"
+            }
+          ]
+        },
+        "subsetList": {
+          "subset": [
+            {
+              "code": "IM",
+              "name": "Index Medicus"
+            }
+          ]
+        },
+        "fullTextUrlList": {
+          "fullTextUrl": [
+            {
+              "availability": "Open access",
+              "availabilityCode": "OA",
+              "documentStyle": "pdf",
+              "site": "Unpaywall",
+              "url": "https://research-repository.st-andrews.ac.uk/bitstream/10023/20787/1/Lyon_2020_mBio_humancytomegalovirus_VoR_CCBY.pdf"
+            },
+            {
+              "availability": "Subscription required",
+              "availabilityCode": "S",
+              "documentStyle": "doi",
+              "site": "DOI",
+              "url": "https://doi.org/10.1128/mBio.02410-20"
+            },
+            {
+              "availability": "Open access",
+              "availabilityCode": "OA",
+              "documentStyle": "html",
+              "site": "Europe_PMC",
+              "url": "https://europepmc.org/articles/PMC7527735"
+            },
+            {
+              "availability": "Open access",
+              "availabilityCode": "OA",
+              "documentStyle": "pdf",
+              "site": "Europe_PMC",
+              "url": "https://europepmc.org/articles/PMC7527735?pdf=render"
+            }
+          ]
+        },
+        "isOpenAccess": "Y",
+        "inEPMC": "Y",
+        "inPMC": "Y",
+        "hasPDF": "Y",
+        "hasBook": "N",
+        "hasSuppl": "N",
+        "citedByCount": 9,
+        "hasData": "N",
+        "hasReferences": "Y",
+        "hasTextMinedTerms": "Y",
+        "hasDbCrossReferences": "N",
+        "hasLabsLinks": "Y",
+        "license": "cc by",
+        "hasEvaluations": "N",
+        "authMan": "N",
+        "epmcAuthMan": "N",
+        "nihAuthMan": "N",
+        "hasTMAccessionNumbers": "N",
+        "dateOfCompletion": "2021-07-20",
+        "dateOfCreation": "2020-09-30",
+        "firstIndexDate": "2020-10-11",
+        "fullTextReceivedDate": "2020-10-21",
+        "dateOfRevision": "2024-03-29",
+        "electronicPublicationDate": "2020-09-29",
+        "firstPublicationDate": "2020-09-29"
+      },
+      {
+        "id": "32365141",
+        "source": "MED",
+        "pmid": "32365141",
+        "pmcid": "PMC7224577",
+        "fullTextIdList": {
+          "fullTextId": [
+            "PMC7224577"
+          ]
+        },
+        "doi": "10.1371/journal.ppat.1008537",
+        "title": "Revisiting promyelocytic leukemia protein targeting by human cytomegalovirus immediate-early protein 1.",
+        "authorString": "Paulus C, Harwardt T, Walter B, Marxreiter A, Zenger M, Reuschel E, Nevels MM.",
+        "authorList": {
+          "author": [
+            {
+              "fullName": "Paulus C",
+              "firstName": "Christina",
+              "lastName": "Paulus",
+              "initials": "C",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0002-4123-5629"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Biomedical Sciences Research Complex, University of St Andrews, St Andrews, United Kingdom."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Harwardt T",
+              "firstName": "Thomas",
+              "lastName": "Harwardt",
+              "initials": "T",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Institute for Medical Microbiology and Hygiene, University of Regensburg, Regensburg, Germany."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Walter B",
+              "firstName": "Bernadette",
+              "lastName": "Walter",
+              "initials": "B",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0003-2548-4577"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Biomedical Sciences Research Complex, University of St Andrews, St Andrews, United Kingdom."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Marxreiter A",
+              "firstName": "Andrea",
+              "lastName": "Marxreiter",
+              "initials": "A",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Institute for Medical Microbiology and Hygiene, University of Regensburg, Regensburg, Germany."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Zenger M",
+              "firstName": "Marion",
+              "lastName": "Zenger",
+              "initials": "M",
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Institute for Medical Microbiology and Hygiene, University of Regensburg, Regensburg, Germany."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Reuschel E",
+              "firstName": "Edith",
+              "lastName": "Reuschel",
+              "initials": "E",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0001-5841-1812"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Department of Obstetrics and Gynecology, Clinic St. Hedwig at Hospital Barmherzige Br\u00fcder Regensburg, Regensburg, Germany."
+                  }
+                ]
+              }
+            },
+            {
+              "fullName": "Nevels MM",
+              "firstName": "Michael M",
+              "lastName": "Nevels",
+              "initials": "MM",
+              "authorId": {
+                "type": "ORCID",
+                "value": "0000-0002-7115-407X"
+              },
+              "authorAffiliationDetailsList": {
+                "authorAffiliation": [
+                  {
+                    "affiliation": "Biomedical Sciences Research Complex, University of St Andrews, St Andrews, United Kingdom."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "authorIdList": {
+          "authorId": [
+            {
+              "type": "ORCID",
+              "value": "0000-0001-5841-1812"
+            },
+            {
+              "type": "ORCID",
+              "value": "0000-0002-4123-5629"
+            },
+            {
+              "type": "ORCID",
+              "value": "0000-0002-7115-407X"
+            },
+            {
+              "type": "ORCID",
+              "value": "0000-0003-2548-4577"
+            }
+          ]
+        },
+        "dataLinksTagsList": {
+          "dataLinkstag": [
+            "altmetrics",
+            "supporting_data",
+            "related_data"
+          ]
+        },
+        "journalInfo": {
+          "issue": "5",
+          "volume": "16",
+          "journalIssueId": 2949023,
+          "dateOfPublication": "2020 May",
+          "monthOfPublication": 5,
+          "yearOfPublication": 2020,
+          "printPublicationDate": "2020-05-01",
+          "journal": {
+            "title": "PLoS pathogens",
+            "medlineAbbreviation": "PLoS Pathog",
+            "issn": "1553-7366",
+            "essn": "1553-7374",
+            "isoabbreviation": "PLoS Pathog",
+            "nlmid": "101238921"
+          }
+        },
+        "pubYear": "2020",
+        "pageInfo": "e1008537",
+        "abstractText": "Promyelocytic leukemia (PML) bodies are nuclear organelles implicated in intrinsic and innate antiviral defense. The eponymous PML proteins, central to the self-organization of PML bodies, and other restriction factors found in these organelles are common targets of viral antagonism. The 72-kDa immediate-early protein 1 (IE1) is the principal antagonist of PML bodies encoded by the human cytomegalovirus (hCMV). IE1 is believed to disrupt PML bodies by inhibiting PML SUMOylation, while PML was proposed to act as an E3 ligase for IE1 SUMOylation. PML targeting by IE1 is considered to be crucial for hCMV replication at low multiplicities of infection, in part via counteracting antiviral gene induction linked to the cellular interferon (IFN) response. However, current concepts of IE1-PML interaction are largely derived from mutant IE1 proteins known or predicted to be metabolically unstable and globally misfolded. We performed systematic clustered charge-to-alanine scanning mutagenesis and identified a stable IE1 mutant protein (IE1cc172-176) with wild-type characteristics except for neither interacting with PML proteins nor inhibiting PML SUMOylation. Consequently, IE1cc172-176 does not associate with PML bodies and is selectively impaired for disrupting these organelles. Surprisingly, functional analysis of IE1cc172-176 revealed that the protein is hypermodified by mixed SUMO chains and that IE1 SUMOylation depends on nucleosome rather than PML binding. Furthermore, a mutant hCMV expressing IE1cc172-176 was only slightly attenuated compared to an IE1-null virus even at low multiplicities of infection. Finally, hCMV-induced expression of cytokine and IFN-stimulated genes turned out to be reduced rather than increased in the presence of IE1cc172-176 relative to wild-type IE1. Our findings challenge present views on the relationship of IE1 with PML and the role of PML in hCMV replication. This study also provides initial evidence for the idea that disruption of PML bodies upon viral infection is linked to activation rather than inhibition of innate immunity.",
+        "affiliation": "Biomedical Sciences Research Complex, University of St Andrews, St Andrews, United Kingdom.",
+        "publicationStatus": "epublish",
+        "language": "eng",
+        "pubModel": "Electronic-eCollection",
+        "pubTypeList": {
+          "pubType": [
+            "Research Support, Non-U.S. Gov't",
+            "research-article",
+            "Journal Article"
+          ]
+        },
+        "grantsList": {
+          "grant": [
+            {
+              "grantId": "MR/P022146/1",
+              "agency": "Medical Research Council",
+              "acronym": "MRC_",
+              "orderIn": 0
+            },
+            {
+              "grantId": "T16/28",
+              "agency": "Tenovus Cancer Care",
+              "orderIn": 0
+            },
+            {
+              "agency": "Erasmus+",
+              "orderIn": 0
+            },
+            {
+              "agency": "Wellcome Trust",
+              "acronym": "WT",
+              "orderIn": 0
+            }
+          ]
+        },
+        "meshHeadingList": {
+          "meshHeading": [
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Cell Line"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Humans"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Cytomegalovirus",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "PH",
+                    "qualifierName": "physiology",
+                    "majorTopic_YN": "Y"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "Y",
+              "descriptorName": "Cytomegalovirus Infections",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "N"
+                  },
+                  {
+                    "abbreviation": "IM",
+                    "qualifierName": "immunology",
+                    "majorTopic_YN": "N"
+                  },
+                  {
+                    "abbreviation": "PA",
+                    "qualifierName": "pathology",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "Y",
+              "descriptorName": "Immediate-Early Proteins",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "N"
+                  },
+                  {
+                    "abbreviation": "IM",
+                    "qualifierName": "immunology",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "Y",
+              "descriptorName": "Virus Replication",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "N"
+                  },
+                  {
+                    "abbreviation": "IM",
+                    "qualifierName": "immunology",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Gene Expression Regulation, Viral",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "IM",
+                    "qualifierName": "immunology",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Mutation"
+            },
+            {
+              "majorTopic_YN": "Y",
+              "descriptorName": "Immunity, Innate"
+            },
+            {
+              "majorTopic_YN": "N",
+              "descriptorName": "Sumoylation",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "IM",
+                    "qualifierName": "immunology",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            },
+            {
+              "majorTopic_YN": "Y",
+              "descriptorName": "Promyelocytic Leukemia Protein",
+              "meshQualifierList": {
+                "meshQualifier": [
+                  {
+                    "abbreviation": "GE",
+                    "qualifierName": "genetics",
+                    "majorTopic_YN": "N"
+                  },
+                  {
+                    "abbreviation": "IM",
+                    "qualifierName": "immunology",
+                    "majorTopic_YN": "N"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "chemicalList": {
+          "chemical": [
+            {
+              "name": "PML protein, human",
+              "registryNumber": "143220-95-5"
+            },
+            {
+              "name": "IE1 protein, cytomegalovirus",
+              "registryNumber": "0"
+            },
+            {
+              "name": "Immediate-Early Proteins",
+              "registryNumber": "0"
+            },
+            {
+              "name": "Promyelocytic Leukemia Protein",
+              "registryNumber": "0"
+            }
+          ]
+        },
+        "subsetList": {
+          "subset": [
+            {
+              "code": "IM",
+              "name": "Index Medicus"
+            }
+          ]
+        },
+        "fullTextUrlList": {
+          "fullTextUrl": [
+            {
+              "availability": "Open access",
+              "availabilityCode": "OA",
+              "documentStyle": "pdf",
+              "site": "Unpaywall",
+              "url": "https://journals.plos.org/plospathogens/article/file?id=10.1371/journal.ppat.1008537&type=printable"
+            },
+            {
+              "availability": "Subscription required",
+              "availabilityCode": "S",
+              "documentStyle": "doi",
+              "site": "DOI",
+              "url": "https://doi.org/10.1371/journal.ppat.1008537"
+            },
+            {
+              "availability": "Open access",
+              "availabilityCode": "OA",
+              "documentStyle": "html",
+              "site": "Europe_PMC",
+              "url": "https://europepmc.org/articles/PMC7224577"
+            },
+            {
+              "availability": "Open access",
+              "availabilityCode": "OA",
+              "documentStyle": "pdf",
+              "site": "Europe_PMC",
+              "url": "https://europepmc.org/articles/PMC7224577?pdf=render"
+            }
+          ]
+        },
+        "isOpenAccess": "Y",
+        "inEPMC": "Y",
+        "inPMC": "Y",
+        "hasPDF": "Y",
+        "hasBook": "N",
+        "hasSuppl": "Y",
+        "citedByCount": 14,
+        "hasData": "Y",
+        "hasReferences": "Y",
+        "hasTextMinedTerms": "Y",
+        "hasDbCrossReferences": "Y",
+        "dbCrossReferenceList": {
+          "dbName": [
+            "UNIPROT"
+          ]
+        },
+        "hasLabsLinks": "Y",
+        "license": "cc by",
+        "hasEvaluations": "N",
+        "authMan": "N",
+        "epmcAuthMan": "N",
+        "nihAuthMan": "N",
+        "hasTMAccessionNumbers": "Y",
+        "tmAccessionTypeList": {
+          "accessionType": [
+            "gen",
+            "pdb"
+          ]
+        },
+        "dateOfCompletion": "2020-07-21",
+        "dateOfCreation": "2020-05-05",
+        "firstIndexDate": "2020-05-05",
+        "fullTextReceivedDate": "2020-07-11",
+        "dateOfRevision": "2024-04-25",
+        "electronicPublicationDate": "2020-05-04",
+        "firstPublicationDate": "2020-05-04"
+      }
+    ]
+  }
+}

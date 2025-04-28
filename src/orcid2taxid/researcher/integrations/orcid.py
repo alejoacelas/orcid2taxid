@@ -8,7 +8,7 @@ from orcid2taxid.researcher.schemas.orcid import (
 )
 from orcid2taxid.researcher.schemas.base import CustomerProfile
 from orcid2taxid.core.logging import get_logger, log_event
-from orcid2taxid.researcher.exceptions import OrcidAPIError, OrcidValidationError, OrcidError
+from orcid2taxid.researcher.exceptions import OrcidAPIError, OrcidValidationError, OrcidError, OrcidNotFoundError
 
 logger = get_logger(__name__)
 
@@ -42,13 +42,31 @@ async def fetch_orcid_data(
             )
             response.raise_for_status()
             return response.json()
-        except httpx.HTTPError as e:
+        except httpx.HTTPStatusError as e:
+            if e.response.status_code == 404:
+                logger.warning("ORCID ID not found: %s", orcid_id)
+                raise OrcidNotFoundError(
+                    message="The requested researcher profile could not be found. Please verify the ORCID ID is correct.",
+                    details={
+                        "orcid_id": orcid_id,
+                        "endpoint": endpoint
+                    }
+                ) from e
             logger.error("Error fetching %s for ORCID %s: %s", endpoint, orcid_id, str(e))
             raise OrcidAPIError(
                 f"Failed to fetch {endpoint} data",
                 details={
                     "orcid_id": orcid_id,
                     "endpoint": endpoint,
+                    "error": str(e)
+                }
+            ) from e
+        except httpx.RequestError as e:
+            logger.error("Error fetching %s for ORCID %s: %s", endpoint, orcid_id, str(e))
+            raise OrcidAPIError(
+                f"Failed to fetch {endpoint} data",
+                details={
+                    "orcid_id": orcid_id,
                     "error": str(e)
                 }
             ) from e

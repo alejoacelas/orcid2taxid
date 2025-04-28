@@ -1,0 +1,212 @@
+{
+  "last-modified-date": {
+    "value": 1536160970105
+  },
+  "affiliation-group": [
+    {
+      "last-modified-date": {
+        "value": 1536160970105
+      },
+      "external-ids": {
+        "external-id": []
+      },
+      "summaries": [
+        {
+          "employment-summary": {
+            "created-date": {
+              "value": 1536160970105
+            },
+            "last-modified-date": {
+              "value": 1536160970105
+            },
+            "source": {
+              "source-orcid": {
+                "uri": "https://orcid.org/0000-0003-1527-0030",
+                "path": "0000-0003-1527-0030",
+                "host": "orcid.org"
+              },
+              "source-client-id": null,
+              "source-name": {
+                "value": "Justin Littman"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "put-code": 6380630,
+            "department-name": "Digital Library Systems and Services, Stanford Library",
+            "role-title": "Software developer",
+            "start-date": {
+              "year": {
+                "value": "2018"
+              },
+              "month": {
+                "value": "08"
+              },
+              "day": null
+            },
+            "end-date": null,
+            "organization": {
+              "name": "Stanford University",
+              "address": {
+                "city": "Stanford",
+                "region": "CA",
+                "country": "US"
+              },
+              "disambiguated-organization": {
+                "disambiguated-organization-identifier": "6429",
+                "disambiguation-source": "RINGGOLD"
+              }
+            },
+            "url": null,
+            "external-ids": null,
+            "display-index": "1",
+            "visibility": "public",
+            "path": "/0000-0003-1527-0030/employment/6380630"
+          }
+        }
+      ]
+    },
+    {
+      "last-modified-date": {
+        "value": 1536160755370
+      },
+      "external-ids": {
+        "external-id": []
+      },
+      "summaries": [
+        {
+          "employment-summary": {
+            "created-date": {
+              "value": 1424367082233
+            },
+            "last-modified-date": {
+              "value": 1536160755370
+            },
+            "source": {
+              "source-orcid": {
+                "uri": "https://orcid.org/0000-0003-1527-0030",
+                "path": "0000-0003-1527-0030",
+                "host": "orcid.org"
+              },
+              "source-client-id": null,
+              "source-name": {
+                "value": "Justin Littman"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "put-code": 742819,
+            "department-name": "Scholarly Technology Group, Gelman Library",
+            "role-title": "Software Developer / Librarian",
+            "start-date": {
+              "year": {
+                "value": "2014"
+              },
+              "month": {
+                "value": "08"
+              },
+              "day": null
+            },
+            "end-date": {
+              "year": {
+                "value": "2018"
+              },
+              "month": {
+                "value": "08"
+              },
+              "day": null
+            },
+            "organization": {
+              "name": "George Washington University",
+              "address": {
+                "city": "Washington",
+                "region": "DC",
+                "country": "US"
+              },
+              "disambiguated-organization": {
+                "disambiguated-organization-identifier": "8367",
+                "disambiguation-source": "RINGGOLD"
+              }
+            },
+            "url": null,
+            "external-ids": null,
+            "display-index": "1",
+            "visibility": "public",
+            "path": "/0000-0003-1527-0030/employment/742819"
+          }
+        }
+      ]
+    },
+    {
+      "last-modified-date": {
+        "value": 1424367787455
+      },
+      "external-ids": {
+        "external-id": []
+      },
+      "summaries": [
+        {
+          "employment-summary": {
+            "created-date": {
+              "value": 1424367025562
+            },
+            "last-modified-date": {
+              "value": 1424367787455
+            },
+            "source": {
+              "source-orcid": {
+                "uri": "https://orcid.org/0000-0003-1527-0030",
+                "path": "0000-0003-1527-0030",
+                "host": "orcid.org"
+              },
+              "source-client-id": null,
+              "source-name": {
+                "value": "Justin Littman"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "put-code": 742815,
+            "department-name": "Repository Development Center, Office of Strategic Initiatives",
+            "role-title": "Software Developer",
+            "start-date": {
+              "year": {
+                "value": "2003"
+              },
+              "month": null,
+              "day": null
+            },
+            "end-date": {
+              "year": {
+                "value": "2014"
+              },
+              "month": null,
+              "day": null
+            },
+            "organization": {
+              "name": "Library of Congress",
+              "address": {
+                "city": "Washington",
+                "region": "DC",
+                "country": "US"
+              },
+              "disambiguated-organization": {
+                "disambiguated-organization-identifier": "8386",
+                "disambiguation-source": "RINGGOLD"
+              }
+            },
+            "url": null,
+            "external-ids": null,
+            "display-index": "0",
+            "visibility": "public",
+            "path": "/0000-0003-1527-0030/employment/742815"
+          }
+        }
+      ]
+    }
+  ],
+  "path": "/0000-0003-1527-0030/employments"
+}

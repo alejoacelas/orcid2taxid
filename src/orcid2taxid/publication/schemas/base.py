@@ -3,7 +3,7 @@ from datetime import datetime
 from pydantic import Field
 from orcid2taxid.shared.schemas import (
     DatetimeSerializableBaseModel, ResearcherProfile,
-    ResearcherID, ExternalReference, InstitutionalAffiliation
+    ResearcherID, InstitutionalAffiliation
 )
 from orcid2taxid.grant.schemas.base import GrantRecord
 from orcid2taxid.publication.schemas.epmc import EpmcResponse
@@ -63,19 +63,15 @@ class PublicationRecord(DatetimeSerializableBaseModel):
                         if author.author_id.type and author.author_id.value:
                             if author.author_id.type.upper() == "ORCID":
                                 orcid = author.author_id.value
-                            else:
-                                external_references.append(ExternalReference(
-                                    url=f"https://{author.author_id.type.lower()}.org/{author.author_id.value}",
-                                    name=author.author_id.type,
-                                    source="Europe PMC"
-                                ))
                     
                     # Create researcher profile with all available information
+                    # Always create a ResearcherID instance, even without ORCID
                     researcher_id = ResearcherID(
                         given_name=author.first_name or author.initials,
                         family_name=author.last_name,
                         credit_name=author.full_name,
-                        orcid=orcid
+                        orcid=orcid,
+                        emails=[]  # Empty list of emails when no ORCID is available
                     )
                     
                     # Handle affiliations

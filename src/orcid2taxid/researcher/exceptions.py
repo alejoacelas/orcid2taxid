@@ -2,7 +2,7 @@ from typing import Optional, Dict, Any
 from pydantic import ValidationError
 from fastapi import status
 from orcid2taxid.shared.exceptions.integration import IntegrationError
-from orcid2taxid.shared.exceptions.validation import DataValidationError
+from orcid2taxid.shared.exceptions.validation import ValidationErrorMixin
 
 class OrcidError(IntegrationError):
     """Base exception for ORCID API errors"""
@@ -30,7 +30,17 @@ class OrcidAPIError(OrcidError):
             details=details
         )
 
-class OrcidValidationError(DataValidationError):
+class OrcidNotFoundError(OrcidError):
+    """Raised when an ORCID ID doesn't exist or can't be found"""
+    def __init__(self, message: str = "ORCID ID not found", details: Optional[Dict[str, Any]] = None):
+        super().__init__(
+            message=message,
+            error_code="orcid_not_found",
+            status_code=status.HTTP_404_NOT_FOUND,
+            details=details
+        )
+
+class OrcidValidationError(OrcidError):
     """Exception for ORCID data parsing/validation errors"""
     def __init__(
         self,
@@ -40,7 +50,12 @@ class OrcidValidationError(DataValidationError):
     ):
         super().__init__(
             message=message,
-            validation_error=validation_error,
-            integration="orcid",
+            error_code="validation_error",
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
             details=details
         )
+        self._validation_mixin = ValidationErrorMixin(validation_error)
+        
+    def __str__(self):
+        """Custom string representation to include detailed error information"""
+        return f"{self.message}\n{self._validation_mixin.format_validation_errors()}"

@@ -1,25 +1,19 @@
+from typing import Optional, List
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field
-from typing import Optional, List
 
 class EmailInfo(BaseModel):
     """Represents an email address with its metadata"""
     address: str
     primary: bool = False
-    
+
 class ResearcherID(BaseModel):
-    """Represents a person's ID"""
-    given_name: str = None
-    family_name: str = None
-    
+    """Represents a person's ID with required contact information"""
+    given_name: str
+    family_name: str
     credit_name: Optional[str] = None
     orcid: Optional[str] = None
     emails: List[EmailInfo] = Field(default_factory=list)
-    
-    def __post_init__(self):
-        if not self.orcid:
-            if not self.emails:
-                raise ValueError("Either ORCID or email must be provided")
     
 class ExternalReference(BaseModel):
     """Represents an external reference"""

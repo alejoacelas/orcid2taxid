@@ -1,136 +1,271 @@
-import requests
-import logging
-from typing import Optional, Dict
-import json
 import os
+from typing import Optional, Dict, Any
+import httpx
+from pydantic import BaseModel, Field, ValidationError
 from dotenv import load_dotenv
-from orcid2taxid.core.models.customer import NCBITaxonomyInfo
+
+from orcid2taxid.organism.schemas.ncbi import (
+    NCBITaxonomyInfo,
+    NCBISearchResult,
+    NCBITaxonomyResponse
+)
+from orcid2taxid.organism.exceptions import (
+    NCBIAPIError,
+    NCBIValidationError,
+    OrganismNotFoundError
+)
+from orcid2taxid.core.logging import get_logger, log_event
 
 # Load environment variables
 load_dotenv()
 
-class TaxIDLookup:
-    """
-    Uses NCBI e-utils to map organism names to their corresponding TAXIDs.
-    """
-    def __init__(self):
-        """
-        Initialize the NCBI TaxID lookup client.
-        """
-        self.base_url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
-        self.tool_name = "orcid2taxid"
-        self.api_key = os.getenv("NCBI_API_KEY")
-        # Use module-level logger like other classes
-        self.logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
-    def fetch_taxid(self, organism_name: str) -> Optional[Dict]:
-        """
-        Fetches raw taxonomy data from NCBI for a given organism name.
-        
-        :param organism_name: The name of the organism to search for.
-        :return: Raw API response as a dictionary or None if not found.
-        """
-        if not organism_name:
-            return None
+class NCBIConfig(BaseModel):
+    """Configuration for NCBI API client"""
+    api_key: Optional[str] = Field(default_factory=lambda: os.getenv("NCBI_API_KEY"))
+    timeout: int = Field(default=30, ge=1)
+    base_url: str = Field(default="https://eutils.ncbi.nlm.nih.gov/entrez/eutils")
+    tool_name: str = Field(default="orcid2taxid")
+    
+    @property
+    def params(self) -> Dict[str, str]:
+        params = {'tool': self.tool_name}
+        if self.api_key:
+            params['api_key'] = self.api_key
+        return params
 
+async def fetch_ncbi_data(
+    endpoint: str,
+    params: Dict[str, Any],
+    config: Optional[NCBIConfig] = None
+) -> Dict[str, Any]:
+    """Generic function to fetch data from NCBI API"""
+    if config is None:
+        config = NCBIConfig()
+    
+    # Merge default params with provided params
+    request_params = {**config.params, **params}
+    
+    async with httpx.AsyncClient(timeout=config.timeout) as client:
         try:
-            # First use esearch to get taxonomy IDs
-            search_url = f"{self.base_url}/esearch.fcgi"
-            
-            # Format the search term - don't use quote() as requests will handle URL encoding
-            search_term = organism_name.strip()
-            
-            params = {
-                'db': 'taxonomy',
-                'term': search_term,
-                'retmode': 'json',
-                'tool': self.tool_name,
-                'api_key': self.api_key
-            }
-            
-            response = requests.get(search_url, params=params)
+            url = f"{config.base_url}/{endpoint}.fcgi"
+            response = await client.get(url, params=request_params)
             response.raise_for_status()
-            
-            search_data = response.json()
-            self.logger.debug(f"Search response: {search_data}")
+            return response.json()
+        except httpx.HTTPStatusError as e:
+            logger.error("Error fetching %s with params %s: %s", endpoint, params, str(e))
+            raise NCBIAPIError(
+                f"Failed to fetch {endpoint} data",
+                details={
+                    "endpoint": endpoint,
+                    "params": params,
+                    "error": str(e)
+                }
+            ) from e
+        except httpx.RequestError as e:
+            logger.error("Error fetching %s with params %s: %s", endpoint, params, str(e))
+            raise NCBIAPIError(
+                f"Failed to fetch {endpoint} data",
+                details={
+                    "error": str(e)
+                }
+            ) from e
+
+@log_event(__name__)
+async def fetch_taxid_search(
+    organism_name: str,
+    config: Optional[NCBIConfig] = None
+) -> NCBISearchResult:
+    """
+    Search for taxonomy IDs using organism name
+    
+    :param organism_name: The name of the organism to search for
+    :param config: Optional API configuration
+    :return: Search result with taxonomy IDs
+    :raises: NCBIAPIError, NCBIValidationError
+    """
+    if not organism_name:
+        raise ValueError("Organism name cannot be empty")
+    
+    try:
+        # Search for taxonomy IDs
+        search_params = {
+            'db': 'taxonomy',
+            'term': organism_name.strip(),
+            'retmode': 'json'
+        }
+        
+        search_data = await fetch_ncbi_data('esearch', search_params, config)
+        logger.debug("Search response: %s", search_data)
+        
+        try:
+            search_result = NCBISearchResult.from_response(search_data)
             
             # Check if we got any results
-            id_list = search_data.get('esearchresult', {}).get('idlist', [])
-            if not id_list:
-                self.logger.debug(f"No results found for organism: {organism_name}")
-                return None
+            if not search_result.id_list:
+                logger.warning("No results found for organism: %s", organism_name)
+                raise OrganismNotFoundError(
+                    message=f"No taxonomy records found for '{organism_name}'",
+                    details={"organism_name": organism_name}
+                )
                 
-            # Get the first (most relevant) taxonomy ID
-            taxid = id_list[0]
+            return search_result
             
-            # Now fetch the full taxonomy record
-            fetch_url = f"{self.base_url}/esummary.fcgi"
-            params = {
-                'db': 'taxonomy',
-                'id': taxid,
-                'retmode': 'json',
-                'tool': self.tool_name,
-                'api_key': self.api_key
-            }
+        except ValidationError as e:
+            raise NCBIValidationError(
+                "Failed to validate NCBI search response",
+                validation_error=e,
+                details={
+                    "organism_name": organism_name,
+                    "raw_data": search_data
+                }
+            ) from e
             
-            response = requests.get(fetch_url, params=params)
-            response.raise_for_status()
-            
-            return response.json()
-            
-        except requests.exceptions.RequestException as e:
-            self.logger.error(f"Error fetching NCBI taxonomy data for {organism_name}", exc_info=True)
-            return None
-        except json.JSONDecodeError as e:
-            self.logger.error(f"Error parsing NCBI taxonomy response for {organism_name}", exc_info=True)
-            return None
-        except Exception as e:
-            self.logger.error(f"Unexpected error in NCBI taxonomy lookup for {organism_name}", exc_info=True)
-            return None
+    except Exception as e:
+        if not isinstance(e, (NCBIAPIError, OrganismNotFoundError)):
+            logger.error("Error searching NCBI taxonomy for %s: %s", organism_name, str(e))
+            raise NCBIAPIError(
+                "Failed to search NCBI taxonomy",
+                details={
+                    "organism_name": organism_name,
+                    "error": str(e)
+                }
+            ) from e
+        raise
 
-    def get_taxid(self, organism_name: str) -> Optional[NCBITaxonomyInfo]:
-        """
-        Returns comprehensive taxonomy information for a given organism name via NCBI requests.
+@log_event(__name__)
+async def fetch_taxonomy_record(
+    taxid: str,
+    config: Optional[NCBIConfig] = None
+) -> NCBITaxonomyResponse:
+    """
+    Fetch taxonomy record by ID
+    
+    :param taxid: Taxonomy ID to fetch
+    :param config: Optional API configuration
+    :return: Taxonomy record
+    :raises: NCBIAPIError, NCBIValidationError
+    """
+    try:
+        # Fetch taxonomy record
+        fetch_params = {
+            'db': 'taxonomy',
+            'id': taxid,
+            'retmode': 'json'
+        }
         
-        :param organism_name: The name of the organism to map.
-        :return: NCBITaxonomyInfo object or None if not found.
-        """
+        fetch_data = await fetch_ncbi_data('esummary', fetch_params, config)
+        
         try:
-            # Get the raw taxonomy data
-            tax_data = self.fetch_taxid(organism_name)
-            if not tax_data:
-                return None
+            return NCBITaxonomyResponse.from_response(fetch_data)
             
-            # Extract the taxonomy information from the response
-            result = tax_data.get('result', {})
-            if not result:
-                return None
-                
-            # Get the first ID from uids list
-            uids = result.get('uids', [])
-            if not uids:
-                return None
-                
-            # Get the taxonomy record for the first ID
-            tax_record = result.get(str(uids[0]), {})
+        except ValidationError as e:
+            raise NCBIValidationError(
+                "Failed to validate NCBI taxonomy response",
+                validation_error=e,
+                details={
+                    "taxid": taxid,
+                    "raw_data": fetch_data
+                }
+            ) from e
             
-            # Create NCBITaxonomyInfo object
-            return NCBITaxonomyInfo(
-                taxid=int(uids[0]),
-                scientific_name=tax_record.get('scientificname', ''),
-                rank=tax_record.get('rank'),
-                division=tax_record.get('division'),
-                common_name=tax_record.get('commonname'),
-                lineage=tax_record.get('lineage', '').split('; ') if tax_record.get('lineage') else None,
-                synonyms=tax_record.get('synonym', []),
-                genetic_code=tax_record.get('gencode'),
-                mito_genetic_code=tax_record.get('mitogenome'),
-                is_parasite=tax_record.get('parasite', False),
-                is_pathogen=tax_record.get('pathogen', False),
-                host_taxid=int(tax_record.get('host_taxid')) if tax_record.get('host_taxid') else None,
-                host_scientific_name=tax_record.get('host_scientificname')
+    except Exception as e:
+        if not isinstance(e, (NCBIAPIError, NCBIValidationError)):
+            logger.error("Error fetching NCBI taxonomy record for %s: %s", taxid, str(e))
+            raise NCBIAPIError(
+                "Failed to fetch NCBI taxonomy record",
+                details={
+                    "taxid": taxid,
+                    "error": str(e)
+                }
+            ) from e
+        raise
+
+@log_event(__name__)
+async def get_taxonomy_info(
+    organism_name: str,
+    config: Optional[NCBIConfig] = None
+) -> NCBITaxonomyInfo:
+    """
+    Get comprehensive taxonomy information for an organism
+    
+    :param organism_name: Name of the organism to lookup
+    :param config: Optional API configuration
+    :return: NCBITaxonomyInfo object with taxonomy details
+    :raises: NCBIAPIError, NCBIValidationError, OrganismNotFoundError
+    """
+    if not organism_name:
+        raise ValueError("Organism name cannot be empty")
+    
+    try:
+        # First search for the taxonomy ID
+        search_result = await fetch_taxid_search(organism_name, config)
+        
+        # Get the first (most relevant) taxonomy ID
+        taxid = search_result.id_list[0]
+        
+        # Fetch the full taxonomy record
+        taxonomy_response = await fetch_taxonomy_record(taxid, config)
+        
+        if not taxonomy_response.uids:
+            raise OrganismNotFoundError(
+                message=f"No taxonomy record found for ID '{taxid}'",
+                details={
+                    "organism_name": organism_name,
+                    "taxid": taxid
+                }
             )
-            
-        except Exception as e:
-            self.logger.error(f"Error extracting taxonomy info from NCBI response for {organism_name}", exc_info=True)
-            return None
+        
+        # Get the first record
+        tax_record = taxonomy_response.result.get(taxid)
+        if not tax_record:
+            raise OrganismNotFoundError(
+                message=f"No taxonomy record found for ID '{taxid}'",
+                details={
+                    "organism_name": organism_name,
+                    "taxid": taxid
+                }
+            )
+        
+        # Convert lineage string to list if available
+        lineage_list = None
+        if tax_record.lineage:
+            lineage_list = [item.strip() for item in tax_record.lineage.split(';')]
+        
+        # Convert host_taxid to int if available
+        host_taxid = None
+        if tax_record.host_taxid:
+            try:
+                host_taxid = int(tax_record.host_taxid)
+            except ValueError:
+                pass
+        
+        # Create NCBITaxonomyInfo object
+        return NCBITaxonomyInfo(
+            taxid=int(taxid),
+            scientific_name=tax_record.scientific_name,
+            rank=tax_record.rank,
+            division=tax_record.division,
+            common_name=tax_record.common_name,
+            lineage=lineage_list,
+            synonyms=tax_record.synonym,
+            genetic_code=tax_record.genetic_code,
+            mito_genetic_code=tax_record.mito_genetic_code,
+            is_parasite=tax_record.is_parasite,
+            is_pathogen=tax_record.is_pathogen,
+            host_taxid=host_taxid,
+            host_scientific_name=tax_record.host_scientific_name
+        )
+        
+    except Exception as e:
+        if not isinstance(e, (NCBIAPIError, NCBIValidationError, OrganismNotFoundError)):
+            logger.error("Error getting taxonomy info for %s: %s", organism_name, str(e))
+            raise NCBIAPIError(
+                "Failed to get taxonomy info",
+                details={
+                    "organism_name": organism_name,
+                    "error": str(e)
+                }
+            ) from e
+        raise

@@ -7,7 +7,7 @@ from orcid2taxid.shared.schemas import (
 )
 from orcid2taxid.grant.schemas.base import GrantRecord
 from orcid2taxid.publication.schemas.epmc import EpmcResponse
-from orcid2taxid.core.utils.date import parse_date
+from orcid2taxid.shared.utils import parse_date
 # from orcid2taxid.core.models.extraction_schemas import PaperClassificationMetadata
 # from orcid2taxid.core.models.integrations.ncbi_schemas import OrganismMention
 

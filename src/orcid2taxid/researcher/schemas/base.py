@@ -9,7 +9,7 @@ from orcid2taxid.shared.schemas import (
 from orcid2taxid.grant.schemas.base import GrantRecord
 from orcid2taxid.publication.schemas import PublicationRecord
 from orcid2taxid.researcher.schemas.orcid import OrcidProfile, OrcidAffiliation, OrcidWorks
-from orcid2taxid.core.utils.date import parse_date
+from orcid2taxid.shared.utils import parse_date
 
 class CustomerProfile(ResearcherProfile):
     """Core customer profile information"""    
@@ -18,7 +18,7 @@ class CustomerProfile(ResearcherProfile):
     
     def __post_init__(self):
         if not self.researcher_id.orcid:  # pylint: disable=no-member
-            if not self.researcher_id.emails:
+            if not self.researcher_id.emails:  # pylint: disable=no-member
                 raise ValueError("Either ORCID or email must be provided to uniquely identify a customer")
     
     @classmethod

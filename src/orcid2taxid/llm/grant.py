@@ -1,9 +1,9 @@
 from typing import List, Dict
 from pathlib import Path
-from orcid2taxid.grants.schemas import GrantRecord
-from orcid2taxid.core.utils.llm import LLMClient
+from orcid2taxid.grant.schemas import GrantRecord
+from orcid2taxid.llm.integrations.llm import LLMClient
 from orcid2taxid.core.utils.data import render_prompt
-from orcid2taxid.core.utils.llm import extract_tagged_content
+from orcid2taxid.llm.integrations.llm import extract_tagged_content
 
 PROMPT_DIR = Path(__file__).parent / "prompts"
 DATA_DIR = Path(__file__).parent / "data"

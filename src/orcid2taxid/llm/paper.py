@@ -2,9 +2,9 @@ from typing import List, Dict, Type, get_type_hints, get_args
 from pathlib import Path
 import asyncio
 from orcid2taxid.core.models.customer import OrganismMention, PublicationRecord, PaperClassificationMetadata
-from orcid2taxid.core.utils.llm import LLMClient
+from orcid2taxid.llm.integrations.llm import LLMClient
 from orcid2taxid.core.utils.data import load_yaml_data, render_prompt
-from orcid2taxid.core.utils.llm import extract_tagged_content
+from orcid2taxid.llm.integrations.llm import extract_tagged_content
 import json
 
 PROMPT_DIR = Path(__file__).parent / "prompts"

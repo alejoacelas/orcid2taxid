@@ -1,7 +1,14 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict, AliasPath, field_validator
 from typing import Optional, List, Dict, Any
 
-class NCBITaxonomyInfo(BaseModel):
+class NCBIBaseModel(BaseModel):
+    """Base model for all NCBI models with shared config"""
+    model_config = ConfigDict(
+        populate_by_name=True,
+        extra='allow'  # Allow extra fields as the API response is complex
+    )
+
+class NCBITaxonomyInfo(NCBIBaseModel):
     """Represents comprehensive taxonomy information from NCBI"""
     taxid: int = Field(description="NCBI Taxonomy ID")
     scientific_name: str = Field(description="Scientific name of the organism")
@@ -17,65 +24,49 @@ class NCBITaxonomyInfo(BaseModel):
     host_taxid: Optional[int] = Field(None, description="TaxID of the primary host if parasitic/pathogenic")
     host_scientific_name: Optional[str] = Field(None, description="Scientific name of the primary host")
 
-class NCBISearchResult(BaseModel):
+    @field_validator('lineage', mode='before')
+    @classmethod
+    def parse_lineage(cls, v: Optional[str]) -> Optional[List[str]]:
+        """Convert lineage string to list if it's a string"""
+        if isinstance(v, str):
+            return [item.strip() for item in v.split(';')]
+        return v
+
+    @field_validator('host_taxid', mode='before')
+    @classmethod
+    def parse_host_taxid(cls, v: Optional[str]) -> Optional[int]:
+        """Convert host_taxid to int if it's a string"""
+        if isinstance(v, str):
+            try:
+                return int(v)
+            except ValueError:
+                return None
+        return v
+
+class NCBISearchResult(NCBIBaseModel):
     """Represents the search result from NCBI esearch endpoint"""
     count: int = Field(description="Number of results found")
-    ret_max: int = Field(description="Maximum number of results returned")
-    ret_start: int = Field(description="Starting position of results")
-    id_list: List[str] = Field(description="List of taxonomy IDs found")
-    
-    @classmethod
-    def from_response(cls, data: Dict[str, Any]) -> "NCBISearchResult":
-        """Create from NCBI esearch response"""
-        esearch_result = data.get("esearchresult", {})
-        return cls(
-            count=int(esearch_result.get("count", 0)),
-            ret_max=int(esearch_result.get("retmax", 0)),
-            ret_start=int(esearch_result.get("retstart", 0)),
-            id_list=esearch_result.get("idlist", [])
-        )
+    ret_max: int = Field(description="Maximum number of results returned", validation_alias=AliasPath('retmax'))
+    ret_start: int = Field(description="Starting position of results", validation_alias=AliasPath('retstart'))
+    id_list: List[str] = Field(description="List of taxonomy IDs found", validation_alias=AliasPath('idlist'))
 
-class NCBITaxRecord(BaseModel):
+class NCBITaxRecord(NCBIBaseModel):
     """Represents a taxonomy record from NCBI esummary endpoint"""
     uid: str = Field(description="Taxonomy ID")
-    scientific_name: str = Field(alias="scientificname", description="Scientific name")
+    scientific_name: str = Field(description="Scientific name", validation_alias=AliasPath('scientificname'))
     rank: Optional[str] = Field(None, description="Taxonomic rank")
     division: Optional[str] = Field(None, description="Taxonomic division")
-    common_name: Optional[str] = Field(None, alias="commonname", description="Common name")
+    common_name: Optional[str] = Field(None, description="Common name", validation_alias=AliasPath('commonname'))
     lineage: Optional[str] = Field(None, description="Lineage as a string")
     synonym: Optional[List[str]] = Field(None, description="Synonyms")
-    genetic_code: Optional[str] = Field(None, alias="gencode", description="Genetic code")
-    mito_genetic_code: Optional[str] = Field(None, alias="mitogenome", description="Mitochondrial genetic code")
-    is_parasite: Optional[bool] = Field(None, alias="parasite", description="Is parasite")
-    is_pathogen: Optional[bool] = Field(None, alias="pathogen", description="Is pathogen")
+    genetic_code: Optional[str] = Field(None, description="Genetic code", validation_alias=AliasPath('gencode'))
+    mito_genetic_code: Optional[str] = Field(None, description="Mitochondrial genetic code", validation_alias=AliasPath('mitogenome'))
+    is_parasite: Optional[bool] = Field(None, description="Is parasite", validation_alias=AliasPath('parasite'))
+    is_pathogen: Optional[bool] = Field(None, description="Is pathogen", validation_alias=AliasPath('pathogen'))
     host_taxid: Optional[str] = Field(None, description="Host taxonomy ID")
-    host_scientific_name: Optional[str] = Field(None, alias="host_scientificname", description="Host scientific name")
-    
-    class Config:
-        populate_by_name = True
+    host_scientific_name: Optional[str] = Field(None, description="Host scientific name", validation_alias=AliasPath('host_scientificname'))
 
-class NCBITaxonomyResponse(BaseModel):
+class NCBITaxonomyResponse(NCBIBaseModel):
     """Represents the full response from NCBI esummary endpoint"""
     uids: List[str] = Field(description="List of taxonomy IDs")
-    result: Dict[str, NCBITaxRecord] = Field(description="Taxonomy records indexed by ID")
-    
-    @classmethod
-    def from_response(cls, data: Dict[str, Any]) -> "NCBITaxonomyResponse":
-        """Create from NCBI esummary response"""
-        result = data.get("result", {})
-        uids = result.get("uids", [])
-        
-        # Create a new dictionary with properly validated NCBITaxRecord objects
-        tax_records = {}
-        for uid in uids:
-            if str(uid) in result:
-                try:
-                    tax_records[str(uid)] = NCBITaxRecord.model_validate(result[str(uid)])
-                except Exception:
-                    # Skip invalid records
-                    continue
-        
-        return cls(
-            uids=uids,
-            result=tax_records
-        ) 
+    result: Dict[str, NCBITaxRecord] = Field(description="Taxonomy records indexed by ID") 

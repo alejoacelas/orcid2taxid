@@ -1,10 +1,22 @@
-from pydantic import BaseModel, Field
-from typing import Optional
+from pydantic import Field
+from typing import Optional, List
+from orcid2taxid.llm.schemas.organism_mention import OrganismMention
+from orcid2taxid.organism.schemas.ncbi import NCBITaxonomyInfo
 
-class OrganismMention(BaseModel):
-    """Represents a mention of an organism in text"""
-    original_name: str = Field(description="Original organism name as found in text")
-    searchable_name: str = Field(description="Searchable organism name for NCBI database")
-    context: Optional[str] = Field(description="Context in which the organism was mentioned")
-    confidence: Optional[float] = Field(description="Confidence score of the extraction")
-    justification: Optional[str] = Field(description="Explanation of why this organism was included") 
+class OrganismMentionWithTaxid(OrganismMention):
+    """Represents a mention of an organism in text with additional taxid information"""
+    taxid: Optional[int] = Field(description="NCBI Taxonomy ID")
+    scientific_name: Optional[str] = Field(description="Scientific name of the organism")
+    rank: Optional[str] = Field(description="Taxonomic rank of the organism")
+    lineage: Optional[List[str]] = Field(description="Full taxonomic lineage of the organism")
+
+    @classmethod
+    def from_taxonomy_info(cls, mention: OrganismMention, taxonomy_info: NCBITaxonomyInfo) -> "OrganismMentionWithTaxid":
+        """Create an OrganismMentionWithTaxid from an OrganismMention and NCBITaxonomyInfo"""
+        return cls(
+            **mention.model_dump(),
+            taxid=taxonomy_info.taxid,
+            scientific_name=taxonomy_info.scientific_name,
+            rank=taxonomy_info.rank,
+            lineage=taxonomy_info.lineage
+        )

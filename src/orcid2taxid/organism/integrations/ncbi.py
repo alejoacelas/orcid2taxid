@@ -15,6 +15,8 @@ from orcid2taxid.organism.exceptions import (
     OrganismNotFoundError
 )
 from orcid2taxid.core.logging import get_logger, log_event
+from orcid2taxid.llm.schemas.organism_mention import OrganismMention
+from orcid2taxid.organism.schemas.base import OrganismMentionWithTaxid
 
 # Load environment variables
 load_dotenv()
@@ -100,7 +102,7 @@ async def fetch_taxid_search(
         logger.debug("Search response: %s", search_data)
         
         try:
-            search_result = NCBISearchResult.from_response(search_data)
+            search_result = NCBISearchResult.model_validate(search_data)
             
             # Check if we got any results
             if not search_result.id_list:
@@ -158,7 +160,7 @@ async def fetch_taxonomy_record(
         fetch_data = await fetch_ncbi_data('esummary', fetch_params, config)
         
         try:
-            return NCBITaxonomyResponse.from_response(fetch_data)
+            return NCBITaxonomyResponse.model_validate(fetch_data)
             
         except ValidationError as e:
             raise NCBIValidationError(
@@ -184,23 +186,23 @@ async def fetch_taxonomy_record(
 
 @log_event(__name__)
 async def get_taxonomy_info(
-    organism_name: str,
+    organism_mention: OrganismMention,
     config: Optional[NCBIConfig] = None
-) -> NCBITaxonomyInfo:
+) -> OrganismMentionWithTaxid:
     """
     Get comprehensive taxonomy information for an organism
     
-    :param organism_name: Name of the organism to lookup
+    :param organism_mention: OrganismMention object containing the organism information
     :param config: Optional API configuration
-    :return: NCBITaxonomyInfo object with taxonomy details
+    :return: OrganismMentionWithTaxid object with taxonomy details
     :raises: NCBIAPIError, NCBIValidationError, OrganismNotFoundError
     """
-    if not organism_name:
+    if not organism_mention.name:
         raise ValueError("Organism name cannot be empty")
     
     try:
         # First search for the taxonomy ID
-        search_result = await fetch_taxid_search(organism_name, config)
+        search_result = await fetch_taxid_search(organism_mention.name, config)
         
         # Get the first (most relevant) taxonomy ID
         taxid = search_result.id_list[0]
@@ -212,7 +214,7 @@ async def get_taxonomy_info(
             raise OrganismNotFoundError(
                 message=f"No taxonomy record found for ID '{taxid}'",
                 details={
-                    "organism_name": organism_name,
+                    "organism_name": organism_mention.name,
                     "taxid": taxid
                 }
             )
@@ -223,48 +225,24 @@ async def get_taxonomy_info(
             raise OrganismNotFoundError(
                 message=f"No taxonomy record found for ID '{taxid}'",
                 details={
-                    "organism_name": organism_name,
+                    "organism_name": organism_mention.name,
                     "taxid": taxid
                 }
             )
         
-        # Convert lineage string to list if available
-        lineage_list = None
-        if tax_record.lineage:
-            lineage_list = [item.strip() for item in tax_record.lineage.split(';')]
-        
-        # Convert host_taxid to int if available
-        host_taxid = None
-        if tax_record.host_taxid:
-            try:
-                host_taxid = int(tax_record.host_taxid)
-            except ValueError:
-                pass
-        
         # Create NCBITaxonomyInfo object
-        return NCBITaxonomyInfo(
-            taxid=int(taxid),
-            scientific_name=tax_record.scientific_name,
-            rank=tax_record.rank,
-            division=tax_record.division,
-            common_name=tax_record.common_name,
-            lineage=lineage_list,
-            synonyms=tax_record.synonym,
-            genetic_code=tax_record.genetic_code,
-            mito_genetic_code=tax_record.mito_genetic_code,
-            is_parasite=tax_record.is_parasite,
-            is_pathogen=tax_record.is_pathogen,
-            host_taxid=host_taxid,
-            host_scientific_name=tax_record.host_scientific_name
-        )
+        taxonomy_info = NCBITaxonomyInfo.model_validate(tax_record.model_dump())
+        
+        # Convert to OrganismMentionWithTaxid
+        return OrganismMentionWithTaxid.from_taxonomy_info(organism_mention, taxonomy_info)
         
     except Exception as e:
         if not isinstance(e, (NCBIAPIError, NCBIValidationError, OrganismNotFoundError)):
-            logger.error("Error getting taxonomy info for %s: %s", organism_name, str(e))
+            logger.error("Error getting taxonomy info for %s: %s", organism_mention.name, str(e))
             raise NCBIAPIError(
                 "Failed to get taxonomy info",
                 details={
-                    "organism_name": organism_name,
+                    "organism_name": organism_mention.name,
                     "error": str(e)
                 }
             ) from e

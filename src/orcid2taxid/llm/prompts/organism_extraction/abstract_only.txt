@@ -9,7 +9,8 @@ First, review the list of pandemic potential pathogens:
 Next, examine the title and abstract of the scientific paper:
 
 <paper_content>
-{{paper_content}}
+Title: {{ PublicationRecord.title }}
+Abstract: {{ PublicationRecord.abstract }}
 </paper_content>
 
 Please follow these instructions carefully:
@@ -42,25 +43,8 @@ Before providing your final output, break down your thought process for each ste
 
 This structured analysis will help ensure a thorough interpretation of the data.
 
-After your analysis, provide your output in the following XML structure:
+After your analysis, provide your response in the specified JSON structure.
 
-<output>
-  <organism>
-    <name>[Organism name]</name>
-    <on_list>[Yes/No]</on_list>
-    <work_type>[Direct wet-lab/Computational/Undetermined]</work_type>
-    <searchable_term>[If different from name, otherwise leave blank]</searchable_term>
-    <evidence>[Text snippet, max 140 characters]</evidence>
-  </organism>
-  <!-- Repeat <organism> block for each identified organism -->
-  <justification>[One-sentence summary explaining your findings]</justification>
-</output>
-
-If no organisms from the pathogen list were directly worked with in the paper, use this structure instead:
-
-<output>
-  <no_organisms_found>No organisms from the provided list were directly worked with in this study.</no_organisms_found>
-  <justification>[One-sentence explanation for why no organisms were identified]</justification>
-</output>
+If no organisms from the pathogen list were directly worked with in the paper, return an empty list of organisms.
 
 Remember to be thorough in your analysis and precise in your output.

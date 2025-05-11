@@ -15,6 +15,40 @@ class ResearcherID(BaseModel):
     orcid: Optional[str] = None
     emails: List[EmailInfo] = Field(default_factory=list)
     
+    def is_same_person(self, other: 'ResearcherID') -> bool:
+        """
+        Check if this ResearcherID represents the same person as another ResearcherID.
+        
+        Args:
+            other: Another ResearcherID instance to compare with
+            
+        Returns:
+            bool: True if the IDs represent the same person, False otherwise
+        """
+        # Match by ORCID if available
+        if self.orcid and other.orcid and self.orcid == other.orcid:
+            return True
+            
+        # Match by email if available
+        if self.emails and other.emails:
+            self_emails = {email.address for email in self.emails}
+            other_emails = {email.address for email in other.emails}
+            if self_emails.intersection(other_emails):
+                return True
+                
+        # Match by name if available
+        if self.credit_name and other.credit_name and self.credit_name == other.credit_name:
+            return True
+            
+        # Match by given/family name if available
+        if (self.given_name and self.family_name and 
+            other.given_name and other.family_name and
+            self.given_name == other.given_name and 
+            self.family_name == other.family_name):
+            return True
+            
+        return False
+
 class ExternalReference(BaseModel):
     """Represents an external reference"""
     url: str
@@ -25,7 +59,7 @@ class ResearcherDescription(BaseModel):
     """Represents a person's description"""
     text: str = ""
     
-    def add_section(self, title: str, text: str) -> None:
+    def extend(self, title: str, text: str) -> None:
         """Add a section to the description"""
         self.text += f"## {title}\n{text}\n\n"
     

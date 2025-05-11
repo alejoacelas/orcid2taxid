@@ -4,7 +4,7 @@ import pytest
 from orcid2taxid.researcher.integrations.orcid import (
     OrcidConfig,
     fetch_orcid_data,
-    get_profile,
+    get_orcid_profile,
     parse_affiliations
 )
 from orcid2taxid.researcher.schemas.base import CustomerProfile
@@ -52,7 +52,7 @@ async def test_orcid_profile_parsing():
     config = OrcidConfig()
     
     # Fetch and parse profile
-    profile = await get_profile(TEST_ORCID_ID, config)
+    profile = await get_orcid_profile(TEST_ORCID_ID, config)
     
     # Save parsed profile if it doesn't exist
     profile_path = ORCID_RESPONSES_DIR / f"parsed_profile_{TEST_ORCID_ID}.json"

@@ -43,7 +43,7 @@ def load_instructor_client(model: str = "gpt-4-turbo-preview") -> instructor.Ins
     elif provider == "ANTHROPIC":
         client = instructor.from_anthropic(Anthropic(api_key=api_key))
     elif provider == "GEMINI":
-        client = instructor.from_gemini(genai.Client(api_key=api_key))
+        client = instructor.from_genai(genai.Client(api_key=api_key))
     else:
         raise ValueError(f"Unsupported provider: {provider}")
 

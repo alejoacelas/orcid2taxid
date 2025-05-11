@@ -1,15 +1,15 @@
-from typing import List, Optional, Literal
+from typing import List, Literal
 from pydantic import BaseModel, Field
 
-class OrganismMention(BaseModel):
+class OrganismMentionLLM(BaseModel):
     """Model for a single organism found in the paper."""
     name: str = Field(..., description="Original name of the organism as found in the text")
-    on_list: str = Field(..., description="Whether the organism is on the provided pathogen list (Yes/No)")
+    controlled_agent: Literal["Yes", "No"] = Field(..., description="Whether the organism is on the provided controlled agent list")
     work_type: Literal["Direct wet-lab", "Computational", "Undetermined"] = Field(..., description="Type of work done with the organism")
-    searchable_term: Optional[str] = Field(None, description="Searchable term for NCBI database if different from name")
-    evidence: str = Field(..., description="Text snippet providing evidence of organism being worked with (max 140 chars)")
+    searchable_term: str = Field(..., description="Searchable term for NCBI database if different from name")
+    quote: str = Field(..., description="Publication quote providing evidence of organism being worked with (max 140 chars)")
 
-class PublicationOrganisms(BaseModel):
+class OrganismMentionListLLM(BaseModel):
     """Model for the complete organism extraction response."""
-    organisms: List[OrganismMention] = Field(default_factory=list, description="List of organisms found in the paper")
+    organisms: List[OrganismMentionLLM] = Field(default_factory=list, description="List of organisms found in the paper")
     justification: str = Field(..., description="One-sentence summary explaining the findings")

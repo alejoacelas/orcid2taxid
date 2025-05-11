@@ -4,19 +4,17 @@ import httpx
 from pydantic import BaseModel, Field, ValidationError
 from dotenv import load_dotenv
 
-from orcid2taxid.organism.schemas.ncbi import (
-    NCBITaxonomyInfo,
+from orcid2taxid.taxonomy.schemas.ncbi import (
     NCBISearchResult,
     NCBITaxonomyResponse
 )
-from orcid2taxid.organism.exceptions import (
+from orcid2taxid.taxonomy.exceptions import (
     NCBIAPIError,
     NCBIValidationError,
     OrganismNotFoundError
 )
 from orcid2taxid.core.logging import get_logger, log_event
-from orcid2taxid.llm.schemas.organism_mention import OrganismMention
-from orcid2taxid.organism.schemas.base import OrganismMentionWithTaxid
+from orcid2taxid.taxonomy.schemas.base import OrganismTaxonomy
 
 # Load environment variables
 load_dotenv()
@@ -186,23 +184,23 @@ async def fetch_taxonomy_record(
 
 @log_event(__name__)
 async def get_taxonomy_info(
-    organism_mention: OrganismMention,
+    organism_name: str,
     config: Optional[NCBIConfig] = None
-) -> OrganismMentionWithTaxid:
+) -> OrganismTaxonomy:
     """
     Get comprehensive taxonomy information for an organism
     
-    :param organism_mention: OrganismMention object containing the organism information
+    :param organism_name: The name of the organism to get taxonomy information for
     :param config: Optional API configuration
-    :return: OrganismMentionWithTaxid object with taxonomy details
+    :return: OrganismTaxonomy object with taxonomy details
     :raises: NCBIAPIError, NCBIValidationError, OrganismNotFoundError
     """
-    if not organism_mention.name:
+    if not organism_name:
         raise ValueError("Organism name cannot be empty")
     
     try:
         # First search for the taxonomy ID
-        search_result = await fetch_taxid_search(organism_mention.name, config)
+        search_result = await fetch_taxid_search(organism_name, config)
         
         # Get the first (most relevant) taxonomy ID
         taxid = search_result.id_list[0]
@@ -214,7 +212,7 @@ async def get_taxonomy_info(
             raise OrganismNotFoundError(
                 message=f"No taxonomy record found for ID '{taxid}'",
                 details={
-                    "organism_name": organism_mention.name,
+                    "organism_name": organism_name,
                     "taxid": taxid
                 }
             )
@@ -225,24 +223,21 @@ async def get_taxonomy_info(
             raise OrganismNotFoundError(
                 message=f"No taxonomy record found for ID '{taxid}'",
                 details={
-                    "organism_name": organism_mention.name,
+                    "organism_name": organism_name,
                     "taxid": taxid
                 }
             )
         
-        # Create NCBITaxonomyInfo object
-        taxonomy_info = NCBITaxonomyInfo.model_validate(tax_record.model_dump())
-        
-        # Convert to OrganismMentionWithTaxid
-        return OrganismMentionWithTaxid.from_taxonomy_info(organism_mention, taxonomy_info)
+        # Create OrganismTaxonomy directly from the tax_record using the specialized method
+        return OrganismTaxonomy.from_ncbi_taxonomy_record(tax_record)
         
     except Exception as e:
         if not isinstance(e, (NCBIAPIError, NCBIValidationError, OrganismNotFoundError)):
-            logger.error("Error getting taxonomy info for %s: %s", organism_mention.name, str(e))
+            logger.error("Error getting taxonomy info for %s: %s", organism_name, str(e))
             raise NCBIAPIError(
                 "Failed to get taxonomy info",
                 details={
-                    "organism_name": organism_mention.name,
+                    "organism_name": organism_name,
                     "error": str(e)
                 }
             ) from e

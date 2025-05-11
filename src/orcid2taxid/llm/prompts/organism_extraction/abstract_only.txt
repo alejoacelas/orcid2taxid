@@ -43,7 +43,7 @@ Before providing your final output, break down your thought process for each ste
 
 This structured analysis will help ensure a thorough interpretation of the data.
 
-After your analysis, provide your response in the specified JSON structure.
+After your analysis, provide your response using the specified JSON schema.
 
 If no organisms from the pathogen list were directly worked with in the paper, return an empty list of organisms.
 

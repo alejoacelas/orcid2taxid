@@ -8,9 +8,7 @@ from orcid2taxid.shared.schemas import (
 from orcid2taxid.grant.schemas.base import GrantRecord
 from orcid2taxid.publication.schemas.epmc import EpmcResponse
 from orcid2taxid.shared.utils import parse_date
-# from orcid2taxid.core.models.extraction_schemas import PaperClassificationMetadata
-# from orcid2taxid.core.models.integrations.ncbi_schemas import OrganismMention
-
+from orcid2taxid.llm.schemas.base import OrganismMention
 
 class PublicationRecord(DatetimeSerializableBaseModel):
     """Represents metadata for a scientific publication"""
@@ -29,8 +27,7 @@ class PublicationRecord(DatetimeSerializableBaseModel):
     subjects: List[str] = Field(default_factory=list)
     grants: List[GrantRecord] = Field(default_factory=list)
     
-    # organisms: List[OrganismMention] = Field(default_factory=list)
-    # classification: Optional[PaperClassificationMetadata] = None
+    organisms: List[OrganismMention] = Field(default_factory=list)
 
     @classmethod
     def from_epmc_response(cls, epmc_response: EpmcResponse) -> List['PublicationRecord']:

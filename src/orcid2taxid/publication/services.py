@@ -1,119 +1,38 @@
-import asyncio
 from orcid2taxid.publication.schemas import PublicationRecord
-from orcid2taxid.analysis.extraction.paper import PaperExtractor
-from orcid2taxid.organism.integrations.ncbi import TaxIDLookup
+from orcid2taxid.llm.extractors.organism_mention import extract_organisms_from_publication
+from orcid2taxid.taxonomy.integrations import get_taxonomy_info
+from orcid2taxid.core.logging import get_logger, log_event
 
-# Singleton instances
-_paper_extractor = PaperExtractor()
-_taxid_lookup = TaxIDLookup()
+logger = get_logger(__name__)
 
-async def get_organisms_async(paper: PublicationRecord) -> PublicationRecord:
+@log_event(__name__)
+async def collect_publication_organisms(
+    publication: PublicationRecord,
+    include_taxonomy: bool = True
+) -> PublicationRecord:
     """
-    Extract organisms from a paper's abstract asynchronously.
+    Process a publication to extract organisms and add taxonomy information.
     
-    :param paper: The paper metadata
-    :return: Updated paper with organisms field populated
-    """
-    if not paper.abstract:
-        # Skip papers without abstracts
-        return paper
+    This function extracts organisms from the publication using an LLM
+    and then adds taxonomy information for each organism if requested.
+    
+    Args:
+        publication: The publication record to process
+        include_taxonomy: Whether to include taxonomy information (default: True)
         
-    paper.organisms = await _paper_extractor.extract_organisms_from_abstract(paper)
-    return paper
-
-def get_organisms(paper: PublicationRecord) -> PublicationRecord:
+    Returns:
+        PublicationRecord: The updated publication record with organisms and taxonomy
     """
-    Extract organisms from a paper's abstract.
-    This is a thin wrapper around get_organisms_async.
+    if not publication.abstract:
+        logger.warning("Publication has no abstract, skipping organism extraction")
+        return publication
     
-    :param paper: The paper metadata
-    :return: Updated paper with organisms field populated
-    """
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    try:
-        return loop.run_until_complete(get_organisms_async(paper))
-    finally:
-        loop.close()
-
-async def get_classification_async(paper: PublicationRecord) -> PublicationRecord:
-    """
-    Classify a paper based on its abstract asynchronously.
+    organism_list = await extract_organisms_from_publication(publication)
+    publication.organisms = organism_list.organisms
     
-    :param paper: The paper metadata
-    :return: Updated paper with classification field populated
-    """
-    if not paper.abstract:
-        # Skip papers without abstracts
-        return paper
-        
-    paper.classification = await _paper_extractor.extract_classification_from_abstract(paper)
-    return paper
-
-def get_classification(paper: PublicationRecord) -> PublicationRecord:
-    """
-    Classify a paper based on its abstract.
-    This is a thin wrapper around get_classification_async.
+    if include_taxonomy and publication.organisms:
+        for organism in publication.organisms:
+            taxonomy_info = await get_taxonomy_info(organism.searchable_term)
+            organism.taxonomy = taxonomy_info
     
-    :param paper: The paper metadata
-    :return: Updated paper with classification field populated
-    """
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    try:
-        return loop.run_until_complete(get_classification_async(paper))
-    finally:
-        loop.close()
-
-async def get_taxonomy_info_async(paper: PublicationRecord) -> PublicationRecord:
-    """
-    Get taxonomy information for organisms in a paper asynchronously.
-    
-    :param paper: The paper metadata with organisms field populated
-    :return: Updated paper with taxonomy information added to organisms
-    """
-    if not paper.organisms:
-        return paper
-        
-    for organism in paper.organisms:
-        if not organism.taxonomy_info:  # Only get taxonomy info if not already present
-            tax_info = _taxid_lookup.get_taxid(organism.searchable_name)
-            if tax_info:
-                organism.taxonomy_info = tax_info
-                
-    return paper
-
-def get_taxonomy_info(paper: PublicationRecord) -> PublicationRecord:
-    """
-    Get taxonomy information for organisms in a paper.
-    This is a thin wrapper around get_taxonomy_info_async.
-    
-    :param paper: The paper metadata with organisms field populated
-    :return: Updated paper with taxonomy information added to organisms
-    """
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    try:
-        return loop.run_until_complete(get_taxonomy_info_async(paper))
-    finally:
-        loop.close()
-
-async def process_paper_async(paper: PublicationRecord) -> PublicationRecord:
-    """
-    Process a paper asynchronously by extracting organisms and classification in parallel.
-    
-    :param paper: The paper metadata to process
-    :return: Updated paper with organisms and classification
-    """
-    # Process paper using the async method
-    processed_paper = await _paper_extractor.process_paper(paper)
-    
-    # Get taxonomy info (currently sync)
-    processed_paper = await get_taxonomy_info_async(processed_paper)
-    
-    return processed_paper
-
-def find_full_text_url(paper: PublicationRecord) -> PublicationRecord:
-    """Find the full text URL for the paper using Unpaywall"""
-    # TODO: Implement Unpaywall integration
-    return paper 
+    return publication

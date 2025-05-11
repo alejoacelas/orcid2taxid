@@ -35,10 +35,10 @@ class CustomerProfile(ResearcherProfile):
         
         description = ResearcherDescription()
         if orcid_profile.biography:
-            description.add_section("ORCID Profile Biography", orcid_profile.biography)
+            description.extend("ORCID Profile Biography", orcid_profile.biography)
         if orcid_profile.keywords:
             keywords_content = [keyword.content for keyword in orcid_profile.keywords]
-            description.add_section("ORCID Profile Keywords", ", ".join(keywords_content))
+            description.extend("ORCID Profile Keywords", ", ".join(keywords_content))
         
         external_references = []
         for ext_id in orcid_profile.external_ids:
@@ -137,8 +137,8 @@ class CustomerProfile(ResearcherProfile):
                 
             if paper.organisms:  # Check if organisms list exists and is not empty
                 for organism in paper.organisms:
-                    if organism.taxonomy_info and organism.taxonomy_info.scientific_name:
-                        by_organism[organism.taxonomy_info.scientific_name].append(paper)
+                    if organism.taxonomy and organism.taxonomy.scientific_name:
+                        by_organism[organism.taxonomy.scientific_name].append(paper)
         return dict(by_organism)
 
     def get_grants_by_funder(self) -> Dict[str, List[GrantRecord]]:

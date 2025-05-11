@@ -1,5 +1,6 @@
 from typing import Dict, Any, Optional
 from pydantic import ValidationError
+from orcid2taxid.shared.exceptions.validation import ValidationErrorMixin
 
 class OrganismError(Exception):
     """Base exception for all organism-related errors"""
@@ -42,6 +43,11 @@ class NCBIValidationError(OrganismError):
             error_code="ncbi_validation_error",
             details=details
         )
+        self._validation_mixin = ValidationErrorMixin(validation_error)
+        
+    def __str__(self):
+        """Custom string representation to include detailed error information"""
+        return f"{self.message}\n{self._validation_mixin.format_validation_errors()}"
 
 class OrganismNotFoundError(OrganismError):
     """Raised when an organism cannot be found"""

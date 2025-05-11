@@ -1,6 +1,7 @@
 from typing import Any, Dict, Optional
 from fastapi import status
 from pydantic import ValidationError
+from orcid2taxid.shared.exceptions.validation import ValidationErrorMixin
 
 class LLMError(Exception):
     """Base exception for LLM-related errors."""
@@ -36,6 +37,7 @@ class LLMValidationError(LLMError):
         details = details or {}
         if validation_error:
             details["validation_errors"] = validation_error.errors()
+            self._validation_mixin = ValidationErrorMixin(validation_error)
         
         super().__init__(
             message=message,
@@ -43,6 +45,12 @@ class LLMValidationError(LLMError):
             status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
             details=details
         )
+    
+    def __str__(self):
+        """Custom string representation to include detailed error information"""
+        if hasattr(self, '_validation_mixin'):
+            return f"{self.message}\n{self._validation_mixin.format_validation_errors()}"
+        return self.message
 
 class LLMAPIError(LLMError):
     """Raised when there's an error communicating with the LLM API."""

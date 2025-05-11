@@ -92,7 +92,7 @@ def parse_affiliations(data: Dict[str, Any]) -> List[InstitutionalAffiliation]:
     return affiliations
 
 @log_event(__name__)
-async def get_profile(orcid_id: str, config: Optional[OrcidConfig] = None) -> CustomerProfile:
+async def get_orcid_profile(orcid_id: str, config: Optional[OrcidConfig] = None) -> CustomerProfile:
     """Fetch and parse researcher metadata from ORCID"""
     try:
         # Fetch all required data

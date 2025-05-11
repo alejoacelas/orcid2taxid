@@ -15,6 +15,11 @@ class ResearcherID(BaseModel):
     orcid: Optional[str] = None
     emails: List[EmailInfo] = Field(default_factory=list)
     
+    @property
+    def full_name(self) -> str:
+        """Get the full name by combining given_name and family_name"""
+        return f"{self.given_name} {self.family_name}"
+    
     def is_same_person(self, other: 'ResearcherID') -> bool:
         """
         Check if this ResearcherID represents the same person as another ResearcherID.

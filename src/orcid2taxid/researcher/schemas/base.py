@@ -137,7 +137,7 @@ class CustomerProfile(ResearcherProfile):
                 
             if paper.organisms:  # Check if organisms list exists and is not empty
                 for organism in paper.organisms:
-                    if organism.taxonomy and organism.taxonomy.scientific_name:
+                    if hasattr(organism, 'taxonomy') and organism.taxonomy and hasattr(organism.taxonomy, 'scientific_name') and organism.taxonomy.scientific_name:
                         by_organism[organism.taxonomy.scientific_name].append(paper)
         return dict(by_organism)
 
@@ -156,14 +156,14 @@ class CustomerProfile(ResearcherProfile):
             funder = grant.funder or "Unknown Funder"
             by_funder[funder].append(grant)
         
-        # Sort grants within each funder group by completeness
+        # Sort grants within each funder group by date (most recent first)
         for funder in by_funder:
             by_funder[funder] = sorted(
                 by_funder[funder],
                 key=lambda g: (
-                    bool(g.project_title and g.abstract_text),
-                    bool(g.project_title),
-                    bool(g.abstract_text)
+                    bool(g.title or g.abstract),
+                    g.start_date or datetime.min.date(),
+                    g.end_date or datetime.min.date()
                 ),
                 reverse=True
             )
@@ -202,7 +202,7 @@ class CustomerProfile(ResearcherProfile):
         # Group affiliations by institution
         by_institution = defaultdict(list)
         for affiliation in self.affiliations:
-            by_institution[affiliation.institution_name].append(affiliation)
+            by_institution[affiliation.institution].append(affiliation)
         
         # Sort affiliations within each institution by start date
         for institution in by_institution:

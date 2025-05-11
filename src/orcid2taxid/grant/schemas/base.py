@@ -106,8 +106,7 @@ class GrantRecord(DatetimeSerializableBaseModel):
             principal_investigators=principal_investigators,
             abstract=nih_project.abstract,
             keywords=terms,
-            award_type=nih_project.award_type,
+            award_type=nih_project.award_type or 'research',
             description=f"### Public Health Relevance: \n{nih_project.phr_text}",
             is_active=nih_project.is_active,
-            grant_type=nih_project.award_type or 'research',
         )

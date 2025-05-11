@@ -1,9 +1,10 @@
 from typing import Optional, List
 from datetime import datetime
-from pydantic import Field
+from pydantic import Field, field_validator
 from orcid2taxid.shared.schemas import (
     DatetimeSerializableBaseModel, ResearcherID
 )
+from orcid2taxid.shared.utils import ensure_datetime
 from orcid2taxid.grant.schemas.nih import NIHProject
 
 class GrantRecord(DatetimeSerializableBaseModel):
@@ -21,6 +22,12 @@ class GrantRecord(DatetimeSerializableBaseModel):
     # Temporal information
     start_date: Optional[datetime] = Field(None, description="Project start date")
     end_date: Optional[datetime] = Field(None, description="Project end date")
+    
+    # Validators to ensure datetime objects
+    @field_validator('start_date', 'end_date', mode='before')
+    @classmethod
+    def ensure_datetime_objects(cls, v):
+        return ensure_datetime(v)
     
     # Organization information
     recipient: Optional[str] = Field(None, description="Recipient organization")
@@ -40,6 +47,9 @@ class GrantRecord(DatetimeSerializableBaseModel):
     description: Optional[str] = Field(None, description="Project description")
     is_active: Optional[bool] = Field(None, description="Whether the grant is active")
     award_type: Optional[str] = Field(None, description="Type of award")
+    
+    # Source information
+    source_doi: Optional[str] = Field(None, description="DOI of the publication this grant was detected from")
 
     @classmethod
     def from_nih_project(cls, nih_project: NIHProject) -> "GrantRecord":

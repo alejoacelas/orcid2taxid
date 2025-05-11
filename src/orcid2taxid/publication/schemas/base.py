@@ -95,6 +95,7 @@ class PublicationRecord(DatetimeSerializableBaseModel):
                         grant_record = GrantRecord(
                             id=grant.grant_id,
                             funder=grant.agency,
+                            source_doi=result.doi  # Pass the publication's DOI to the grant record
                         )
                         grants.append(grant_record)
             

@@ -9,7 +9,7 @@ from orcid2taxid.shared.schemas import (
 from orcid2taxid.grant.schemas.base import GrantRecord
 from orcid2taxid.publication.schemas import PublicationRecord
 from orcid2taxid.researcher.schemas.orcid import OrcidProfile, OrcidAffiliation, OrcidWorks
-from orcid2taxid.shared.utils import parse_date
+from orcid2taxid.shared.utils import parse_date, ensure_datetime
 
 class CustomerProfile(ResearcherProfile):
     """Core customer profile information"""    
@@ -162,8 +162,8 @@ class CustomerProfile(ResearcherProfile):
                 by_funder[funder],
                 key=lambda g: (
                     bool(g.title or g.abstract),
-                    g.start_date or datetime.min.date(),
-                    g.end_date or datetime.min.date()
+                    ensure_datetime(g.start_date).date() if g.start_date else datetime.min.date(),
+                    ensure_datetime(g.end_date).date() if g.end_date else datetime.min.date()
                 ),
                 reverse=True
             )
@@ -208,7 +208,7 @@ class CustomerProfile(ResearcherProfile):
         for institution in by_institution:
             by_institution[institution] = sorted(
                 by_institution[institution],
-                key=lambda x: (x.start_date or datetime.min, x.end_date or datetime.max),
+                key=lambda x: (ensure_datetime(x.start_date) or datetime.min, ensure_datetime(x.end_date) or datetime.max),
                 reverse=True
             )
         

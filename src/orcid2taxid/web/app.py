@@ -11,6 +11,7 @@ from orcid2taxid.grant.schemas.base import GrantRecord
 
 from orcid2taxid.researcher.services import get_customer_profile, collect_customer_publications
 from orcid2taxid.publication.services import collect_publication_organisms
+from orcid2taxid.grant.services import find_grants
 from orcid2taxid.shared.schemas import ResearcherID
 
 # Custom hash functions for Pydantic models
@@ -82,7 +83,6 @@ def fetch_grants(researcher: CustomerProfile) -> CustomerProfile:
     Uses hash_researcher_metadata to prevent Streamlit from hashing the researcher object"""
     loop = asyncio.new_event_loop()
     try:
-        from orcid2taxid.grant.services import find_grants
         # Pass the researcher and max_results to find_grants
         return loop.run_until_complete(find_grants(researcher, max_results=50))
     finally:
@@ -361,6 +361,11 @@ def _display_grants_list(grants):
         if grant.year:
             st.markdown(f"**Fiscal Year:** {grant.year}")
         
+        # Display source DOI if available
+        if grant.source_doi:
+            st.markdown(f"**Source Publication DOI:** [doi:{grant.source_doi}](https://doi.org/{grant.source_doi})")
+        
+        # Add a divider between grants
         # Display abstract if available
         if grant.abstract:
             st.markdown("**Abstract:**")
@@ -373,7 +378,6 @@ def _display_grants_list(grants):
                                      if len(grant.keywords) > 20 else "")
             st.markdown(f"**Keywords:** {', '.join(keywords_to_show)} {extra_keyword_message}")
         
-        # Add a divider between grants
         if i < len(grants) - 1:
             st.markdown("---")
 

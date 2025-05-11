@@ -53,4 +53,23 @@ def parse_date(date_value: Union[str, datetime, date, Dict, None]) -> Optional[d
         return None
         
     except (ValueError, TypeError, AttributeError):
-        return None 
+        return None
+
+
+def ensure_datetime(date_value: Union[datetime, date, None]) -> Optional[datetime]:
+    """
+    Ensure a date value is a datetime object.
+    
+    Args:
+        date_value: A datetime, date, or None value
+        
+    Returns:
+        datetime object or None
+    """
+    if date_value is None:
+        return None
+    if isinstance(date_value, datetime):
+        return date_value
+    if isinstance(date_value, date):
+        return datetime.combine(date_value, datetime.min.time())
+    return None 

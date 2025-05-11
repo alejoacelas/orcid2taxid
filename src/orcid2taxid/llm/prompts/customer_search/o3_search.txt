@@ -1,0 +1,62 @@
+You're helping collect information for customer screening of flagged DNA synthesis orders. Around 5% of orders are flagged by our systems and the great majority of them are delivered. Search the web to gather more information about the following customer profile:
+
+<profile>
+Name: {{ customer_profile.researcher_id.given_name }} {{ customer_profile.researcher_id.family_name }}
+{% if customer_profile.researcher_id.orcid %}ORCID: {{ customer_profile.researcher_id.orcid }}{% endif %}
+
+{% if customer_profile.employments and customer_profile.employments|length > 0 %}
+Current Institution: 
+{% for employment in customer_profile.employments %}
+- {{ employment.institution }}{% if employment.department %}, {{ employment.department }}{% endif %}{% if employment.role %} ({{ employment.role }}){% endif %}
+{% endfor %}
+{% endif %}
+
+{% if customer_profile.description %}
+Research Interests: {{ customer_profile.description.text }}
+{% endif %}
+
+{% if customer_profile.publications and customer_profile.publications|length > 0 %}
+Recent Publications:
+{% for pub in customer_profile.publications[:5] %}
+- {{ pub.title }}{% if pub.journal_name %} ({{ pub.journal_name }}){% endif %}{% if pub.publication_date %} {{ pub.publication_date }}{% endif %}{% if pub.doi %} DOI: {{ pub.doi }}{% endif %}
+{% endfor %}
+{% endif %}
+</profile>
+
+In particular, provide information to answer the following questions, both for the customer and the institution(s) they work at:
+* What is the primary research focus or business area of the institution/customer?
+* What is the highest biosafety level (BSL) facility documented at the institution? If not explicitly stated, gather sources that could be used to infer it, such as from published research methodologies, safety protocols, or types of pathogens/agents they work with.
+* Has the institution/customer worked with any agents on the Federal Select Agent Program list, HHS/USDA overlap agents, or DURC agents of concern?
+
+And, specifically about the customer:
+
+* What is the customer's specific role and level of responsibility at their institution? If present, identify any evidence that they directly handle controlled biological agents, supervise others who do, or have regulatory authorization to access restricted materials.
+* Identify up to three of the customer's most significant research publications, patents, or technical outputs. Prioritize any work directly involving controlled biological agents or select agents. If no such work exists, select outputs that best demonstrate their technical capabilities, laboratory skills, and research focus.
+
+For each output, note the types of organisms or biological materials used, techniques employed, and any biosafety considerations mentioned.
+
+## Response Format
+
+Your response MUST follow this structured format to be properly parsed:
+
+1. For each question, provide a list of sources in table format with the following columns:
+   - URL: A link/embedded reference to a source that addresses the question
+   - Summary: A short summary of the information from the source that helps to answer the question
+   - Quote: A verbatim quote from the original source of at most 280 characters that best summarizes the source's relevant content
+
+2. For the highest BSL level, provide a clear statement like "Highest BSL: BSL-3" or "Highest BSL: Unknown"
+
+3. For controlled agents, provide a clear Yes/No/Unknown statement
+
+4. For the customer's role in handling controlled agents, provide a clear Yes/No/Unknown statement
+
+5. For significant research outputs, provide a structured list with:
+   - Title and URL
+   - Organisms/materials used (as a list)
+   - Techniques employed (as a list)
+   - Any biosafety considerations mentioned
+   - Brief summary
+
+6. Conclude with a brief overall summary of your findings
+
+This structured format is essential for proper parsing of your response into a machine-readable format.

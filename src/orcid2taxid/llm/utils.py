@@ -16,6 +16,7 @@ MODEL_PROVIDERS = {
     "claude-3-7-sonnet": "ANTHROPIC",
     "o3": "OPENAI",
     "o3-mini": "OPENAI",
+    "gpt-4o": "OPENAI",
     "gemini-2.0-flash": "GEMINI",
 }
 

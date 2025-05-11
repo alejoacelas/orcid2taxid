@@ -1,6 +1,7 @@
 from typing import List, Optional
 from pydantic import Field
 from orcid2taxid.llm.schemas.organism_mention import OrganismMentionLLM, OrganismMentionListLLM
+from orcid2taxid.llm.schemas.customer_search import CustomerSearchLLM
 from orcid2taxid.taxonomy.schemas.base import OrganismTaxonomy
 
 class OrganismMention(OrganismMentionLLM):
@@ -15,3 +16,10 @@ class OrganismMentionList(OrganismMentionListLLM):
             organisms=[OrganismMention(**organism.model_dump()) for organism in llm_response.organisms],
             justification=llm_response.justification
         )
+
+class CustomerSearch(CustomerSearchLLM):
+    """Extended model for customer search with additional functionality."""
+    
+    @classmethod
+    def from_llm_response(cls, llm_response: CustomerSearchLLM) -> "CustomerSearch":
+        return cls(**llm_response.model_dump())

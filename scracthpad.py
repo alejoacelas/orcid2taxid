@@ -1,4 +1,23 @@
 # %%
+
+from orcid2taxid.llm.extractors.customer_search import search_customer_information
+from orcid2taxid.researcher.services import get_customer_profile
+from orcid2taxid.shared.schemas import ResearcherID
+
+customer_id = ResearcherID(
+    given_name="Adib",
+    family_name="Hasan",
+    orcid="0009-0009-2183-7559"
+)
+customer = await get_customer_profile(customer_id)
+search_result = await search_customer_information(customer)
+
+# %%
+
+print(search_result.model_dump_json(indent=2))
+
+
+# %%
 from orcid2taxid.publication.integrations.epmc import get_epmc_publications_by_orcid
 from orcid2taxid.llm.extractors.organism_mention import extract_organisms_from_publication
 

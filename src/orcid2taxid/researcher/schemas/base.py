@@ -89,7 +89,6 @@ class CustomerProfile(ResearcherProfile):
             sources = [summary.source for summary in summaries if summary.source]
         
             # Find DOI from external IDs
-            print(work.external_ids)
             doi = next((ext_id.value for ext_id in work.external_ids if ext_id.name == 'doi'), None)
                 
             # Create publication record

@@ -23,9 +23,9 @@ async def extract_organisms_from_publication(publication: PublicationRecord) -> 
         # Initialize client and load prompt
         model = "gemini-2.0-flash"
         client = load_instructor_client(model)
-        prompt = load_prompt("organism_extraction/abstract_only.txt")
+        prompt = load_prompt("organism_mention/abstract_only.txt")
         context = {
-            "pathogen_list": load_prompt("organism_extraction/pathogen_list.txt"),
+            "pathogen_list": load_prompt("organism_mention/pathogen_list.txt"),
             "PublicationRecord": publication.model_dump()
         }
        

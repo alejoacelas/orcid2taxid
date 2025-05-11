@@ -1,17 +1,16 @@
-pyyaml
-requests
-pytest
-ipykernel
-anthropic
-google-genai
-python-dotenv
-ipykernel
-aiohttp
-aiolimiter
-pytest-asyncio
-fastapi
-uvicorn
-pydantic>=2.0.0
-instructor[openai, anthropic, google-genai]
-streamlit
+PyYAML==6.0.2
+requests==2.32.3
+pytest==8.3.5
+ipykernel==6.29.5
+anthropic==0.48.0
+google-genai==1.8.0
+python-dotenv==1.0.1
+aiohttp==3.11.14
+aiolimiter==1.2.1
+pytest-asyncio==0.26.0
+fastapi==0.115.11
+uvicorn==0.34.0
+pydantic==2.10.6
+instructor==1.7.9
+streamlit==1.43.2
 -e .

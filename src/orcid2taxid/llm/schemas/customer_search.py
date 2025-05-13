@@ -23,25 +23,23 @@ class CustomerSearchLLM(BaseModel):
     """Model for the complete customer search response."""
     # Institution/customer information
     research_focus_sources: List[SourceInformation] = Field(
-        ..., 
+        ...,
         description="Sources about the primary research focus or business area"
     )
-    
     biosafety_level_sources: List[SourceInformation] = Field(
-        ..., 
+        ...,
         description="Sources about the highest biosafety level (BSL) facility documented"
     )
     highest_bsl: Optional[str] = Field(
-        None, 
+        ...,
         description="Highest biosafety level identified (e.g., 'BSL-1', 'BSL-2', 'BSL-3', 'BSL-4', or 'Unknown')"
     )
-    
     controlled_agents_sources: List[SourceInformation] = Field(
-        ..., 
+        ...,
         description="Sources about work with agents on control lists"
     )
     has_worked_with_controlled_agents: Literal["Yes", "No", "Unknown"] = Field(
-        ..., 
+        ...,
         description="Whether the institution/customer has worked with controlled agents"
     )
     

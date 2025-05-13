@@ -18,13 +18,14 @@ MODEL_PROVIDERS = {
     "o3-mini": "OPENAI",
     "gpt-4o": "OPENAI",
     "gemini-2.0-flash": "GEMINI",
+    "gemini-2.5-pro-preview-05-06": "GEMINI",
 }
 
-def load_instructor_client(model: str = "gpt-4-turbo-preview") -> instructor.Instructor:
+def load_instructor_client(model: str = "gemini-2.0-flash") -> instructor.Instructor:
     """
     Initialize and return an Instructor client configured for the specified model.
     
-    :param model: The model name to use (default: gpt-4-turbo-preview)
+    :param model: The model name to use (default: gemini-2.0-flash)
     :return: Configured Instructor client
     :raises: ValueError if model is not supported or API key is not set
     """

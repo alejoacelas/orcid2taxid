@@ -9,8 +9,8 @@ class EmailInfo(BaseModel):
 
 class ResearcherID(BaseModel):
     """Represents a person's ID with required contact information"""
-    given_name: str
-    family_name: str
+    given_name: Optional[str] = None
+    family_name: Optional[str] = None
     credit_name: Optional[str] = None
     orcid: Optional[str] = None
     emails: List[EmailInfo] = Field(default_factory=list)

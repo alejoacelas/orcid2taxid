@@ -1,6 +1,5 @@
 import asyncio
 import base64
-from datetime import datetime
 from pathlib import Path
 
 import streamlit as st
@@ -54,11 +53,7 @@ def hash_researcher_metadata(researcher: CustomerProfile) -> tuple:
 @st.cache_data()
 def fetch_researcher_by_orcid(orcid: str) -> CustomerProfile:
     """Cached function to fetch basic researcher metadata"""
-    customer_id = ResearcherID(
-        orcid=orcid,
-        given_name="",
-        family_name="",
-    )
+    customer_id = ResearcherID(orcid=orcid)
     loop = asyncio.new_event_loop()
     try:
         return loop.run_until_complete(get_customer_profile(customer_id))
@@ -98,21 +93,6 @@ def extract_organisms_from_paper(paper: PublicationRecord) -> PublicationRecord:
         return loop.run_until_complete(collect_publication_organisms(paper))
     finally:
         loop.close()
-
-# @st.cache_data(hash_funcs={PublicationRecord: hash_paper_metadata})
-# def classify_paper(paper: PublicationRecord) -> PublicationRecord:
-#     """Cached function to classify a paper
-    
-#     Uses underscore prefix to prevent Streamlit from hashing the paper object"""
-#     return get_classification(paper)
-
-# @st.cache_data(hash_funcs={PublicationRecord: hash_paper_metadata})
-# def get_taxonomy(paper: PublicationRecord) -> PublicationRecord:
-#     """Cached function to get taxonomy info for a paper
-    
-#     Uses underscore prefix to prevent Streamlit from hashing the paper object"""
-#     return get_taxonomy_info(paper)
-
 
 # We'll maintain a simple in-memory cache for processed papers
 _paper_cache = {}

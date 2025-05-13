@@ -1,7 +1,7 @@
 from typing import List, Dict
 from collections import defaultdict
 from datetime import datetime
-from pydantic import Field
+from pydantic import Field, BaseModel
 from orcid2taxid.shared.schemas import (
     ResearcherID, ExternalReference, InstitutionalAffiliation,
     ResearcherDescription, ResearcherProfile, EmailInfo
@@ -10,6 +10,48 @@ from orcid2taxid.grant.schemas.base import GrantRecord
 from orcid2taxid.publication.schemas import PublicationRecord
 from orcid2taxid.researcher.schemas.orcid import OrcidProfile, OrcidAffiliation, OrcidWorks
 from orcid2taxid.shared.utils import parse_date, ensure_datetime
+
+class OrganismAggregation(BaseModel):
+    """Aggregated information about an organism and its associated papers"""
+    scientific_name: str = Field(..., description="Scientific name of the organism")
+    taxid: int = Field(..., description="NCBI Taxonomy ID")
+    is_controlled: bool = Field(..., description="Whether the organism is a controlled agent")
+    publications: List[PublicationRecord] = Field(default_factory=list, description="List of publications mentioning this organism")
+    total_mentions: int = Field(..., description="Total number of mentions across all publications")
+    first_mention_date: datetime = Field(..., description="Date of first mention in publications")
+    last_mention_date: datetime = Field(..., description="Date of most recent mention in publications")
+    
+    @classmethod
+    def from_publications(cls, scientific_name: str, publications: List[PublicationRecord]) -> "OrganismAggregation":
+        """Create an organism aggregation from a list of publications"""
+        if not publications:
+            raise ValueError("Cannot create aggregation from empty publication list")
+            
+        # Get taxonomy info from first publication
+        first_paper = next(p for p in publications if p.organisms)
+        organism = next(o for o in first_paper.organisms if o.taxonomy and o.taxonomy.scientific_name == scientific_name)
+        
+        # Calculate total mentions
+        total_mentions = sum(
+            len([o for o in p.organisms if o.taxonomy and o.taxonomy.scientific_name == scientific_name])
+            for p in publications
+        )
+        
+        # Get date range
+        dates = [
+            p.publication_date for p in publications 
+            if p.publication_date
+        ]
+        
+        return cls(
+            scientific_name=scientific_name,
+            taxid=organism.taxonomy.taxid,
+            is_controlled=organism.controlled_agent == "Yes",
+            publications=publications,
+            total_mentions=total_mentions,
+            first_mention_date=min(dates) if dates else None,
+            last_mention_date=max(dates) if dates else None
+        )
 
 class CustomerProfile(ResearcherProfile):
     """Core customer profile information"""    
@@ -139,6 +181,14 @@ class CustomerProfile(ResearcherProfile):
                     if hasattr(organism, 'taxonomy') and organism.taxonomy and hasattr(organism.taxonomy, 'scientific_name') and organism.taxonomy.scientific_name:
                         by_organism[organism.taxonomy.scientific_name].append(paper)
         return dict(by_organism)
+        
+    def get_organism_aggregations(self) -> List[OrganismAggregation]:
+        """Get aggregated information about organisms and their associated papers"""
+        by_organism = self.get_publications_by_organism()
+        return [
+            OrganismAggregation.from_publications(scientific_name, publications)
+            for scientific_name, publications in by_organism.items()
+        ]
 
     def get_grants_by_funder(self) -> Dict[str, List[GrantRecord]]:
         """Get grants grouped by funder, with special handling for single-grant funders.
@@ -247,22 +297,4 @@ class CustomerProfile(ResearcherProfile):
         if affiliation.department:
             parts.append(affiliation.department)
         return ", ".join(parts) if parts else ""
-
-    def format_education_time_range(self, education: InstitutionalAffiliation) -> str:
-        """Format the time range for an education entry.
         
-        Args:
-            education: The education entry to format
-            
-        Returns:
-            str: Formatted time range string
-        """
-        if not education.start_date:
-            return ""
-            
-        start_year = education.start_date.strftime('%Y')
-        if not education.end_date:
-            return f"({start_year} - Present)"
-        else:
-            end_year = education.end_date.strftime('%Y')
-            return f"({start_year} - {end_year})"

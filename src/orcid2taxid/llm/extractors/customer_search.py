@@ -26,7 +26,7 @@ async def search_customer_information(customer: str | CustomerProfile) -> Custom
         model = "gemini-2.5-pro-preview-05-06"
         client = load_instructor_client(model)
         if isinstance(customer, str):
-            prompt = load_prompt("customer_search/o3_search_free_text_profile.txt")
+            prompt = load_prompt("customer_search/geminipro_search.txt")
             context = {"customer_profile": customer}
         elif isinstance(customer, CustomerProfile):
             prompt = load_prompt("customer_search/o3_search.txt")

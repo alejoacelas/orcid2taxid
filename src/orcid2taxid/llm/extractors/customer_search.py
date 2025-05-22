@@ -7,7 +7,7 @@ from orcid2taxid.llm.schemas.base import CustomerSearch
 from orcid2taxid.llm.schemas.customer_search import CustomerSearchLLM
 from orcid2taxid.core.logging import get_logger, log_event
 from orcid2taxid.llm.exceptions import LLMAPIError, LLMValidationError
-from orcid2taxid.llm.utils import load_instructor_client, load_prompt
+from orcid2taxid.llm.utils.instructor import load_instructor_client, load_prompt
 
 logger = get_logger(__name__)
 
@@ -24,7 +24,7 @@ async def search_customer_information(customer: str | CustomerProfile) -> Custom
         # model = "o3"
         # model = "gpt-4o"
         model = "gemini-2.5-pro-preview-05-06"
-        client = load_instructor_client(model)
+        client = load_instructor_client(model, use_search=True)
         if isinstance(customer, str):
             prompt = load_prompt("customer_search/o3_search_free_text_profile.txt")
             context = {"customer_profile": customer}

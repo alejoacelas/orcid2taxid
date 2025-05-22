@@ -7,7 +7,7 @@ from orcid2taxid.llm.schemas.base import OrganismMentionList
 from orcid2taxid.llm.schemas.organism_mention import OrganismMentionListLLM
 from orcid2taxid.core.logging import get_logger, log_event
 from orcid2taxid.llm.exceptions import LLMAPIError, LLMValidationError
-from orcid2taxid.llm.utils import load_instructor_client, load_prompt
+from orcid2taxid.llm.utils.instructor import load_instructor_client, load_prompt
 
 logger = get_logger(__name__)
 

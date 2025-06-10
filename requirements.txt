@@ -12,5 +12,6 @@ fastapi==0.115.11
 uvicorn==0.34.0
 pydantic==2.10.6
 instructor==1.7.9
+jsonref==1.1.0
 streamlit==1.43.2
 -e .

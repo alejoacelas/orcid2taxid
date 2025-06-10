@@ -272,15 +272,7 @@ class CustomerProfile(ResearcherProfile):
         Returns:
             str: Formatted time range string
         """
-        if not affiliation.start_date:
-            return ""
-            
-        start_year = affiliation.start_date.strftime('%Y')
-        if not affiliation.end_date:
-            return f"({start_year} - Present)"
-        else:
-            end_year = affiliation.end_date.strftime('%Y')
-            return f"({start_year} - {end_year})"
+        return affiliation.format_time_range()
 
     def format_affiliation_role(self, affiliation: InstitutionalAffiliation) -> str:
         """Format the role and department for an affiliation.
@@ -291,10 +283,5 @@ class CustomerProfile(ResearcherProfile):
         Returns:
             str: Formatted role string
         """
-        parts = []
-        if affiliation.role:
-            parts.append(affiliation.role)
-        if affiliation.department:
-            parts.append(affiliation.department)
-        return ", ".join(parts) if parts else ""
+        return affiliation.format_role()
         

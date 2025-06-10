@@ -86,6 +86,35 @@ class InstitutionalAffiliation(DatetimeSerializableBaseModel):
     start_date: Optional[datetime] = None
     end_date: Optional[datetime] = None
     
+    def format_time_range(self) -> str:
+        """Format the time range for this affiliation.
+        
+        Returns:
+            str: Formatted time range string (e.g., "(2020 - Present)" or "(2018 - 2022)")
+        """
+        if not self.start_date:
+            return ""
+            
+        start_year = self.start_date.strftime('%Y')
+        if not self.end_date:
+            return f"({start_year} - Present)"
+        else:
+            end_year = self.end_date.strftime('%Y')
+            return f"({start_year} - {end_year})"
+    
+    def format_role(self) -> str:
+        """Format the role and department for this affiliation.
+        
+        Returns:
+            str: Formatted role string (e.g., "Professor, Computer Science")
+        """
+        parts = []
+        if self.role:
+            parts.append(self.role)
+        if self.department:
+            parts.append(self.department)
+        return ", ".join(parts) if parts else ""
+    
 class ResearcherProfile(BaseModel):
     """Core customer profile information"""
     researcher_id: ResearcherID = Field(default_factory=ResearcherID)

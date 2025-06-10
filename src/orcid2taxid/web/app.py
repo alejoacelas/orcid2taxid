@@ -201,8 +201,8 @@ def display_researcher_info(researcher: CustomerProfile):
                 st.markdown(f"**{institution}**")
                 for affiliation in affiliations:
                     # Format time range and role
-                    time_range = researcher.format_affiliation_time_range(affiliation)
-                    role_info = researcher.format_affiliation_role(affiliation)
+                    time_range = affiliation.format_time_range()
+                    role_info = affiliation.format_role()
                     
                     # Create the role line
                     role_line = " - "
@@ -235,7 +235,7 @@ def display_researcher_info(researcher: CustomerProfile):
                     education_line += f" ({education.role})"
                 
                 # Add time range if available
-                time_range = researcher.format_education_time_range(education)
+                time_range = education.format_time_range()
                 if time_range:
                     education_line += f" {time_range}"
                     

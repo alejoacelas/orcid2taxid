@@ -16,9 +16,17 @@ async def _enhance_grant_metadata(grant: GrantRecord) -> GrantRecord:
     
     # Try to enhance with NIH data if it's an NIH grant
     if _is_nih_grant(grant.funder or ''):
-        nih_grant = await get_nih_grant_by_number(grant.id)
-        if nih_grant:
-            return nih_grant
+        try:
+            nih_grant = await get_nih_grant_by_number(grant.id)
+            if nih_grant:
+                return nih_grant
+        except Exception as e:
+            # Log the error but don't let it crash the app
+            # Return the original grant if NIH enhancement fails
+            from orcid2taxid.core.logging import get_logger
+            logger = get_logger(__name__)
+            logger.warning("Failed to enhance grant %s with NIH data: %s", grant.id, str(e))
+            return grant
     return grant
 
 async def find_grants(researcher: ResearcherProfile, max_results: int = 20) -> ResearcherProfile:

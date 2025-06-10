@@ -186,6 +186,13 @@ async def get_nih_grant_by_number(
 ) -> Optional[GrantRecord]:
     """Get a single grant by its project number from NIH Reporter"""
     try:
+        # Validate input
+        if not project_number or not project_number.strip():
+            logger.warning("Empty or invalid project number provided")
+            return None
+            
+        project_number = project_number.strip()
+        
         # Construct search payload
         payload = {
             "criteria": {
